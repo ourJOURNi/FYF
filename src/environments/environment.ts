@@ -10,14 +10,16 @@
 
 import 'zone.js/dist/zone-error';
 
-const ip = '10.0.1.16';
+const ip = '10.0.1.7';
+const wsEndpoint = 'ws://localhost:8081';
 const baseUrl = `http://${ip}:3000`;
 const fairsUrl = `http://${ip}:4000`;
 
 export const environment = {
   production: false,
   url: baseUrl,
-  fairsUrl: fairsUrl
+  fairsUrl: fairsUrl,
+  wsEndpoint
 };
 
 /*

@@ -261,6 +261,7 @@ export class ProfilePage implements OnInit, OnDestroy {
       this.router.navigate(['/home/profile/change-password']);
     }
     changePhoneNumber() {
+      console.log(this.userObject);
       console.log('Navigating to Change Phone Number Page');
       this.router.navigate(['/home/profile/change-phone', this.userObject.phone]);
     }

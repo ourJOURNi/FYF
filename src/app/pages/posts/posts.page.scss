@@ -17,7 +17,6 @@
 
 .post {
   padding: 24px 0;
-  margin-bottom: 42px;
   border-radius: 10px;
   box-shadow: 1px 10px 26px rgba(0,0,0,0.05);
   font-size: 1.1em;
@@ -58,7 +57,7 @@ ion-content {
   background: #edf3f8;
 }
 .filter-toolbar-wrapper{
-  background: #c1e1ff;
+  background: #0057a9b8;
   position: fixed;
   width: 100%;
   height: 50px;
@@ -80,12 +79,10 @@ ion-content {
   top: -16px;
 }
 .filter-message{
-  color: #0055a5;
-  font-size: 1.25em;
+  color: white;
+  font-size: 0.85em;
   display: inline;
   position: relative;
-  right: 16px;
-  top: 6px;
 
   span {
     font-weight: 600;
@@ -96,17 +93,19 @@ ion-content {
     color: #0055a5;
     background-color: white;
     border: 2px solid #0055a5;
-    padding: 0.7em;
+    padding: 0.5em;
     border-radius: 50px;
-    margin: 20px;
     box-shadow: 1px 1px 10px rgba(0,0,0,0.05);
-    top: 0px;
+  .filter-icon {
+      font-size: 2.5em;
+      color: #0055a5;
+    }
 
   }
 }
 .filter-icon {
   font-size: 2.5em;
-  color: #0055a5;
+  color: white;
 }
 .toolbar-orange-button {
   width: 130px;
@@ -164,7 +163,8 @@ ion-content {
   top: -32px;
 }
 .post-content {
-  font-size: 0.9em;
+  font-size: 1em;
+  color: #111;
   height: auto;
   overflow: hidden;
  }
@@ -229,11 +229,11 @@ ion-content {
     --background: #faa71b;
   }
  }
- 
+
 
 .user-details {
   position: fixed;
-  top: 200px;
+  margin-top: 16%;
   background: white;
   border-radius: 15px;
   border: 2px solid rgb(230, 230, 230);

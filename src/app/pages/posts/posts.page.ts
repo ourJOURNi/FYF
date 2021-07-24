@@ -75,7 +75,7 @@ export class PostsPage implements OnInit, OnDestroy {
     private postsEmitterService: PostPageEmitterService,
     private filterPostsService: FilterPostsService,
     private studentChat: StudentChatService,
-    private notificationsService: NotificationsService
+    private notifications: NotificationsService
   ) {}
   ngOnDestroy(): void {
     this.postsSub.unsubscribe();
@@ -86,12 +86,14 @@ export class PostsPage implements OnInit, OnDestroy {
     this.posts.followingSubject$.unsubscribe();
   }
   ngOnInit() {
-
     this.getUserInfo();
     this.getPosts();
     this.getFollowingPosts();
     this.trackRoute();
-
+    // To collect comment data
+   this.commentForm = this.formBuilder.group({
+     comment: ['']
+   });
     // When Users updated their Profile Picture, Unfollow/Follow, Up/Downvote, or Comment on an individual
     if (this.postsEmitterService.subsVar === undefined) {
       this.postsEmitterService.subsVar = this.postsEmitterService.invokePostsPageRefresh.subscribe(() => {
@@ -99,7 +101,6 @@ export class PostsPage implements OnInit, OnDestroy {
         this.getUserInfo();
       });
     }
-
     // Filter Jobs from Popover
     if (this.filterPostsService.subsVar == undefined) {
       this.filterPostsService.subsVar = this.filterPostsService.filterPostsEmitter.subscribe(data => {
@@ -109,10 +110,6 @@ export class PostsPage implements OnInit, OnDestroy {
       });
     }
 
-     // To collect comment data
-    this.commentForm = this.formBuilder.group({
-      comment: ['']
-    });
   }
   trackRoute() {
     this.routerSub = this.router.events.pipe(
@@ -302,13 +299,12 @@ export class PostsPage implements OnInit, OnDestroy {
       this.myPostsLength = details['posts'].length;
       this.followedPost = details['followedPost'];
 
-      this.notificationsSub = this.notificationsService.notifications$.subscribe(
+      this.notifications.getNotifications(this.userEmail)
+      .subscribe(
         notifications => {
-          console.log('Notifications: ')
-          console.log(notifications);
-          this.notificationsLength = notifications.length;
-        }
-      );
+            console.log(notifications);
+            this.notificationsLength = Object.values(notifications).length;
+        })
     });
   }
   getFollowingPosts() {
@@ -362,13 +358,8 @@ export class PostsPage implements OnInit, OnDestroy {
     this.postsSub = this.posts.getPosts().subscribe( posts => {
       this.allPosts = Object.values(posts);
       this.loadedAllPosts = Object.values(posts);
-      // for (const post of this.allPosts) {
-      //   post.date = formatDistanceToNow( new Date(post.date), {
-      //     includeSeconds: true,
-      //     addSuffix: true
-      //   });
-      // }
-      switch (this.postFilter) {
+    // Filter Logic
+    switch (this.postFilter) {
         case 'mostc':
           console.log('Most Comments');
           this.filtering = true;
@@ -432,9 +423,9 @@ export class PostsPage implements OnInit, OnDestroy {
 
         default:
           break;
-      }
+    }
 
-      return setTimeout(() => {
+    return setTimeout(() => {
         this.filtering = false;
       }, 1000);
     });
@@ -452,7 +443,7 @@ export class PostsPage implements OnInit, OnDestroy {
   chat() {
     this.router.navigate(['/home/posts/student-chat']);
   }
-  notifications() {
+  notificationsPage() {
     this.router.navigate(['/home/posts/notifications']);
   }
   async comment(postID, userFullName, userEmail, userProfilePicture, comment) {
@@ -501,8 +492,8 @@ export class PostsPage implements OnInit, OnDestroy {
 
             // this.userEmail = instigatingUser
             // postCreator = recievingUser
-            this.notificationsService.
-            commentNotification(this.userEmail, postCreator, postID, newComment).subscribe();
+            this.notifications.
+            commentNotification(this.userEmail, postCreator, postID, newComment)
           }
         );
       }
