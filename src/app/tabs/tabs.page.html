@@ -9,11 +9,11 @@
         </ion-col>
         <ion-col style="z-index: 9999;" class="ion-float-right" push-lg="1.5"  size-lg="6" push-xl="1" size-xl="4.5">
 
-          <a (click)="logoutConfirm()" style="cursor: pointer;">
+          <!-- <a (click)="logoutConfirm()" style="cursor: pointer;">
             LOGOUT
-          </a>
+          </a> -->
           <a routerLink="/home/profile/" routerLinkActive="active-link">
-            PROFILE
+            <img id="profile-picture" style="position: relative; top: -8px;" src="{{this.userProfilePicture}}" alt="User Profile Picture" srcset="">
           </a>
           <a routerLink="/home/mentors" routerLinkActive="active-link">
             MENTORS
@@ -57,8 +57,10 @@
       <!-- <ion-label>MENTORS</ion-label> -->
     </ion-tab-button>
 
+    <!-- I need to add profile picture -->
+    <!-- Where do I get it from? -->
     <ion-tab-button tab="profile">
-      <ion-icon src="../assets/icon/profile-inactive.svg"></ion-icon>
+      <img id="profile-picture" src="{{this.userProfilePicture}}" alt="User Profile Picture" srcset="">
       <!-- <ion-label>PROFILE</ion-label> -->
     </ion-tab-button>
   </ion-tab-bar>

@@ -1,8 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { AlertController } from '@ionic/angular';
 import { Location } from '@angular/common';
-
+import { ProfileService } from '../services/profile.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tabs',
@@ -10,13 +11,28 @@ import { Location } from '@angular/common';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
+  profilePicture;
+  infoSub: Subscription;
+  userProfilePicture: any;
 
   constructor(
     private auth: AuthService,
     private alert: AlertController,
-    private location: Location
+    private location: Location,
+    private profile: ProfileService
   ) {}
+
+  ngOnInit() {
+    this.getUserInfo();
+  }
+
+  getUserInfo() {
+    this.infoSub = this.profile.getUserDetails().subscribe( details => {
+      // console.log(details);
+      this.userProfilePicture = details['profilePicture'];
+      console.log(this.userProfilePicture);
+    });
+  }
 
   async logoutConfirm() {
     const alert = await this.alert.create({
@@ -40,6 +56,4 @@ export class TabsPage {
 
     await alert.present();
   }
-
-
 }
