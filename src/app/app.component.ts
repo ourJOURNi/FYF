@@ -39,7 +39,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   initializeApp() {
     this.auth.checkToken();
-    this.notifications.connect();
+    // this.notifications.connect();
     this.notifications.messages$
     .pipe(
       // map(rows => rows.data),
@@ -59,7 +59,7 @@ export class AppComponent implements OnInit, OnDestroy {
     });
     let img = '../assets/icons/icon-72x72.svg';
     let text = 'This is a notification.';
-    let notification = new Notification('To do list', {body: text, icon: img});
+    // let notification = new Notification('To do list', {body: text, icon: img});
     this.platform.ready().then(() => {
     });
     // State for the User. If Authentication State == False, the app reverts back to the landing page
