@@ -54,9 +54,9 @@ export class AppComponent implements OnInit, OnDestroy {
       (e) => {
         console.log(e)
       });
-    Notification.requestPermission((e) => {
-      console.log(e);
-    });
+    // Notification.requestPermission((e) => {
+    //   console.log(e);
+    // });
     let img = '../assets/icons/icon-72x72.svg';
     let text = 'This is a notification.';
     // let notification = new Notification('To do list', {body: text, icon: img});
