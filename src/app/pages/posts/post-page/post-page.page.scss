@@ -11,7 +11,7 @@
 }
 .post {
   margin-bottom: 40px;
-  background: #0055a5;
+  background: #fbfcfd;
   padding: 20px 0px;
 }
 .comments-header {
@@ -46,7 +46,7 @@
 }
 
 .post-name {
-  color: white;
+  color: #0055a5;
   font-size: 1.6em;
   font-weight: 600;
   margin: 0;
@@ -57,7 +57,7 @@
   opacity: 0.8;
   font-size: 1em;
   font-weight: 600;
-  color: white;
+  color: #444;
   margin: 0;
   display: block;
 }
@@ -111,7 +111,7 @@
 .post-content{
   font-size: 1.15em;
   line-height: 28px;
-  color: white;
+  color: #333;
 }
 
 .back-button {
@@ -160,7 +160,7 @@
   background: white;
   height: auto;
   opacity: 0;
-  margin:  0 8px 0;
+  margin:  10px 8px 0;
   box-shadow: 1px 10px 10px rgba(0,0,0,0.05);
   border-top: 3px solid #d7d7d7;
   border-radius: 5px;
