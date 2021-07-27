@@ -8,7 +8,7 @@
 
 // local host is for local machine and 10.0.1.8 is for android testing
 
-import 'zone.js/dist/zone-error';
+import 'zone.js/plugins/zone-error';
 
 const ip = '10.0.1.7';
 const wsEndpoint = 'ws://localhost:8081';
@@ -29,4 +29,4 @@ export const environment = {
  * This import should be commented out in production mode because it will have a negative impact
  * on performance if an error is thrown.
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
