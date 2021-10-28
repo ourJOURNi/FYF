@@ -29,7 +29,7 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 export class HeartIconComponent implements OnInit {
 
-  favoriteState = 'unfavorited';
+  favoriteState;
   public iconName = 'heart';
   @Input() job;
   @Input() favoriteJobs;
@@ -40,33 +40,30 @@ export class HeartIconComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      for (const job of this.favoriteJobs) {
-        if (this.job._id == job._id) {
-          this.setFavoriteStateOn();
-        }
+    this.favoriteState = 'unfavorited';
+    for (const favJob of this.favoriteJobs) {
+      if (this.job._id === favJob['_id']) {
+        console.log('There was a match!')
+        return this.setFavoriteStateOn();
       }
-    }, 300);
+    }
   }
-
   toggleLikeState() {
-
     if (this.favoriteState === 'unfavorited') {
       this.setFavoriteStateOn()
-      this.favorites.favoriteThisJob(this.job);
-    } else {
+      return this.favorites.favoriteThisJob(this.job);
+    }
+    else {
       this.setFavoriteStateOff()
-      this.favorites.unFavoriteThisJob(this.job);
+      return this.favorites.unFavoriteThisJob(this.job);
     }
 
   }
-
   setFavoriteStateOn() {
     this.favoriteState = 'favorited';
     this.iconName = 'heart';
 
  }
-
   setFavoriteStateOff() {
     this.favoriteState = 'unfavorited';
     this.iconName = 'heart';

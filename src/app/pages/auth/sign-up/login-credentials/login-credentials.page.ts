@@ -95,7 +95,7 @@ formOnChanges(): void {
     console.log('Going to Enter Code Page');
     this.router.navigate(['/personal-info/profile-picture/upload-resume/login-credentials/enter-code/', this.email]);
 
-      }
+  }
 
   async userAlreadyExistAlert() {
     const alert = await this.alert.create({

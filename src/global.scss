@@ -51,9 +51,20 @@ ion-grid {
 }
 ion-header {
   background: #fff;
-  box-shadow: 1px 1px 20px rgba(0,0,0,0.15);
-  color: #0055a5;
-  // height: 60px;
+
+  ion-icon {
+    font-size: 2em;
+  }
+  ion-title {
+    color: #333;
+    position: relative;
+    left: 16px;
+    top: 3px;
+  }
+}
+ion-skeleton-text {
+  line-height: 13px;
+  --background-rgb: 251,182,6;
 }
 ion-list {
   --background: none;
@@ -63,11 +74,11 @@ ion-content {
   --background: #f4f5f8;
 }
 ion-toolbar {
-  --background: #0055a5;
+  --background: white;
   --color: white;
 
   ion-back-button {
-    color: white;
+    color: #0055a5;
   }
 }
 .drawer-content {
@@ -395,6 +406,8 @@ ion-select-option {
   --background: #00c400;
   color: white;
 }
+
+
 
 .upvoted-toast {
   --background: #0055a5;

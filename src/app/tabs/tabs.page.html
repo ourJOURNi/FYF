@@ -5,7 +5,7 @@
       <ion-row style="margin-top: 16px;" class="ion-align-items-center">
         <ion-col size="2"></ion-col>
         <ion-col pull-lg="1.5" pull-xl="0" size="2">
-          <img id="logo" src="../../assets/icon/Logo 2.0.png">
+          <img id="logo" src="../../assets/logos/White-FYF-LOGO-2.svg">
         </ion-col>
         <ion-col style="z-index: 9999;" class="ion-float-right" push-lg="1.5"  size-lg="6" push-xl="1" size-xl="4.5">
 
@@ -16,16 +16,16 @@
             <img id="profile-picture" style="position: relative; top: -8px;" src="{{this.userProfilePicture}}" alt="User Profile Picture" srcset="">
           </a>
           <a routerLink="/home/mentors" routerLinkActive="active-link">
-            MENTORS
+            Mentors
           </a>
           <a routerLink="/home/posts" routerLinkActive="active-link">
-            POSTS
+            Posts
           </a>
           <a routerLink="/home/events" routerLinkActive="active-link">
-           EVENTS
+           Events
           </a>
           <a routerLink="/home/jobs" routerLinkActive="active-link">
-            JOBS
+            Jobs
           </a>
         </ion-col>
         <ion-col size="1"></ion-col>
@@ -33,35 +33,38 @@
     </ion-grid>
   </ion-toolbar>
   <!-- Tab Bar for Mobile -->
-  <ion-tab-bar slot="bottom" id="tabBar" class="ion-hide-lg-up">
-    <ion-tab-button tab="jobs">
-      <ion-icon name="briefcase-outline"></ion-icon>
-      <!-- <ion-icon src="../assets/icon/suitcase-inactive.svg"></ion-icon> -->
-      <!-- <ion-label>JOBS</ion-label> -->
-    </ion-tab-button>
+  <ion-fab id="tab-bar-fab" class="ion-hide-lg-up" vertical="bottom" horizontal="center" translucent="true">
+    <ion-fab-button>
+      <ion-tab-button (click)="toProfile()"  tab="profile">
+        <img id="profile-picture" src="{{this.userProfilePicture}}" alt="User Profile Picture">
+        <!-- <ion-label>PROFILE</ion-label> -->
+      </ion-tab-button>
+    </ion-fab-button>
+  </ion-fab>
 
-    <ion-tab-button tab="events">
-      <ion-icon name="calendar-outline"></ion-icon>
-      <!-- <ion-icon src="../assets/icon/calendar-inactive.svg"></ion-icon> -->
-      <!-- <ion-label>EVENTS</ion-label> -->
-    </ion-tab-button>
+  <ion-tab-bar id="tabBar" slot="bottom" class="ion-hide-lg-up ion-no-border">
+  <ion-tab-button tab="jobs">
+    <ion-icon style="font-size: 2.1em"  name="briefcase-outline"></ion-icon>
+    <!-- <ion-icon src="../assets/icon/suitcase-inactive.svg"></ion-icon> -->
+    <ion-label>JOBS</ion-label>
+  </ion-tab-button>
 
-    <ion-tab-button tab="posts">
-      <ion-icon name="newspaper-outline"></ion-icon>
-      <!-- <ion-icon src="../assets/icon/post-inactive.svg"></ion-icon> -->
-      <!-- <ion-label>POSTS</ion-label> -->
+  <ion-tab-button class="events" tab="events">
+    <ion-icon style="font-size: 2.1em"  name="calendar-outline"></ion-icon>
+    <!-- <ion-icon src="../assets/icon/calendar-inactive.svg"></ion-icon> -->
+    <ion-label>EVENTS</ion-label>
+  </ion-tab-button>
+
+  <svg height="50" viewBox="0 0 100 50" width="100" xmlns="http://www.w3.org/2000/svg"><path d="M100 0v50H0V0c.543 27.153 22.72 49 50 49S99.457 27.153 99.99 0h.01z" fill-rule="evenodd"></path></svg>
+
+    <ion-tab-button class="posts" tab="posts">
+      <ion-icon style="font-size: 2.1em" name="newspaper-outline"></ion-icon>
+      <ion-label>POSTS</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="mentors">
-      <ion-icon src="../assets/icon/question-inactive.svg"></ion-icon>
-      <!-- <ion-label>MENTORS</ion-label> -->
-    </ion-tab-button>
-
-    <!-- I need to add profile picture -->
-    <!-- Where do I get it from? -->
-    <ion-tab-button tab="profile">
-      <img id="profile-picture" src="{{this.userProfilePicture}}" alt="User Profile Picture" srcset="">
-      <!-- <ion-label>PROFILE</ion-label> -->
+      <ion-icon style="font-size: 2.1em" name="ribbon-outline"></ion-icon>
+      <ion-label>MENTORS</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

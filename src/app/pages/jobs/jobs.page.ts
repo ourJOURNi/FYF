@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
 import { IonSearchbar, LoadingController, PopoverController } from '@ionic/angular';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
@@ -10,7 +10,6 @@ import { FavoritesEventEmitterService } from 'src/app/emitters/favorites-event-e
 import { Subscription } from 'rxjs';
 import { JobsFilterPopoverComponent } from 'src/app/components/jobs-filter-popover/jobs-filter-popover.component';
 import { FilterJobsService } from 'src/app/emitters/filter-jobs.service';
-
 
 
 @Component({
@@ -39,6 +38,9 @@ export class JobsPage implements OnInit, OnDestroy {
   loadedAllJobs;
   filtering: boolean;
 
+  // Set this false to enable skeleton
+  data = true;
+
   constructor(
     private router: Router,
     private jobs: JobsService,
@@ -50,48 +52,54 @@ export class JobsPage implements OnInit, OnDestroy {
     public loading: LoadingController
   ) {}
 
-  ngOnDestroy() {
-    this.favoritesEventEmitterService.subsVar.unsubscribe();
-    this.jobsSub.unsubscribe();
-    this.profileSub.unsubscribe();
-    this.favoriteJobsSub.unsubscribe();
-  }
   ngOnInit() {
+
+    this.getJobs('newest');
+    this.getFavoriteJobs();
+    this.trackRoute();
     // Refresh Favorites after one has been deleted from the favoites page.
     if (this.favoritesEventEmitterService.subsVar == undefined) {
       this.favoritesEventEmitterService.subsVar = this.favoritesEventEmitterService.invokeJobsPageRefresh.subscribe(() => {
-        this.getJobs();
+        return this.getJobs('newest');
       });
     }
     // Filter Jobs from Popover
     if (this.filterJobsService.subsVar == undefined) {
       this.filterJobsService.subsVar = this.filterJobsService.filterJobsEmitter.subscribe(data => {
         // Filter jobs
+        console.log(data)
         this.jobFilter = data;
-        this.getJobs();
+        this.getJobs(data);
+        return;
       });
     }
-
-    this.getFavoriteJobs();
-    this.getJobs();
-    this.trackRoute();
+  }
+  ionViewWillEnter() {
+    setTimeout(() => {
+      this.data = true;
+    }, 1500);
   }
   trackRoute() {
     this.routerSub = this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)).subscribe(
       data => {
-        console.log(data['url']);
+        // console.log(data['url']);
         let url = data['url'];
         if(url.includes('/home/jobs/job-page/')) {
           console.log('Hide Tab Bar!');
           let tabBar = document.getElementById('tabBar');
+          let tabBarFab = document.getElementById('tab-bar-fab');
           tabBar.style.height = '0px'
           tabBar.style.transition = '1s'
-        } else {
+          tabBarFab.style.transform = 'translateY(100px)'
+        }
+        else {
           let tabBar = document.getElementById('tabBar');
-          console.log(tabBar);
+          let tabBarFab = document.getElementById('tab-bar-fab');
+          // console.log(tabBar);
           tabBar.style.height = '50px'
           tabBar.style.transition = '1s'
+          tabBarFab.style.transform = 'translateY(0px)'
         }
       });
   }
@@ -106,78 +114,13 @@ export class JobsPage implements OnInit, OnDestroy {
       }
     });
      await popover.present();
-     await popover.onWillDismiss().then((data) => {
-       console.log(data);
-     }
-     );
-  }
-  filter(job) {
-
-    this.initializeItems();
-    let searchTerm = job.detail.value;
-
-    this.presentLoadingWithOptions();
-
-    this.allJobs = this.allJobs.filter( currentJobs => {
-      console.log(currentJobs);
-
-      if (!currentJobs || !searchTerm  ) {
-
-        console.log('No results from that search');
-        this.noSearchInput = true;
-
-      }
-
-      if ( currentJobs.title && searchTerm) {
-
-        if (currentJobs.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
-
-          console.log(currentJobs.title);
-          console.log((currentJobs));
-
-          this.searchTerm = searchTerm;
-
-          this.searching = true;
-          this.noSearchInput = false;
-
-          return true;
-        }
-        return false;
-      }
-      this.noSearchInput = true;
-
-  });
-
-    this.allJobsLength = this.allJobs.length;
-
-    // If there are no matches with the searchTerm
-    if ( this.allJobsLength === 0 ) {
-
-      console.log('No results from that search');
-      this.searching = true;
-      this.searchTerm = searchTerm;
-
-      this.searchbar.getInputElement().then(  (searchbarInputElement) => {
-        searchbarInputElement.value = '';
-      });
-      this.noSearchInput = true;
-    }
-
-    if (!searchTerm) {
-      console.log('Search term is empty; showing all jobs instead');
-      this.noSearchInput = false;
-      this.searching = false;
-      this.getJobs();
-    }
-
-  }
-  initializeItems(): void {
-    this.allJobs = this.loadedAllJobs;
   }
   getFavoriteJobs() {
+    console.clear()
     // Get all the user's favorite jobs
     this.profileSub = this.profile.getUserDetails().subscribe(
       data => {
+        console.log(data)
         this.favoriteJobs = data['favoriteJobs']
         console.log('Favorite Jobs:');
         console.log(this.favoriteJobs);
@@ -236,10 +179,13 @@ export class JobsPage implements OnInit, OnDestroy {
 
     await console.log('Refreshing jobs Page..');
   }
-  async getJobs() {
+  async getJobs(filter) {
     this.jobsSub = this.jobs.getJobs().subscribe( jobs => {
       console.log(jobs);
-      switch (this.jobFilter) {
+      this.allJobs = Object.values(jobs);
+      this.allJobsLength = this.allJobs.length;
+      this.allJobs.reverse();
+      switch (filter) {
         case 'htol':
           console.log('High to Low');
           this.filtering = true;
@@ -253,7 +199,6 @@ export class JobsPage implements OnInit, OnDestroy {
           }
           this.allJobs.sort(sortHighToLow);
           this.allJobs.reverse();
-          this.searching = false;
 
           // Format Times
           for (const job of this.allJobs) {
@@ -272,7 +217,6 @@ export class JobsPage implements OnInit, OnDestroy {
           }
           this.allJobs.sort(sortLowToHigh);
           this.allJobs.reverse();
-          this.searching = false;
 
           // Format Times
           for (const job of this.allJobs) {
@@ -285,7 +229,6 @@ export class JobsPage implements OnInit, OnDestroy {
           this.jobFilter = 'oldest';
           this.allJobs = Object.values(jobs);
           this.allJobsLength = this.allJobs.length;
-          this.searching = false;
 
           // Format Times
           for (const job of this.allJobs) {
@@ -296,34 +239,24 @@ export class JobsPage implements OnInit, OnDestroy {
           console.log('Newest');
           this.filtering = true;
           this.jobFilter = 'newest';
-          this.allJobs = Object.values(jobs);
-          this.allJobsLength = this.allJobs.length;
-          this.allJobs.reverse();
-          this.searching = false;
 
           // Format Times
           for (const job of this.allJobs) {
             job.dateCreated = formatDistanceToNow( new Date(job.dateCreated), { addSuffix: false });
           }
           break;
-
         default:
           break;
       }
 
-      return setTimeout(() => {
-        this.filtering = false;
-      }, 1000);
     });
   }
-  async presentLoadingWithOptions() {
-    const loading = await this.loading.create({
-      duration: 1000,
-      message: 'Searching for jobs...',
-      translucent: true,
-      cssClass: 'custom-class custom-loading',
-      keyboardClose: false
-    });
-    return await loading.present();
+
+  @HostListener('unloaded')
+  ngOnDestroy() {
+    console.log('Jobs Page Destroyed!')
+    this.favoritesEventEmitterService.subsVar.unsubscribe();
+    this.favoriteJobsSub.unsubscribe();
   }
+
 }

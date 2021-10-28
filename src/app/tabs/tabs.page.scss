@@ -1,70 +1,40 @@
 // Tab-Bar
 #profile-picture {
-  height: 32px;
-  border-radius: 50px;
+  border-radius: 100px;
+  padding: 2.3em;
 }
-ion-tab-bar  {
-  padding: 0 40px;
-  height: 50px;
-  z-index: 9999;
-  // box-shadow: 2px 1px 5px #555;
-  transition: 0.5s;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+// Profile Picture needs height: 40px on desktop views.
+@media only screen and (min-width: 993px) {
+  #profile-picture {
+    height: 40px;
+    padding: 0em;
+  }
 }
-
-ion-label {
-  position: relative;
-  top: 6px;
-  font-size: 0.8em;
-  transition: 0.5s;
-  font-weight: 700;
-}
-
-ion-tab-button{
-  font-size: 0.8em;
-  --color: #0055a563;
-  --color-selected: #FFB351;
-  --padding-end: 0px;
-  --padding-start: 10px;
-  --padding-bottom: 0px;
-  --margin-left:0px;
-  --margin-right:0px;
-  max-width:100px;
-  ion-icon{
-      font-size: 2em;
-      --font-size-selected: 4em;
-      --background-color: white;
-      transition: 0.5s;
-  }}
-
-
-
-
-  // Toolbar
-
+// Toolbar
   #logo {
-    height: 32px;
+		height: 44px;
+		position: relative;
+		top: -9px;
   }
 
   ion-toolbar {
     --min-height: 7vh;
-    --background: white;
+    --background: linear-gradient(30deg, #004785, #0055a5);
     font-size: 0.9em;
     box-shadow: 1px 1px 15px rgba(0,0,0,0.08);
 
     a {
+      transition: 0.5s;
       margin: 0 10px 0 10px;
       text-decoration: none;
-      color: #333;
-      letter-spacing: 1px;
-      font-size: 0.8em;
+      color: white;
+      font-size: 1.2em;
+			font-weight: 600;
       float: right;
     }
 
     .active-link {
-      color: #0055a5;
-      font-weight: 600;
-      transition: 0.5s;
+      color: #fbb606;
     }
 
     ion-button {
@@ -77,3 +47,63 @@ ion-tab-button{
   ion-grid {
     height: 50px;
   }
+ion-tabs{
+	ion-fab {
+		margin-bottom: env(safe-area-inset-bottom); /* fix notch ios*/
+		ion-fab-button {
+			// --box-shadow: none;
+		}
+	}
+	ion-tab-bar {
+		--border: 0;
+		--background: none;
+		position: absolute;
+		bottom: 0;
+		left:0; right: 0;
+		width: 100%;
+		&:after{
+			content: " ";
+			width: 100%;
+			bottom: 0;
+			background: #000000;
+			height: env(safe-area-inset-bottom);
+			position: absolute;
+		}
+		ion-tab-button {
+			--background: linear-gradient(30deg, #004785, #0055a5);
+
+			ion-icon, ion-label {
+				color: white;
+			}
+		}
+		ion-tab-button.events {
+			margin-right: 0px;
+			border-top-right-radius: 18px;
+		}
+		ion-tab-button.posts {
+			margin-left: 0px;
+			border-top-left-radius: 18px;
+		}
+		svg {
+			width: 72px;
+			margin-top: 19px;
+			path{
+				fill:  #0055a5;
+			}
+		}
+	}
+	.pro-pic-animation {
+		animation: profile-picture-up 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+	}
+	@keyframes profile-picture-up {
+		0% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(-20px);
+		}
+		100% {
+			transform: translateY(0px);
+		}
+	}
+}

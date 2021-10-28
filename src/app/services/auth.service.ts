@@ -133,7 +133,7 @@ doesUserExists(email, password) {
       }
     }
   });
-}
+ }
 
  checkIfUserExits(email) {
   return this.http.post(`${this.BACKEND_URL}/api/forgot-password`, {email})
