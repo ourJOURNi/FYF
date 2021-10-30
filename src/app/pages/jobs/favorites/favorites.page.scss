@@ -1,6 +1,9 @@
 ion-grid {
   padding-bottom: 40px;
 }
+ion-row {
+  margin-top: 0.5em;
+}
 #no-favorites {
   text-align: center;
   background: none;
@@ -53,9 +56,11 @@ ion-grid {
   }
 }
 .job-details {
-  --background: #0055a5;
-  --color: white;
-  --background-hover: rgb(24, 40, 54);
+  --background: white;
+  --color: #0055a5;
+  --border-color: #0055a5;
+  --border-style: solid;
+  --border-width: 2px;
   height: 24px;
   --width: 100px;
   font-size: 0.5em;
@@ -65,12 +70,24 @@ ion-grid {
   top: 10px;
 }
 .desktop-toolbar{
-  --background: none;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #33333326;
-
+  --background: linear-gradient(30deg, #004785, #0055a5);
+  box-shadow: 1px 1px 19px #36363636;
+  border-radius: 100px;
+  margin-top: 2em;
   h1 {
-    color: #0055a5;
+    color: white;
+    position: relative;
+    left: 10px;
+    top: -5px;
+    font-size: 1.5em;
+  }
+  ion-buttons:nth-child(1){
+    position: relative;
+    left: 3em;
+  }
+  ion-buttons:nth-child(2){
+    position: relative;
+    right: 3em;
   }
 }
 .back-button {
@@ -78,7 +95,8 @@ ion-grid {
   --background: #e3405f;
   --background-hover: linear-gradient(#e3405f, #5f4045);
   height: 24px;
-  width: 100px;
+  border-radius: 5px;
+  width: 60px;
   font-size: 0.5em;
   font-weight: 600;
   display: block;
@@ -122,8 +140,8 @@ h6, p {
 }
 @media only screen and (min-width: 993px) {
   #job-summary {
-    font-size: 1em;
-    font-size: 1em;
+    font-size: 16px;
+    line-height: 21px;
   }
 }
 #company-name {

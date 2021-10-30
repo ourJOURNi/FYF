@@ -1,17 +1,17 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilterJobsService {
-  filterJobsEmitter = new EventEmitter();
-  subsVar: Subscription;
+  filterBehaviorSub = new BehaviorSubject('newest');
 
   constructor() { }
 
   filterJobs(selection) {
     console.log('Emitting from FilterJobs Emitter...');
-    this.filterJobsEmitter.emit(selection);
+    this.filterBehaviorSub.next(selection);
   }
 }

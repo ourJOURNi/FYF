@@ -12,11 +12,11 @@
 <ion-content>
   <ion-grid>
     <!-- Desktop Header -->
-    <ion-row style="padding-top: 80px; margin-bottom: 40px;" class="ion-hide-lg-down ion-justify-content-center">
+    <ion-row class="ion-hide-lg-down ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
         <ion-toolbar class="desktop-toolbar">
               <ion-buttons slot="start">
-                  <img height="50" src="../../../../assets/icon/jobs-favorites-heart-blue.svg" alt="Favorites-Icon" srcset="">
+                  <img height="36" src="../../../../assets/icon/jobs-favorites-heart-white.svg" alt="Favorites-Icon">
                   <h1>Favorites</h1>
               </ion-buttons>
               <ion-buttons slot="end">
@@ -37,7 +37,7 @@
 
     <!-- Favorite Jobs -->
     <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="8" size-xl="6"></ion-col>
+      <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="8" size-xl="6">
       <ion-row class="job-section ion-justify-content-center" *ngFor="let job of favoriteJobsObj">
             <ion-col push="0.3" size="1">
               <img class="company-logo" src="{{job.companyLogo}}">
@@ -59,6 +59,7 @@
                 </ion-button>
             </ion-col>
       </ion-row>
+    </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

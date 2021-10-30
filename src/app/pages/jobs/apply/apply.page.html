@@ -2,20 +2,21 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
+      <img id="mobile-toolbar-icon" src="../../../../assets/logos/White-FYF-LOGO.svg" alt="White FYF Logo">
     </ion-buttons>
-  <ion-title>Job Page</ion-title>
+  <ion-title>Application</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
     <!-- Desktop Header -->
-    <ion-row style="padding-top: 80px; margin-bottom: 40px;" class="ion-hide-lg-down ion-justify-content-center">
+    <ion-row style="padding-top: 40px;" class="ion-hide-lg-down ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
         <ion-toolbar class="desktop-toolbar">
               <ion-buttons slot="start">
                 <img style="border-radius: 50px;" height="75" src="{{this.jobLogo}}">
-                <div class="desktop-toolbar-company-info">
+                <div class="toolbar-company-info">
                   <h2>{{jobCompanyName}}</h2>
                   <h3>{{jobTitle}}</h3>
                   <p>${{jobRateOfPay}} / hr</p>
@@ -29,7 +30,7 @@
         </ion-toolbar>
       </ion-col>
     </ion-row>
-    <ion-row class="ion-justify-content-center">
+    <ion-row class="ion-justify-content-center ion-hide-lg-up">
       <ion-col size-xs="11" size-sm="10" size-md="10">
         <div class="spacer"></div>
         <img style="border-radius: 50px;" height="75" src="{{this.jobLogo}}">
@@ -44,7 +45,7 @@
     <!-- Instructions -->
     <ion-row class="ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
-            <p>Please go over your information before you send your application. You can edit your profile's phone number and Resume from here. After you hit submit, an email with your FYF Profile, Resume, and application message will be sent to the employer.</p>
+        <p id="instructions">Please go over your information before you send your application. You can edit your profile's phone number and Resume from here. After you hit submit, an email with your FYF Profile, Resume, and application message will be sent to the employer.</p>
       </ion-col>
     </ion-row>
     <!-- Forms -->
@@ -80,7 +81,7 @@
           </div>
           <ion-row>
             <ion-col class="ion-text-center" size="12">
-              <ion-button (click)="finishApplication()" style="margin: 120px auto;" class="orange-button next-button">Submit</ion-button>
+              <ion-button (click)="finishApplication()" class="orange-button next-button">Submit</ion-button>
             </ion-col>
           </ion-row>
         </form>

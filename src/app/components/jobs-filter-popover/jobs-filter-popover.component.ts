@@ -24,11 +24,11 @@ export class JobsFilterPopoverComponent implements OnInit {
   selectOption(e) {
     this.selection = e.detail.value;
     console.log(this.selection);
-    this.filterJobsService.filterJobs(this.selection);
     this.dismiss();
     return;
   }
   dismiss() {
+    this.filterJobsService.filterBehaviorSub.next(this.selection);
     return this.popoverController.dismiss({
       data: this.selection
     });

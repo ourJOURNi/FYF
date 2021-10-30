@@ -1,16 +1,20 @@
-ion-title {
-  margin: 0;
+ion-toolbar {
+  --background: #0055a5;
 }
-
-.orange-button {
-  width: unset;
-  display: block;
-  margin: 40px auto;
-  width: 200px;
+ion-icon, ion-title {
+  color: white;
 }
-
+ion-icon {
+  position: relative;
+  left: 1em;
+}
+h4 {
+  margin: 45px auto;
+  color: #005191;
+}
 
 input[type=file] {
+  display: block;
   color: white;
   font-size: 1.2em;
   font-weight: 600;
@@ -24,7 +28,9 @@ input[type=file] {
   cursor: pointer;
 
 }
-
 input[type=file]::-webkit-file-upload-button {
   visibility: hidden;
+}
+ion-button {
+  margin-top: 1em;
 }

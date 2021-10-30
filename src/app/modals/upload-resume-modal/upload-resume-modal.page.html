@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons (click)="cancel()" slot="start">
       <ion-icon slot="start" name="close"></ion-icon>
-      <p class="toolbar-title">Update Resume</p>
+      <ion-title>Upload Resume</ion-title>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -25,10 +25,12 @@
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
-      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="8" size-lg="6">
+      <ion-col class="ion-text-center" size-xs="12" size-sm="10" size-md="8" size-lg="6">
         <!-- Need to express to User formats that are acceptable -->
         <!-- pdf, ect -->
         <p class="text-header">Please upload a resume from your phone</p>
+      </ion-col>
+      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="8" size-lg="6">
         <form
         (ngSubmit)="uploadResume()" id="changeResumeForm">
           <input

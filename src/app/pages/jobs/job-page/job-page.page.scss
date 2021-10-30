@@ -1,5 +1,25 @@
-ion-title {
-  margin: 0;
+ion-toolbar {
+  --background: #0055a5;
+}
+#job-header-wrapper {
+  margin-top: 1em
+}
+@media only screen and (min-width: 992px) {
+  #job-header-wrapper {
+    margin-top: 4em;
+  }
+}
+#mobile-toolbar-icon {
+  height: 32px;
+  position: relative;
+}
+ion-back-button {
+  color: white;
+  width: auto;
+}
+app-heart-icon {
+  position: relative;
+  right: 25px;
 }
 .toolbar-apply-button {
   width: 90px;
@@ -10,14 +30,15 @@ ion-title {
 }
 .toolbar-company-info{
   display: inline-block;
-  margin-left: 8px;
+  margin-left: 1em;
   --background: none;
 
   h2, h3, p {
     margin: 0;
   }
   h2 {
-    color: #222;
+    color: #0055a5;
+    font-weight: 600;
   }
   h3 {
     font-size: 1em;
@@ -25,10 +46,12 @@ ion-title {
   }
   p {
     color: white;
+    margin-top: 0.7em;
+    text-align: center;
     background: #4dc066;
-    width: 71px;
+    width: 50px;
     padding: 4px;
-    font-size: 1em;
+    font-size: 0.7em;
     font-weight: 600;
     border-radius: 5px;
   }
@@ -50,7 +73,7 @@ span {
   --background-hover: linear-gradient(#0055a5, #0d2e4d);
   height: 24px;
   --border-radius: 5px;
-  width: 100px;
+  width: 54px;
   font-size: 0.5em;
   font-weight: 600;
   display: block;
@@ -83,9 +106,10 @@ span {
   font-size: 1em;
   line-height: 1.4em;
   color: #333;
-  margin: 50px 0;
-  border-top: 1px solid #99999975;
-  padding-top: 16px;
+  background: white;
+  box-shadow: 1px 4px 5px rgb(0 0 0 / 5%);
+  padding: 1em;
+  margin-top: 2em;
 }
 @keyframes logo-slide-in {
   0% {

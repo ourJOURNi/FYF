@@ -26,7 +26,7 @@
   ion-toolbar {
     --background: linear-gradient(30deg, #004785, #0055a5);
     position: relative;
-    top: 26px;
+    top: 10px;
     box-shadow: 1px 1px 8px #36363654;
     border-radius: 100px;
     p {
@@ -147,8 +147,8 @@ h6, p {
 }
 @media only screen and (min-width: 993px) {
   #job-summary {
-    font-size: 1.2em;
-    line-height: 1.7em;
+    font-size: 16px;
+    line-height: 21px;
   }
 }
 #company-name {

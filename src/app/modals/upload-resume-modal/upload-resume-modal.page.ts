@@ -65,6 +65,7 @@ export class UploadResumeModalPage implements OnInit {
     }
   }
 
+  // Uploads Resume
   uploadResume() {
     const formElement = document.querySelectorAll('form');
     formElement.forEach(form => {

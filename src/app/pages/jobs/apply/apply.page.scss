@@ -1,45 +1,59 @@
 ion-title {
   margin: 0;
+  color: white;
+}
+ion-toolbar {
+  --background: #0055a5;
+}
+#mobile-toolbar-icon {
+  height: 32px;
+  position: relative;
+}
+ion-back-button {
+  color: white;
+  width: auto;
 }
 .desktop-toolbar{
   --background: none;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #33333326;
-
   h1 {
     color: #0055a5;
   }
 }
 .toolbar-company-info{
   display: inline-block;
-  margin-left: 8px;
+  margin-left: 1em;
+  --background: none;
 
   h2, h3, p {
     margin: 0;
   }
   h2 {
-    color: #222;
+    color: #0055a5;
+    font-weight: 600;
   }
   h3 {
+    font-size: 1em;
     color: #666
   }
   p {
     color: white;
+    margin-top: 0.7em;
+    text-align: center;
     background: #4dc066;
-    width: 71px;
+    width: 50px;
     padding: 4px;
-    font-size: 1em;
+    font-size: 0.7em;
     font-weight: 600;
     border-radius: 5px;
   }
 }
 .back-button {
   --color: white;
-  --background: #0055a5;
-  --background-hover: linear-gradient(#0055a5, #0d2e4d);
+  --background: #e3405f;
+  --background-hover: linear-gradient(#e3405f, #0d2e4d);
   height: 24px;
   --border-radius: 5px;
-  width: 100px;
+  width: 50px;
   font-size: 0.5em;
   font-weight: 600;
   display: block;
@@ -47,17 +61,16 @@ ion-title {
 .instructions {
   line-height: 1em;
   width: 400px;
-  color: #0055a5;
-  font-size: 1.3em;
+  color: #333;
+  font-size: 1em;
   font-weight: 600;
 }
 
 .info-section{
   margin-bottom: 20px;
 }
-
 .message-input {
-  background: rgba(213, 232, 236, .3);
+  background: white;
   height: auto;
   margin: 20px 0 10px 0;
   box-shadow: none;
@@ -72,27 +85,27 @@ ion-title {
   background-size: contain;
   background-position: center;
 }
-
 .job-title {
   font-size: 2em;
   margin-top: 15px;
   margin-bottom: 5px;
   color: #005191;
 }
-
 #company-name {
   margin-top: 22px;
   margin-left: 8px;
   color: #222;
 }
-
-p {
+#instructions {
   margin-top: 25px;
-  font-size: 1.3em;
-  color: #666;
+  font-size: 1em;
+  color: #111;
 }
-
-
+@media only screen and (min-width: 992px) {
+  #instructions {
+    font-size: 0.9em;
+  }
+}
 .custom-file-input {
   visibility: hidden;
 }

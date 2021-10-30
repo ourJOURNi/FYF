@@ -7,7 +7,7 @@ import { FavoritesService } from '../../services/favorites.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { formatDistanceToNow } from 'date-fns';
 import { FavoritesEventEmitterService } from 'src/app/emitters/favorites-event-emitter.service';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { JobsFilterPopoverComponent } from 'src/app/components/jobs-filter-popover/jobs-filter-popover.component';
 import { FilterJobsService } from 'src/app/emitters/filter-jobs.service';
 
@@ -20,7 +20,6 @@ import { FilterJobsService } from 'src/app/emitters/filter-jobs.service';
 export class JobsPage implements OnInit, OnDestroy {
 
   @ViewChild(IonSearchbar, { static: false }) searchbar: IonSearchbar;
-
   jobsSub: Subscription;
   profileSub: Subscription;
   favoriteJobsSub: Subscription;
@@ -53,26 +52,22 @@ export class JobsPage implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-
-    this.getJobs('newest');
-    this.getFavoriteJobs();
-    this.trackRoute();
-    // Refresh Favorites after one has been deleted from the favoites page.
     if (this.favoritesEventEmitterService.subsVar == undefined) {
       this.favoritesEventEmitterService.subsVar = this.favoritesEventEmitterService.invokeJobsPageRefresh.subscribe(() => {
         return this.getJobs('newest');
       });
     }
-    // Filter Jobs from Popover
-    if (this.filterJobsService.subsVar == undefined) {
-      this.filterJobsService.subsVar = this.filterJobsService.filterJobsEmitter.subscribe(data => {
-        // Filter jobs
-        console.log(data)
+    this.filterJobsService.filterBehaviorSub.subscribe(
+      data => {
+        console.log('Data from Filter Behavior Subject')
+        console.log(data);
         this.jobFilter = data;
         this.getJobs(data);
-        return;
-      });
-    }
+      }
+    )
+    this.getFavoriteJobs();
+    this.trackRoute();
+    // Refresh Favorites after one has been deleted from the favoites page.
   }
   ionViewWillEnter() {
     setTimeout(() => {
@@ -181,16 +176,23 @@ export class JobsPage implements OnInit, OnDestroy {
   }
   async getJobs(filter) {
     this.jobsSub = this.jobs.getJobs().subscribe( jobs => {
-      console.log(jobs);
-      this.allJobs = Object.values(jobs);
-      this.allJobsLength = this.allJobs.length;
-      this.allJobs.reverse();
-      switch (filter) {
-        case 'htol':
+      console.log('Getting Jobs from JOBS.PAGE.TS');
+      if(filter === 'newest') {
+        console.log('Newest');
+        this.filtering = true;
+        this.jobFilter = 'newest';
+        this.allJobs = jobs;
+        this.allJobsLength = this.allJobs.length;
+
+        // Format Times
+        for (const job of this.allJobs) {
+          job.dateCreated = formatDistanceToNow( new Date(job.dateCreated), { addSuffix: false });
+      }}
+        if(filter === 'htol')  {
           console.log('High to Low');
           this.filtering = true;
           this.jobFilter = 'htol';
-          this.allJobs = Object.values(jobs);
+          this.allJobs = jobs;
           this.allJobsLength = this.allJobs.length;
 
           function sortHighToLow(a, b){
@@ -203,13 +205,12 @@ export class JobsPage implements OnInit, OnDestroy {
           // Format Times
           for (const job of this.allJobs) {
             job.dateCreated = formatDistanceToNow( new Date(job.dateCreated), { addSuffix: false });
-          }
-          break;
-        case 'ltoh':
+        }}
+        if(filter ==='ltoh') {
           console.log('Low to High');
           this.filtering = true;
           this.jobFilter = 'ltoh';
-          this.allJobs = Object.values(jobs);
+          this.allJobs = jobs;
           this.allJobsLength = this.allJobs.length;
           function sortLowToHigh(a, b){
             console.log('Sorting Price')
@@ -222,32 +223,22 @@ export class JobsPage implements OnInit, OnDestroy {
           for (const job of this.allJobs) {
             job.dateCreated = formatDistanceToNow( new Date(job.dateCreated), { addSuffix: false });
           }
-          break;
-        case 'oldest':
+
+        }
+        if(filter === 'oldest') {
           console.log('Oldest');
           this.filtering = true;
           this.jobFilter = 'oldest';
-          this.allJobs = Object.values(jobs);
+          this.allJobs = jobs;
           this.allJobsLength = this.allJobs.length;
+          this.jobFilter = 'Oldest'
 
           // Format Times
           for (const job of this.allJobs) {
             job.dateCreated = formatDistanceToNow( new Date(job.dateCreated), { addSuffix: false });
           }
-          break;
-        case 'newest':
-          console.log('Newest');
-          this.filtering = true;
-          this.jobFilter = 'newest';
-
-          // Format Times
-          for (const job of this.allJobs) {
-            job.dateCreated = formatDistanceToNow( new Date(job.dateCreated), { addSuffix: false });
-          }
-          break;
-        default:
-          break;
-      }
+        }
+        return this.allJobs;
 
     });
   }

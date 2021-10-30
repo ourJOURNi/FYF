@@ -6,8 +6,6 @@ import { ProfileService } from 'src/app/services/profile.service';
 import { ModalController } from '@ionic/angular';
 import { UploadResumeModalPage } from '../upload-resume-modal/upload-resume-modal.page';
 
-
-
 @Component({
   selector: 'app-view-resume',
   templateUrl: './view-resume.page.html',

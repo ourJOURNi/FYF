@@ -44,7 +44,7 @@ ion-grid {
   --ion-grid-padding: 0px;
 }
 .spacer {
-  margin: 50px 0;
+  margin: 1em 0;
 }
 #logo {
   height: 40px;
@@ -206,7 +206,7 @@ ion-title {
       background: white;
       --border-color: transparent!important;
       --highlight-height: 0;
-      margin: 8px auto;
+      margin-bottom: 20px;
       // box-shadow: 1px 10px 6px rgba(0,0,0,0.07);
       border: 2px solid #0055a5;
       transition: 0.2s;
@@ -508,7 +508,13 @@ ion-select-option {
 @media screen and (min-width: 959px) {
   .text-header {
     font-size: 1.2em;
-    padding: 1em 10em;
+    padding: 1em;
+  }
+}
+@media screen and (max-width: 959px) {
+  .text-header {
+    font-size: 0.9em;
+    padding: 1em;
   }
 }
 
