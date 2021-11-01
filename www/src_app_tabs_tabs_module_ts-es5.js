@@ -52,7 +52,7 @@
 
       var routes = [{
         path: '',
-        redirectTo: '/home/posts',
+        redirectTo: '/home/jobs',
         pathMatch: 'full'
       }, {
         path: '',
@@ -254,7 +254,7 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
       37716);
       /* harmony import */
@@ -266,13 +266,13 @@
       /* harmony import */
 
 
-      var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic/angular */
       80476);
       /* harmony import */
 
 
-      var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/common */
       38583);
       /* harmony import */
@@ -281,12 +281,19 @@
       var _services_profile_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../services/profile.service */
       39181);
+      /* harmony import */
+
+
+      var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! @angular/router */
+      39895);
 
       var _TabsPage = /*#__PURE__*/function () {
-        function TabsPage(auth, alert, location, profile) {
+        function TabsPage(auth, router, alert, location, profile) {
           _classCallCheck(this, TabsPage);
 
           this.auth = auth;
+          this.router = router;
           this.alert = alert;
           this.location = location;
           this.profile = profile;
@@ -350,6 +357,15 @@
               }, _callee, this);
             }));
           }
+        }, {
+          key: "toProfile",
+          value: function toProfile() {
+            var tabBarFab = document.getElementById('tab-bar-fab');
+            tabBarFab.classList.remove("pro-pic-animation");
+            tabBarFab.offsetWidth;
+            tabBarFab.classList.add("pro-pic-animation");
+            return; // this.router.navigateByUrl('/profile');
+          }
         }]);
 
         return TabsPage;
@@ -359,19 +375,21 @@
         return [{
           type: _services_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService
         }, {
-          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.AlertController
+          type: _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router
         }, {
-          type: _angular_common__WEBPACK_IMPORTED_MODULE_6__.Location
+          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.AlertController
+        }, {
+          type: _angular_common__WEBPACK_IMPORTED_MODULE_7__.Location
         }, {
           type: _services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService
         }];
       };
 
-      _TabsPage = (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
+      _TabsPage = (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-tabs',
         template: _raw_loader_tabs_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_tabs_page_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
-      }), (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__metadata)("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService, _ionic_angular__WEBPACK_IMPORTED_MODULE_5__.AlertController, _angular_common__WEBPACK_IMPORTED_MODULE_6__.Location, _services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService])], _TabsPage);
+      }), (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__metadata)("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService, _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.AlertController, _angular_common__WEBPACK_IMPORTED_MODULE_7__.Location, _services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService])], _TabsPage);
       /***/
     },
 
@@ -383,7 +401,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "#profile-picture {\n  height: 32px;\n  border-radius: 50px;\n}\n\nion-tab-bar {\n  padding: 0 40px;\n  height: 50px;\n  z-index: 9999;\n  transition: 0.5s;\n  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\nion-label {\n  position: relative;\n  top: 6px;\n  font-size: 0.8em;\n  transition: 0.5s;\n  font-weight: 700;\n}\n\nion-tab-button {\n  font-size: 0.8em;\n  --color: #0055a563;\n  --color-selected: #FFB351;\n  --padding-end: 0px;\n  --padding-start: 10px;\n  --padding-bottom: 0px;\n  --margin-left:0px;\n  --margin-right:0px;\n  max-width: 100px;\n}\n\nion-tab-button ion-icon {\n  font-size: 2em;\n  --font-size-selected: 4em;\n  --background-color: white;\n  transition: 0.5s;\n}\n\n#logo {\n  height: 32px;\n}\n\nion-toolbar {\n  --min-height: 7vh;\n  --background: white;\n  font-size: 0.9em;\n  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.08);\n}\n\nion-toolbar a {\n  margin: 0 10px 0 10px;\n  text-decoration: none;\n  color: #333;\n  letter-spacing: 1px;\n  font-size: 0.8em;\n  float: right;\n}\n\nion-toolbar .active-link {\n  color: #0055a5;\n  font-weight: 600;\n  transition: 0.5s;\n}\n\nion-toolbar ion-button {\n  --color: #D0D4D8;\n  opacity: 0.6;\n  font-weight: 700;\n}\n\nion-grid {\n  height: 50px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsWUFBQTtFQUNBLG1CQUFBO0FBQUY7O0FBRUE7RUFDRSxlQUFBO0VBQ0EsWUFBQTtFQUNBLGFBQUE7RUFFQSxnQkFBQTtFQUNBLG1FQUFBO0FBQUY7O0FBR0E7RUFDRSxrQkFBQTtFQUNBLFFBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7QUFBRjs7QUFHQTtFQUNFLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0EscUJBQUE7RUFDQSxxQkFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtBQUFGOztBQUNFO0VBQ0ksY0FBQTtFQUNBLHlCQUFBO0VBQ0EseUJBQUE7RUFDQSxnQkFBQTtBQUNOOztBQU9FO0VBQ0UsWUFBQTtBQUpKOztBQU9FO0VBQ0UsaUJBQUE7RUFDQSxtQkFBQTtFQUNBLGdCQUFBO0VBQ0EsNENBQUE7QUFKSjs7QUFNSTtFQUNFLHFCQUFBO0VBQ0EscUJBQUE7RUFDQSxXQUFBO0VBQ0EsbUJBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7QUFKTjs7QUFPSTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0FBTE47O0FBUUk7RUFDRSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtBQU5OOztBQVVFO0VBQ0UsWUFBQTtBQVBKIiwiZmlsZSI6InRhYnMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gVGFiLUJhclxuI3Byb2ZpbGUtcGljdHVyZSB7XG4gIGhlaWdodDogMzJweDtcbiAgYm9yZGVyLXJhZGl1czogNTBweDtcbn1cbmlvbi10YWItYmFyICB7XG4gIHBhZGRpbmc6IDAgNDBweDtcbiAgaGVpZ2h0OiA1MHB4O1xuICB6LWluZGV4OiA5OTk5O1xuICAvLyBib3gtc2hhZG93OiAycHggMXB4IDVweCAjNTU1O1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICB0cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpO1xufVxuXG5pb24tbGFiZWwge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogNnB4O1xuICBmb250LXNpemU6IDAuOGVtO1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICBmb250LXdlaWdodDogNzAwO1xufVxuXG5pb24tdGFiLWJ1dHRvbntcbiAgZm9udC1zaXplOiAwLjhlbTtcbiAgLS1jb2xvcjogIzAwNTVhNTYzO1xuICAtLWNvbG9yLXNlbGVjdGVkOiAjRkZCMzUxO1xuICAtLXBhZGRpbmctZW5kOiAwcHg7XG4gIC0tcGFkZGluZy1zdGFydDogMTBweDtcbiAgLS1wYWRkaW5nLWJvdHRvbTogMHB4O1xuICAtLW1hcmdpbi1sZWZ0OjBweDtcbiAgLS1tYXJnaW4tcmlnaHQ6MHB4O1xuICBtYXgtd2lkdGg6MTAwcHg7XG4gIGlvbi1pY29ue1xuICAgICAgZm9udC1zaXplOiAyZW07XG4gICAgICAtLWZvbnQtc2l6ZS1zZWxlY3RlZDogNGVtO1xuICAgICAgLS1iYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgICAgIHRyYW5zaXRpb246IDAuNXM7XG4gIH19XG5cblxuXG5cbiAgLy8gVG9vbGJhclxuXG4gICNsb2dvIHtcbiAgICBoZWlnaHQ6IDMycHg7XG4gIH1cblxuICBpb24tdG9vbGJhciB7XG4gICAgLS1taW4taGVpZ2h0OiA3dmg7XG4gICAgLS1iYWNrZ3JvdW5kOiB3aGl0ZTtcbiAgICBmb250LXNpemU6IDAuOWVtO1xuICAgIGJveC1zaGFkb3c6IDFweCAxcHggMTVweCByZ2JhKDAsMCwwLDAuMDgpO1xuXG4gICAgYSB7XG4gICAgICBtYXJnaW46IDAgMTBweCAwIDEwcHg7XG4gICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICBjb2xvcjogIzMzMztcbiAgICAgIGxldHRlci1zcGFjaW5nOiAxcHg7XG4gICAgICBmb250LXNpemU6IDAuOGVtO1xuICAgICAgZmxvYXQ6IHJpZ2h0O1xuICAgIH1cblxuICAgIC5hY3RpdmUtbGluayB7XG4gICAgICBjb2xvcjogIzAwNTVhNTtcbiAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICB0cmFuc2l0aW9uOiAwLjVzO1xuICAgIH1cblxuICAgIGlvbi1idXR0b24ge1xuICAgICAgLS1jb2xvcjogI0QwRDREODtcbiAgICAgIG9wYWNpdHk6IDAuNjtcbiAgICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgfVxuICB9XG5cbiAgaW9uLWdyaWQge1xuICAgIGhlaWdodDogNTBweDtcbiAgfSJdfQ== */";
+      __webpack_exports__["default"] = "#profile-picture {\n  border-radius: 100px;\n  padding: 2.3em;\n}\n\n@media only screen and (min-width: 993px) {\n  #profile-picture {\n    height: 40px;\n    padding: 0em;\n  }\n}\n\n#logo {\n  height: 44px;\n  position: relative;\n  top: -9px;\n}\n\nion-toolbar {\n  --min-height: 7vh;\n  --background: linear-gradient(30deg, #004785, #0055a5);\n  font-size: 0.9em;\n  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.08);\n}\n\nion-toolbar a {\n  transition: 0.5s;\n  margin: 0 10px 0 10px;\n  text-decoration: none;\n  color: white;\n  font-size: 1.2em;\n  font-weight: 600;\n  float: right;\n}\n\nion-toolbar .active-link {\n  color: #fbb606;\n}\n\nion-toolbar ion-button {\n  --color: #D0D4D8;\n  opacity: 0.6;\n  font-weight: 700;\n}\n\nion-grid {\n  height: 50px;\n}\n\nion-tabs ion-fab {\n  margin-bottom: env(safe-area-inset-bottom);\n  /* fix notch ios*/\n}\n\nion-tabs ion-tab-bar {\n  --border: 0;\n  --background: none;\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  width: 100%;\n}\n\nion-tabs ion-tab-bar:after {\n  content: \" \";\n  width: 100%;\n  bottom: 0;\n  background: #000000;\n  height: env(safe-area-inset-bottom);\n  position: absolute;\n}\n\nion-tabs ion-tab-bar ion-tab-button {\n  --background: linear-gradient(30deg, #004785, #0055a5);\n}\n\nion-tabs ion-tab-bar ion-tab-button ion-icon, ion-tabs ion-tab-bar ion-tab-button ion-label {\n  color: white;\n}\n\nion-tabs ion-tab-bar ion-tab-button.events {\n  margin-right: 0px;\n  border-top-right-radius: 18px;\n}\n\nion-tabs ion-tab-bar ion-tab-button.posts {\n  margin-left: 0px;\n  border-top-left-radius: 18px;\n}\n\nion-tabs ion-tab-bar svg {\n  width: 72px;\n  margin-top: 19px;\n}\n\nion-tabs ion-tab-bar svg path {\n  fill: #0055a5;\n}\n\nion-tabs .pro-pic-animation {\n  -webkit-animation: profile-picture-up 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;\n          animation: profile-picture-up 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;\n}\n\n@-webkit-keyframes profile-picture-up {\n  0% {\n    transform: translateY(0px);\n  }\n  50% {\n    transform: translateY(-20px);\n  }\n  100% {\n    transform: translateY(0px);\n  }\n}\n\n@keyframes profile-picture-up {\n  0% {\n    transform: translateY(0px);\n  }\n  50% {\n    transform: translateY(-20px);\n  }\n  100% {\n    transform: translateY(0px);\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRhYnMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0Usb0JBQUE7RUFDQSxjQUFBO0FBQUY7O0FBR0E7RUFDRTtJQUNFLFlBQUE7SUFDQSxZQUFBO0VBQUY7QUFDRjs7QUFHRTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7QUFERjs7QUFJRTtFQUNFLGlCQUFBO0VBQ0Esc0RBQUE7RUFDQSxnQkFBQTtFQUNBLDRDQUFBO0FBREo7O0FBR0k7RUFDRSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0EscUJBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDSCxnQkFBQTtFQUNHLFlBQUE7QUFETjs7QUFJSTtFQUNFLGNBQUE7QUFGTjs7QUFLSTtFQUNFLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0FBSE47O0FBT0U7RUFDRSxZQUFBO0FBSko7O0FBT0M7RUFDQywwQ0FBQTtFQUE0QyxpQkFBQTtBQUg5Qzs7QUFRQztFQUNDLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLE9BQUE7RUFBUSxRQUFBO0VBQ1IsV0FBQTtBQUxGOztBQU1FO0VBQ0MsWUFBQTtFQUNBLFdBQUE7RUFDQSxTQUFBO0VBQ0EsbUJBQUE7RUFDQSxtQ0FBQTtFQUNBLGtCQUFBO0FBSkg7O0FBTUU7RUFDQyxzREFBQTtBQUpIOztBQU1HO0VBQ0MsWUFBQTtBQUpKOztBQU9FO0VBQ0MsaUJBQUE7RUFDQSw2QkFBQTtBQUxIOztBQU9FO0VBQ0MsZ0JBQUE7RUFDQSw0QkFBQTtBQUxIOztBQU9FO0VBQ0MsV0FBQTtFQUNBLGdCQUFBO0FBTEg7O0FBTUc7RUFDQyxhQUFBO0FBSko7O0FBUUM7RUFDQyx5RkFBQTtVQUFBLGlGQUFBO0FBTkY7O0FBUUM7RUFDQztJQUNDLDBCQUFBO0VBTkQ7RUFRQTtJQUNDLDRCQUFBO0VBTkQ7RUFRQTtJQUNDLDBCQUFBO0VBTkQ7QUFDRjs7QUFIQztFQUNDO0lBQ0MsMEJBQUE7RUFORDtFQVFBO0lBQ0MsNEJBQUE7RUFORDtFQVFBO0lBQ0MsMEJBQUE7RUFORDtBQUNGIiwiZmlsZSI6InRhYnMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLy8gVGFiLUJhclxuI3Byb2ZpbGUtcGljdHVyZSB7XG4gIGJvcmRlci1yYWRpdXM6IDEwMHB4O1xuICBwYWRkaW5nOiAyLjNlbTtcbn1cbi8vIFByb2ZpbGUgUGljdHVyZSBuZWVkcyBoZWlnaHQ6IDQwcHggb24gZGVza3RvcCB2aWV3cy5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogOTkzcHgpIHtcbiAgI3Byb2ZpbGUtcGljdHVyZSB7XG4gICAgaGVpZ2h0OiA0MHB4O1xuICAgIHBhZGRpbmc6IDBlbTtcbiAgfVxufVxuLy8gVG9vbGJhclxuICAjbG9nbyB7XG5cdFx0aGVpZ2h0OiA0NHB4O1xuXHRcdHBvc2l0aW9uOiByZWxhdGl2ZTtcblx0XHR0b3A6IC05cHg7XG4gIH1cblxuICBpb24tdG9vbGJhciB7XG4gICAgLS1taW4taGVpZ2h0OiA3dmg7XG4gICAgLS1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMzBkZWcsICMwMDQ3ODUsICMwMDU1YTUpO1xuICAgIGZvbnQtc2l6ZTogMC45ZW07XG4gICAgYm94LXNoYWRvdzogMXB4IDFweCAxNXB4IHJnYmEoMCwwLDAsMC4wOCk7XG5cbiAgICBhIHtcbiAgICAgIHRyYW5zaXRpb246IDAuNXM7XG4gICAgICBtYXJnaW46IDAgMTBweCAwIDEwcHg7XG4gICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICBjb2xvcjogd2hpdGU7XG4gICAgICBmb250LXNpemU6IDEuMmVtO1xuXHRcdFx0Zm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgIGZsb2F0OiByaWdodDtcbiAgICB9XG5cbiAgICAuYWN0aXZlLWxpbmsge1xuICAgICAgY29sb3I6ICNmYmI2MDY7XG4gICAgfVxuXG4gICAgaW9uLWJ1dHRvbiB7XG4gICAgICAtLWNvbG9yOiAjRDBENEQ4O1xuICAgICAgb3BhY2l0eTogMC42O1xuICAgICAgZm9udC13ZWlnaHQ6IDcwMDtcbiAgICB9XG4gIH1cblxuICBpb24tZ3JpZCB7XG4gICAgaGVpZ2h0OiA1MHB4O1xuICB9XG5pb24tdGFic3tcblx0aW9uLWZhYiB7XG5cdFx0bWFyZ2luLWJvdHRvbTogZW52KHNhZmUtYXJlYS1pbnNldC1ib3R0b20pOyAvKiBmaXggbm90Y2ggaW9zKi9cblx0XHRpb24tZmFiLWJ1dHRvbiB7XG5cdFx0XHQvLyAtLWJveC1zaGFkb3c6IG5vbmU7XG5cdFx0fVxuXHR9XG5cdGlvbi10YWItYmFyIHtcblx0XHQtLWJvcmRlcjogMDtcblx0XHQtLWJhY2tncm91bmQ6IG5vbmU7XG5cdFx0cG9zaXRpb246IGFic29sdXRlO1xuXHRcdGJvdHRvbTogMDtcblx0XHRsZWZ0OjA7IHJpZ2h0OiAwO1xuXHRcdHdpZHRoOiAxMDAlO1xuXHRcdCY6YWZ0ZXJ7XG5cdFx0XHRjb250ZW50OiBcIiBcIjtcblx0XHRcdHdpZHRoOiAxMDAlO1xuXHRcdFx0Ym90dG9tOiAwO1xuXHRcdFx0YmFja2dyb3VuZDogIzAwMDAwMDtcblx0XHRcdGhlaWdodDogZW52KHNhZmUtYXJlYS1pbnNldC1ib3R0b20pO1xuXHRcdFx0cG9zaXRpb246IGFic29sdXRlO1xuXHRcdH1cblx0XHRpb24tdGFiLWJ1dHRvbiB7XG5cdFx0XHQtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgzMGRlZywgIzAwNDc4NSwgIzAwNTVhNSk7XG5cblx0XHRcdGlvbi1pY29uLCBpb24tbGFiZWwge1xuXHRcdFx0XHRjb2xvcjogd2hpdGU7XG5cdFx0XHR9XG5cdFx0fVxuXHRcdGlvbi10YWItYnV0dG9uLmV2ZW50cyB7XG5cdFx0XHRtYXJnaW4tcmlnaHQ6IDBweDtcblx0XHRcdGJvcmRlci10b3AtcmlnaHQtcmFkaXVzOiAxOHB4O1xuXHRcdH1cblx0XHRpb24tdGFiLWJ1dHRvbi5wb3N0cyB7XG5cdFx0XHRtYXJnaW4tbGVmdDogMHB4O1xuXHRcdFx0Ym9yZGVyLXRvcC1sZWZ0LXJhZGl1czogMThweDtcblx0XHR9XG5cdFx0c3ZnIHtcblx0XHRcdHdpZHRoOiA3MnB4O1xuXHRcdFx0bWFyZ2luLXRvcDogMTlweDtcblx0XHRcdHBhdGh7XG5cdFx0XHRcdGZpbGw6ICAjMDA1NWE1O1xuXHRcdFx0fVxuXHRcdH1cblx0fVxuXHQucHJvLXBpYy1hbmltYXRpb24ge1xuXHRcdGFuaW1hdGlvbjogcHJvZmlsZS1waWN0dXJlLXVwIDFzIGN1YmljLWJlemllcigwLjE3NSwgMC44ODUsIDAuMzIsIDEuMjc1KSBmb3J3YXJkcztcblx0fVxuXHRAa2V5ZnJhbWVzIHByb2ZpbGUtcGljdHVyZS11cCB7XG5cdFx0MCUge1xuXHRcdFx0dHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7XG5cdFx0fVxuXHRcdDUwJSB7XG5cdFx0XHR0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTIwcHgpO1xuXHRcdH1cblx0XHQxMDAlIHtcblx0XHRcdHRyYW5zZm9ybTogdHJhbnNsYXRlWSgwcHgpO1xuXHRcdH1cblx0fVxufSJdfQ== */";
       /***/
     },
 
@@ -395,7 +413,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-tabs>\n  <!-- Toolbar for Desktop -->\n  <ion-toolbar slot=\"top\" class=\"ion-hide-lg-down\">\n    <ion-grid>\n      <ion-row style=\"margin-top: 16px;\" class=\"ion-align-items-center\">\n        <ion-col size=\"2\"></ion-col>\n        <ion-col pull-lg=\"1.5\" pull-xl=\"0\" size=\"2\">\n          <img id=\"logo\" src=\"../../assets/icon/Logo 2.0.png\">\n        </ion-col>\n        <ion-col style=\"z-index: 9999;\" class=\"ion-float-right\" push-lg=\"1.5\"  size-lg=\"6\" push-xl=\"1\" size-xl=\"4.5\">\n\n          <!-- <a (click)=\"logoutConfirm()\" style=\"cursor: pointer;\">\n            LOGOUT\n          </a> -->\n          <a routerLink=\"/home/profile/\" routerLinkActive=\"active-link\">\n            <img id=\"profile-picture\" style=\"position: relative; top: -8px;\" src=\"{{this.userProfilePicture}}\" alt=\"User Profile Picture\" srcset=\"\">\n          </a>\n          <a routerLink=\"/home/mentors\" routerLinkActive=\"active-link\">\n            MENTORS\n          </a>\n          <a routerLink=\"/home/posts\" routerLinkActive=\"active-link\">\n            POSTS\n          </a>\n          <a routerLink=\"/home/events\" routerLinkActive=\"active-link\">\n           EVENTS\n          </a>\n          <a routerLink=\"/home/jobs\" routerLinkActive=\"active-link\">\n            JOBS\n          </a>\n        </ion-col>\n        <ion-col size=\"1\"></ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n  <!-- Tab Bar for Mobile -->\n  <ion-tab-bar slot=\"bottom\" id=\"tabBar\" class=\"ion-hide-lg-up\">\n    <ion-tab-button tab=\"jobs\">\n      <ion-icon name=\"briefcase-outline\"></ion-icon>\n      <!-- <ion-icon src=\"../assets/icon/suitcase-inactive.svg\"></ion-icon> -->\n      <!-- <ion-label>JOBS</ion-label> -->\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"events\">\n      <ion-icon name=\"calendar-outline\"></ion-icon>\n      <!-- <ion-icon src=\"../assets/icon/calendar-inactive.svg\"></ion-icon> -->\n      <!-- <ion-label>EVENTS</ion-label> -->\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"posts\">\n      <ion-icon name=\"newspaper-outline\"></ion-icon>\n      <!-- <ion-icon src=\"../assets/icon/post-inactive.svg\"></ion-icon> -->\n      <!-- <ion-label>POSTS</ion-label> -->\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"mentors\">\n      <ion-icon src=\"../assets/icon/question-inactive.svg\"></ion-icon>\n      <!-- <ion-label>MENTORS</ion-label> -->\n    </ion-tab-button>\n\n    <!-- I need to add profile picture -->\n    <!-- Where do I get it from? -->\n    <ion-tab-button tab=\"profile\">\n      <img id=\"profile-picture\" src=\"{{this.userProfilePicture}}\" alt=\"User Profile Picture\" srcset=\"\">\n      <!-- <ion-label>PROFILE</ion-label> -->\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n\n";
+      __webpack_exports__["default"] = "<ion-tabs>\n  <!-- Toolbar for Desktop -->\n  <ion-toolbar slot=\"top\" class=\"ion-hide-lg-down\">\n    <ion-grid>\n      <ion-row style=\"margin-top: 16px;\" class=\"ion-align-items-center\">\n        <ion-col size=\"2\"></ion-col>\n        <ion-col pull-lg=\"1.5\" pull-xl=\"0\" size=\"2\">\n          <img id=\"logo\" src=\"../../assets/logos/White-FYF-LOGO-2.svg\">\n        </ion-col>\n        <ion-col style=\"z-index: 9999;\" class=\"ion-float-right\" push-lg=\"1.5\"  size-lg=\"6\" push-xl=\"1\" size-xl=\"4.5\">\n\n          <!-- <a (click)=\"logoutConfirm()\" style=\"cursor: pointer;\">\n            LOGOUT\n          </a> -->\n          <a routerLink=\"/home/profile/\" routerLinkActive=\"active-link\">\n            <img id=\"profile-picture\" style=\"position: relative; top: -8px;\" src=\"{{this.userProfilePicture}}\" alt=\"User Profile Picture\" srcset=\"\">\n          </a>\n          <a routerLink=\"/home/mentors\" routerLinkActive=\"active-link\">\n            Mentors\n          </a>\n          <a routerLink=\"/home/posts\" routerLinkActive=\"active-link\">\n            Posts\n          </a>\n          <a routerLink=\"/home/events\" routerLinkActive=\"active-link\">\n           Events\n          </a>\n          <a routerLink=\"/home/jobs\" routerLinkActive=\"active-link\">\n            Jobs\n          </a>\n        </ion-col>\n        <ion-col size=\"1\"></ion-col>\n      </ion-row>\n    </ion-grid>\n  </ion-toolbar>\n  <!-- Tab Bar for Mobile -->\n  <ion-fab id=\"tab-bar-fab\" class=\"ion-hide-lg-up\" vertical=\"bottom\" horizontal=\"center\" translucent=\"true\">\n    <ion-fab-button>\n      <ion-tab-button (click)=\"toProfile()\"  tab=\"profile\">\n        <img id=\"profile-picture\" src=\"{{this.userProfilePicture}}\" alt=\"User Profile Picture\">\n        <!-- <ion-label>PROFILE</ion-label> -->\n      </ion-tab-button>\n    </ion-fab-button>\n  </ion-fab>\n\n  <ion-tab-bar id=\"tabBar\" slot=\"bottom\" class=\"ion-hide-lg-up ion-no-border\">\n  <ion-tab-button tab=\"jobs\">\n    <ion-icon style=\"font-size: 2.1em\"  name=\"briefcase-outline\"></ion-icon>\n    <!-- <ion-icon src=\"../assets/icon/suitcase-inactive.svg\"></ion-icon> -->\n    <ion-label>JOBS</ion-label>\n  </ion-tab-button>\n\n  <ion-tab-button class=\"events\" tab=\"events\">\n    <ion-icon style=\"font-size: 2.1em\"  name=\"calendar-outline\"></ion-icon>\n    <!-- <ion-icon src=\"../assets/icon/calendar-inactive.svg\"></ion-icon> -->\n    <ion-label>EVENTS</ion-label>\n  </ion-tab-button>\n\n  <svg height=\"50\" viewBox=\"0 0 100 50\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M100 0v50H0V0c.543 27.153 22.72 49 50 49S99.457 27.153 99.99 0h.01z\" fill-rule=\"evenodd\"></path></svg>\n\n    <ion-tab-button class=\"posts\" tab=\"posts\">\n      <ion-icon style=\"font-size: 2.1em\" name=\"newspaper-outline\"></ion-icon>\n      <ion-label>POSTS</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"mentors\">\n      <ion-icon style=\"font-size: 2.1em\" name=\"ribbon-outline\"></ion-icon>\n      <ion-label>MENTORS</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n\n";
       /***/
     }
   }]);

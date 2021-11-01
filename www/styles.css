@@ -1279,15 +1279,26 @@ ion-grid {
   --ion-grid-padding: 0px;
 }
 .spacer {
-  margin: 50px 0;
+  margin: 1em 0;
 }
 #logo {
   height: 40px;
 }
 ion-header {
   background: #fff;
-  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.15);
-  color: #0055a5;
+}
+ion-header ion-icon {
+  font-size: 2em;
+}
+ion-header ion-title {
+  color: #333;
+  position: relative;
+  left: 16px;
+  top: 3px;
+}
+ion-skeleton-text {
+  line-height: 13px;
+  --background-rgb: 251,182,6;
 }
 ion-list {
   --background: none;
@@ -1297,11 +1308,11 @@ ion-content {
   --background: #f4f5f8;
 }
 ion-toolbar {
-  --background: #0055a5;
+  --background: white;
   --color: white;
 }
 ion-toolbar ion-back-button {
-  color: white;
+  color: #0055a5;
 }
 .drawer-content {
   padding-top: 40px;
@@ -1414,7 +1425,7 @@ ion-title {
   background: white;
   --border-color: transparent!important;
   --highlight-height: 0;
-  margin: 8px auto;
+  margin-bottom: 20px;
   border: 2px solid #0055a5;
   transition: 0.2s;
   border-radius: 4px;
@@ -1677,7 +1688,13 @@ ion-select-option {
 @media screen and (min-width: 959px) {
   .text-header {
     font-size: 1.2em;
-    padding: 1em 10em;
+    padding: 1em;
+  }
+}
+@media screen and (max-width: 959px) {
+  .text-header {
+    font-size: 0.9em;
+    padding: 1em;
   }
 }
 .date {

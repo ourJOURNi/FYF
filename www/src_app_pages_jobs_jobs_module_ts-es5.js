@@ -307,42 +307,40 @@
           this.jobFilter = 'newest';
           this.jobsGoingLength = 0;
           this.searching = false;
-          this.noSearchInput = false;
+          this.noSearchInput = false; // Set this false to enable skeleton
+
+          this.data = true;
         }
 
         _createClass(JobsPage, [{
-          key: "ngOnDestroy",
-          value: function ngOnDestroy() {
-            this.favoritesEventEmitterService.subsVar.unsubscribe();
-            this.jobsSub.unsubscribe();
-            this.profileSub.unsubscribe();
-            this.favoriteJobsSub.unsubscribe();
-          }
-        }, {
           key: "ngOnInit",
           value: function ngOnInit() {
             var _this = this;
 
-            // Refresh Favorites after one has been deleted from the favoites page.
             if (this.favoritesEventEmitterService.subsVar == undefined) {
               this.favoritesEventEmitterService.subsVar = this.favoritesEventEmitterService.invokeJobsPageRefresh.subscribe(function () {
-                _this.getJobs();
-              });
-            } // Filter Jobs from Popover
-
-
-            if (this.filterJobsService.subsVar == undefined) {
-              this.filterJobsService.subsVar = this.filterJobsService.filterJobsEmitter.subscribe(function (data) {
-                // Filter jobs
-                _this.jobFilter = data;
-
-                _this.getJobs();
+                return _this.getJobs('newest');
               });
             }
 
+            this.filterJobsService.filterBehaviorSub.subscribe(function (data) {
+              console.log('Data from Filter Behavior Subject');
+              console.log(data);
+              _this.jobFilter = data;
+
+              _this.getJobs(data);
+            });
             this.getFavoriteJobs();
-            this.getJobs();
-            this.trackRoute();
+            this.trackRoute(); // Refresh Favorites after one has been deleted from the favoites page.
+          }
+        }, {
+          key: "ionViewWillEnter",
+          value: function ionViewWillEnter() {
+            var _this2 = this;
+
+            setTimeout(function () {
+              _this2.data = true;
+            }, 1500);
           }
         }, {
           key: "trackRoute",
@@ -350,20 +348,25 @@
             this.routerSub = this.router.events.pipe((0, rxjs_operators__WEBPACK_IMPORTED_MODULE_8__.filter)(function (e) {
               return e instanceof _angular_router__WEBPACK_IMPORTED_MODULE_9__.NavigationEnd;
             })).subscribe(function (data) {
-              console.log(data['url']);
+              // console.log(data['url']);
               var url = data['url'];
 
               if (url.includes('/home/jobs/job-page/')) {
                 console.log('Hide Tab Bar!');
                 var tabBar = document.getElementById('tabBar');
+                var tabBarFab = document.getElementById('tab-bar-fab');
                 tabBar.style.height = '0px';
                 tabBar.style.transition = '1s';
+                tabBarFab.style.transform = 'translateY(100px)';
               } else {
                 var _tabBar = document.getElementById('tabBar');
 
-                console.log(_tabBar);
+                var _tabBarFab = document.getElementById('tab-bar-fab'); // console.log(tabBar);
+
+
                 _tabBar.style.height = '50px';
                 _tabBar.style.transition = '1s';
+                _tabBarFab.style.transform = 'translateY(0px)';
               }
             });
           }
@@ -393,12 +396,6 @@
                       return popover.present();
 
                     case 5:
-                      _context.next = 7;
-                      return popover.onWillDismiss().then(function (data) {
-                        console.log(data);
-                      });
-
-                    case 7:
                     case "end":
                       return _context.stop();
                   }
@@ -407,67 +404,14 @@
             }));
           }
         }, {
-          key: "filter",
-          value: function filter(job) {
-            var _this2 = this;
-
-            this.initializeItems();
-            var searchTerm = job.detail.value;
-            this.presentLoadingWithOptions();
-            this.allJobs = this.allJobs.filter(function (currentJobs) {
-              console.log(currentJobs);
-
-              if (!currentJobs || !searchTerm) {
-                console.log('No results from that search');
-                _this2.noSearchInput = true;
-              }
-
-              if (currentJobs.title && searchTerm) {
-                if (currentJobs.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
-                  console.log(currentJobs.title);
-                  console.log(currentJobs);
-                  _this2.searchTerm = searchTerm;
-                  _this2.searching = true;
-                  _this2.noSearchInput = false;
-                  return true;
-                }
-
-                return false;
-              }
-
-              _this2.noSearchInput = true;
-            });
-            this.allJobsLength = this.allJobs.length; // If there are no matches with the searchTerm
-
-            if (this.allJobsLength === 0) {
-              console.log('No results from that search');
-              this.searching = true;
-              this.searchTerm = searchTerm;
-              this.searchbar.getInputElement().then(function (searchbarInputElement) {
-                searchbarInputElement.value = '';
-              });
-              this.noSearchInput = true;
-            }
-
-            if (!searchTerm) {
-              console.log('Search term is empty; showing all jobs instead');
-              this.noSearchInput = false;
-              this.searching = false;
-              this.getJobs();
-            }
-          }
-        }, {
-          key: "initializeItems",
-          value: function initializeItems() {
-            this.allJobs = this.loadedAllJobs;
-          }
-        }, {
           key: "getFavoriteJobs",
           value: function getFavoriteJobs() {
             var _this3 = this;
 
-            // Get all the user's favorite jobs
+            console.clear(); // Get all the user's favorite jobs
+
             this.profileSub = this.profile.getUserDetails().subscribe(function (data) {
+              console.log(data);
               _this3.favoriteJobs = data['favoriteJobs'];
               console.log('Favorite Jobs:');
               console.log(_this3.favoriteJobs);
@@ -558,7 +502,7 @@
           }
         }, {
           key: "getJobs",
-          value: function getJobs() {
+          value: function getJobs(filter) {
             return (0, tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
               var _this5 = this;
 
@@ -567,143 +511,126 @@
                   switch (_context3.prev = _context3.next) {
                     case 0:
                       this.jobsSub = this.jobs.getJobs().subscribe(function (jobs) {
-                        console.log(jobs);
+                        console.log('Getting Jobs from JOBS.PAGE.TS');
 
-                        switch (_this5.jobFilter) {
-                          case 'htol':
-                            console.log('High to Low');
-                            _this5.filtering = true;
-                            _this5.jobFilter = 'htol';
-                            _this5.allJobs = Object.values(jobs);
-                            _this5.allJobsLength = _this5.allJobs.length;
+                        if (filter === 'newest') {
+                          console.log('Newest');
+                          _this5.filtering = true;
+                          _this5.jobFilter = 'newest';
+                          _this5.allJobs = jobs;
+                          _this5.allJobsLength = _this5.allJobs.length; // Format Times
 
-                            var sortHighToLow = function sortHighToLow(a, b) {
-                              console.log('Sorting Price');
-                              return parseFloat(a.rateOfPay) - parseFloat(b.rateOfPay);
-                            };
+                          var _iterator2 = _createForOfIteratorHelper(_this5.allJobs),
+                              _step2;
 
-                            _this5.allJobs.sort(sortHighToLow);
-
-                            _this5.allJobs.reverse();
-
-                            _this5.searching = false; // Format Times
-
-                            var _iterator2 = _createForOfIteratorHelper(_this5.allJobs),
-                                _step2;
-
-                            try {
-                              for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-                                var job = _step2.value;
-                                job.dateCreated = (0, date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(new Date(job.dateCreated), {
-                                  addSuffix: false
-                                });
-                              }
-                            } catch (err) {
-                              _iterator2.e(err);
-                            } finally {
-                              _iterator2.f();
+                          try {
+                            for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+                              var job = _step2.value;
+                              job.dateCreated = (0, date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(new Date(job.dateCreated), {
+                                addSuffix: false
+                              });
                             }
-
-                            break;
-
-                          case 'ltoh':
-                            console.log('Low to High');
-                            _this5.filtering = true;
-                            _this5.jobFilter = 'ltoh';
-                            _this5.allJobs = Object.values(jobs);
-                            _this5.allJobsLength = _this5.allJobs.length;
-
-                            var sortLowToHigh = function sortLowToHigh(a, b) {
-                              console.log('Sorting Price');
-                              return parseFloat(b.rateOfPay) - parseFloat(a.rateOfPay);
-                            };
-
-                            _this5.allJobs.sort(sortLowToHigh);
-
-                            _this5.allJobs.reverse();
-
-                            _this5.searching = false; // Format Times
-
-                            var _iterator3 = _createForOfIteratorHelper(_this5.allJobs),
-                                _step3;
-
-                            try {
-                              for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-                                var _job2 = _step3.value;
-                                _job2.dateCreated = (0, date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(new Date(_job2.dateCreated), {
-                                  addSuffix: false
-                                });
-                              }
-                            } catch (err) {
-                              _iterator3.e(err);
-                            } finally {
-                              _iterator3.f();
-                            }
-
-                            break;
-
-                          case 'oldest':
-                            console.log('Oldest');
-                            _this5.filtering = true;
-                            _this5.jobFilter = 'oldest';
-                            _this5.allJobs = Object.values(jobs);
-                            _this5.allJobsLength = _this5.allJobs.length;
-                            _this5.searching = false; // Format Times
-
-                            var _iterator4 = _createForOfIteratorHelper(_this5.allJobs),
-                                _step4;
-
-                            try {
-                              for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-                                var _job3 = _step4.value;
-                                _job3.dateCreated = (0, date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(new Date(_job3.dateCreated), {
-                                  addSuffix: false
-                                });
-                              }
-                            } catch (err) {
-                              _iterator4.e(err);
-                            } finally {
-                              _iterator4.f();
-                            }
-
-                            break;
-
-                          case 'newest':
-                            console.log('Newest');
-                            _this5.filtering = true;
-                            _this5.jobFilter = 'newest';
-                            _this5.allJobs = Object.values(jobs);
-                            _this5.allJobsLength = _this5.allJobs.length;
-
-                            _this5.allJobs.reverse();
-
-                            _this5.searching = false; // Format Times
-
-                            var _iterator5 = _createForOfIteratorHelper(_this5.allJobs),
-                                _step5;
-
-                            try {
-                              for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-                                var _job4 = _step5.value;
-                                _job4.dateCreated = (0, date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(new Date(_job4.dateCreated), {
-                                  addSuffix: false
-                                });
-                              }
-                            } catch (err) {
-                              _iterator5.e(err);
-                            } finally {
-                              _iterator5.f();
-                            }
-
-                            break;
-
-                          default:
-                            break;
+                          } catch (err) {
+                            _iterator2.e(err);
+                          } finally {
+                            _iterator2.f();
+                          }
                         }
 
-                        return setTimeout(function () {
-                          _this5.filtering = false;
-                        }, 1000);
+                        if (filter === 'htol') {
+                          var sortHighToLow = function sortHighToLow(a, b) {
+                            console.log('Sorting Price');
+                            return parseFloat(a.rateOfPay) - parseFloat(b.rateOfPay);
+                          };
+
+                          console.log('High to Low');
+                          _this5.filtering = true;
+                          _this5.jobFilter = 'htol';
+                          _this5.allJobs = jobs;
+                          _this5.allJobsLength = _this5.allJobs.length;
+
+                          _this5.allJobs.sort(sortHighToLow);
+
+                          _this5.allJobs.reverse(); // Format Times
+
+
+                          var _iterator3 = _createForOfIteratorHelper(_this5.allJobs),
+                              _step3;
+
+                          try {
+                            for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+                              var _job2 = _step3.value;
+                              _job2.dateCreated = (0, date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(new Date(_job2.dateCreated), {
+                                addSuffix: false
+                              });
+                            }
+                          } catch (err) {
+                            _iterator3.e(err);
+                          } finally {
+                            _iterator3.f();
+                          }
+                        }
+
+                        if (filter === 'ltoh') {
+                          var sortLowToHigh = function sortLowToHigh(a, b) {
+                            console.log('Sorting Price');
+                            return parseFloat(b.rateOfPay) - parseFloat(a.rateOfPay);
+                          };
+
+                          console.log('Low to High');
+                          _this5.filtering = true;
+                          _this5.jobFilter = 'ltoh';
+                          _this5.allJobs = jobs;
+                          _this5.allJobsLength = _this5.allJobs.length;
+
+                          _this5.allJobs.sort(sortLowToHigh);
+
+                          _this5.allJobs.reverse(); // Format Times
+
+
+                          var _iterator4 = _createForOfIteratorHelper(_this5.allJobs),
+                              _step4;
+
+                          try {
+                            for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+                              var _job3 = _step4.value;
+                              _job3.dateCreated = (0, date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(new Date(_job3.dateCreated), {
+                                addSuffix: false
+                              });
+                            }
+                          } catch (err) {
+                            _iterator4.e(err);
+                          } finally {
+                            _iterator4.f();
+                          }
+                        }
+
+                        if (filter === 'oldest') {
+                          console.log('Oldest');
+                          _this5.filtering = true;
+                          _this5.jobFilter = 'oldest';
+                          _this5.allJobs = jobs;
+                          _this5.allJobsLength = _this5.allJobs.length;
+                          _this5.jobFilter = 'Oldest'; // Format Times
+
+                          var _iterator5 = _createForOfIteratorHelper(_this5.allJobs),
+                              _step5;
+
+                          try {
+                            for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+                              var _job4 = _step5.value;
+                              _job4.dateCreated = (0, date_fns__WEBPACK_IMPORTED_MODULE_11__["default"])(new Date(_job4.dateCreated), {
+                                addSuffix: false
+                              });
+                            }
+                          } catch (err) {
+                            _iterator5.e(err);
+                          } finally {
+                            _iterator5.f();
+                          }
+                        }
+
+                        return _this5.allJobs;
                       });
 
                     case 1:
@@ -715,38 +642,11 @@
             }));
           }
         }, {
-          key: "presentLoadingWithOptions",
-          value: function presentLoadingWithOptions() {
-            return (0, tslib__WEBPACK_IMPORTED_MODULE_10__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-              var loading;
-              return regeneratorRuntime.wrap(function _callee4$(_context4) {
-                while (1) {
-                  switch (_context4.prev = _context4.next) {
-                    case 0:
-                      _context4.next = 2;
-                      return this.loading.create({
-                        duration: 1000,
-                        message: 'Searching for jobs...',
-                        translucent: true,
-                        cssClass: 'custom-class custom-loading',
-                        keyboardClose: false
-                      });
-
-                    case 2:
-                      loading = _context4.sent;
-                      _context4.next = 5;
-                      return loading.present();
-
-                    case 5:
-                      return _context4.abrupt("return", _context4.sent);
-
-                    case 6:
-                    case "end":
-                      return _context4.stop();
-                  }
-                }
-              }, _callee4, this);
-            }));
+          key: "ngOnDestroy",
+          value: function ngOnDestroy() {
+            console.log('Jobs Page Destroyed!');
+            this.favoritesEventEmitterService.subsVar.unsubscribe();
+            this.favoriteJobsSub.unsubscribe();
           }
         }]);
 
@@ -779,6 +679,10 @@
           args: [_ionic_angular__WEBPACK_IMPORTED_MODULE_12__.IonSearchbar, {
             "static": false
           }]
+        }],
+        ngOnDestroy: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_13__.HostListener,
+          args: ['unloaded']
         }]
       };
       _JobsPage = (0, tslib__WEBPACK_IMPORTED_MODULE_10__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_13__.Component)({
@@ -885,7 +789,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-header {\n  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);\n  background: #edf3f8;\n  border-bottom: 1px solid #005191;\n}\nion-header ion-icon {\n  font-size: 2em;\n}\n#searchbar-wrapper {\n  transition: 0.5s;\n  height: 60px;\n  background: #edf3f8;\n}\n#logo {\n  width: 100px;\n  position: relative;\n  top: 10px;\n  left: 10px;\n}\n.company-logo {\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n  border-radius: 50px;\n}\n.filter-toolbar-wrapper {\n  background: linear-gradient(90deg, #0055a5 10%, #051422 100%);\n  position: fixed;\n  width: 100%;\n  height: 50px;\n  z-index: 9999;\n}\n.filter-toolbar-wrapper ion-toolbar {\n  --background: none;\n}\n.filter-toolbar {\n  height: 40px;\n  position: relative;\n  top: -8px;\n}\n.filter-message {\n  color: white;\n  font-size: 1.2em;\n}\n.filter-message span {\n  font-weight: 600;\n}\n@media only screen and (min-width: 992px) {\n  .filter-message {\n    color: #0055a5;\n  }\n}\n.filter-icon {\n  color: white;\n  font-size: 1.4em;\n}\n.job-details {\n  --background: #0055a5;\n  --color: white;\n  --background-hover: rgb(24, 40, 54);\n  height: 24px;\n  --width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n  position: relative;\n  top: 10px;\n}\n.desktop-toolbar {\n  --background: none;\n  padding-bottom: 16px;\n  border-bottom: 1px solid #33333326;\n}\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n.favorites-button {\n  --color: white;\n  --background: #e3405f;\n  --background-hover: linear-gradient(#e3405f, #5f4045);\n  height: 24px;\n  width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n}\n.filter-button {\n  --color: white;\n  --background: #333;\n  --background-hover: linear-gradient(#e3405f, #da3a57);\n  height: 24px;\n  --border-radius: 5px;\n  width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n}\n.job-section {\n  background: white;\n  border-radius: 10px;\n  height: auto;\n  color: #777;\n  width: 100%;\n  opacity: 0;\n  padding: 1em 0px;\n  margin-bottom: 50px;\n  box-shadow: 1px 10px 26px rgba(0, 0, 0, 0.05);\n  -webkit-animation: job-section-slide 0.5s ease 0.5 forwards;\n          animation: job-section-slide 0.5s ease 0.5 forwards;\n}\n@-webkit-keyframes job-section-slide {\n  0% {\n    transform: translateX(-20px);\n    opacity: 1;\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n@keyframes job-section-slide {\n  0% {\n    transform: translateX(-20px);\n    opacity: 1;\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\nh6, p {\n  display: block;\n}\n--ion-buttons {\n  --color: #888;\n}\n#job-summary {\n  font-size: 1em;\n  line-height: 1.3em;\n  color: #222;\n}\n#company-name {\n  font-size: 0.9em;\n  opacity: 0.8;\n  position: relative;\n  top: -29px;\n}\n#job-title {\n  font-size: 1.2em;\n  font-weight: 500;\n  position: relative;\n  top: -15px;\n  color: #111;\n}\n#job-rate {\n  font-size: 0.95em;\n  font-weight: 900;\n  opacity: 0.7;\n  position: relative;\n  top: -53px;\n  color: #116e56;\n}\n@media only screen and (min-width: 992px) {\n  #job-title {\n    font-size: 1.3em;\n    font-weight: 500;\n  }\n}\n@media only screen and (min-width: 576px) {\n  #job-title {\n    font-size: 1.3em;\n    font-weight: 500;\n  }\n}\n#job-posted-date {\n  font-size: 10px;\n  opacity: 0.7;\n  position: relative;\n  top: -43px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpvYnMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsMENBQUE7RUFDQSxtQkFBQTtFQUNBLGdDQUFBO0FBQ0Y7QUFDRTtFQUNFLGNBQUE7QUFDSjtBQUVBO0VBQ0UsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7QUFDRjtBQUVBO0VBQ0UsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLFVBQUE7QUFDRjtBQUNBO0VBQ0UsNEJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0VBQ0EsbUJBQUE7QUFFRjtBQUFBO0VBQ0UsNkRBQUE7RUFDQSxlQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxhQUFBO0FBR0Y7QUFBRTtFQUNFLGtCQUFBO0FBRUo7QUFDQTtFQUNFLFlBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7QUFFRjtBQUFBO0VBQ0UsWUFBQTtFQUNBLGdCQUFBO0FBR0Y7QUFERTtFQUNFLGdCQUFBO0FBR0o7QUFBQTtFQUNFO0lBQ0UsY0FBQTtFQUdGO0FBQ0Y7QUFEQTtFQUNFLFlBQUE7RUFDQSxnQkFBQTtBQUdGO0FBREE7RUFDRSxxQkFBQTtFQUNBLGNBQUE7RUFDQSxtQ0FBQTtFQUNBLFlBQUE7RUFDQSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7QUFJRjtBQUZBO0VBQ0Usa0JBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0FBS0Y7QUFIRTtFQUNFLGNBQUE7QUFLSjtBQUZBO0VBQ0UsY0FBQTtFQUNBLHFCQUFBO0VBQ0EscURBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FBS0Y7QUFIQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLHFEQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FBTUY7QUFKQTtFQUNFLGlCQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLFdBQUE7RUFDQSxVQUFBO0VBQ0EsZ0JBQUE7RUFDQSxtQkFBQTtFQUNBLDZDQUFBO0VBQ0EsMkRBQUE7VUFBQSxtREFBQTtBQU9GO0FBTEE7RUFDRTtJQUNFLDRCQUFBO0lBQ0EsVUFBQTtFQVFGO0VBTkE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFRRjtBQUNGO0FBaEJBO0VBQ0U7SUFDRSw0QkFBQTtJQUNBLFVBQUE7RUFRRjtFQU5BO0lBQ0UsVUFBQTtJQUNBLDBCQUFBO0VBUUY7QUFDRjtBQUpBO0VBQ0UsY0FBQTtBQU1GO0FBSEE7RUFDRSxhQUFBO0FBTUY7QUFIQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7QUFNRjtBQUhBO0VBQ0UsZ0JBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0FBTUY7QUFIQTtFQUNFLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7RUFDQSxXQUFBO0FBTUY7QUFIQTtFQUNFLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0EsY0FBQTtBQU1GO0FBSEE7RUFDRTtJQUNFLGdCQUFBO0lBQ0EsZ0JBQUE7RUFNRjtBQUNGO0FBSEE7RUFDRTtJQUNFLGdCQUFBO0lBQ0EsZ0JBQUE7RUFLRjtBQUNGO0FBRkE7RUFDRSxlQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtBQUlGIiwiZmlsZSI6ImpvYnMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWhlYWRlciB7XG4gIGJveC1zaGFkb3c6IDFweCAxcHggNXB4IHJnYmEoMCwwLDAsMC4xKTtcbiAgYmFja2dyb3VuZDogI2VkZjNmODtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMwMDUxOTE7XG5cbiAgaW9uLWljb24ge1xuICAgIGZvbnQtc2l6ZTogMmVtO1xuICB9XG59XG4jc2VhcmNoYmFyLXdyYXBwZXIge1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICBoZWlnaHQ6IDYwcHg7XG4gIGJhY2tncm91bmQ6ICNlZGYzZjg7XG4gfVxuXG4jbG9nb3tcbiAgd2lkdGg6IDEwMHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogMTBweDtcbiAgbGVmdDogMTBweDtcbn1cbi5jb21wYW55LWxvZ28ge1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvbnRhaW47XG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcbiAgYm9yZGVyLXJhZGl1czogNTBweDtcbn1cbi5maWx0ZXItdG9vbGJhci13cmFwcGVye1xuICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoOTBkZWcsIHJnYmEoMCw4NSwxNjUsIDEpIDEwJSwgcmdiKDUsIDIwLCAzNCkgMTAwJSk7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNTBweDtcbiAgei1pbmRleDogOTk5OTtcbiAgLy8gYm94LXNoYWRvdzogMXB4IDEwcHggMjZweCByZ2JhKDAsMCwwLDAuMDUpO1xuXG4gIGlvbi10b29sYmFyIHtcbiAgICAtLWJhY2tncm91bmQ6IG5vbmU7XG4gIH1cbn1cbi5maWx0ZXItdG9vbGJhcntcbiAgaGVpZ2h0OiA0MHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogLThweDtcbn1cbi5maWx0ZXItbWVzc2FnZXtcbiAgY29sb3I6IHdoaXRlO1xuICBmb250LXNpemU6IDEuMmVtO1xuXG4gIHNwYW4ge1xuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIH1cbn1cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogOTkycHgpIHtcbiAgLmZpbHRlci1tZXNzYWdlICB7XG4gICAgY29sb3I6ICMwMDU1YTU7XG4gIH1cbn1cbi5maWx0ZXItaWNvbiB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxLjRlbTtcbn1cbi5qb2ItZGV0YWlscyB7XG4gIC0tYmFja2dyb3VuZDogIzAwNTVhNTtcbiAgLS1jb2xvcjogd2hpdGU7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogcmdiKDI0LCA0MCwgNTQpO1xuICBoZWlnaHQ6IDI0cHg7XG4gIC0td2lkdGg6IDEwMHB4O1xuICBmb250LXNpemU6IDAuNWVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBkaXNwbGF5OiBibG9jaztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB0b3A6IDEwcHg7XG59XG4uZGVza3RvcC10b29sYmFye1xuICAtLWJhY2tncm91bmQ6IG5vbmU7XG4gIHBhZGRpbmctYm90dG9tOiAxNnB4O1xuICBib3JkZXItYm90dG9tOiAxcHggc29saWQgIzMzMzMzMzI2O1xuXG4gIGgxIHtcbiAgICBjb2xvcjogIzAwNTVhNTtcbiAgfVxufVxuLmZhdm9yaXRlcy1idXR0b24ge1xuICAtLWNvbG9yOiB3aGl0ZTtcbiAgLS1iYWNrZ3JvdW5kOiAjZTM0MDVmO1xuICAtLWJhY2tncm91bmQtaG92ZXI6IGxpbmVhci1ncmFkaWVudCgjZTM0MDVmLCAjNWY0MDQ1KTtcbiAgaGVpZ2h0OiAyNHB4O1xuICB3aWR0aDogMTAwcHg7XG4gIGZvbnQtc2l6ZTogMC41ZW07XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuLmZpbHRlci1idXR0b24ge1xuICAtLWNvbG9yOiB3aGl0ZTtcbiAgLS1iYWNrZ3JvdW5kOiAjMzMzO1xuICAtLWJhY2tncm91bmQtaG92ZXI6IGxpbmVhci1ncmFkaWVudCgjZTM0MDVmLCAjZGEzYTU3KTtcbiAgaGVpZ2h0OiAyNHB4O1xuICAtLWJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IDEwMHB4O1xuICBmb250LXNpemU6IDAuNWVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5qb2Itc2VjdGlvbiB7XG4gIGJhY2tncm91bmQ6IHdoaXRlO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBoZWlnaHQ6IGF1dG87XG4gIGNvbG9yOiAjNzc3O1xuICB3aWR0aDogMTAwJTtcbiAgb3BhY2l0eTogMDtcbiAgcGFkZGluZzogMWVtIDBweDtcbiAgbWFyZ2luLWJvdHRvbTogNTBweDtcbiAgYm94LXNoYWRvdzogMXB4IDEwcHggMjZweCByZ2JhKDAsMCwwLDAuMDUpO1xuICBhbmltYXRpb246IGpvYi1zZWN0aW9uLXNsaWRlIDAuNXMgZWFzZSAwLjUgZm9yd2FyZHM7XG59XG5Aa2V5ZnJhbWVzIGpvYi1zZWN0aW9uLXNsaWRlIHtcbiAgMCV7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0yMHB4KTtcbiAgICBvcGFjaXR5OiAxO1xuICB9XG4gIDEwMCV7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMHB4KTtcbiAgfVxuICAwJXtcbiAgfVxufVxuaDYsIHAge1xuICBkaXNwbGF5OiBibG9jaztcbn1cblxuLS1pb24tYnV0dG9ucyB7XG4gIC0tY29sb3I6ICM4ODg7XG59XG5cbiNqb2Itc3VtbWFyeSB7XG4gIGZvbnQtc2l6ZTogMWVtO1xuICBsaW5lLWhlaWdodDogMS4zZW07XG4gIGNvbG9yOiAjMjIyO1xufVxuXG4jY29tcGFueS1uYW1lIHtcbiAgZm9udC1zaXplOiAwLjllbTtcbiAgb3BhY2l0eTogMC44O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogLTI5cHhcbn1cblxuI2pvYi10aXRsZSB7XG4gIGZvbnQtc2l6ZTogMS4yZW07XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiAtMTVweDtcbiAgY29sb3I6ICMxMTE7XG59XG5cbiNqb2ItcmF0ZSB7XG4gIGZvbnQtc2l6ZTogMC45NWVtO1xuICBmb250LXdlaWdodDogOTAwO1xuICBvcGFjaXR5OiAwLjc7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiAtNTNweDtcbiAgY29sb3I6ICMxMTZlNTY7XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogOTkycHgpIHtcbiAgI2pvYi10aXRsZSAge1xuICAgIGZvbnQtc2l6ZTogMS4zZW07XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgfVxufVxuXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDU3NnB4KSB7XG4gICNqb2ItdGl0bGUgIHtcbiAgICBmb250LXNpemU6IDEuM2VtO1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIH1cbn1cblxuI2pvYi1wb3N0ZWQtZGF0ZSB7XG4gIGZvbnQtc2l6ZTogMTBweDtcbiAgb3BhY2l0eTogMC43O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogLTQzcHhcbn1cbiJdfQ== */";
+      __webpack_exports__["default"] = "#searchbar-wrapper {\n  transition: 0.5s;\n  height: 60px;\n  background: #edf3f8;\n}\n\n#logo {\n  width: 100px;\n  position: relative;\n  top: 10px;\n  left: 10px;\n}\n\n.company-logo {\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n  border-radius: 50px;\n  width: 100%;\n}\n\n.filter-toolbar-wrapper {\n  width: 100%;\n  z-index: 9999;\n}\n\n.filter-toolbar-wrapper ion-toolbar {\n  --background: linear-gradient(30deg, #004785, #0055a5);\n  position: relative;\n  top: 10px;\n  box-shadow: 1px 1px 8px #36363654;\n  border-radius: 100px;\n}\n\n.filter-toolbar-wrapper ion-toolbar p {\n  font-weight: 600;\n  color: white;\n}\n\n.filter-message {\n  color: #222;\n  font-size: 1.2em;\n  position: relative;\n  left: 16px;\n}\n\n@media only screen and (min-width: 992px) {\n  .filter-message {\n    color: #fbb606;\n    font-weight: 600;\n    position: relative;\n    top: 3px;\n  }\n}\n\n.filter-icon {\n  color: white;\n  font-size: 1.4em;\n}\n\n.job-details {\n  --background: white;\n  --color: #0055a5;\n  --border-color: #0055a5;\n  --border-style: solid;\n  --border-width: 2px;\n  height: 24px;\n  --width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n  position: relative;\n  top: 10px;\n}\n\n.desktop-toolbar {\n  --background: linear-gradient(30deg, #004785, #0055a5);\n  box-shadow: 1px 1px 19px #36363636;\n  border-radius: 100px;\n}\n\n.desktop-toolbar h1 {\n  color: white;\n}\n\n.desktop-toolbar ion-buttons:nth-child(1) {\n  position: relative;\n  left: 3em;\n}\n\n.desktop-toolbar ion-buttons:nth-child(2) {\n  position: relative;\n  right: 3em;\n}\n\n.favorites-button {\n  --color: white;\n  --background: none;\n  --background-hover: linear-gradient(#e3405f, #5f4045);\n  height: 24px;\n  width: 70px;\n  font-size: 0.6em;\n  font-weight: 600;\n  display: block;\n}\n\n.filter-button {\n  --color: white;\n  --background: none;\n  --background-hover: linear-gradient(#e3405f, #da3a57);\n  height: 24px;\n  --border-radius: 5px;\n  width: 70px;\n  font-size: 0.8em;\n  font-weight: 600;\n  display: block;\n}\n\n.job-section {\n  background: white;\n  border-radius: 10px;\n  height: auto;\n  color: #777;\n  width: 100%;\n  opacity: 0;\n  padding: 1em 0px;\n  margin-bottom: 50px;\n  box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.05);\n  -webkit-animation: job-section-slide 0.5s ease 0.5 forwards;\n          animation: job-section-slide 0.5s ease 0.5 forwards;\n}\n\n@-webkit-keyframes job-section-slide {\n  0% {\n    transform: translateX(-20px);\n    opacity: 1;\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@keyframes job-section-slide {\n  0% {\n    transform: translateX(-20px);\n    opacity: 1;\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\nh6, p {\n  display: block;\n}\n\n--ion-buttons {\n  --color: #888;\n}\n\n#job-summary {\n  font-size: 0.9em;\n  line-height: 1.4em;\n  color: #222;\n}\n\n@media only screen and (min-width: 993px) {\n  #job-summary {\n    font-size: 16px;\n    line-height: 21px;\n  }\n}\n\n#company-name {\n  font-size: 0.9em;\n  opacity: 0.8;\n  position: relative;\n  top: -29px;\n}\n\n#job-title {\n  font-size: 1.2em;\n  font-weight: 500;\n  position: relative;\n  top: -15px;\n  color: #111;\n}\n\n#job-rate {\n  font-size: 0.95em;\n  font-weight: 900;\n  opacity: 0.7;\n  position: relative;\n  top: -53px;\n  color: #116e56;\n}\n\n@media only screen and (min-width: 992px) {\n  #job-title {\n    font-size: 1.3em;\n    font-weight: 500;\n  }\n}\n\n@media only screen and (min-width: 576px) {\n  #job-title {\n    font-size: 1.3em;\n    font-weight: 500;\n  }\n}\n\n#job-posted-date {\n  font-size: 10px;\n  opacity: 0.7;\n  position: relative;\n  top: -43px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImpvYnMucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0UsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7QUFBRjs7QUFHQTtFQUNFLFlBQUE7RUFDQSxrQkFBQTtFQUNBLFNBQUE7RUFDQSxVQUFBO0FBQUY7O0FBRUE7RUFDRSw0QkFBQTtFQUNBLHdCQUFBO0VBQ0EsMkJBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7QUFDRjs7QUFDQTtFQUNFLFdBQUE7RUFDQSxhQUFBO0FBRUY7O0FBQ0U7RUFDRSxzREFBQTtFQUNBLGtCQUFBO0VBQ0EsU0FBQTtFQUNBLGlDQUFBO0VBQ0Esb0JBQUE7QUFDSjs7QUFBSTtFQUNFLGdCQUFBO0VBQ0EsWUFBQTtBQUVOOztBQUlBO0VBQ0UsV0FBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0FBREY7O0FBS0E7RUFDRTtJQUNFLGNBQUE7SUFDQSxnQkFBQTtJQUNBLGtCQUFBO0lBQ0EsUUFBQTtFQUZGO0FBQ0Y7O0FBSUE7RUFDRSxZQUFBO0VBQ0EsZ0JBQUE7QUFGRjs7QUFJQTtFQUNFLG1CQUFBO0VBQ0EsZ0JBQUE7RUFDQSx1QkFBQTtFQUNBLHFCQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0FBREY7O0FBR0E7RUFDRSxzREFBQTtFQUNBLGtDQUFBO0VBQ0Esb0JBQUE7QUFBRjs7QUFDRTtFQUNFLFlBQUE7QUFDSjs7QUFDRTtFQUNFLGtCQUFBO0VBQ0EsU0FBQTtBQUNKOztBQUNFO0VBQ0Usa0JBQUE7RUFDQSxVQUFBO0FBQ0o7O0FBRUE7RUFDRSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxxREFBQTtFQUNBLFlBQUE7RUFDQSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7QUFDRjs7QUFDQTtFQUNFLGNBQUE7RUFDQSxrQkFBQTtFQUNBLHFEQUFBO0VBQ0EsWUFBQTtFQUNBLG9CQUFBO0VBQ0EsV0FBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxjQUFBO0FBRUY7O0FBQUE7RUFDRSxpQkFBQTtFQUNBLG1CQUFBO0VBQ0EsWUFBQTtFQUNBLFdBQUE7RUFDQSxXQUFBO0VBQ0EsVUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUJBQUE7RUFDQSwyQ0FBQTtFQUNBLDJEQUFBO1VBQUEsbURBQUE7QUFHRjs7QUFEQTtFQUNFO0lBQ0UsNEJBQUE7SUFDQSxVQUFBO0VBSUY7RUFGQTtJQUNFLFVBQUE7SUFDQSwwQkFBQTtFQUlGO0FBQ0Y7O0FBWkE7RUFDRTtJQUNFLDRCQUFBO0lBQ0EsVUFBQTtFQUlGO0VBRkE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFJRjtBQUNGOztBQUFBO0VBQ0UsY0FBQTtBQUVGOztBQUNBO0VBQ0UsYUFBQTtBQUVGOztBQUNBO0VBQ0UsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLFdBQUE7QUFFRjs7QUFBQTtFQUNFO0lBQ0UsZUFBQTtJQUNBLGlCQUFBO0VBR0Y7QUFDRjs7QUFEQTtFQUNFLGdCQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtBQUdGOztBQUFBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtFQUNBLFdBQUE7QUFHRjs7QUFBQTtFQUNFLGlCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0EsY0FBQTtBQUdGOztBQUFBO0VBQ0U7SUFDRSxnQkFBQTtJQUNBLGdCQUFBO0VBR0Y7QUFDRjs7QUFBQTtFQUNFO0lBQ0UsZ0JBQUE7SUFDQSxnQkFBQTtFQUVGO0FBQ0Y7O0FBQ0E7RUFDRSxlQUFBO0VBQ0EsWUFBQTtFQUNBLGtCQUFBO0VBQ0EsVUFBQTtBQUNGIiwiZmlsZSI6ImpvYnMucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiXG4jc2VhcmNoYmFyLXdyYXBwZXIge1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICBoZWlnaHQ6IDYwcHg7XG4gIGJhY2tncm91bmQ6ICNlZGYzZjg7XG4gfVxuXG4jbG9nb3tcbiAgd2lkdGg6IDEwMHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogMTBweDtcbiAgbGVmdDogMTBweDtcbn1cbi5jb21wYW55LWxvZ28ge1xuICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0O1xuICBiYWNrZ3JvdW5kLXNpemU6IGNvbnRhaW47XG4gIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcbiAgYm9yZGVyLXJhZGl1czogNTBweDtcbiAgd2lkdGg6IDEwMCU7XG59XG4uZmlsdGVyLXRvb2xiYXItd3JhcHBlcntcbiAgd2lkdGg6IDEwMCU7XG4gIHotaW5kZXg6IDk5OTk7XG4gIC8vIGJveC1zaGFkb3c6IDFweCAxMHB4IDI2cHggcmdiYSgwLDAsMCwwLjA1KTtcblxuICBpb24tdG9vbGJhciB7XG4gICAgLS1iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMzBkZWcsICMwMDQ3ODUsICMwMDU1YTUpO1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICB0b3A6IDEwcHg7XG4gICAgYm94LXNoYWRvdzogMXB4IDFweCA4cHggIzM2MzYzNjU0O1xuICAgIGJvcmRlci1yYWRpdXM6IDEwMHB4O1xuICAgIHAge1xuICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICB9XG4gIH1cbn1cbi5maWx0ZXItdG9vbGJhcntcbn1cbi5maWx0ZXItbWVzc2FnZXtcbiAgY29sb3I6ICMyMjI7XG4gIGZvbnQtc2l6ZTogMS4yZW07XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbGVmdDogMTZweDtcblxuICBcbn1cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogOTkycHgpIHtcbiAgLmZpbHRlci1tZXNzYWdlICB7XG4gICAgY29sb3I6ICNmYmI2MDY7XG4gICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gICAgdG9wOiAzcHg7XG4gIH1cbn1cbi5maWx0ZXItaWNvbiB7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxLjRlbTtcbn1cbi5qb2ItZGV0YWlscyB7XG4gIC0tYmFja2dyb3VuZDogd2hpdGU7XG4gIC0tY29sb3I6ICMwMDU1YTU7XG4gIC0tYm9yZGVyLWNvbG9yOiAjMDA1NWE1O1xuICAtLWJvcmRlci1zdHlsZTogc29saWQ7XG4gIC0tYm9yZGVyLXdpZHRoOiAycHg7XG4gIGhlaWdodDogMjRweDtcbiAgLS13aWR0aDogMTAwcHg7XG4gIGZvbnQtc2l6ZTogMC41ZW07XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGRpc3BsYXk6IGJsb2NrO1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogMTBweDtcbn1cbi5kZXNrdG9wLXRvb2xiYXJ7XG4gIC0tYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDMwZGVnLCAjMDA0Nzg1LCAjMDA1NWE1KTtcbiAgYm94LXNoYWRvdzogMXB4IDFweCAxOXB4ICMzNjM2MzYzNjtcbiAgYm9yZGVyLXJhZGl1czogMTAwcHg7XG4gIGgxIHtcbiAgICBjb2xvcjogd2hpdGU7XG4gIH1cbiAgaW9uLWJ1dHRvbnM6bnRoLWNoaWxkKDEpe1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICBsZWZ0OiAzZW07XG4gIH1cbiAgaW9uLWJ1dHRvbnM6bnRoLWNoaWxkKDIpe1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICByaWdodDogM2VtO1xuICB9XG59XG4uZmF2b3JpdGVzLWJ1dHRvbiB7XG4gIC0tY29sb3I6IHdoaXRlO1xuICAtLWJhY2tncm91bmQ6IG5vbmU7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogbGluZWFyLWdyYWRpZW50KCNlMzQwNWYsICM1ZjQwNDUpO1xuICBoZWlnaHQ6IDI0cHg7XG4gIHdpZHRoOiA3MHB4O1xuICBmb250LXNpemU6IDAuNmVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5maWx0ZXItYnV0dG9uIHtcbiAgLS1jb2xvcjogd2hpdGU7XG4gIC0tYmFja2dyb3VuZDogbm9uZTtcbiAgLS1iYWNrZ3JvdW5kLWhvdmVyOiBsaW5lYXItZ3JhZGllbnQoI2UzNDA1ZiwgI2RhM2E1Nyk7XG4gIGhlaWdodDogMjRweDtcbiAgLS1ib3JkZXItcmFkaXVzOiA1cHg7XG4gIHdpZHRoOiA3MHB4O1xuICBmb250LXNpemU6IDAuOGVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5qb2Itc2VjdGlvbiB7XG4gIGJhY2tncm91bmQ6IHdoaXRlO1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICBoZWlnaHQ6IGF1dG87XG4gIGNvbG9yOiAjNzc3O1xuICB3aWR0aDogMTAwJTtcbiAgb3BhY2l0eTogMDtcbiAgcGFkZGluZzogMWVtIDBweDtcbiAgbWFyZ2luLWJvdHRvbTogNTBweDtcbiAgYm94LXNoYWRvdzogMXB4IDRweCA1cHggcmdiKDAgMCAwIC8gNSUpO1xuICBhbmltYXRpb246IGpvYi1zZWN0aW9uLXNsaWRlIDAuNXMgZWFzZSAwLjUgZm9yd2FyZHM7XG59XG5Aa2V5ZnJhbWVzIGpvYi1zZWN0aW9uLXNsaWRlIHtcbiAgMCV7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVYKC0yMHB4KTtcbiAgICBvcGFjaXR5OiAxO1xuICB9XG4gIDEwMCV7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMHB4KTtcbiAgfVxuICAwJXtcbiAgfVxufVxuaDYsIHAge1xuICBkaXNwbGF5OiBibG9jaztcbn1cblxuLS1pb24tYnV0dG9ucyB7XG4gIC0tY29sb3I6ICM4ODg7XG59XG5cbiNqb2Itc3VtbWFyeSB7XG4gIGZvbnQtc2l6ZTogMC45ZW07XG4gIGxpbmUtaGVpZ2h0OiAxLjRlbTtcbiAgY29sb3I6ICMyMjI7XG59XG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDk5M3B4KSB7XG4gICNqb2Itc3VtbWFyeSB7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIGxpbmUtaGVpZ2h0OiAyMXB4O1xuICB9XG59XG4jY29tcGFueS1uYW1lIHtcbiAgZm9udC1zaXplOiAwLjllbTtcbiAgb3BhY2l0eTogMC44O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogLTI5cHhcbn1cblxuI2pvYi10aXRsZSB7XG4gIGZvbnQtc2l6ZTogMS4yZW07XG4gIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiAtMTVweDtcbiAgY29sb3I6ICMxMTE7XG59XG5cbiNqb2ItcmF0ZSB7XG4gIGZvbnQtc2l6ZTogMC45NWVtO1xuICBmb250LXdlaWdodDogOTAwO1xuICBvcGFjaXR5OiAwLjc7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgdG9wOiAtNTNweDtcbiAgY29sb3I6ICMxMTZlNTY7XG59XG5cbkBtZWRpYSBvbmx5IHNjcmVlbiBhbmQgKG1pbi13aWR0aDogOTkycHgpIHtcbiAgI2pvYi10aXRsZSAge1xuICAgIGZvbnQtc2l6ZTogMS4zZW07XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgfVxufVxuXG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDU3NnB4KSB7XG4gICNqb2ItdGl0bGUgIHtcbiAgICBmb250LXNpemU6IDEuM2VtO1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gIH1cbn1cblxuI2pvYi1wb3N0ZWQtZGF0ZSB7XG4gIGZvbnQtc2l6ZTogMTBweDtcbiAgb3BhY2l0eTogMC43O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogLTQzcHhcbn1cbiJdfQ== */";
       /***/
     },
 
@@ -897,7 +801,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-header no-border class=\"ion-hide-lg-up\">\n  <!-- Mobile & Tablet Toolbar -->\n  <ion-toolbar>\n    <ion-icon style=\"position: relative; left: 24px\" color=\"light\" name=\"briefcase-outline\"></ion-icon>\n       <ion-buttons slot=\"end\">\n        <ion-button (click)=\"favoritesPage()\">\n          <ion-icon slot=\"start\" src=\"../../assets/icon/my-favorite-jobs.svg\"></ion-icon>\n        </ion-button>\n        <!-- <ion-button (click)=\"filterMenu()\">\n          <ion-icon slot=\"start\" name=\"filter\"></ion-icon>\n        </ion-button> -->\n      </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <!-- Refresher -->\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"doRefresh($event)\">\n      <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-grid>\n    <!-- Desktop Header -->\n    <ion-row style=\"padding-top: 80px; margin-bottom: 40px;\" class=\"ion-hide-lg-down ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <ion-toolbar class=\"desktop-toolbar\">\n              <ion-buttons slot=\"start\">\n                  <ion-icon style=\"font-size: 2em; color: #0055a5; margin-right: 8px;\" name=\"briefcase-outline\"></ion-icon>\n                  <h1>Jobs</h1>\n              </ion-buttons>\n              <ion-buttons slot=\"end\">\n                <ion-button class=\"filter-button\" (click)=\"filterMenu()\">\n                  Filter\n                </ion-button>\n                <ion-button class=\"favorites-button\" (click)=\"favoritesPage()\">\n                  Favorites\n                </ion-button>\n              </ion-buttons>\n        </ion-toolbar>\n        <ion-row>\n          <ion-col size=\"12\">\n            <p *ngIf=\"this.jobFilter === 'htol'\" class=\"filter-message\"><span>Filter</span>: Pay - High to Low</p>\n            <p *ngIf=\"this.jobFilter === 'ltoh'\" class=\"filter-message\"><span>Filter</span>: Pay - Low to High</p>\n            <p *ngIf=\"this.jobFilter === 'newest'\" class=\"filter-message\"><span>Filter</span>: Newest</p>\n            <p *ngIf=\"this.jobFilter === 'oldest'\" class=\"filter-message\"><span>Filter</span> {{this.jobFilter}}</p>\n          </ion-col>\n        </ion-row>\n            <!-- <img height=\"50\" style=\"display: inline;\" src=\"../../../assets/icon/suitcase-blue.svg\" alt=\"\" srcset=\"\">\n            <h1 style=\"display: inline; margin-left: 15px;\">Jobs</h1> -->\n      </ion-col>\n    </ion-row>\n    <!-- Filter Toolbar -->\n    <ion-row class=\"filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <ion-toolbar class=\"filter-toolbar\">\n          <ion-buttons slot=\"start\">\n            <p *ngIf=\"this.jobFilter === 'htol'\" class=\"filter-message\"><span>Filter</span>: Pay - High to Low</p>\n            <p *ngIf=\"this.jobFilter === 'ltoh'\" class=\"filter-message\"><span>Filter</span>: Pay - Low to High</p>\n            <p *ngIf=\"this.jobFilter === 'newest'\" class=\"filter-message\"><span>Filter</span>: Newest</p>\n            <p *ngIf=\"this.jobFilter === 'oldest'\" class=\"filter-message\"><span>Filter</span> Oldest</p>\n          </ion-buttons>\n          <ion-buttons slot=\"end\">\n              <ion-button (click)=\"filterMenu()\">\n                <ion-icon class=\"filter-icon\" slot=\"start\" name=\"filter\"></ion-icon>\n              </ion-button>\n          </ion-buttons>\n        </ion-toolbar>\n      </ion-col>\n    </ion-row>\n\n    <!-- Filtering Message -->\n    <ion-row *ngIf=\"this.filtering\" class=\"ion-justify-content-center\">\n      <ion-col style=\"position: relative; top: -100px;\" class=\"ion-text-center\" size=\"12\">\n        <ion-spinner  name=\"bubbles\">Filtering</ion-spinner>\n      </ion-col>\n    </ion-row>\n\n    <!-- Jobs -->\n    <ion-row *ngIf=\"!this.filtering\" class=\"ion-justify-content-center\">\n      <ion-col style=\"margin-top: 16px;\" size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <div class=\"spacer ion-hide-lg-up\"></div>\n        <ion-row class=\"job-section ion-justify-content-center\" *ngFor=\"let job of allJobs\">\n              <ion-col push=\"0.5\" size=\"1\">\n                <img class=\"company-logo\" src=\"{{job.companyLogo}}\">\n              </ion-col>\n              <ion-col push=\"1\" style=\"height: 80px;\">\n                <h5 id=\"job-title\">{{job.title}}</h5>\n                <p id=\"company-name\">{{job.companyName}}</p>\n                <h5 id=\"job-posted-date\">Posted: {{job.dateCreated}}</h5>\n                <h5 id=\"job-rate\">${{job.rateOfPay}}/hr</h5>\n              </ion-col>\n              <ion-col size=\"11\">\n                <p id=\"job-summary\">{{job.summary}}</p>\n              </ion-col>\n              <ion-col pull=\"0\" size=\"11\">\n                  <ion-button class=\"job-details ion-float-right\" (click)=\"jobPage(job)\">\n                    Details\n                  </ion-button>\n                  <!-- Heart Icon Component holds the state for Favorites -->\n                  <app-heart-icon [job]=\"job\" [favoriteJobs]=\"favoriteJobsObj\" *ngIf=\"favoriteJobsObj\"></app-heart-icon>\n              </ion-col>\n        </ion-row>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n";
+      __webpack_exports__["default"] = "<ion-header no-border class=\"ion-hide-lg-up\">\n  <!-- Mobile & Tablet Toolbar -->\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-icon style=\"position: relative; left: 24px; color: #0055a5;\"name=\"briefcase-outline\"></ion-icon>\n    </ion-buttons>\n    <ion-title>Jobs</ion-title>\n       <ion-buttons slot=\"end\">\n        <ion-button (click)=\"favoritesPage()\">\n          <ion-icon slot=\"start\" src=\"../../assets/icon/jobs-favorites-heart-blue.svg\"></ion-icon>\n        </ion-button>\n        <!-- <ion-button (click)=\"filterMenu()\">\n          <ion-icon slot=\"start\" name=\"filter\"></ion-icon>\n        </ion-button> -->\n      </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n\n  <!-- Refresher -->\n  <ion-refresher slot=\"fixed\" (ionRefresh)=\"doRefresh($event)\">\n      <ion-refresher-content></ion-refresher-content>\n  </ion-refresher>\n\n  <ion-grid>\n    <div *ngIf=\"this.data\">\n      <!-- Desktop Header -->\n      <ion-row style=\"padding-top: 40px; margin-bottom: 40px;\" class=\"ion-hide-lg-down ion-justify-content-center\">\n        <ion-col style=\"padding: 0 2em;\" size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n          <ion-toolbar class=\"desktop-toolbar\">\n            <ion-buttons slot=\"start\">\n              <ion-icon style=\"font-size: 2em; color: white; margin-right: 8px;\" name=\"briefcase-outline\"></ion-icon>\n              <h1 style=\"margin-top: 12px;\">Jobs |</h1>\n              <p *ngIf=\"this.jobFilter === 'htol'\" class=\"filter-message\">Pay - High to Low</p>\n              <p *ngIf=\"this.jobFilter === 'ltoh'\" class=\"filter-message\">Pay - Low to High</p>\n              <p *ngIf=\"this.jobFilter === 'newest'\" class=\"filter-message\">Newest</p>\n              <p *ngIf=\"this.jobFilter === 'oldest'\" class=\"filter-message\">{{this.jobFilter}}</p>\n            </ion-buttons>\n            <ion-buttons slot=\"end\">\n                  <ion-button class=\"filter-button\" (click)=\"filterMenu()\">\n                    Filter\n                  </ion-button>\n                  <ion-button class=\"favorites-button\" (click)=\"favoritesPage()\">\n                    <img height=\"30\" src=\"../../../assets/icon/jobs-favorites-heart-white.svg\" alt=\"\" srcset=\"\">\n                  </ion-button>\n            </ion-buttons>\n          </ion-toolbar>\n        </ion-col>\n      </ion-row>\n\n      <!-- Filter Toolbar -->\n      <ion-row class=\"filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center\">\n        <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n          <ion-toolbar (click)=\"filterMenu()\" class=\"filter-toolbar\">\n            <ion-buttons slot=\"start\">\n              <p class=\"filter-message\">{{this.jobFilter}}</p>\n            </ion-buttons>\n            <ion-buttons slot=\"end\">\n                <ion-button>\n                  <ion-icon class=\"filter-icon\" slot=\"start\" name=\"filter\"></ion-icon>\n                </ion-button>\n            </ion-buttons>\n          </ion-toolbar>\n        </ion-col>\n      </ion-row>\n\n      <!-- Jobs -->\n      <ion-row class=\"ion-justify-content-center\">\n        <ion-col size-xs=\"12\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n          <div class=\"spacer ion-hide-lg-up\"></div>\n          <ion-row class=\"job-section ion-justify-content-center\" *ngFor=\"let job of allJobs\">\n                <ion-col push=\"0.3\" size=\"1\">\n                  <img class=\"company-logo\" src=\"{{job.companyLogo}}\">\n                </ion-col>\n                <ion-col push=\"0.3\" style=\"height: 80px;\">\n                  <h5 id=\"job-title\">{{job.title}}</h5>\n                  <p id=\"company-name\">{{job.companyName}}</p>\n                  <h5 id=\"job-posted-date\">Posted: {{job.dateCreated}}</h5>\n                  <h5 id=\"job-rate\">${{job.rateOfPay}}/hr</h5>\n                </ion-col>\n                <ion-col size=\"11\">\n                  <p id=\"job-summary\">{{job.summary}}</p>\n                </ion-col>\n                <ion-col pull=\"0\" size=\"11\">\n                    <!-- Heart Icon Component holds the state for Favorites -->\n                    <app-heart-icon [job]=\"job\" [favoriteJobs]=\"this.favoriteJobsObj\" ></app-heart-icon>\n                    <ion-button class=\"job-details ion-float-right\" (click)=\"jobPage(job)\">\n                      Details\n                    </ion-button>\n                </ion-col>\n          </ion-row>\n        </ion-col>\n      </ion-row>\n\n    </div>\n\n    <!-- Skeleton Data -->\n    <div *ngIf=\"!this.data\">\n      <ion-list>\n        <ion-item lines=\"none\">\n          <ion-thumbnail slot=\"start\">\n            <ion-skeleton-text></ion-skeleton-text>\n          </ion-thumbnail>\n          <ion-label>\n            <h3>\n              <ion-skeleton-text animated style=\"width: 80%\"></ion-skeleton-text>\n            </h3>\n            <p>\n              <ion-skeleton-text animated style=\"width: 60%\"></ion-skeleton-text>\n            </p>\n            <p>\n              <ion-skeleton-text animated style=\"width: 30%\"></ion-skeleton-text>\n            </p>\n          </ion-label>\n        </ion-item>\n        <ion-item lines=\"none\">\n          <ion-thumbnail slot=\"start\">\n            <ion-skeleton-text></ion-skeleton-text>\n          </ion-thumbnail>\n          <ion-label>\n            <h3>\n              <ion-skeleton-text animated style=\"width: 80%\"></ion-skeleton-text>\n            </h3>\n            <p>\n              <ion-skeleton-text animated style=\"width: 60%\"></ion-skeleton-text>\n            </p>\n            <p>\n              <ion-skeleton-text animated style=\"width: 30%\"></ion-skeleton-text>\n            </p>\n          </ion-label>\n        </ion-item>\n        <ion-item lines=\"none\">\n          <ion-thumbnail slot=\"start\">\n            <ion-skeleton-text></ion-skeleton-text>\n          </ion-thumbnail>\n          <ion-label>\n            <h3>\n              <ion-skeleton-text animated style=\"width: 80%\"></ion-skeleton-text>\n            </h3>\n            <p>\n              <ion-skeleton-text animated style=\"width: 60%\"></ion-skeleton-text>\n            </p>\n            <p>\n              <ion-skeleton-text animated style=\"width: 30%\"></ion-skeleton-text>\n            </p>\n          </ion-label>\n        </ion-item>\n        <ion-item lines=\"none\">\n          <ion-thumbnail slot=\"start\">\n            <ion-skeleton-text></ion-skeleton-text>\n          </ion-thumbnail>\n          <ion-label>\n            <h3>\n              <ion-skeleton-text animated style=\"width: 80%\"></ion-skeleton-text>\n            </h3>\n            <p>\n              <ion-skeleton-text animated style=\"width: 60%\"></ion-skeleton-text>\n            </p>\n            <p>\n              <ion-skeleton-text animated style=\"width: 30%\"></ion-skeleton-text>\n            </p>\n          </ion-label>\n        </ion-item>\n      </ion-list>\n    </div>\n\n  </ion-grid>\n</ion-content>\n";
       /***/
     }
   }]);

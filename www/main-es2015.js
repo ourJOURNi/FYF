@@ -1013,26 +1013,25 @@ let HeartIconComponent = class HeartIconComponent {
     constructor(favorites, profile) {
         this.favorites = favorites;
         this.profile = profile;
-        this.favoriteState = 'unfavorited';
         this.iconName = 'heart';
     }
     ngOnInit() {
-        setTimeout(() => {
-            for (const job of this.favoriteJobs) {
-                if (this.job._id == job._id) {
-                    this.setFavoriteStateOn();
-                }
+        this.favoriteState = 'unfavorited';
+        for (const favJob of this.favoriteJobs) {
+            if (this.job._id === favJob['_id']) {
+                console.log('There was a match!');
+                return this.setFavoriteStateOn();
             }
-        }, 300);
+        }
     }
     toggleLikeState() {
         if (this.favoriteState === 'unfavorited') {
             this.setFavoriteStateOn();
-            this.favorites.favoriteThisJob(this.job);
+            return this.favorites.favoriteThisJob(this.job);
         }
         else {
             this.setFavoriteStateOff();
-            this.favorites.unFavoriteThisJob(this.job);
+            return this.favorites.unFavoriteThisJob(this.job);
         }
     }
     setFavoriteStateOn() {
@@ -1092,10 +1091,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "JobsFilterPopoverComponent": function() { return /* binding */ JobsFilterPopoverComponent; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! tslib */ 64762);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
 /* harmony import */ var _raw_loader_jobs_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./jobs-filter-popover.component.html */ 16607);
 /* harmony import */ var _jobs_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./jobs-filter-popover.component.scss */ 40958);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 80476);
 /* harmony import */ var src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/emitters/filter-jobs.service */ 67677);
 
@@ -1104,44 +1103,45 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 let JobsFilterPopoverComponent = class JobsFilterPopoverComponent {
-    constructor(popoverController, filterJobsService, navParams) {
+    constructor(popoverController, filterJobsService) {
         this.popoverController = popoverController;
         this.filterJobsService = filterJobsService;
-        this.navParams = navParams;
         // Initial Filter applied to each no page will be the newest filter.
-        this.selection = "newest";
+        this.selection = null;
     }
     ngOnInit() {
-        this.filterFromJobsPage = this.navParams.get('filter');
-        this.selection = this.filterFromJobsPage;
+        this.selection = this.filter;
+        return;
     }
     selectOption(e) {
         this.selection = e.detail.value;
         console.log(this.selection);
-        this.filterJobsService.filterJobs(this.selection);
+        this.dismiss();
+        return;
     }
     dismiss() {
-        this.popoverController.dismiss({
+        this.filterJobsService.filterBehaviorSub.next(this.selection);
+        return this.popoverController.dismiss({
             data: this.selection
         });
     }
 };
 JobsFilterPopoverComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController },
-    { type: src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__.FilterJobsService },
-    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.NavParams }
+    { type: src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__.FilterJobsService }
 ];
-JobsFilterPopoverComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+JobsFilterPopoverComponent.propDecorators = {
+    filter: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Input, args: ["filter",] }]
+};
+JobsFilterPopoverComponent = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-jobs-filter-popover',
         template: _raw_loader_jobs_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__.default,
         styles: [_jobs_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__.default]
     }),
-    (0,tslib__WEBPACK_IMPORTED_MODULE_4__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController,
-        src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__.FilterJobsService,
-        _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.NavParams])
+    (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController,
+        src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__.FilterJobsService])
 ], JobsFilterPopoverComponent);
 
 
@@ -1754,21 +1754,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FilterJobsService": function() { return /* binding */ FilterJobsService; }
 /* harmony export */ });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! rxjs */ 26215);
+
 
 
 let FilterJobsService = class FilterJobsService {
     constructor() {
-        this.filterJobsEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+        this.filterBehaviorSub = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject('newest');
     }
     filterJobs(selection) {
         console.log('Emitting from FilterJobs Emitter...');
-        this.filterJobsEmitter.emit(selection);
+        this.filterBehaviorSub.next(selection);
     }
 };
 FilterJobsService.ctorParameters = () => [];
 FilterJobsService = (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([
-    (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable)({
+    (0,_angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
         providedIn: 'root'
     }),
     (0,tslib__WEBPACK_IMPORTED_MODULE_1__.__metadata)("design:paramtypes", [])
@@ -3255,7 +3257,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-icon {\n  float: right;\n  z-index: 9999;\n  position: relative;\n  right: 10px;\n  margin-right: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhlYXJ0LWljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0FBQ0YiLCJmaWxlIjoiaGVhcnQtaWNvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pY29uIHtcbiAgZmxvYXQ6IHJpZ2h0O1xuICB6LWluZGV4OiA5OTk5O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHJpZ2h0OiAxMHB4O1xuICBtYXJnaW4tcmlnaHQ6IDIwcHg7XG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-icon {\n  z-index: 9999;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhlYXJ0LWljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0Esa0JBQUE7QUFDRiIsImZpbGUiOiJoZWFydC1pY29uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWljb24ge1xuICB6LWluZGV4OiA5OTk5O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59Il19 */");
 
 /***/ }),
 
@@ -3387,7 +3389,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-icon (click)=\"toggleLikeState()\" tappable [@heart]=\"favoriteState\" style=\"font-size: 3em\" [name]=\"iconName\"></ion-icon>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-icon (click)=\"toggleLikeState()\" tappable [@heart]=\"this.favoriteState\" style=\"font-size: 2em\" [name]=\"iconName\"></ion-icon>\n");
 
 /***/ }),
 

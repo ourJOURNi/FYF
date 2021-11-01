@@ -1833,43 +1833,41 @@
 
           this.favorites = favorites;
           this.profile = profile;
-          this.favoriteState = 'unfavorited';
           this.iconName = 'heart';
         }
 
         _createClass(HeartIconComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this8 = this;
+            this.favoriteState = 'unfavorited';
 
-            setTimeout(function () {
-              var _iterator = _createForOfIteratorHelper(_this8.favoriteJobs),
-                  _step;
+            var _iterator = _createForOfIteratorHelper(this.favoriteJobs),
+                _step;
 
-              try {
-                for (_iterator.s(); !(_step = _iterator.n()).done;) {
-                  var job = _step.value;
+            try {
+              for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                var favJob = _step.value;
 
-                  if (_this8.job._id == job._id) {
-                    _this8.setFavoriteStateOn();
-                  }
+                if (this.job._id === favJob['_id']) {
+                  console.log('There was a match!');
+                  return this.setFavoriteStateOn();
                 }
-              } catch (err) {
-                _iterator.e(err);
-              } finally {
-                _iterator.f();
               }
-            }, 300);
+            } catch (err) {
+              _iterator.e(err);
+            } finally {
+              _iterator.f();
+            }
           }
         }, {
           key: "toggleLikeState",
           value: function toggleLikeState() {
             if (this.favoriteState === 'unfavorited') {
               this.setFavoriteStateOn();
-              this.favorites.favoriteThisJob(this.job);
+              return this.favorites.favoriteThisJob(this.job);
             } else {
               this.setFavoriteStateOff();
-              this.favorites.unFavoriteThisJob(this.job);
+              return this.favorites.unFavoriteThisJob(this.job);
             }
           }
         }, {
@@ -1944,7 +1942,7 @@
       /* harmony import */
 
 
-      var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! tslib */
       64762);
       /* harmony import */
@@ -1962,7 +1960,7 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
       37716);
       /* harmony import */
@@ -1979,33 +1977,34 @@
       67677);
 
       var _JobsFilterPopoverComponent = /*#__PURE__*/function () {
-        function JobsFilterPopoverComponent(popoverController, filterJobsService, navParams) {
+        function JobsFilterPopoverComponent(popoverController, filterJobsService) {
           _classCallCheck(this, JobsFilterPopoverComponent);
 
           this.popoverController = popoverController;
-          this.filterJobsService = filterJobsService;
-          this.navParams = navParams; // Initial Filter applied to each no page will be the newest filter.
+          this.filterJobsService = filterJobsService; // Initial Filter applied to each no page will be the newest filter.
 
-          this.selection = "newest";
+          this.selection = null;
         }
 
         _createClass(JobsFilterPopoverComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            this.filterFromJobsPage = this.navParams.get('filter');
-            this.selection = this.filterFromJobsPage;
+            this.selection = this.filter;
+            return;
           }
         }, {
           key: "selectOption",
           value: function selectOption(e) {
             this.selection = e.detail.value;
             console.log(this.selection);
-            this.filterJobsService.filterJobs(this.selection);
+            this.dismiss();
+            return;
           }
         }, {
           key: "dismiss",
           value: function dismiss() {
-            this.popoverController.dismiss({
+            this.filterJobsService.filterBehaviorSub.next(this.selection);
+            return this.popoverController.dismiss({
               data: this.selection
             });
           }
@@ -2019,16 +2018,20 @@
           type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController
         }, {
           type: src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__.FilterJobsService
-        }, {
-          type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.NavParams
         }];
       };
 
-      _JobsFilterPopoverComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
+      _JobsFilterPopoverComponent.propDecorators = {
+        filter: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_4__.Input,
+          args: ["filter"]
+        }]
+      };
+      _JobsFilterPopoverComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-jobs-filter-popover',
         template: _raw_loader_jobs_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         styles: [_jobs_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
-      }), (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController, src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__.FilterJobsService, _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.NavParams])], _JobsFilterPopoverComponent);
+      }), (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController, src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__.FilterJobsService])], _JobsFilterPopoverComponent);
       /***/
     },
 
@@ -2428,7 +2431,7 @@
           key: "presentAlertConfirm",
           value: function presentAlertConfirm() {
             return (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee14() {
-              var _this9 = this;
+              var _this8 = this;
 
               var alert;
               return regeneratorRuntime.wrap(function _callee14$(_context14) {
@@ -2450,7 +2453,7 @@
                         }, {
                           text: 'Yes',
                           handler: function handler() {
-                            return (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(_this9, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
+                            return (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__awaiter)(_this8, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee13() {
                               return regeneratorRuntime.wrap(function _callee13$(_context13) {
                                 while (1) {
                                   switch (_context13.prev = _context13.next) {
@@ -2648,24 +2651,24 @@
         _createClass(UpDownVoteButtonsComponent, [{
           key: "ngOnInit",
           value: function ngOnInit() {
-            var _this10 = this;
+            var _this9 = this;
 
             // Get information about post
             this.posts.getPostInfo(this.postID).subscribe(function (postInfo) {
-              _this10.upVotes = postInfo['upvotes'];
-              _this10.downVotes = postInfo['downvotes'];
-              _this10.upVoters = postInfo['upvoters'];
-              _this10.downVoters = postInfo['downvoters'];
+              _this9.upVotes = postInfo['upvotes'];
+              _this9.downVotes = postInfo['downvotes'];
+              _this9.upVoters = postInfo['upvoters'];
+              _this9.downVoters = postInfo['downvoters'];
               var followers = postInfo['followers'];
 
-              _this10.upVotes$.next(_this10.upVotes);
+              _this9.upVotes$.next(_this9.upVotes);
 
-              _this10.downVotes$.next(_this10.downVotes);
+              _this9.downVotes$.next(_this9.downVotes);
 
-              _this10.upVoteLength = _this10.upVotes$.getValue();
-              _this10.downVoteLength = _this10.downVotes$.getValue(); // Get User Email
+              _this9.upVoteLength = _this9.upVotes$.getValue();
+              _this9.downVoteLength = _this9.downVotes$.getValue(); // Get User Email
 
-              _this10.profile.getUserDetails().subscribe(function (userDetails) {
+              _this9.profile.getUserDetails().subscribe(function (userDetails) {
                 var userEmail = userDetails['email'];
                 var following = false;
                 var upVoted = false;
@@ -2681,9 +2684,9 @@
                   }
                 }
 
-                _this10.upVoters.find(findUpVoter);
+                _this9.upVoters.find(findUpVoter);
 
-                _this10.downVoters.find(findDownVoter);
+                _this9.downVoters.find(findDownVoter);
 
                 function findUpVoter(upVoter) {
                   if (!upVoter) {}
@@ -2703,17 +2706,17 @@
                   }
                 }
 
-                _this10.userEmail = userEmail;
-                _this10.upVoted = upVoted;
-                _this10.downVoted = downVoted;
-                _this10.followers = followers;
-                _this10.following = following;
+                _this9.userEmail = userEmail;
+                _this9.upVoted = upVoted;
+                _this9.downVoted = downVoted;
+                _this9.followers = followers;
+                _this9.following = following;
                 console.log(followers.length);
 
-                _this10.followingLength$.next(followers.length);
+                _this9.followingLength$.next(followers.length);
 
-                _this10.followingLength$.subscribe(function (data) {
-                  _this10.followingLength = data;
+                _this9.followingLength$.subscribe(function (data) {
+                  _this9.followingLength = data;
                 });
               });
             });
@@ -2722,7 +2725,7 @@
           key: "upVotePost",
           value: function upVotePost() {
             return (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee16() {
-              var _this11 = this;
+              var _this10 = this;
 
               return regeneratorRuntime.wrap(function _callee16$(_context16) {
                 while (1) {
@@ -2734,16 +2737,16 @@
                         var downvotes = data['downvotes'];
                         console.log(data);
 
-                        _this11.upVotes$.next(upvotes);
+                        _this10.upVotes$.next(upvotes);
 
-                        _this11.downVotes$.next(downvotes);
+                        _this10.downVotes$.next(downvotes);
 
-                        _this11.upVoted = true;
-                        _this11.upVoteLength = _this11.upVotes$.getValue();
-                        _this11.downVoteLength = _this11.downVotes$.getValue();
+                        _this10.upVoted = true;
+                        _this10.upVoteLength = _this10.upVotes$.getValue();
+                        _this10.downVoteLength = _this10.downVotes$.getValue();
 
-                        if (_this11.upVoted === true) {
-                          return _this11.downVoted = false;
+                        if (_this10.upVoted === true) {
+                          return _this10.downVoted = false;
                         }
                       });
 
@@ -2791,7 +2794,7 @@
           key: "downVotePost",
           value: function downVotePost() {
             return (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee18() {
-              var _this12 = this;
+              var _this11 = this;
 
               return regeneratorRuntime.wrap(function _callee18$(_context18) {
                 while (1) {
@@ -2803,16 +2806,16 @@
                         var downvotes = data['downvotes'];
                         console.log(data);
 
-                        _this12.upVotes$.next(upvotes);
+                        _this11.upVotes$.next(upvotes);
 
-                        _this12.downVotes$.next(downvotes);
+                        _this11.downVotes$.next(downvotes);
 
-                        _this12.downVoted = true;
-                        _this12.upVoteLength = _this12.upVotes$.getValue();
-                        _this12.downVoteLength = _this12.downVotes$.getValue();
+                        _this11.downVoted = true;
+                        _this11.upVoteLength = _this11.upVotes$.getValue();
+                        _this11.downVoteLength = _this11.downVotes$.getValue();
 
-                        if (_this12.downVoted === true) {
-                          return _this12.upVoted = false;
+                        if (_this11.downVoted === true) {
+                          return _this11.upVoted = false;
                         }
                       });
 
@@ -3166,22 +3169,28 @@
       /* harmony import */
 
 
-      var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
       37716);
+      /* harmony import */
+
+
+      var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! rxjs */
+      26215);
 
       var _FilterJobsService = /*#__PURE__*/function () {
         function FilterJobsService() {
           _classCallCheck(this, FilterJobsService);
 
-          this.filterJobsEmitter = new _angular_core__WEBPACK_IMPORTED_MODULE_0__.EventEmitter();
+          this.filterBehaviorSub = new rxjs__WEBPACK_IMPORTED_MODULE_0__.BehaviorSubject('newest');
         }
 
         _createClass(FilterJobsService, [{
           key: "filterJobs",
           value: function filterJobs(selection) {
             console.log('Emitting from FilterJobs Emitter...');
-            this.filterJobsEmitter.emit(selection);
+            this.filterBehaviorSub.next(selection);
           }
         }]);
 
@@ -3192,7 +3201,7 @@
         return [];
       };
 
-      _FilterJobsService = (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_0__.Injectable)({
+      _FilterJobsService = (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_2__.Injectable)({
         providedIn: 'root'
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__metadata)("design:paramtypes", [])], _FilterJobsService);
       /***/
@@ -3477,7 +3486,7 @@
 
       var _AuthService = /*#__PURE__*/function () {
         function AuthService(http, storage, alertController, helper, plt, router, toast) {
-          var _this13 = this;
+          var _this12 = this;
 
           _classCallCheck(this, AuthService);
 
@@ -3509,9 +3518,9 @@
           }; // Inside the constructor we always check for an existing token so we can automatically log in a user
 
           this.plt.ready().then(function () {
-            _this13.checkToken();
+            _this12.checkToken();
 
-            _this13.getEmailFromToken();
+            _this12.getEmailFromToken();
           });
           console.log('Authentication State');
           this.authenticationState.subscribe(console.log);
@@ -3595,7 +3604,7 @@
           key: "checkToken",
           value: function checkToken() {
             return (0, tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee24() {
-              var _this14 = this;
+              var _this13 = this;
 
               return regeneratorRuntime.wrap(function _callee24$(_context24) {
                 while (1) {
@@ -3603,19 +3612,19 @@
                     case 0:
                       this.storage.get(this.TOKEN_KEY).then(function (token) {
                         if (token) {
-                          var decoded = _this14.helper.decodeToken(token);
+                          var decoded = _this13.helper.decodeToken(token);
 
-                          var isExpired = _this14.helper.isTokenExpired(token);
+                          var isExpired = _this13.helper.isTokenExpired(token);
 
                           if (!isExpired) {
-                            _this14.user = decoded;
+                            _this13.user = decoded;
                             console.log('Decoded Token: ' + JSON.stringify(decoded));
 
-                            _this14.authenticationState.next(true);
+                            _this13.authenticationState.next(true);
                           } else {
                             console.log('Token Removed from Storage');
 
-                            _this14.storage.remove(_this14.TOKEN_KEY);
+                            _this13.storage.remove(_this13.TOKEN_KEY);
                           }
                         }
                       });
@@ -3638,14 +3647,14 @@
         }, {
           key: "getEmailFromToken",
           value: function getEmailFromToken() {
-            var _this15 = this;
+            var _this14 = this;
 
             this.storage.get(this.TOKEN_KEY).then(function (token) {
               if (token) {
-                var decoded = _this15.helper.decodeToken(token);
+                var decoded = _this14.helper.decodeToken(token);
 
                 console.log('Token Email: ' + decoded.email);
-                _this15.activeEmail = decoded.email;
+                _this14.activeEmail = decoded.email;
               }
             });
           } //  Needs the Resonse Type to be text because I am sending the code, which isn't in JSON format
@@ -3677,7 +3686,7 @@
         }, {
           key: "login",
           value: function login(data) {
-            var _this16 = this;
+            var _this15 = this;
 
             console.log('Logging in');
             return this.loginSub = this.http.post("".concat(this.BACKEND_URL, "/api"), {
@@ -3688,25 +3697,25 @@
                 console.log('There was no response.');
               }
 
-              _this16.storage.set(_this16.TOKEN_KEY, res['token']);
+              _this15.storage.set(_this15.TOKEN_KEY, res['token']);
 
-              _this16.user = _this16.helper.decodeToken(res['token']);
-              _this16.activeEmail = _this16.user.email;
+              _this15.user = _this15.helper.decodeToken(res['token']);
+              _this15.activeEmail = _this15.user.email;
 
-              _this16.authenticationState.next(true);
+              _this15.authenticationState.next(true);
 
-              console.log('Active User: ' + _this16.user.email);
+              console.log('Active User: ' + _this15.user.email);
             }), (0, rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.catchError)(function (e) {
               console.error(e);
 
               if (e.error.msg === 'The email and password don\'t match.') {
-                _this16.presentAlert('Incorrect Email/Password', 'The email and password don\'t match.');
+                _this15.presentAlert('Incorrect Email/Password', 'The email and password don\'t match.');
               } else if (e.error.msg === 'The user does not exist') {
-                _this16.presentAlert('Nonexistent User Account', 'There is no account with that email address.');
+                _this15.presentAlert('Nonexistent User Account', 'There is no account with that email address.');
               } else if (e.message.startsWith('Http failure response')) {
-                _this16.presentAlert('Server Connection Error', 'There was a problem connecting to the server. Please try again later.');
+                _this15.presentAlert('Server Connection Error', 'There was a problem connecting to the server. Please try again later.');
               } else {
-                _this16.presentAlert('Email/Password Error', 'Please try again.');
+                _this15.presentAlert('Email/Password Error', 'Please try again.');
               }
 
               throw new Error(e);
@@ -3814,12 +3823,12 @@
         }, {
           key: "logout",
           value: function logout() {
-            var _this17 = this;
+            var _this16 = this;
 
             this.storage.remove(this.TOKEN_KEY).then(function (token) {
               console.log('Logging out...');
-              _this17.user = null;
-              _this17.userInfo = {
+              _this16.user = null;
+              _this16.userInfo = {
                 fullName: '',
                 about: '',
                 phone: '',
@@ -3831,7 +3840,7 @@
                 resume: '',
                 email: '',
                 password: ''
-              }, _this17.authenticationState.next(false); // window.location.reload();
+              }, _this16.authenticationState.next(false); // window.location.reload();
             });
           }
         }, {
@@ -4076,7 +4085,7 @@
         }, {
           key: "favoriteThisJob",
           value: function favoriteThisJob(job) {
-            var _this18 = this;
+            var _this17 = this;
 
             // get user's email for database query
             var email = this.profile.activeEmail; // put this job's id into this user's favoriteJobs property
@@ -4092,15 +4101,15 @@
 
               var updatedFavorites = _toConsumableArray(Object.values(data));
 
-              _this18.favoriteJobs$.next(updatedFavorites);
+              _this17.favoriteJobs$.next(updatedFavorites);
 
-              _this18.presentToastFavorited('You favorited this job!');
+              _this17.presentToastFavorited('You favorited this job!');
             });
           }
         }, {
           key: "unFavoriteThisJob",
           value: function unFavoriteThisJob(job) {
-            var _this19 = this;
+            var _this18 = this;
 
             // get user's email for database query
             var email = this.profile.activeEmail;
@@ -4111,7 +4120,7 @@
               email: email,
               _id: id
             }).subscribe(function (data) {
-              return (0, tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(_this19, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee28() {
+              return (0, tslib__WEBPACK_IMPORTED_MODULE_3__.__awaiter)(_this18, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee28() {
                 var updatedFavorites;
                 return regeneratorRuntime.wrap(function _callee28$(_context28) {
                   while (1) {
@@ -4353,7 +4362,7 @@
         }, {
           key: "commentNotification",
           value: function commentNotification(instigatingUser, recievingUser, postID, commentID) {
-            var _this20 = this;
+            var _this19 = this;
 
             console.log("Sending notfication to ".concat(recievingUser, " that ").concat(instigatingUser, " commented on their post.")); // tslint:disable-next-line: max-line-length
 
@@ -4365,7 +4374,7 @@
             }).subscribe(function (n) {
               console.log(n);
 
-              _this20.sendMessageWS(n);
+              _this19.sendMessageWS(n);
             });
           }
         }, {
@@ -4625,7 +4634,7 @@
         }, {
           key: "followPost",
           value: function followPost(postID, userEmail) {
-            var _this21 = this;
+            var _this20 = this;
 
             return this.http.post("".concat(this.BACKEND_URL, "/api/posts/follow"), {
               _id: postID,
@@ -4633,13 +4642,13 @@
             }).subscribe(function (data) {
               var updatedFollowingPosts = _toConsumableArray(Object.values(data));
 
-              _this21.followingSubject$.next(updatedFollowingPosts);
+              _this20.followingSubject$.next(updatedFollowingPosts);
             });
           }
         }, {
           key: "unFollowPost",
           value: function unFollowPost(postID, userEmail) {
-            var _this22 = this;
+            var _this21 = this;
 
             return this.http.post("".concat(this.BACKEND_URL, "/api/posts/unfollow"), {
               _id: postID,
@@ -4647,7 +4656,7 @@
             }).subscribe(function (data) {
               var updatedFollowingPosts = _toConsumableArray(Object.values(data));
 
-              _this22.followingSubject$.next(updatedFollowingPosts);
+              _this21.followingSubject$.next(updatedFollowingPosts);
             });
           }
         }, {
@@ -4874,7 +4883,7 @@
         }, {
           key: "changeEmail",
           value: function changeEmail(newEmail, password) {
-            var _this23 = this;
+            var _this22 = this;
 
             // tslint:disable-next-line: max-line-length
             return this.http.post("".concat(this.BACKEND_URL, "/api/home/user/change-email"), {
@@ -4882,20 +4891,20 @@
               email: newEmail,
               password: password
             }).pipe((0, rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(function (e) {
-              _this23.presentFailToast(_this23.activeEmail);
+              _this22.presentFailToast(_this22.activeEmail);
 
               throw new Error(e);
             })).subscribe(function (data) {
               if (data === true) {
-                _this23.email.next(newEmail);
+                _this22.email.next(newEmail);
 
-                _this23.activeEmail = newEmail;
+                _this22.activeEmail = newEmail;
 
-                _this23.router.navigate(['/home/profile']);
+                _this22.router.navigate(['/home/profile']);
 
-                _this23.presentSuccessToast();
+                _this22.presentSuccessToast();
               } else {
-                _this23.presentFailToast(_this23.activeEmail);
+                _this22.presentFailToast(_this22.activeEmail);
 
                 return console.log('Passwords dont match');
               }
@@ -4904,7 +4913,7 @@
         }, {
           key: "changePhone",
           value: function changePhone(newPhone, password) {
-            var _this24 = this;
+            var _this23 = this;
 
             // tslint:disable-next-line: max-line-length
             return this.http.post("".concat(this.BACKEND_URL, "/api/home/user/change-phone"), {
@@ -4912,20 +4921,20 @@
               newPhone: newPhone,
               password: password
             }).pipe((0, rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.catchError)(function (e) {
-              _this24.presentFailToast(_this24.activeEmail);
+              _this23.presentFailToast(_this23.activeEmail);
 
               throw new Error(e);
             })).subscribe(function (data) {
               if (data === true) {
-                _this24.phone.next(newPhone);
+                _this23.phone.next(newPhone);
 
-                _this24.phone = newPhone;
+                _this23.phone = newPhone;
 
-                _this24.router.navigate(['/home/profile']);
+                _this23.router.navigate(['/home/profile']);
 
-                _this24.presentSuccessToast();
+                _this23.presentSuccessToast();
               } else {
-                _this24.presentFailToast(_this24.activeEmail);
+                _this23.presentFailToast(_this23.activeEmail);
 
                 return console.log('Passwords dont match');
               }
@@ -4966,7 +4975,7 @@
           key: "changePassword",
           value: function changePassword(activeEmail, oldPassword, newPassword, reTypeNewPassword) {
             return (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee31() {
-              var _this25 = this;
+              var _this24 = this;
 
               return regeneratorRuntime.wrap(function _callee31$(_context31) {
                 while (1) {
@@ -4983,9 +4992,9 @@
                         if (data === true) {
                           console.log('TRUE');
 
-                          _this25.router.navigate(['']);
+                          _this24.router.navigate(['']);
 
-                          var toast = _this25.toastController.create({
+                          var toast = _this24.toastController.create({
                             message: 'Password updated. Please login with your new password.',
                             duration: 3000,
                             cssClass: 'updated-toast',
@@ -5042,7 +5051,7 @@
           key: "changeSchool",
           value: function changeSchool(email, newSchool, newGrade, password) {
             return (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee33() {
-              var _this26 = this;
+              var _this25 = this;
 
               return regeneratorRuntime.wrap(function _callee33$(_context33) {
                 while (1) {
@@ -5056,13 +5065,13 @@
                         password: password
                       }).subscribe(function (data) {
                         if (data === true) {
-                          _this26.school.next(newSchool);
+                          _this25.school.next(newSchool);
 
-                          _this26.grade.next(newGrade);
+                          _this25.grade.next(newGrade);
 
-                          _this26.router.navigate(['/home/profile']);
+                          _this25.router.navigate(['/home/profile']);
 
-                          var successToast = _this26.toastController.create({
+                          var successToast = _this25.toastController.create({
                             // tslint:disable-next-line: max-line-length
                             message: 'Your school information has been updated.',
                             duration: 3000,
@@ -5075,7 +5084,7 @@
                             return t.present();
                           });
                         } else {
-                          var failToast = _this26.toastController.create({
+                          var failToast = _this25.toastController.create({
                             // tslint:disable-next-line: max-line-length
                             message: 'Please make sure your password is correct',
                             duration: 3000,
@@ -5127,7 +5136,7 @@
           key: "changeResume",
           value: function changeResume(email, newResume, password) {
             return (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__awaiter)(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee35() {
-              var _this27 = this;
+              var _this26 = this;
 
               return regeneratorRuntime.wrap(function _callee35$(_context35) {
                 while (1) {
@@ -5142,9 +5151,9 @@
                         if (data === true) {
                           console.log('Changing Resume...');
 
-                          _this27.resume.next(newResume);
+                          _this26.resume.next(newResume);
 
-                          _this27.router.navigate(['/home/user/change-school/:school/:grade/confirm']);
+                          _this26.router.navigate(['/home/user/change-school/:school/:grade/confirm']);
                         } else {
                           return console.log('Passwords dont match');
                         }
@@ -5438,7 +5447,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "ion-icon {\n  float: right;\n  z-index: 9999;\n  position: relative;\n  right: 10px;\n  margin-right: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhlYXJ0LWljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsYUFBQTtFQUNBLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLGtCQUFBO0FBQ0YiLCJmaWxlIjoiaGVhcnQtaWNvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pY29uIHtcbiAgZmxvYXQ6IHJpZ2h0O1xuICB6LWluZGV4OiA5OTk5O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHJpZ2h0OiAxMHB4O1xuICBtYXJnaW4tcmlnaHQ6IDIwcHg7XG59Il19 */";
+      __webpack_exports__["default"] = "ion-icon {\n  z-index: 9999;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhlYXJ0LWljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0Esa0JBQUE7QUFDRiIsImZpbGUiOiJoZWFydC1pY29uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWljb24ge1xuICB6LWluZGV4OiA5OTk5O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59Il19 */";
       /***/
     },
 
@@ -5570,7 +5579,7 @@
       /* harmony default export */
 
 
-      __webpack_exports__["default"] = "<ion-icon (click)=\"toggleLikeState()\" tappable [@heart]=\"favoriteState\" style=\"font-size: 3em\" [name]=\"iconName\"></ion-icon>\n";
+      __webpack_exports__["default"] = "<ion-icon (click)=\"toggleLikeState()\" tappable [@heart]=\"this.favoriteState\" style=\"font-size: 2em\" [name]=\"iconName\"></ion-icon>\n";
       /***/
     },
 
