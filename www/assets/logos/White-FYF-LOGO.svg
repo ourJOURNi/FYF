@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="685px" height="250px" viewBox="0 0 685 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>White-FYF-LOGO Copy 3</title>
+    <g id="White-FYF-LOGO-Copy-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" transform="translate(15.000000, 12.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <polygon id="Path-2" points="0 70.4433527 72 0 72 48.5763281 0 118"></polygon>
+            <polygon id="Path-2-Copy-2" transform="translate(108.000000, 59.000000) scale(-1, 1) translate(-108.000000, -59.000000) " points="72 70.4433527 144 0 144 48.5763281 72 118"></polygon>
+            <polygon id="Path-2-Copy-3" transform="translate(108.000000, 157.000000) scale(-1, 1) translate(-108.000000, -157.000000) " points="72 168.443353 144 98 144 146.576328 72 216"></polygon>
+            <polygon id="Path-2-Copy" points="0 168.443353 72 98 72 146.576328 0 216"></polygon>
+        </g>
+        <text id="FUTURE" fill="#FFFFFF" fill-rule="nonzero" font-family="Arial-BoldMT, Arial" font-size="120" font-weight="bold">
+            <tspan x="182" y="225">FUTURE</tspan>
+        </text>
+        <text id="FIND-YOUR" fill="#FFFFFF" fill-rule="nonzero" font-family="Arial-BoldMT, Arial" font-size="88" font-weight="bold">
+            <tspan x="182" y="80">FIND YOUR</tspan>
+        </text>
+        <line x1="192" y1="107.5" x2="659" y2="108" id="Line" stroke="#F9B216" stroke-width="10" stroke-linecap="square"></line>
+    </g>
+</svg>
