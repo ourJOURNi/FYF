@@ -7,7 +7,13 @@
 
   (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["src_app_pages_auth_sign-up_profile-picture_profile-picture_module_ts"], {
     /***/
-    7777: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    62292:
+    /*!**************************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/core-plugin-definitions.js ***!
+      \**************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -315,14 +321,19 @@
          */
 
         StatusBarAnimation["Fade"] = "FADE";
-      })(_StatusBarAnimation || (_StatusBarAnimation = {})); //# sourceMappingURL=core-plugin-definitions.js.map
-
+      })(_StatusBarAnimation || (_StatusBarAnimation = {}));
       /***/
 
     },
 
     /***/
-    32653: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    14857:
+    /*!*********************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/global.js ***!
+      \*********************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -363,7 +374,7 @@
 
       var _web_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./web-runtime */
-      31994); // Create our default Capacitor instance, which will be
+      66131); // Create our default Capacitor instance, which will be
       // overridden on native platforms
 
 
@@ -376,13 +387,18 @@
       // ensure errors are not thrown in an node SSR environment or web worker
       typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {});
 
-      var _Plugins = Capacitor.Plugins; //# sourceMappingURL=global.js.map
-
+      var _Plugins = Capacitor.Plugins;
       /***/
     },
 
     /***/
-    51188: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    19889:
+    /*!********************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/index.js ***!
+      \********************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -845,32 +861,37 @@
 
       var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./core-plugin-definitions */
-      7777);
+      62292);
       /* harmony import */
 
 
       var _global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./global */
-      32653);
+      14857);
       /* harmony import */
 
 
       var _web_plugins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./web-plugins */
-      59339);
+      74754);
       /* harmony import */
 
 
       var _web_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./web/index */
-      76605); //# sourceMappingURL=index.js.map
-
+      883);
       /***/
 
     },
 
     /***/
-    56949: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    85135:
+    /*!*******************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/util.js ***!
+      \*******************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -922,14 +943,19 @@
               v = c === 'x' ? r : r & 0x3 | 0x8;
           return v.toString(16);
         });
-      }; //# sourceMappingURL=util.js.map
-
+      };
       /***/
 
     },
 
     /***/
-    59339: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    74754:
+    /*!**************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web-plugins.js ***!
+      \**************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1224,128 +1250,133 @@
 
       var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./global */
-      32653);
+      14857);
       /* harmony import */
 
 
       var _web_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./web/index */
-      76605);
+      883);
       /* harmony import */
 
 
       var _web_accessibility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./web/accessibility */
-      35825);
+      58359);
       /* harmony import */
 
 
       var _web_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ./web/app */
-      319);
+      33458);
       /* harmony import */
 
 
       var _web_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! ./web/browser */
-      3538);
+      81282);
       /* harmony import */
 
 
       var _web_camera__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! ./web/camera */
-      29842);
+      17872);
       /* harmony import */
 
 
       var _web_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! ./web/clipboard */
-      96362);
+      2300);
       /* harmony import */
 
 
       var _web_filesystem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! ./web/filesystem */
-      5);
+      13378);
       /* harmony import */
 
 
       var _web_geolocation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! ./web/geolocation */
-      35956);
+      40356);
       /* harmony import */
 
 
       var _web_device__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! ./web/device */
-      9747);
+      30461);
       /* harmony import */
 
 
       var _web_local_notifications__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! ./web/local-notifications */
-      62146);
+      56247);
       /* harmony import */
 
 
       var _web_share__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! ./web/share */
-      17881);
+      80683);
       /* harmony import */
 
 
       var _web_modals__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ./web/modals */
-      54374);
+      40705);
       /* harmony import */
 
 
       var _web_motion__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! ./web/motion */
-      73813);
+      83546);
       /* harmony import */
 
 
       var _web_network__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! ./web/network */
-      10840);
+      56451);
       /* harmony import */
 
 
       var _web_permissions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! ./web/permissions */
-      14383);
+      46201);
       /* harmony import */
 
 
       var _web_splash_screen__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! ./web/splash-screen */
-      55477);
+      51923);
       /* harmony import */
 
 
       var _web_storage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! ./web/storage */
-      23030);
+      99081);
       /* harmony import */
 
 
       var _web_toast__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! ./web/toast */
-      31814);
+      61135);
 
       (0, _web_index__WEBPACK_IMPORTED_MODULE_1__.mergeWebPlugins)(_global__WEBPACK_IMPORTED_MODULE_0__.Plugins);
 
       var _registerWebPlugin = function _registerWebPlugin(plugin) {
         (0, _web_index__WEBPACK_IMPORTED_MODULE_1__.mergeWebPlugin)(_global__WEBPACK_IMPORTED_MODULE_0__.Plugins, plugin);
-      }; //# sourceMappingURL=web-plugins.js.map
-
+      };
       /***/
 
     },
 
     /***/
-    31994: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    66131:
+    /*!**************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web-runtime.js ***!
+      \**************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1364,7 +1395,9 @@
 
       });
 
-      var _CapacitorWeb = function () {
+      var _CapacitorWeb =
+      /** @class */
+      function () {
         function CapacitorWeb() {
           var _this = this;
 
@@ -1421,14 +1454,19 @@
         };
 
         return CapacitorWeb;
-      }(); //# sourceMappingURL=web-runtime.js.map
-
+      }();
       /***/
 
     },
 
     /***/
-    35825: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    58359:
+    /*!********************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/accessibility.js ***!
+      \********************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1459,15 +1497,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _AccessibilityPluginWeb = function (_super) {
+      var _AccessibilityPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(AccessibilityPluginWeb, _super);
 
         function AccessibilityPluginWeb() {
@@ -1499,14 +1539,19 @@
         return AccessibilityPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Accessibility = new _AccessibilityPluginWeb(); //# sourceMappingURL=accessibility.js.map
-
+      var _Accessibility = new _AccessibilityPluginWeb();
       /***/
 
     },
 
     /***/
-    319: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    33458:
+    /*!**********************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/app.js ***!
+      \**********************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1537,15 +1582,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _AppPluginWeb = function (_super) {
+      var _AppPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(AppPluginWeb, _super);
 
         function AppPluginWeb() {
@@ -1599,14 +1646,19 @@
         return AppPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _App = new _AppPluginWeb(); //# sourceMappingURL=app.js.map
-
+      var _App = new _AppPluginWeb();
       /***/
 
     },
 
     /***/
-    3538: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    81282:
+    /*!**************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/browser.js ***!
+      \**************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1637,15 +1689,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _BrowserPluginWeb = function (_super) {
+      var _BrowserPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(BrowserPluginWeb, _super);
 
         function BrowserPluginWeb() {
@@ -1691,14 +1745,19 @@
         return BrowserPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Browser = new _BrowserPluginWeb(); //# sourceMappingURL=browser.js.map
-
+      var _Browser = new _BrowserPluginWeb();
       /***/
 
     },
 
     /***/
-    29842: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    17872:
+    /*!*************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/camera.js ***!
+      \*************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1729,21 +1788,23 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
       /* harmony import */
 
 
       var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../core-plugin-definitions */
-      7777);
+      62292);
 
-      var _CameraPluginWeb = function (_super) {
+      var _CameraPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__extends)(CameraPluginWeb, _super);
 
         function CameraPluginWeb() {
@@ -1979,14 +2040,19 @@
         return CameraPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Camera = new _CameraPluginWeb(); //# sourceMappingURL=camera.js.map
-
+      var _Camera = new _CameraPluginWeb();
       /***/
 
     },
 
     /***/
-    96362: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    2300:
+    /*!****************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/clipboard.js ***!
+      \****************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2017,15 +2083,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _ClipboardPluginWeb = function (_super) {
+      var _ClipboardPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(ClipboardPluginWeb, _super);
 
         function ClipboardPluginWeb() {
@@ -2252,14 +2320,19 @@
         return ClipboardPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Clipboard = new _ClipboardPluginWeb(); //# sourceMappingURL=clipboard.js.map
-
+      var _Clipboard = new _ClipboardPluginWeb();
       /***/
 
     },
 
     /***/
-    9747: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    30461:
+    /*!*************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/device.js ***!
+      \*************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2290,21 +2363,23 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
       /* harmony import */
 
 
       var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../util */
-      56949);
+      85135);
 
-      var _DevicePluginWeb = function (_super) {
+      var _DevicePluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__extends)(DevicePluginWeb, _super);
 
         function DevicePluginWeb() {
@@ -2451,14 +2526,19 @@
         return DevicePluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Device = new _DevicePluginWeb(); //# sourceMappingURL=device.js.map
-
+      var _Device = new _DevicePluginWeb();
       /***/
 
     },
 
     /***/
-    5: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    13378:
+    /*!*****************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/filesystem.js ***!
+      \*****************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2489,21 +2569,23 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
       /* harmony import */
 
 
       var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../core-plugin-definitions */
-      7777);
+      62292);
 
-      var _FilesystemPluginWeb = function (_super) {
+      var _FilesystemPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__extends)(FilesystemPluginWeb, _super);
 
         function FilesystemPluginWeb() {
@@ -3554,14 +3636,19 @@
         return FilesystemPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Filesystem = new _FilesystemPluginWeb(); //# sourceMappingURL=filesystem.js.map
-
+      var _Filesystem = new _FilesystemPluginWeb();
       /***/
 
     },
 
     /***/
-    35956: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    40356:
+    /*!******************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/geolocation.js ***!
+      \******************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3592,21 +3679,23 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
       /* harmony import */
 
 
       var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../util */
-      56949);
+      85135);
 
-      var _GeolocationPluginWeb = function (_super) {
+      var _GeolocationPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__extends)(GeolocationPluginWeb, _super);
 
         function GeolocationPluginWeb() {
@@ -3655,14 +3744,19 @@
         return GeolocationPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Geolocation = new _GeolocationPluginWeb(); //# sourceMappingURL=geolocation.js.map
-
+      var _Geolocation = new _GeolocationPluginWeb();
       /***/
 
     },
 
     /***/
-    76605: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    883:
+    /*!************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/index.js ***!
+      \************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3713,7 +3807,9 @@
 
       });
 
-      var _WebPluginRegistry = function () {
+      var _WebPluginRegistry =
+      /** @class */
+      function () {
         function WebPluginRegistry() {
           this.plugins = {};
           this.loadedPlugins = {};
@@ -3753,7 +3849,9 @@
 
       var _WebPlugins = new _WebPluginRegistry();
 
-      var _WebPlugin = function () {
+      var _WebPlugin =
+      /** @class */
+      function () {
         function WebPlugin(config, pluginRegistry) {
           this.config = config;
           this.loaded = false;
@@ -3906,14 +4004,19 @@
         }
 
         knownPlugins[plugin.config.name] = plugin;
-      }; //# sourceMappingURL=index.js.map
-
+      };
       /***/
 
     },
 
     /***/
-    62146: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    56247:
+    /*!**************************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/local-notifications.js ***!
+      \**************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3944,15 +4047,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _LocalNotificationsPluginWeb = function (_super) {
+      var _LocalNotificationsPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(LocalNotificationsPluginWeb, _super);
 
         function LocalNotificationsPluginWeb() {
@@ -4103,14 +4208,19 @@
         return LocalNotificationsPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _LocalNotifications = new _LocalNotificationsPluginWeb(); //# sourceMappingURL=local-notifications.js.map
-
+      var _LocalNotifications = new _LocalNotificationsPluginWeb();
       /***/
 
     },
 
     /***/
-    54374: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    40705:
+    /*!*************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/modals.js ***!
+      \*************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4141,15 +4251,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _ModalsPluginWeb = function (_super) {
+      var _ModalsPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(ModalsPluginWeb, _super);
 
         function ModalsPluginWeb() {
@@ -4250,14 +4362,19 @@
         return ModalsPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Modals = new _ModalsPluginWeb(); //# sourceMappingURL=modals.js.map
-
+      var _Modals = new _ModalsPluginWeb();
       /***/
 
     },
 
     /***/
-    73813: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    83546:
+    /*!*************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/motion.js ***!
+      \*************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4288,15 +4405,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _MotionPluginWeb = function (_super) {
+      var _MotionPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(MotionPluginWeb, _super);
 
         function MotionPluginWeb() {
@@ -4314,14 +4433,19 @@
         return MotionPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Motion = new _MotionPluginWeb(); //# sourceMappingURL=motion.js.map
-
+      var _Motion = new _MotionPluginWeb();
       /***/
 
     },
 
     /***/
-    10840: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    56451:
+    /*!**************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/network.js ***!
+      \**************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4352,15 +4476,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _NetworkPluginWeb = function (_super) {
+      var _NetworkPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(NetworkPluginWeb, _super);
 
         function NetworkPluginWeb() {
@@ -4418,14 +4544,19 @@
         return NetworkPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Network = new _NetworkPluginWeb(); //# sourceMappingURL=network.js.map
-
+      var _Network = new _NetworkPluginWeb();
       /***/
 
     },
 
     /***/
-    14383: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    46201:
+    /*!******************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/permissions.js ***!
+      \******************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4456,21 +4587,23 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
       /* harmony import */
 
 
       var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../core-plugin-definitions */
-      7777);
+      62292);
 
-      var _PermissionsPluginWeb = function (_super) {
+      var _PermissionsPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__extends)(PermissionsPluginWeb, _super);
 
         function PermissionsPluginWeb() {
@@ -4515,14 +4648,19 @@
         return PermissionsPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Permissions = new _PermissionsPluginWeb(); //# sourceMappingURL=permissions.js.map
-
+      var _Permissions = new _PermissionsPluginWeb();
       /***/
 
     },
 
     /***/
-    17881: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    80683:
+    /*!************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/share.js ***!
+      \************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4553,15 +4691,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _SharePluginWeb = function (_super) {
+      var _SharePluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(SharePluginWeb, _super);
 
         function SharePluginWeb() {
@@ -4586,14 +4726,19 @@
         return SharePluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Share = new _SharePluginWeb(); //# sourceMappingURL=share.js.map
-
+      var _Share = new _SharePluginWeb();
       /***/
 
     },
 
     /***/
-    55477: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    51923:
+    /*!********************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/splash-screen.js ***!
+      \********************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4624,15 +4769,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _SplashScreenPluginWeb = function (_super) {
+      var _SplashScreenPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(SplashScreenPluginWeb, _super);
 
         function SplashScreenPluginWeb() {
@@ -4653,14 +4800,19 @@
         return SplashScreenPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _SplashScreen = new _SplashScreenPluginWeb(); //# sourceMappingURL=splash-screen.js.map
-
+      var _SplashScreen = new _SplashScreenPluginWeb();
       /***/
 
     },
 
     /***/
-    23030: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    99081:
+    /*!**************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/storage.js ***!
+      \**************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4691,15 +4843,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _StoragePluginWeb = function (_super) {
+      var _StoragePluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(StoragePluginWeb, _super);
 
         function StoragePluginWeb() {
@@ -4782,14 +4936,19 @@
         return StoragePluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Storage = new _StoragePluginWeb(); //# sourceMappingURL=storage.js.map
-
+      var _Storage = new _StoragePluginWeb();
       /***/
 
     },
 
     /***/
-    31814: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    61135:
+    /*!************************************************************!*\
+      !*** ./node_modules/@capacitor/core/dist/esm/web/toast.js ***!
+      \************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4820,15 +4979,17 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index */
-      76605);
+      883);
 
-      var _ToastPluginWeb = function (_super) {
+      var _ToastPluginWeb =
+      /** @class */
+      function (_super) {
         (0, tslib__WEBPACK_IMPORTED_MODULE_1__.__extends)(ToastPluginWeb, _super);
 
         function ToastPluginWeb() {
@@ -4862,14 +5023,19 @@
         return ToastPluginWeb;
       }(_index__WEBPACK_IMPORTED_MODULE_0__.WebPlugin);
 
-      var _Toast = new _ToastPluginWeb(); //# sourceMappingURL=toast.js.map
-
+      var _Toast = new _ToastPluginWeb();
       /***/
 
     },
 
     /***/
-    4937: function _(module) {
+    61630:
+    /*!******************************************************!*\
+      !*** ./node_modules/compressorjs/dist/compressor.js ***!
+      \******************************************************/
+
+    /***/
+    function _(module) {
       /*!
        * Compressor.js v1.0.7
        * https://fengyuanchen.github.io/compressorjs
@@ -5847,7 +6013,13 @@
     },
 
     /***/
-    60793: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    60793:
+    /*!**************************************************************************************!*\
+      !*** ./src/app/pages/auth/sign-up/profile-picture/profile-picture-routing.module.ts ***!
+      \**************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5870,19 +6042,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -5918,7 +6090,13 @@
     },
 
     /***/
-    49305: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    49305:
+    /*!******************************************************************************!*\
+      !*** ./src/app/pages/auth/sign-up/profile-picture/profile-picture.module.ts ***!
+      \******************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5941,31 +6119,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
-      38583);
+      54364);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/forms */
-      3679);
+      1707);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -5997,7 +6175,13 @@
     },
 
     /***/
-    83289: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    83289:
+    /*!****************************************************************************!*\
+      !*** ./src/app/pages/auth/sign-up/profile-picture/profile-picture.page.ts ***!
+      \****************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -6020,43 +6204,43 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_profile_picture_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./profile-picture.page.html */
-      94827);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_profile_picture_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./profile-picture.page.html */
+      34859);
       /* harmony import */
 
 
       var _profile_picture_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./profile-picture.page.scss */
-      87187);
+      15854);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var _capacitor_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @capacitor/core */
-      51188);
+      19889);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -6086,7 +6270,7 @@
 
       var compressorjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! compressorjs */
-      4937);
+      61630);
       /* harmony import */
 
 
@@ -6458,27 +6642,21 @@
 
       _ProfilePicturePage = (0, tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_11__.Component)({
         selector: 'app-profile-picture',
-        template: _raw_loader_profile_picture_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_profile_picture_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         providers: [],
-        styles: [_profile_picture_page_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        styles: [_profile_picture_page_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_8__.__metadata)("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router, _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.AlertController, _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.LoadingController, _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ModalController, _services_photo_service__WEBPACK_IMPORTED_MODULE_4__.PhotoService, _services_auth_service__WEBPACK_IMPORTED_MODULE_3__.AuthService, _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.ToastController])], _ProfilePicturePage);
       /***/
     },
 
     /***/
-    87187: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".image-cropper {\n  height: 100%;\n  width: 100%;\n}\n\n.desktop-toolbar {\n  --background: none;\n  padding-bottom: 16px;\n  border-bottom: 1px solid #33333326;\n}\n\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n\n.back-button {\n  --color: white;\n  --background: #0055a5;\n  --background-hover: linear-gradient(#0055a5, #0c375f);\n  height: 24px;\n  --border-radius: 5px;\n  width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n}\n\n.orange-button {\n  width: unset;\n  display: block;\n  margin: 8px auto;\n  width: 200px;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 1;\n}\n\n.skip-button {\n  display: block;\n  --background: #e6e6e6;\n  --background-hover: #999;\n  color: #888;\n  width: 200px;\n  font-weight: 600;\n  margin: 8px auto;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 0.5;\n}\n\n#default-picture-wrapper {\n  height: 100px;\n  width: 100px;\n  margin: 0 auto;\n  border-radius: 50px;\n  background-image: url('default-pro-picture.svg');\n}\n\n#uploaded-photo {\n  height: 100px;\n  box-shadow: 1px 1px 28px rgba(0, 0, 0, 0.2);\n  border-radius: 100px;\n}\n\n#upload-picture-wrapper {\n  height: 100px;\n  width: 100px;\n  margin: 0 auto;\n  border-radius: 50px;\n}\n\nspan {\n  color: #0055a5;\n  font-weight: 600;\n  background: white;\n  padding: 6px;\n  line-height: 1.5em;\n  border-radius: 5px;\n}\n\n#next-button {\n  width: 100%;\n  height: 60px;\n  margin: 8px auto;\n  background: lightgray;\n  position: absolute;\n  bottom: 0;\n  font-size: 1em;\n}\n\n.cancel-button {\n  color: #e4405f;\n  --background: none;\n  --background-hover: linear-gradient(#f15b77, #e4405f);\n  height: 50px;\n  width: 200px;\n  transition: 0.5s;\n  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\n.cancel-button:hover {\n  color: white;\n}\n\n.get-picture-button {\n  --background: #1FCC6D;\n  --color: white;\n  height: 50px;\n  font-weight: 600;\n  margin: 32px auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2ZpbGUtcGljdHVyZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBQUNGOztBQUNBO0VBQ0Usa0JBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0FBRUY7O0FBQUU7RUFDRSxjQUFBO0FBRUo7O0FBQ0E7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxxREFBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUVGOztBQUFBO0VBQ0UsWUFBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSx1QkFBQTtVQUFBLGVBQUE7RUFDQSxVQUFBO0FBR0Y7O0FBREE7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSx3QkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLHVCQUFBO1VBQUEsZUFBQTtFQUNBLFlBQUE7QUFJRjs7QUFGQTtFQUNFLGFBQUE7RUFBZSxZQUFBO0VBQ2YsY0FBQTtFQUNBLG1CQUFBO0VBQ0EsZ0RBQUE7QUFNRjs7QUFKQTtFQUNFLGFBQUE7RUFFQSwyQ0FBQTtFQUNBLG9CQUFBO0FBTUY7O0FBSkE7RUFDRSxhQUFBO0VBQWUsWUFBQTtFQUNmLGNBQUE7RUFDQSxtQkFBQTtBQVFGOztBQUxBO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtBQVFGOztBQU5BO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsY0FBQTtBQVNGOztBQVBBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EscURBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUVBQUE7QUFVRjs7QUFQQTtFQUNFLFlBQUE7QUFVRjs7QUFSQTtFQUNFLHFCQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBV0YiLCJmaWxlIjoicHJvZmlsZS1waWN0dXJlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZS1jcm9wcGVyIHtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbn1cbi5kZXNrdG9wLXRvb2xiYXJ7XG4gIC0tYmFja2dyb3VuZDogbm9uZTtcbiAgcGFkZGluZy1ib3R0b206IDE2cHg7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMzMzMzMzMjY7XG5cbiAgaDEge1xuICAgIGNvbG9yOiAjMDA1NWE1O1xuICB9XG59XG4uYmFjay1idXR0b24ge1xuICAtLWNvbG9yOiB3aGl0ZTtcbiAgLS1iYWNrZ3JvdW5kOiAjMDA1NWE1O1xuICAtLWJhY2tncm91bmQtaG92ZXI6IGxpbmVhci1ncmFkaWVudCgjMDA1NWE1LCAjMGMzNzVmKTtcbiAgaGVpZ2h0OiAyNHB4O1xuICAtLWJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IDEwMHB4O1xuICBmb250LXNpemU6IDAuNWVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5vcmFuZ2UtYnV0dG9uIHtcbiAgd2lkdGg6IHVuc2V0O1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiA4cHggYXV0bztcbiAgd2lkdGg6IDIwMHB4O1xuICBhbmltYXRpb246IG5vbmU7XG4gIG9wYWNpdHk6IDE7XG59XG4uc2tpcC1idXR0b257XG4gIGRpc3BsYXk6IGJsb2NrO1xuICAtLWJhY2tncm91bmQ6ICNlNmU2ZTY7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogIzk5OTtcbiAgY29sb3I6ICM4ODg7XG4gIHdpZHRoOiAyMDBweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgbWFyZ2luOiA4cHggYXV0bztcbiAgYW5pbWF0aW9uOiBub25lO1xuICBvcGFjaXR5OiAwLjU7XG59XG4jZGVmYXVsdC1waWN0dXJlLXdyYXBwZXIge1xuICBoZWlnaHQ6IDEwMHB4OyB3aWR0aDogMTAwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBib3JkZXItcmFkaXVzOiA1MHB4O1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uLy4uLy4uLy4uLy4uL2Fzc2V0cy9pY29uL2RlZmF1bHQtcHJvLXBpY3R1cmUuc3ZnJyk7XG59XG4jdXBsb2FkZWQtcGhvdG8ge1xuICBoZWlnaHQ6IDEwMHB4O1xuICAvLyBib3JkZXI6IDVweCBzb2xpZCAjZmFhNzFiO1xuICBib3gtc2hhZG93OiAxcHggMXB4IDI4cHggcmdiKDAgMCAwIC8gMjAlKTtcbiAgYm9yZGVyLXJhZGl1czogMTAwcHg7XG59XG4jdXBsb2FkLXBpY3R1cmUtd3JhcHBlciB7XG4gIGhlaWdodDogMTAwcHg7IHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGJvcmRlci1yYWRpdXM6IDUwcHg7XG4gIC8vIGJvcmRlci1yYWRpdXM6IDUwcHg7XG59XG5zcGFue1xuICBjb2xvcjogIzAwNTVhNTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgYmFja2dyb3VuZDogd2hpdGU7XG4gIHBhZGRpbmc6IDZweDtcbiAgbGluZS1oZWlnaHQ6IDEuNWVtO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG59XG4jbmV4dC1idXR0b257XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDYwcHg7XG4gIG1hcmdpbjogOHB4IGF1dG87XG4gIGJhY2tncm91bmQ6IGxpZ2h0Z3JheTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBib3R0b206IDA7XG4gIGZvbnQtc2l6ZTogMWVtO1xufVxuLmNhbmNlbC1idXR0b24ge1xuICBjb2xvcjogI2U0NDA1ZjtcbiAgLS1iYWNrZ3JvdW5kOiAgbm9uZTtcbiAgLS1iYWNrZ3JvdW5kLWhvdmVyOiBsaW5lYXItZ3JhZGllbnQoI2YxNWI3NywgI2U0NDA1Zik7XG4gIGhlaWdodDogNTBweDtcbiAgd2lkdGg6IDIwMHB4O1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICB0cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpO1xufVxuXG4uY2FuY2VsLWJ1dHRvbjpob3ZlciB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5nZXQtcGljdHVyZS1idXR0b24ge1xuICAtLWJhY2tncm91bmQ6ICMxRkNDNkQ7XG4gIC0tY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDUwcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIG1hcmdpbjogMzJweCBhdXRvO1xufVxuXG4iXX0= */";
-      /***/
-    },
+    34859:
+    /*!*********************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/pages/auth/sign-up/profile-picture/profile-picture.page.html ***!
+      \*********************************************************************************************************************************************/
 
     /***/
-    94827: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -6486,6 +6664,20 @@
 
 
       __webpack_exports__["default"] = "<ion-header class=\"ion-hide-md-up\">\n  <ion-toolbar mode=\"md\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n    </ion-buttons>\n    <ion-buttons slot=\"end\">\n      <img style=\"margin-right: 16px;\" height=\"32\" src=\"../../../../../assets/icon/fyf-white-icon.svg\">\n    </ion-buttons>\n    <ion-title size=\"small\">Profile Picture</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"ion-text-center\">\n  <div class=\"spacer ion-hide-lg-down\"></div>\n  <ion-grid>\n    <!-- Desktop Header -->\n    <ion-row style=\"padding-top: 80px; margin-bottom: 40px;\" class=\"ion-hide-lg-down ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <ion-toolbar class=\"desktop-toolbar\">\n              <ion-buttons slot=\"start\">\n                  <img height=\"50\" src=\"../../../../../assets/icon/Logo 2.0.svg\" alt=\"\" srcset=\"\">\n              </ion-buttons>\n              <ion-buttons slot=\"end\">\n                <ion-button class=\"back-button\" (click)=\"cancel()\">\n                  Back\n                </ion-button>\n              </ion-buttons>\n        </ion-toolbar>\n            <!-- <img height=\"50\" style=\"display: inline;\" src=\"../../../assets/icon/suitcase-blue.svg\" alt=\"\" srcset=\"\">\n            <h1 style=\"display: inline; margin-left: 15px;\">Jobs</h1> -->\n      </ion-col>\n    </ion-row>\n\n    <!-- Header -->\n    <ion-row class=\"ion-justify-content-center header\">\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <h6 class=\"text-header\">Please upload your Profile Picture</h6>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class=\"ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <!-- Picture Wrappers -->\n        <ion-col  size-lg=\"3\" size-md=\"7\" size-xs=\"11\" class=\"ion-align-items-center\">\n          <!-- Default Picture if user does not select profile picture Wrapper -->\n          <canvas\n            #defaultPicture\n            id=\"default-picture-wrapper\"\n            *ngIf=\"!uploadedPhoto\"></canvas>\n\n          <!-- User has uploaded cropped profile picture -->\n          <img id=\"uploaded-photo\" *ngIf=\"this.uploadedPhoto\" src=\"{{imageSrc}}\">\n\n            <!-- User has cropped profile picture -->\n            <!-- <img\n              id=\"upload-picture-wrapper\"\n              *ngIf=\"uploadedPhoto\"\n              src=\"{{croppedPhotoURL}}\" /> -->\n        </ion-col>\n      <!-- Get Picture Button -->\n      <ion-row class=\"ion-justify-content-center\">\n        <ion-col size=\"10\">\n          <img height=\"80\" *ngIf=\"!this.uploadedPhoto\" src=\"../../../../../assets/icons/carrier-candidate.svg\" alt=\"\" srcset=\"\">\n        </ion-col>\n        <ion-button (click)=\"takePicture()\" class=\"get-picture-button\">\n          Tap to get Profile Picture\n          <!-- <span>Only .png, .jpg, and .jpeg are allowed.</span> -->\n        </ion-button>\n      </ion-row>\n      <!-- Skip & Cancel Buttons -->\n      <ion-row class=\"ion-justify-content-center\" style=\"margin-top: 16px;\">\n        <ion-col size=\"10\">\n          <ion-button\n            (click)=\"uploadPhoto()\"\n            class=\"orange-button\">\n            Next\n          </ion-button>\n          <!-- <ion-button class=\"skip-button\">\n            Skip\n          </ion-button> -->\n          <ion-button (click)=\"this.auth.cancelSignUp()\" class=\"cancel-button\">\n            Cancel\n          </ion-button>\n        </ion-col>\n      </ion-row>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n";
+      /***/
+    },
+
+    /***/
+    15854:
+    /*!******************************************************************************!*\
+      !*** ./src/app/pages/auth/sign-up/profile-picture/profile-picture.page.scss ***!
+      \******************************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = ".image-cropper {\n  height: 100%;\n  width: 100%;\n}\n\n.desktop-toolbar {\n  --background: none;\n  padding-bottom: 16px;\n  border-bottom: 1px solid #33333326;\n}\n\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n\n.back-button {\n  --color: white;\n  --background: #0055a5;\n  --background-hover: linear-gradient(#0055a5, #0c375f);\n  height: 24px;\n  --border-radius: 5px;\n  width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n}\n\n.orange-button {\n  width: unset;\n  display: block;\n  margin: 8px auto;\n  width: 200px;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 1;\n}\n\n.skip-button {\n  display: block;\n  --background: #e6e6e6;\n  --background-hover: #999;\n  color: #888;\n  width: 200px;\n  font-weight: 600;\n  margin: 8px auto;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 0.5;\n}\n\n#default-picture-wrapper {\n  height: 100px;\n  width: 100px;\n  margin: 0 auto;\n  border-radius: 50px;\n  background-image: url('default-pro-picture.svg');\n}\n\n#uploaded-photo {\n  height: 100px;\n  box-shadow: 1px 1px 28px rgba(0, 0, 0, 0.2);\n  border-radius: 100px;\n}\n\n#upload-picture-wrapper {\n  height: 100px;\n  width: 100px;\n  margin: 0 auto;\n  border-radius: 50px;\n}\n\nspan {\n  color: #0055a5;\n  font-weight: 600;\n  background: white;\n  padding: 6px;\n  line-height: 1.5em;\n  border-radius: 5px;\n}\n\n#next-button {\n  width: 100%;\n  height: 60px;\n  margin: 8px auto;\n  background: lightgray;\n  position: absolute;\n  bottom: 0;\n  font-size: 1em;\n}\n\n.cancel-button {\n  color: #e4405f;\n  --background: none;\n  --background-hover: linear-gradient(#f15b77, #e4405f);\n  height: 50px;\n  width: 200px;\n  transition: 0.5s;\n  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\n.cancel-button:hover {\n  color: white;\n}\n\n.get-picture-button {\n  --background: #1FCC6D;\n  --color: white;\n  height: 50px;\n  font-weight: 600;\n  margin: 32px auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2ZpbGUtcGljdHVyZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBQUNGOztBQUNBO0VBQ0Usa0JBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0FBRUY7O0FBQUU7RUFDRSxjQUFBO0FBRUo7O0FBQ0E7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxxREFBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUVGOztBQUFBO0VBQ0UsWUFBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSx1QkFBQTtVQUFBLGVBQUE7RUFDQSxVQUFBO0FBR0Y7O0FBREE7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSx3QkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLHVCQUFBO1VBQUEsZUFBQTtFQUNBLFlBQUE7QUFJRjs7QUFGQTtFQUNFLGFBQUE7RUFBZSxZQUFBO0VBQ2YsY0FBQTtFQUNBLG1CQUFBO0VBQ0EsZ0RBQUE7QUFNRjs7QUFKQTtFQUNFLGFBQUE7RUFFQSwyQ0FBQTtFQUNBLG9CQUFBO0FBTUY7O0FBSkE7RUFDRSxhQUFBO0VBQWUsWUFBQTtFQUNmLGNBQUE7RUFDQSxtQkFBQTtBQVFGOztBQUxBO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtBQVFGOztBQU5BO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsY0FBQTtBQVNGOztBQVBBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EscURBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUVBQUE7QUFVRjs7QUFQQTtFQUNFLFlBQUE7QUFVRjs7QUFSQTtFQUNFLHFCQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBV0YiLCJmaWxlIjoicHJvZmlsZS1waWN0dXJlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZS1jcm9wcGVyIHtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbn1cbi5kZXNrdG9wLXRvb2xiYXJ7XG4gIC0tYmFja2dyb3VuZDogbm9uZTtcbiAgcGFkZGluZy1ib3R0b206IDE2cHg7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMzMzMzMzMjY7XG5cbiAgaDEge1xuICAgIGNvbG9yOiAjMDA1NWE1O1xuICB9XG59XG4uYmFjay1idXR0b24ge1xuICAtLWNvbG9yOiB3aGl0ZTtcbiAgLS1iYWNrZ3JvdW5kOiAjMDA1NWE1O1xuICAtLWJhY2tncm91bmQtaG92ZXI6IGxpbmVhci1ncmFkaWVudCgjMDA1NWE1LCAjMGMzNzVmKTtcbiAgaGVpZ2h0OiAyNHB4O1xuICAtLWJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IDEwMHB4O1xuICBmb250LXNpemU6IDAuNWVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5vcmFuZ2UtYnV0dG9uIHtcbiAgd2lkdGg6IHVuc2V0O1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiA4cHggYXV0bztcbiAgd2lkdGg6IDIwMHB4O1xuICBhbmltYXRpb246IG5vbmU7XG4gIG9wYWNpdHk6IDE7XG59XG4uc2tpcC1idXR0b257XG4gIGRpc3BsYXk6IGJsb2NrO1xuICAtLWJhY2tncm91bmQ6ICNlNmU2ZTY7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogIzk5OTtcbiAgY29sb3I6ICM4ODg7XG4gIHdpZHRoOiAyMDBweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgbWFyZ2luOiA4cHggYXV0bztcbiAgYW5pbWF0aW9uOiBub25lO1xuICBvcGFjaXR5OiAwLjU7XG59XG4jZGVmYXVsdC1waWN0dXJlLXdyYXBwZXIge1xuICBoZWlnaHQ6IDEwMHB4OyB3aWR0aDogMTAwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBib3JkZXItcmFkaXVzOiA1MHB4O1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uLy4uLy4uLy4uLy4uL2Fzc2V0cy9pY29uL2RlZmF1bHQtcHJvLXBpY3R1cmUuc3ZnJyk7XG59XG4jdXBsb2FkZWQtcGhvdG8ge1xuICBoZWlnaHQ6IDEwMHB4O1xuICAvLyBib3JkZXI6IDVweCBzb2xpZCAjZmFhNzFiO1xuICBib3gtc2hhZG93OiAxcHggMXB4IDI4cHggcmdiKDAgMCAwIC8gMjAlKTtcbiAgYm9yZGVyLXJhZGl1czogMTAwcHg7XG59XG4jdXBsb2FkLXBpY3R1cmUtd3JhcHBlciB7XG4gIGhlaWdodDogMTAwcHg7IHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGJvcmRlci1yYWRpdXM6IDUwcHg7XG4gIC8vIGJvcmRlci1yYWRpdXM6IDUwcHg7XG59XG5zcGFue1xuICBjb2xvcjogIzAwNTVhNTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgYmFja2dyb3VuZDogd2hpdGU7XG4gIHBhZGRpbmc6IDZweDtcbiAgbGluZS1oZWlnaHQ6IDEuNWVtO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG59XG4jbmV4dC1idXR0b257XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDYwcHg7XG4gIG1hcmdpbjogOHB4IGF1dG87XG4gIGJhY2tncm91bmQ6IGxpZ2h0Z3JheTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBib3R0b206IDA7XG4gIGZvbnQtc2l6ZTogMWVtO1xufVxuLmNhbmNlbC1idXR0b24ge1xuICBjb2xvcjogI2U0NDA1ZjtcbiAgLS1iYWNrZ3JvdW5kOiAgbm9uZTtcbiAgLS1iYWNrZ3JvdW5kLWhvdmVyOiBsaW5lYXItZ3JhZGllbnQoI2YxNWI3NywgI2U0NDA1Zik7XG4gIGhlaWdodDogNTBweDtcbiAgd2lkdGg6IDIwMHB4O1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICB0cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpO1xufVxuXG4uY2FuY2VsLWJ1dHRvbjpob3ZlciB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5nZXQtcGljdHVyZS1idXR0b24ge1xuICAtLWJhY2tncm91bmQ6ICMxRkNDNkQ7XG4gIC0tY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDUwcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIG1hcmdpbjogMzJweCBhdXRvO1xufVxuXG4iXX0= */";
       /***/
     }
   }]);

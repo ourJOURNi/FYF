@@ -14,32 +14,30 @@ import { EventsEventEmitterService } from 'src/app/emitters/events-event-emitter
   templateUrl: './going-icon.component.html',
   styleUrls: ['./going-icon.component.scss'],
   animations: [
+    trigger('heart', [
+      state('unfavorited', style({
+          color: '#999',
+          opacity: '1',
+          transform: 'scale(0.9)'
+      })),
+      state('favorited', style({
+          color: '#e4405f',
+          opacity: '1',
+          transform: 'scale(1)'
 
-    trigger('going', [
-        state('going', style({
-            color: 'blue',
-            opacity: '0.4',
-            transition: '0.5s',
-            transform: 'scale(0.9)'
-        })),
-        state('not-going', style({
-            color: '#21ce99',
-            opacity: '1',
-            transition: '0.5s',
-            transform: 'scale(1)'
+      })),
 
-        })),
-
-        transition('not-going <=> going', animate('100ms ease-out'))
-    ])
-  ]
+      transition('unfavorited <=> favorited', animate('100ms ease-out'))
+  ])
+]
 })
 export class GoingIconComponent implements OnInit {
-
+  favoriteState;
   going = false;
   goingState = 'not-going';
-  public iconName = 'add-circle-outline';
+  public iconName = 'heart';
   @Input() event;
+  @Input() favoriteEvents;
   @Input() userEmail;
   @Input() id;
 
@@ -68,6 +66,38 @@ export class GoingIconComponent implements OnInit {
        }
 
      });
+
+
+    this.favoriteState = 'unfavorited';
+    for (const favEvent of this.favoriteEvents) {
+      if (this.event._id === favEvent['_id']) {
+        console.log('There was a match!')
+        return this.setFavoriteStateOn();
+      }
+    }
+  }
+
+  toggleLikeState() {
+    if (this.favoriteState === 'unfavorited') {
+      this.setFavoriteStateOn()
+      return;
+      // return this.favorites.favoriteThisJob(this.job);
+    }
+    else {
+      this.setFavoriteStateOff()
+      return;
+      // return this.favorites.unFavoriteThisJob(this.job);
+    }
+
+  }
+  setFavoriteStateOn() {
+    this.favoriteState = 'favorited';
+    this.iconName = 'heart';
+
+ }
+  setFavoriteStateOff() {
+    this.favoriteState = 'unfavorited';
+    this.iconName = 'heart';
   }
 
   toggleGoingState(event) {

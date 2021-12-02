@@ -7,6 +7,14 @@
   font-weight: 600;
   display: block;
 }
+ion-toolbar {
+  --background: #0055a5;
+}
+
+ion-back-button {
+  color: white;
+  width: auto;
+}
 h1 {
   font-weight: 600;
   font-size: 3em;
@@ -15,7 +23,8 @@ h1 {
 }
 
 ion-label {
-  font-size: 2em;
+  font-size: 1.4em;
+  margin-bottom: 1em;
   color: #0055a5;
   font-weight: 600;
 }

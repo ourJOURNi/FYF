@@ -56,10 +56,8 @@ ion-header {
     font-size: 2em;
   }
   ion-title {
-    color: #333;
-    position: relative;
-    left: 16px;
-    top: 3px;
+    color: #faa71b;
+    font-weight: 700;
   }
 }
 ion-skeleton-text {
@@ -129,21 +127,14 @@ ion-title {
   white-space: pre-wrap;
 }
 
-.searchbar{
-  transition: 0.5s;
-  height: 60px;
-  // background: #edf3f8;
-
-}
-
 .searchbar-input {
   background: #FFF !important;
   border: 2px solid #0055a5 !important;
   border-radius: 5px !important;
   height: 40px !important;
-  padding: 10px 0px 10px 20px !important;
+  padding: 10px 0px 10px 10px !important;
   max-width: 100%;
-  font-size: 1em !important;
+  font-size: 0.8em !important;
   box-shadow: 1px 1px 10px rgba(0,0,0,0.1) !important;
 }
 
@@ -278,7 +269,7 @@ ion-select-option {
 .grey-button {
   --background: #e0e0e0;
   --background-hover: #e0e0e0;
-  color: #999;
+  color: #0055a1;
   width: 200px;
   height: 40px;
   font-size: 1em;

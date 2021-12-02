@@ -21,7 +21,13 @@
 
   (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["main"], {
     /***/
-    98255: function _(module) {
+    98255:
+    /*!*******************************************************!*\
+      !*** ./$_lazy_route_resources/ lazy namespace object ***!
+      \*******************************************************/
+
+    /***/
+    function _(module) {
       function webpackEmptyAsyncContext(req) {
         // Here Promise.resolve().then() is used instead of new Promise() to prevent
         // uncaught exception popping up in devtools
@@ -43,7 +49,13 @@
     },
 
     /***/
-    90158: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    90158:
+    /*!***************************************!*\
+      !*** ./src/app/app-routing.module.ts ***!
+      \***************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -66,19 +78,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -293,7 +305,13 @@
     },
 
     /***/
-    55041: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    55041:
+    /*!**********************************!*\
+      !*** ./src/app/app.component.ts ***!
+      \**********************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -316,25 +334,25 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./app.component.html */
-      91106);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_app_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./app.component.html */
+      75158);
       /* harmony import */
 
 
       var _app_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./app.component.scss */
-      43069);
+      53040);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
@@ -346,13 +364,13 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -364,13 +382,13 @@
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs/operators */
-      5304);
+      18293);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs/operators */
-      68307);
+      98636);
 
       var _AppComponent = /*#__PURE__*/function () {
         function AppComponent(platform, auth, notifications, router) {
@@ -461,15 +479,21 @@
 
       _AppComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
         selector: 'app-root',
-        template: _raw_loader_app_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_app_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_9__.ChangeDetectionStrategy.OnPush,
-        styles: [_app_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        styles: [_app_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_7__.Platform, _services_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService, _services_notifications_service__WEBPACK_IMPORTED_MODULE_3__.NotificationsService, _angular_router__WEBPACK_IMPORTED_MODULE_8__.Router])], _AppComponent);
       /***/
     },
 
     /***/
-    36747: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    36747:
+    /*!*******************************!*\
+      !*** ./src/app/app.module.ts ***!
+      \*******************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -500,49 +524,49 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @angular/platform-browser */
-      39075);
+      71570);
       /* harmony import */
 
 
       var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
       /*! @angular/platform-browser/animations */
-      75835);
+      20718);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
       /*! @angular/common/http */
-      91841);
+      53882);
       /* harmony import */
 
 
       var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @auth0/angular-jwt */
-      55036);
+      69956);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
       /*! @angular/forms */
-      3679);
+      1707);
       /* harmony import */
 
 
@@ -560,7 +584,7 @@
 
       var ion_bottom_drawer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! ion-bottom-drawer */
-      21224);
+      11);
       /* harmony import */
 
 
@@ -584,43 +608,43 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
       var _ionic_storage__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(
       /*! @ionic/storage */
-      38605);
+      12314);
       /* harmony import */
 
 
       var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic-native/camera/ngx */
-      84267);
+      34483);
       /* harmony import */
 
 
       var _ionic_native_file_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic-native/file/ngx */
-      20138);
+      18659);
       /* harmony import */
 
 
       var _ionic_native_file_path_ngx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @ionic-native/file-path/ngx */
-      59865);
+      40773);
       /* harmony import */
 
 
       var _ionic_native_ionic_webview_ngx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @ionic-native/ionic-webview/ngx */
-      24575);
+      73039);
       /* harmony import */
 
 
       var _angular_service_worker__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(
       /*! @angular/service-worker */
-      72249); // Angular Modules
+      47334); // Angular Modules
       // import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
       // const config: SocketIoConfig = { url: 'http://10.0.1.5:3000', options: {} };
       // Third Party
@@ -666,7 +690,13 @@
     },
 
     /***/
-    17855: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    17855:
+    /*!***************************************************************************!*\
+      !*** ./src/app/components/comment-vote-bar/comment-vote-bar.component.ts ***!
+      \***************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -689,31 +719,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_comment_vote_bar_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./comment-vote-bar.component.html */
-      81620);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_comment_vote_bar_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./comment-vote-bar.component.html */
+      37133);
       /* harmony import */
 
 
       var _comment_vote_bar_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./comment-vote-bar.component.scss */
-      59300);
+      71920);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -731,7 +761,7 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
       /* harmony import */
 
 
@@ -963,14 +993,20 @@
       };
       _CommentVoteBarComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-comment-vote-bar',
-        template: _raw_loader_comment_vote_bar_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_comment_vote_bar_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_comment_vote_bar_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_comment_vote_bar_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__metadata)("design:paramtypes", [src_app_services_post_service__WEBPACK_IMPORTED_MODULE_2__.PostsService, src_app_services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService, _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ToastController, src_app_emitters_post_page_emitter_service__WEBPACK_IMPORTED_MODULE_4__.PostPageEmitterService])], _CommentVoteBarComponent);
       /***/
     },
 
     /***/
-    64941: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    64941:
+    /*!*******************************************************!*\
+      !*** ./src/app/components/custom-component.module.ts ***!
+      \*******************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -993,25 +1029,25 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/common */
-      38583);
+      54364);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -1086,7 +1122,13 @@
     },
 
     /***/
-    56264: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    56264:
+    /*!***************************************************************************************!*\
+      !*** ./src/app/components/follow-comment-buttons/follow-comment-buttons.component.ts ***!
+      \***************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1109,31 +1151,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_follow_comment_buttons_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./follow-comment-buttons.component.html */
-      56812);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_follow_comment_buttons_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./follow-comment-buttons.component.html */
+      13707);
       /* harmony import */
 
 
       var _follow_comment_buttons_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./follow-comment-buttons.component.scss */
-      66525);
+      22787);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -1151,13 +1193,13 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
 
       var _FollowCommentButtonsComponent = /*#__PURE__*/function () {
         function FollowCommentButtonsComponent(router, posts, profile, toast) {
@@ -1377,14 +1419,20 @@
       };
       _FollowCommentButtonsComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-follow-comment-buttons',
-        template: _raw_loader_follow_comment_buttons_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_follow_comment_buttons_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_follow_comment_buttons_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_follow_comment_buttons_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__metadata)("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_6__.Router, src_app_services_post_service__WEBPACK_IMPORTED_MODULE_3__.PostsService, src_app_services_profile_service__WEBPACK_IMPORTED_MODULE_2__.ProfileService, _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ToastController])], _FollowCommentButtonsComponent);
       /***/
     },
 
     /***/
-    19648: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    19648:
+    /*!*****************************************************************!*\
+      !*** ./src/app/components/follow-icon/follow-icon.component.ts ***!
+      \*****************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1407,31 +1455,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_follow_icon_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./follow-icon.component.html */
-      46897);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_follow_icon_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./follow-icon.component.html */
+      9121);
       /* harmony import */
 
 
       var _follow_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./follow-icon.component.scss */
-      73325);
+      51801);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/animations */
-      17238);
+      97175);
       /* harmony import */
 
 
@@ -1487,7 +1535,7 @@
       };
       _FollowIconComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_3__.Component)({
         selector: 'app-follow-icon',
-        template: _raw_loader_follow_icon_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_follow_icon_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         animations: [(0, _angular_animations__WEBPACK_IMPORTED_MODULE_5__.trigger)('follow', [(0, _angular_animations__WEBPACK_IMPORTED_MODULE_5__.state)('not-followed', (0, _angular_animations__WEBPACK_IMPORTED_MODULE_5__.style)({
           color: '#d1d8e0',
           opacity: '0.4',
@@ -1497,13 +1545,19 @@
           opacity: '1',
           transform: 'scale(1)'
         })), (0, _angular_animations__WEBPACK_IMPORTED_MODULE_5__.transition)('not-followed <=> followed', (0, _angular_animations__WEBPACK_IMPORTED_MODULE_5__.animate)('100ms ease-out'))])],
-        styles: [_follow_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        styles: [_follow_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__metadata)("design:paramtypes", [_services_post_service__WEBPACK_IMPORTED_MODULE_2__.PostsService])], _FollowIconComponent);
       /***/
     },
 
     /***/
-    78520: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    78520:
+    /*!***************************************************************!*\
+      !*** ./src/app/components/going-icon/going-icon.component.ts ***!
+      \***************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1526,31 +1580,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_going_icon_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./going-icon.component.html */
-      3749);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_going_icon_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./going-icon.component.html */
+      34971);
       /* harmony import */
 
 
       var _going_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./going-icon.component.scss */
-      46301);
+      95266);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/animations */
-      17238);
+      97175);
       /* harmony import */
 
 
@@ -1562,7 +1616,7 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -1574,7 +1628,7 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -1748,7 +1802,7 @@
       };
       _GoingIconComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-going-icon',
-        template: _raw_loader_going_icon_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_going_icon_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         animations: [(0, _angular_animations__WEBPACK_IMPORTED_MODULE_9__.trigger)('going', [(0, _angular_animations__WEBPACK_IMPORTED_MODULE_9__.state)('going', (0, _angular_animations__WEBPACK_IMPORTED_MODULE_9__.style)({
           color: 'blue',
           opacity: '0.4',
@@ -1760,13 +1814,19 @@
           transition: '0.5s',
           transform: 'scale(1)'
         })), (0, _angular_animations__WEBPACK_IMPORTED_MODULE_9__.transition)('not-going <=> going', (0, _angular_animations__WEBPACK_IMPORTED_MODULE_9__.animate)('100ms ease-out'))])],
-        styles: [_going_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        styles: [_going_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__metadata)("design:paramtypes", [_services_events_service__WEBPACK_IMPORTED_MODULE_2__.EventsService, src_app_emitters_events_event_emitter_service__WEBPACK_IMPORTED_MODULE_4__.EventsEventEmitterService, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ToastController, _angular_router__WEBPACK_IMPORTED_MODULE_7__.Router, src_app_services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService])], _GoingIconComponent);
       /***/
     },
 
     /***/
-    87811: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    87811:
+    /*!***************************************************************!*\
+      !*** ./src/app/components/heart-icon/heart-icon.component.ts ***!
+      \***************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1789,31 +1849,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_heart_icon_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./heart-icon.component.html */
-      37167);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_heart_icon_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./heart-icon.component.html */
+      67330);
       /* harmony import */
 
 
       var _heart_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./heart-icon.component.scss */
-      62947);
+      20970);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/animations */
-      17238);
+      97175);
       /* harmony import */
 
 
@@ -1905,7 +1965,7 @@
       };
       _HeartIconComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-heart-icon',
-        template: _raw_loader_heart_icon_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_heart_icon_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         animations: [(0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.trigger)('heart', [(0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.state)('unfavorited', (0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.style)({
           color: '#999',
           opacity: '1',
@@ -1915,13 +1975,19 @@
           opacity: '1',
           transform: 'scale(1)'
         })), (0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.transition)('unfavorited <=> favorited', (0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.animate)('100ms ease-out'))])],
-        styles: [_heart_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        styles: [_heart_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__metadata)("design:paramtypes", [_services_favorites_service__WEBPACK_IMPORTED_MODULE_2__.FavoritesService, src_app_services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService])], _HeartIconComponent);
       /***/
     },
 
     /***/
-    99820: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    99820:
+    /*!*********************************************************************************!*\
+      !*** ./src/app/components/jobs-filter-popover/jobs-filter-popover.component.ts ***!
+      \*********************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -1944,31 +2010,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_jobs_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./jobs-filter-popover.component.html */
-      16607);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_jobs_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./jobs-filter-popover.component.html */
+      99969);
       /* harmony import */
 
 
       var _jobs_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./jobs-filter-popover.component.scss */
-      40958);
+      45634);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -2029,14 +2095,20 @@
       };
       _JobsFilterPopoverComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-jobs-filter-popover',
-        template: _raw_loader_jobs_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_jobs_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_jobs_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_jobs_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_5__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController, src_app_emitters_filter_jobs_service__WEBPACK_IMPORTED_MODULE_2__.FilterJobsService])], _JobsFilterPopoverComponent);
       /***/
     },
 
     /***/
-    94661: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    94661:
+    /*!***********************************************************************!*\
+      !*** ./src/app/components/not-going-icon/not-going-icon.component.ts ***!
+      \***********************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2059,31 +2131,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_not_going_icon_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./not-going-icon.component.html */
-      23922);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_not_going_icon_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./not-going-icon.component.html */
+      24645);
       /* harmony import */
 
 
       var _not_going_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./not-going-icon.component.scss */
-      67023);
+      59612);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_animations__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/animations */
-      17238);
+      97175);
       /* harmony import */
 
 
@@ -2095,7 +2167,7 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
 
       var _NotGoingIconComponent = /*#__PURE__*/function () {
         function NotGoingIconComponent(events, toast) {
@@ -2207,7 +2279,7 @@
       };
       _NotGoingIconComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_3__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-not-going-icon',
-        template: _raw_loader_not_going_icon_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_not_going_icon_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
         animations: [(0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.trigger)('notGoing', [(0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.state)('not-going', (0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.style)({
           color: '#e4405f',
           opacity: '0.4',
@@ -2219,13 +2291,19 @@
           transition: '0.5s',
           transform: 'scale(1)'
         })), (0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.transition)('not-going <=> ot-not-going', (0, _angular_animations__WEBPACK_IMPORTED_MODULE_6__.animate)('100ms ease-out'))])],
-        styles: [_not_going_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        styles: [_not_going_icon_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_3__.__metadata)("design:paramtypes", [_services_events_service__WEBPACK_IMPORTED_MODULE_2__.EventsService, _ionic_angular__WEBPACK_IMPORTED_MODULE_4__.ToastController])], _NotGoingIconComponent);
       /***/
     },
 
     /***/
-    78546: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    78546:
+    /*!***********************************************************************************!*\
+      !*** ./src/app/components/posts-filter-popover/posts-filter-popover.component.ts ***!
+      \***********************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2248,31 +2326,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_posts_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./posts-filter-popover.component.html */
-      19050);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_posts_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./posts-filter-popover.component.html */
+      72813);
       /* harmony import */
 
 
       var _posts_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./posts-filter-popover.component.scss */
-      84794);
+      4511);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -2328,14 +2406,20 @@
 
       _PostsFilterPopoverComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_5__.Component)({
         selector: 'app-posts-filter-popover',
-        template: _raw_loader_posts_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_posts_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_posts_filter_popover_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_posts_filter_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController, src_app_emitters_filter_posts_service__WEBPACK_IMPORTED_MODULE_2__.FilterPostsService, _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.NavParams])], _PostsFilterPopoverComponent);
       /***/
     },
 
     /***/
-    56438: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    56438:
+    /*!*************************************************************************************!*\
+      !*** ./src/app/components/reply-options-popover/reply-options-popover.component.ts ***!
+      \*************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2358,31 +2442,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_reply_options_popover_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./reply-options-popover.component.html */
-      56074);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_reply_options_popover_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./reply-options-popover.component.html */
+      20995);
       /* harmony import */
 
 
       var _reply_options_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./reply-options-popover.component.scss */
-      67348);
+      61778);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
 
       var _ReplyOptionsPopoverComponent = /*#__PURE__*/function () {
         function ReplyOptionsPopoverComponent(popoverController, alertController, loadingController) {
@@ -2548,14 +2632,20 @@
 
       _ReplyOptionsPopoverComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-reply-options-popover',
-        template: _raw_loader_reply_options_popover_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_reply_options_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_reply_options_popover_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_reply_options_popover_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_2__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.PopoverController, _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.AlertController, _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.LoadingController])], _ReplyOptionsPopoverComponent);
       /***/
     },
 
     /***/
-    86812: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    86812:
+    /*!***********************************************************************************!*\
+      !*** ./src/app/components/up-down-vote-buttons/up-down-vote-buttons.component.ts ***!
+      \***********************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -2578,25 +2668,25 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_up_down_vote_buttons_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./up-down-vote-buttons.component.html */
-      69495);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_up_down_vote_buttons_component_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./up-down-vote-buttons.component.html */
+      6404);
       /* harmony import */
 
 
       var _up_down_vote_buttons_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./up-down-vote-buttons.component.scss */
-      65568);
+      82993);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
@@ -2614,13 +2704,13 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
       /* harmony import */
 
 
@@ -3011,14 +3101,20 @@
       };
       _UpDownVoteButtonsComponent = (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-up-down-vote-buttons',
-        template: _raw_loader_up_down_vote_buttons_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_up_down_vote_buttons_component_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_up_down_vote_buttons_component_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_up_down_vote_buttons_component_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__metadata)("design:paramtypes", [src_app_services_post_service__WEBPACK_IMPORTED_MODULE_2__.PostsService, src_app_services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService, _ionic_angular__WEBPACK_IMPORTED_MODULE_7__.ToastController, src_app_emitters_post_page_emitter_service__WEBPACK_IMPORTED_MODULE_4__.PostPageEmitterService])], _UpDownVoteButtonsComponent);
       /***/
     },
 
     /***/
-    9193: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    9193:
+    /*!**********************************************************!*\
+      !*** ./src/app/emitters/events-event-emitter.service.ts ***!
+      \**********************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3041,13 +3137,13 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
 
       var _EventsEventEmitterService = /*#__PURE__*/function () {
         function EventsEventEmitterService() {
@@ -3083,7 +3179,13 @@
     },
 
     /***/
-    81615: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    81615:
+    /*!*************************************************************!*\
+      !*** ./src/app/emitters/favorites-event-emitter.service.ts ***!
+      \*************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3106,13 +3208,13 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
 
       var _FavoritesEventEmitterService = /*#__PURE__*/function () {
         function FavoritesEventEmitterService() {
@@ -3142,7 +3244,13 @@
     },
 
     /***/
-    67677: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    67677:
+    /*!*************************************************!*\
+      !*** ./src/app/emitters/filter-jobs.service.ts ***!
+      \*************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3165,19 +3273,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
 
       var _FilterJobsService = /*#__PURE__*/function () {
         function FilterJobsService() {
@@ -3208,7 +3316,13 @@
     },
 
     /***/
-    15588: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    15588:
+    /*!**************************************************!*\
+      !*** ./src/app/emitters/filter-posts.service.ts ***!
+      \**************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3231,13 +3345,13 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
 
       var _FilterPostsService = /*#__PURE__*/function () {
         function FilterPostsService() {
@@ -3268,7 +3382,13 @@
     },
 
     /***/
-    50806: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    50806:
+    /*!*******************************************************!*\
+      !*** ./src/app/emitters/post-page-emitter.service.ts ***!
+      \*******************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3291,13 +3411,13 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
 
       var _PostPageEmitterService = /*#__PURE__*/function () {
         function PostPageEmitterService() {
@@ -3332,7 +3452,13 @@
     },
 
     /***/
-    78968: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    78968:
+    /*!************************************************!*\
+      !*** ./src/app/services/auth-guard.service.ts ***!
+      \************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3355,13 +3481,13 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
@@ -3399,7 +3525,13 @@
     },
 
     /***/
-    37556: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    37556:
+    /*!******************************************!*\
+      !*** ./src/app/services/auth.service.ts ***!
+      \******************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3422,43 +3554,43 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common/http */
-      91841);
+      53882);
       /* harmony import */
 
 
       var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @auth0/angular-jwt */
-      55036);
+      69956);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
       var _ionic_storage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/storage */
-      38605);
+      12314);
       /* harmony import */
 
 
@@ -3470,19 +3602,19 @@
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs/operators */
-      68307);
+      98636);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs/operators */
-      5304);
+      18293);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
 
       var _AuthService = /*#__PURE__*/function () {
         function AuthService(http, storage, alertController, helper, plt, router, toast) {
@@ -3878,7 +4010,13 @@
     },
 
     /***/
-    80106: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    80106:
+    /*!********************************************!*\
+      !*** ./src/app/services/events.service.ts ***!
+      \********************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -3901,19 +4039,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/common/http */
-      91841);
+      53882);
       /* harmony import */
 
 
@@ -3925,7 +4063,7 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
       /* harmony import */
 
 
@@ -4002,7 +4140,13 @@
     },
 
     /***/
-    85097: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    85097:
+    /*!***********************************************!*\
+      !*** ./src/app/services/favorites.service.ts ***!
+      \***********************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4025,25 +4169,25 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/common/http */
-      91841);
+      53882);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
       /* harmony import */
 
 
@@ -4061,7 +4205,7 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
 
       var _FavoritesService = /*#__PURE__*/function () {
         function FavoritesService(http, profile, toast) {
@@ -4227,7 +4371,13 @@
     },
 
     /***/
-    79744: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    79744:
+    /*!***************************************************!*\
+      !*** ./src/app/services/notifications.service.ts ***!
+      \***************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4250,19 +4400,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/common/http */
-      91841);
+      53882);
       /* harmony import */
 
 
@@ -4274,49 +4424,49 @@
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! rxjs/operators */
-      94634);
+      61531);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs/operators */
-      5304);
+      18293);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! rxjs/operators */
-      67666);
+      29845);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! rxjs/operators */
-      68307);
+      98636);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! rxjs/operators */
-      11627);
+      33392);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! rxjs */
-      79765);
+      79441);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! rxjs */
-      46797);
+      12702);
       /* harmony import */
 
 
       var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! rxjs */
-      26215); // export const WS_ENDPOINT = environment.wsEndpoint;
+      76491); // export const WS_ENDPOINT = environment.wsEndpoint;
 
 
       var _NotificationsService = /*#__PURE__*/function () {
@@ -4462,7 +4612,13 @@
     },
 
     /***/
-    69166: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    69166:
+    /*!******************************************!*\
+      !*** ./src/app/services/post.service.ts ***!
+      \******************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4485,19 +4641,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/common/http */
-      91841);
+      53882);
       /* harmony import */
 
 
@@ -4509,7 +4665,7 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
       /* harmony import */
 
 
@@ -4744,7 +4900,13 @@
     },
 
     /***/
-    39181: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    39181:
+    /*!*********************************************!*\
+      !*** ./src/app/services/profile.service.ts ***!
+      \*********************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -4767,37 +4929,37 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common/http */
-      91841);
+      53882);
       /* harmony import */
 
 
       var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! @auth0/angular-jwt */
-      55036);
+      69956);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -4809,13 +4971,13 @@
 
       var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! rxjs */
-      26215);
+      76491);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs/operators */
-      5304);
+      18293);
       /* harmony import */
 
 
@@ -4827,7 +4989,7 @@
 
       var _ionic_storage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/storage */
-      38605);
+      12314);
 
       var _ProfileService = /*#__PURE__*/function () {
         function ProfileService(http, storage, alertController, helper, auth, router, toastController) {
@@ -5206,7 +5368,13 @@
     },
 
     /***/
-    92340: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    92340:
+    /*!*****************************************!*\
+      !*** ./src/environments/environment.ts ***!
+      \*****************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5229,7 +5397,7 @@
 
       var zone_js_plugins_zone_error__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! zone.js/plugins/zone-error */
-      17746);
+      79815);
       /* harmony import */
 
 
@@ -5263,7 +5431,13 @@
     },
 
     /***/
-    14431: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    14431:
+    /*!*********************!*\
+      !*** ./src/main.ts ***!
+      \*********************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5272,13 +5446,13 @@
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/platform-browser-dynamic */
-      24608);
+      61882);
       /* harmony import */
 
 
@@ -5307,51 +5481,57 @@
     },
 
     /***/
-    50863: function _(module, __unused_webpack_exports, __webpack_require__) {
+    50863:
+    /*!******************************************************************************************************************************************!*\
+      !*** ./node_modules/@ionic/core/dist/esm/ lazy ^\.\/.*\.entry\.js$ include: \.entry\.js$ exclude: \.system\.entry\.js$ namespace object ***!
+      \******************************************************************************************************************************************/
+
+    /***/
+    function _(module, __unused_webpack_exports, __webpack_require__) {
       var map = {
-        "./ion-action-sheet.entry.js": [47321, "common", "node_modules_ionic_core_dist_esm_ion-action-sheet_entry_js"],
-        "./ion-alert.entry.js": [36108, "common", "node_modules_ionic_core_dist_esm_ion-alert_entry_js"],
-        "./ion-app_8.entry.js": [31489, "common", "node_modules_ionic_core_dist_esm_ion-app_8_entry_js"],
-        "./ion-avatar_3.entry.js": [10305, "common", "node_modules_ionic_core_dist_esm_ion-avatar_3_entry_js"],
-        "./ion-back-button.entry.js": [15830, "common", "node_modules_ionic_core_dist_esm_ion-back-button_entry_js"],
-        "./ion-backdrop.entry.js": [37757, "node_modules_ionic_core_dist_esm_ion-backdrop_entry_js"],
-        "./ion-button_2.entry.js": [30392, "common", "node_modules_ionic_core_dist_esm_ion-button_2_entry_js"],
-        "./ion-card_5.entry.js": [66911, "common", "node_modules_ionic_core_dist_esm_ion-card_5_entry_js"],
-        "./ion-checkbox.entry.js": [30937, "common", "node_modules_ionic_core_dist_esm_ion-checkbox_entry_js"],
-        "./ion-chip.entry.js": [78695, "common", "node_modules_ionic_core_dist_esm_ion-chip_entry_js"],
-        "./ion-col_3.entry.js": [16034, "node_modules_ionic_core_dist_esm_ion-col_3_entry_js"],
-        "./ion-datetime_3.entry.js": [68837, "common", "node_modules_ionic_core_dist_esm_ion-datetime_3_entry_js"],
-        "./ion-fab_3.entry.js": [34195, "common", "node_modules_ionic_core_dist_esm_ion-fab_3_entry_js"],
-        "./ion-img.entry.js": [41709, "node_modules_ionic_core_dist_esm_ion-img_entry_js"],
-        "./ion-infinite-scroll_2.entry.js": [33087, "node_modules_ionic_core_dist_esm_ion-infinite-scroll_2_entry_js"],
-        "./ion-input.entry.js": [84513, "common", "node_modules_ionic_core_dist_esm_ion-input_entry_js"],
-        "./ion-item-option_3.entry.js": [58056, "common", "node_modules_ionic_core_dist_esm_ion-item-option_3_entry_js"],
-        "./ion-item_8.entry.js": [10862, "common", "node_modules_ionic_core_dist_esm_ion-item_8_entry_js"],
-        "./ion-loading.entry.js": [7509, "common", "node_modules_ionic_core_dist_esm_ion-loading_entry_js"],
-        "./ion-menu_3.entry.js": [76272, "common", "node_modules_ionic_core_dist_esm_ion-menu_3_entry_js"],
-        "./ion-modal.entry.js": [71855, "common", "node_modules_ionic_core_dist_esm_ion-modal_entry_js"],
-        "./ion-nav_2.entry.js": [38708, "common", "node_modules_ionic_core_dist_esm_ion-nav_2_entry_js"],
-        "./ion-popover.entry.js": [23527, "common", "node_modules_ionic_core_dist_esm_ion-popover_entry_js"],
-        "./ion-progress-bar.entry.js": [24694, "common", "node_modules_ionic_core_dist_esm_ion-progress-bar_entry_js"],
-        "./ion-radio_2.entry.js": [19222, "common", "node_modules_ionic_core_dist_esm_ion-radio_2_entry_js"],
-        "./ion-range.entry.js": [25277, "common", "node_modules_ionic_core_dist_esm_ion-range_entry_js"],
-        "./ion-refresher_2.entry.js": [39921, "common", "node_modules_ionic_core_dist_esm_ion-refresher_2_entry_js"],
-        "./ion-reorder_2.entry.js": [83122, "common", "node_modules_ionic_core_dist_esm_ion-reorder_2_entry_js"],
-        "./ion-ripple-effect.entry.js": [51602, "node_modules_ionic_core_dist_esm_ion-ripple-effect_entry_js"],
-        "./ion-route_4.entry.js": [45174, "common", "node_modules_ionic_core_dist_esm_ion-route_4_entry_js"],
-        "./ion-searchbar.entry.js": [7895, "common", "node_modules_ionic_core_dist_esm_ion-searchbar_entry_js"],
-        "./ion-segment_2.entry.js": [76164, "common", "node_modules_ionic_core_dist_esm_ion-segment_2_entry_js"],
-        "./ion-select_3.entry.js": [20592, "common", "node_modules_ionic_core_dist_esm_ion-select_3_entry_js"],
-        "./ion-slide_2.entry.js": [27162, "node_modules_ionic_core_dist_esm_ion-slide_2_entry_js"],
-        "./ion-spinner.entry.js": [81374, "common", "node_modules_ionic_core_dist_esm_ion-spinner_entry_js"],
-        "./ion-split-pane.entry.js": [97896, "node_modules_ionic_core_dist_esm_ion-split-pane_entry_js"],
-        "./ion-tab-bar_2.entry.js": [25043, "common", "node_modules_ionic_core_dist_esm_ion-tab-bar_2_entry_js"],
-        "./ion-tab_2.entry.js": [77802, "common", "node_modules_ionic_core_dist_esm_ion-tab_2_entry_js"],
-        "./ion-text.entry.js": [29072, "common", "node_modules_ionic_core_dist_esm_ion-text_entry_js"],
-        "./ion-textarea.entry.js": [32191, "common", "node_modules_ionic_core_dist_esm_ion-textarea_entry_js"],
-        "./ion-toast.entry.js": [40801, "common", "node_modules_ionic_core_dist_esm_ion-toast_entry_js"],
-        "./ion-toggle.entry.js": [67110, "common", "node_modules_ionic_core_dist_esm_ion-toggle_entry_js"],
-        "./ion-virtual-scroll.entry.js": [10431, "node_modules_ionic_core_dist_esm_ion-virtual-scroll_entry_js"]
+        "./ion-action-sheet.entry.js": [90733, "common", "node_modules_ionic_core_dist_esm_ion-action-sheet_entry_js"],
+        "./ion-alert.entry.js": [20985, "common", "node_modules_ionic_core_dist_esm_ion-alert_entry_js"],
+        "./ion-app_8.entry.js": [93899, "common", "node_modules_ionic_core_dist_esm_ion-app_8_entry_js"],
+        "./ion-avatar_3.entry.js": [5121, "common", "node_modules_ionic_core_dist_esm_ion-avatar_3_entry_js"],
+        "./ion-back-button.entry.js": [52960, "common", "node_modules_ionic_core_dist_esm_ion-back-button_entry_js"],
+        "./ion-backdrop.entry.js": [45473, "node_modules_ionic_core_dist_esm_ion-backdrop_entry_js"],
+        "./ion-button_2.entry.js": [19787, "common", "node_modules_ionic_core_dist_esm_ion-button_2_entry_js"],
+        "./ion-card_5.entry.js": [66165, "common", "node_modules_ionic_core_dist_esm_ion-card_5_entry_js"],
+        "./ion-checkbox.entry.js": [69569, "common", "node_modules_ionic_core_dist_esm_ion-checkbox_entry_js"],
+        "./ion-chip.entry.js": [35119, "common", "node_modules_ionic_core_dist_esm_ion-chip_entry_js"],
+        "./ion-col_3.entry.js": [90799, "node_modules_ionic_core_dist_esm_ion-col_3_entry_js"],
+        "./ion-datetime_3.entry.js": [68918, "common", "node_modules_ionic_core_dist_esm_ion-datetime_3_entry_js"],
+        "./ion-fab_3.entry.js": [94028, "common", "node_modules_ionic_core_dist_esm_ion-fab_3_entry_js"],
+        "./ion-img.entry.js": [98107, "node_modules_ionic_core_dist_esm_ion-img_entry_js"],
+        "./ion-infinite-scroll_2.entry.js": [72178, "node_modules_ionic_core_dist_esm_ion-infinite-scroll_2_entry_js"],
+        "./ion-input.entry.js": [42868, "common", "node_modules_ionic_core_dist_esm_ion-input_entry_js"],
+        "./ion-item-option_3.entry.js": [18706, "common", "node_modules_ionic_core_dist_esm_ion-item-option_3_entry_js"],
+        "./ion-item_8.entry.js": [12099, "common", "node_modules_ionic_core_dist_esm_ion-item_8_entry_js"],
+        "./ion-loading.entry.js": [84868, "common", "node_modules_ionic_core_dist_esm_ion-loading_entry_js"],
+        "./ion-menu_3.entry.js": [54377, "common", "node_modules_ionic_core_dist_esm_ion-menu_3_entry_js"],
+        "./ion-modal.entry.js": [15678, "common", "node_modules_ionic_core_dist_esm_ion-modal_entry_js"],
+        "./ion-nav_2.entry.js": [16735, "common", "node_modules_ionic_core_dist_esm_ion-nav_2_entry_js"],
+        "./ion-popover.entry.js": [87686, "common", "node_modules_ionic_core_dist_esm_ion-popover_entry_js"],
+        "./ion-progress-bar.entry.js": [48555, "common", "node_modules_ionic_core_dist_esm_ion-progress-bar_entry_js"],
+        "./ion-radio_2.entry.js": [30568, "common", "node_modules_ionic_core_dist_esm_ion-radio_2_entry_js"],
+        "./ion-range.entry.js": [6231, "common", "node_modules_ionic_core_dist_esm_ion-range_entry_js"],
+        "./ion-refresher_2.entry.js": [45772, "common", "node_modules_ionic_core_dist_esm_ion-refresher_2_entry_js"],
+        "./ion-reorder_2.entry.js": [14977, "common", "node_modules_ionic_core_dist_esm_ion-reorder_2_entry_js"],
+        "./ion-ripple-effect.entry.js": [42886, "node_modules_ionic_core_dist_esm_ion-ripple-effect_entry_js"],
+        "./ion-route_4.entry.js": [54990, "common", "node_modules_ionic_core_dist_esm_ion-route_4_entry_js"],
+        "./ion-searchbar.entry.js": [13810, "common", "node_modules_ionic_core_dist_esm_ion-searchbar_entry_js"],
+        "./ion-segment_2.entry.js": [2446, "common", "node_modules_ionic_core_dist_esm_ion-segment_2_entry_js"],
+        "./ion-select_3.entry.js": [47619, "common", "node_modules_ionic_core_dist_esm_ion-select_3_entry_js"],
+        "./ion-slide_2.entry.js": [28393, "node_modules_ionic_core_dist_esm_ion-slide_2_entry_js"],
+        "./ion-spinner.entry.js": [56281, "common", "node_modules_ionic_core_dist_esm_ion-spinner_entry_js"],
+        "./ion-split-pane.entry.js": [35932, "node_modules_ionic_core_dist_esm_ion-split-pane_entry_js"],
+        "./ion-tab-bar_2.entry.js": [57970, "common", "node_modules_ionic_core_dist_esm_ion-tab-bar_2_entry_js"],
+        "./ion-tab_2.entry.js": [80298, "common", "node_modules_ionic_core_dist_esm_ion-tab_2_entry_js"],
+        "./ion-text.entry.js": [71006, "common", "node_modules_ionic_core_dist_esm_ion-text_entry_js"],
+        "./ion-textarea.entry.js": [74783, "common", "node_modules_ionic_core_dist_esm_ion-textarea_entry_js"],
+        "./ion-toast.entry.js": [62749, "common", "node_modules_ionic_core_dist_esm_ion-toast_entry_js"],
+        "./ion-toggle.entry.js": [55404, "common", "node_modules_ionic_core_dist_esm_ion-toggle_entry_js"],
+        "./ion-virtual-scroll.entry.js": [39043, "node_modules_ionic_core_dist_esm_ion-virtual-scroll_entry_js"]
       };
 
       function webpackAsyncContext(req) {
@@ -5380,139 +5560,13 @@
     },
 
     /***/
-    43069: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MifQ== */";
-      /***/
-    },
+    75158:
+    /*!***************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/app.component.html ***!
+      \***************************************************************************************************/
 
     /***/
-    59300: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".upvote {\n  border-radius: 5px;\n  width: 60px;\n  position: relative;\n  --color: #005191;\n}\n.upvote ion-icon {\n  color: #005191;\n  font-size: 40px;\n}\n.downvote {\n  border-radius: 5px;\n  width: 60px;\n  padding-left: 0px;\n  --color: #005191;\n}\n.downvote ion-icon {\n  color: #005191;\n  --font-size: 40px;\n}\n.upvoted-toast {\n  --background: #005191;\n}\n.downvoted-toast {\n  --background: #FFB351;\n}\n.followed-toast {\n  --background: #24d8a8;\n}\n.unfollowed-toast {\n  --background: #FFB351;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbW1lbnQtdm90ZS1iYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FBQ0o7QUFDSTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBQ047QUFFRTtFQUNFLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFDSjtBQUNJO0VBQ0UsY0FBQTtFQUNBLGlCQUFBO0FBQ047QUFHRTtFQUNFLHFCQUFBO0FBQUo7QUFFRTtFQUNFLHFCQUFBO0FBQ0o7QUFFRTtFQUNFLHFCQUFBO0FBQ0o7QUFDRTtFQUNFLHFCQUFBO0FBRUoiLCJmaWxlIjoiY29tbWVudC12b3RlLWJhci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi51cHZvdGV7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHdpZHRoOiA2MHB4O1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAtLWNvbG9yOiAjMDA1MTkxO1xuXG4gICAgaW9uLWljb24ge1xuICAgICAgY29sb3I6ICMwMDUxOTE7XG4gICAgICBmb250LXNpemU6IDQwcHg7XG4gICAgfVxuICB9XG4gIC5kb3dudm90ZSB7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHdpZHRoOiA2MHB4O1xuICAgIHBhZGRpbmctbGVmdDogMHB4O1xuICAgIC0tY29sb3I6ICMwMDUxOTE7XG4gIFxuICAgIGlvbi1pY29uIHtcbiAgICAgIGNvbG9yOiAjMDA1MTkxO1xuICAgICAgLS1mb250LXNpemU6IDQwcHg7XG4gICAgfVxuICB9XG4gIFxuICAudXB2b3RlZC10b2FzdCB7XG4gICAgLS1iYWNrZ3JvdW5kOiAjMDA1MTkxO1xuICB9XG4gIC5kb3dudm90ZWQtdG9hc3Qge1xuICAgIC0tYmFja2dyb3VuZDogI0ZGQjM1MTtcbiAgfVxuICBcbiAgLmZvbGxvd2VkLXRvYXN0IHtcbiAgICAtLWJhY2tncm91bmQ6ICMyNGQ4YTg7XG4gIH1cbiAgLnVuZm9sbG93ZWQtdG9hc3Qge1xuICAgIC0tYmFja2dyb3VuZDogI0ZGQjM1MTtcbiAgfSJdfQ== */";
-      /***/
-    },
-
-    /***/
-    66525: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".comment-button {\n  --color: #0055a5;\n  font-size: 1em;\n  font-size: 800;\n  border-radius: 5px;\n  position: relative;\n  right: 8px;\n}\n\nion-icon {\n  height: 40px;\n  width: 40px;\n  position: relative;\n  left: -5px;\n  font-weight: 600;\n}\n\n@media screen and (max-width: 567px) {\n  .comment-button {\n    font-size: 0.82em;\n    font-weight: 600;\n    width: 80px;\n    --width: 70px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvbGxvdy1jb21tZW50LWJ1dHRvbnMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7QUFDRjs7QUFDQTtFQUNFLFlBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0EsZ0JBQUE7QUFFRjs7QUFDQTtFQUNFO0lBQ0ksaUJBQUE7SUFDQSxnQkFBQTtJQUNBLFdBQUE7SUFDQSxhQUFBO0VBRUo7QUFDRiIsImZpbGUiOiJmb2xsb3ctY29tbWVudC1idXR0b25zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbW1lbnQtYnV0dG9ue1xuICAtLWNvbG9yOiAjMDA1NWE1O1xuICBmb250LXNpemU6IDFlbTtcbiAgZm9udC1zaXplOiA4MDA7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICByaWdodDogOHB4O1xufVxuaW9uLWljb24ge1xuICBoZWlnaHQ6IDQwcHg7XG4gIHdpZHRoOiA0MHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGxlZnQ6IC01cHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDU2N3B4KSB7XG4gIC5jb21tZW50LWJ1dHRvbntcbiAgICAgIGZvbnQtc2l6ZTogMC44MmVtO1xuICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgIHdpZHRoOiA4MHB4O1xuICAgICAgLS13aWR0aDogNzBweDtcbiAgfVxufVxuIl19 */";
-      /***/
-    },
-
-    /***/
-    73325: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "ion-icon {\n  --color: lightgrey;\n}\n\n@media screen and (max-width: 567px) {\n  .follow-button, .unfollow-button {\n    font-size: 0.52em;\n    font-weight: 600;\n    width: 80px;\n    --width: 70px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvbGxvdy1pY29uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7QUFDRjs7QUFDQTtFQUNDO0lBQ0ssaUJBQUE7SUFDQSxnQkFBQTtJQUNBLFdBQUE7SUFDQSxhQUFBO0VBRUo7QUFDRiIsImZpbGUiOiJmb2xsb3ctaWNvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pY29uIHtcbiAgLS1jb2xvcjogbGlnaHRncmV5O1xufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNTY3cHgpIHtcbiAuZm9sbG93LWJ1dHRvbiwgLnVuZm9sbG93LWJ1dHRvbiB7XG4gICAgICBmb250LXNpemU6IDAuNTJlbTtcbiAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICB3aWR0aDogODBweDtcbiAgICAgIC0td2lkdGg6IDcwcHg7XG4gIH1cbn0iXX0= */";
-      /***/
-    },
-
-    /***/
-    46301: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "p {\n  transition: 0.5s;\n  opacity: 1;\n}\n\nion-button {\n  font-size: 1em;\n  font-weight: 800;\n  height: 20px;\n  width: 100px;\n  margin-left: 0px;\n  margin-right: 10px;\n  display: inline;\n}\n\n.not-going {\n  --color: white;\n  font-size: 0.65em;\n  --background: linear-gradient(#faa71b, #e99b14);\n}\n\n.grey-button {\n  margin-right: 10px;\n  --background: #222;\n  --color: #edf3f8;\n  font-size: 0.65em;\n}\n\n.going {\n  --color: white;\n  font-size: 0.65em;\n  --background: #24d8a8;\n  --background-hover: #24d8a8;\n}\n\n.not-going-mobile {\n  --color: white;\n  display: block;\n  width: 100%;\n  height: 40px;\n  font-size: 1em;\n  --background: linear-gradient(#faa71b, #e99b14);\n}\n\n.grey-button-mobile {\n  margin-right: 10px;\n  display: block;\n  width: 100%;\n  height: 40px;\n  --background: #0055a5;\n  --color: #edf3f8;\n  font-size: 1em;\n  top: -8px;\n  position: relative;\n}\n\n.going-mobile {\n  --color: white;\n  display: block;\n  width: 100%;\n  height: 40px;\n  font-size: 1em;\n  --background: #24d8a8;\n  --background-hover: #24d8a8;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdvaW5nLWljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBQTtFQUNBLFVBQUE7QUFDRjs7QUFDQTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUFFRjs7QUFBQTtFQUNFLGNBQUE7RUFDQSxpQkFBQTtFQUNBLCtDQUFBO0FBR0Y7O0FBREE7RUFDRSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQUlGOztBQUZBO0VBQ0UsY0FBQTtFQUNBLGlCQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQUtGOztBQUhBO0VBQ0UsY0FBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSwrQ0FBQTtBQU1GOztBQUpBO0VBQ0Usa0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLFNBQUE7RUFDQSxrQkFBQTtBQU9GOztBQUxBO0VBQ0UsY0FBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSxxQkFBQTtFQUNBLDJCQUFBO0FBUUYiLCJmaWxlIjoiZ29pbmctaWNvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInAge1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICBvcGFjaXR5OiAxO1xufVxuaW9uLWJ1dHRvbiB7XG4gIGZvbnQtc2l6ZTogMWVtO1xuICBmb250LXdlaWdodDogODAwO1xuICBoZWlnaHQ6IDIwcHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luLWxlZnQ6IDBweDtcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICBkaXNwbGF5OiBpbmxpbmU7XG59XG4ubm90LWdvaW5nIHtcbiAgLS1jb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMC42NWVtO1xuICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgjZmFhNzFiLCAjZTk5YjE0KTtcbn1cbi5ncmV5LWJ1dHRvbntcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICAtLWJhY2tncm91bmQ6ICMyMjI7XG4gIC0tY29sb3I6ICNlZGYzZjg7XG4gIGZvbnQtc2l6ZTogMC42NWVtO1xufVxuLmdvaW5nIHtcbiAgLS1jb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMC42NWVtO1xuICAtLWJhY2tncm91bmQ6ICMyNGQ4YTg7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogIzI0ZDhhODtcbn1cbi5ub3QtZ29pbmctbW9iaWxlICB7XG4gIC0tY29sb3I6IHdoaXRlO1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNDBweDtcbiAgZm9udC1zaXplOiAxZW07XG4gIC0tYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KCNmYWE3MWIsICNlOTliMTQpO1xufVxuLmdyZXktYnV0dG9uLW1vYmlsZSB7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDQwcHg7XG4gIC0tYmFja2dyb3VuZDogIzAwNTVhNTtcbiAgLS1jb2xvcjogI2VkZjNmODtcbiAgZm9udC1zaXplOiAxZW07XG4gIHRvcDogLThweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuLmdvaW5nLW1vYmlsZSB7XG4gIC0tY29sb3I6IHdoaXRlO1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNDBweDtcbiAgZm9udC1zaXplOiAxZW07XG4gIC0tYmFja2dyb3VuZDogIzI0ZDhhODtcbiAgLS1iYWNrZ3JvdW5kLWhvdmVyOiAjMjRkOGE4O1xufVxuXG5cblxuIl19 */";
-      /***/
-    },
-
-    /***/
-    62947: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "ion-icon {\n  z-index: 9999;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhlYXJ0LWljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0Esa0JBQUE7QUFDRiIsImZpbGUiOiJoZWFydC1pY29uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWljb24ge1xuICB6LWluZGV4OiA5OTk5O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59Il19 */";
-      /***/
-    },
-
-    /***/
-    40958: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJqb2JzLWZpbHRlci1wb3BvdmVyLmNvbXBvbmVudC5zY3NzIn0= */";
-      /***/
-    },
-
-    /***/
-    67023: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJub3QtZ29pbmctaWNvbi5jb21wb25lbnQuc2NzcyJ9 */";
-      /***/
-    },
-
-    /***/
-    84794: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwb3N0cy1maWx0ZXItcG9wb3Zlci5jb21wb25lbnQuc2NzcyJ9 */";
-      /***/
-    },
-
-    /***/
-    67348: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZXBseS1vcHRpb25zLXBvcG92ZXIuY29tcG9uZW50LnNjc3MifQ== */";
-      /***/
-    },
-
-    /***/
-    65568: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "ion-buttons {\n  position: relative;\n  left: -10px;\n}\n\n.upvote {\n  border-radius: 5px;\n  position: relative;\n  --color: #005191;\n}\n\n.upvote ion-icon {\n  color: #005191;\n  font-size: 40px;\n}\n\n.downvote {\n  border-radius: 5px;\n  padding-left: 0px;\n  --color: #005191;\n}\n\n.downvote ion-icon {\n  color: #005191;\n  --font-size: 40px;\n}\n\n.upvoted-toast {\n  --background: #005191;\n}\n\n.downvoted-toast {\n  --background: #FFB351;\n}\n\n.followed-toast {\n  --background: #24d8a8;\n}\n\n.unfollowed-toast {\n  --background: #FFB351;\n}\n\n.follow-button {\n  --color: #888;\n  --border-style: solid;\n  --border-width: 3px;\n  --border-color: #888;\n  font-size: 0.6em;\n  font-weight: 800;\n  border-radius: 5px;\n  width: 100px;\n  margin-left: 10px;\n}\n\n.unfollow-button {\n  --color: #faa71b;\n  --border-style: solid;\n  --border-width: 3px;\n  --border-color: #faa71b;\n  font-size: 0.6em;\n  font-weight: 800;\n  border-radius: 5px;\n  width: 100px;\n  margin-left: 10px;\n}\n\n@media screen and (max-width: 567px) {\n  .follow-button, .unfollow-button {\n    font-size: 0.52em;\n    font-weight: 600;\n    width: 80px;\n    --width: 70px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVwLWRvd24tdm90ZS1idXR0b25zLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0FBQ0Y7O0FBRUE7RUFDRSxrQkFBQTtFQUVBLGtCQUFBO0VBQ0EsZ0JBQUE7QUFBRjs7QUFFRTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBQUo7O0FBSUE7RUFDRSxrQkFBQTtFQUVBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFGRjs7QUFJRTtFQUNFLGNBQUE7RUFDQSxpQkFBQTtBQUZKOztBQU1BO0VBQ0UscUJBQUE7QUFIRjs7QUFLQTtFQUNFLHFCQUFBO0FBRkY7O0FBS0E7RUFDRSxxQkFBQTtBQUZGOztBQUlBO0VBQ0UscUJBQUE7QUFERjs7QUFJQTtFQUNFLGFBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7QUFERjs7QUFLQTtFQUNFLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0FBRkY7O0FBS0E7RUFDRTtJQUNJLGlCQUFBO0lBQ0EsZ0JBQUE7SUFDQSxXQUFBO0lBQ0EsYUFBQTtFQUZKO0FBQ0YiLCJmaWxlIjoidXAtZG93bi12b3RlLWJ1dHRvbnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tYnV0dG9ucyB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbGVmdDogLTEwcHg7XG59XG5cbi51cHZvdGV7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgLy8gd2lkdGg6IDYwcHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgLS1jb2xvcjogIzAwNTE5MTtcblxuICBpb24taWNvbiB7XG4gICAgY29sb3I6ICMwMDUxOTE7XG4gICAgZm9udC1zaXplOiA0MHB4O1xuICB9XG59XG5cbi5kb3dudm90ZSB7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgLy8gd2lkdGg6IDYwcHg7XG4gIHBhZGRpbmctbGVmdDogMHB4O1xuICAtLWNvbG9yOiAjMDA1MTkxO1xuXG4gIGlvbi1pY29uIHtcbiAgICBjb2xvcjogIzAwNTE5MTtcbiAgICAtLWZvbnQtc2l6ZTogNDBweDtcbiAgfVxufVxuXG4udXB2b3RlZC10b2FzdCB7XG4gIC0tYmFja2dyb3VuZDogIzAwNTE5MTtcbn1cbi5kb3dudm90ZWQtdG9hc3Qge1xuICAtLWJhY2tncm91bmQ6ICNGRkIzNTE7XG59XG5cbi5mb2xsb3dlZC10b2FzdCB7XG4gIC0tYmFja2dyb3VuZDogIzI0ZDhhODtcbn1cbi51bmZvbGxvd2VkLXRvYXN0IHtcbiAgLS1iYWNrZ3JvdW5kOiAjRkZCMzUxO1xufVxuXG4uZm9sbG93LWJ1dHRvbiB7XG4gIC0tY29sb3I6ICM4ODg7XG4gIC0tYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgLS1ib3JkZXItd2lkdGg6IDNweDtcbiAgLS1ib3JkZXItY29sb3I6ICM4ODg7XG4gIGZvbnQtc2l6ZTogMC42MGVtO1xuICBmb250LXdlaWdodDogODAwO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG59XG5cbi8vIENoYW5nZSBjb2xvclxuLnVuZm9sbG93LWJ1dHRvbiB7XG4gIC0tY29sb3I6ICNmYWE3MWI7XG4gIC0tYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgLS1ib3JkZXItd2lkdGg6IDNweDtcbiAgLS1ib3JkZXItY29sb3I6ICNmYWE3MWI7XG4gIGZvbnQtc2l6ZTogMC42MGVtO1xuICBmb250LXdlaWdodDogODAwO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDU2N3B4KSB7XG4gIC5mb2xsb3ctYnV0dG9uLCAudW5mb2xsb3ctYnV0dG9uIHtcbiAgICAgIGZvbnQtc2l6ZTogMC41MmVtO1xuICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgIHdpZHRoOiA4MHB4O1xuICAgICAgLS13aWR0aDogNzBweDtcbiAgfVxufSJdfQ== */";
-      /***/
-    },
-
-    /***/
-    91106: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5524,7 +5578,13 @@
     },
 
     /***/
-    81620: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    37133:
+    /*!********************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/comment-vote-bar/comment-vote-bar.component.html ***!
+      \********************************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5536,7 +5596,13 @@
     },
 
     /***/
-    56812: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    13707:
+    /*!********************************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/follow-comment-buttons/follow-comment-buttons.component.html ***!
+      \********************************************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5548,7 +5614,13 @@
     },
 
     /***/
-    46897: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    9121:
+    /*!**********************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/follow-icon/follow-icon.component.html ***!
+      \**********************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5560,7 +5632,13 @@
     },
 
     /***/
-    3749: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    34971:
+    /*!********************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/going-icon/going-icon.component.html ***!
+      \********************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5572,7 +5650,13 @@
     },
 
     /***/
-    37167: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    67330:
+    /*!********************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/heart-icon/heart-icon.component.html ***!
+      \********************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5584,7 +5668,13 @@
     },
 
     /***/
-    16607: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    99969:
+    /*!**************************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/jobs-filter-popover/jobs-filter-popover.component.html ***!
+      \**************************************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5596,7 +5686,13 @@
     },
 
     /***/
-    23922: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    24645:
+    /*!****************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/not-going-icon/not-going-icon.component.html ***!
+      \****************************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5608,7 +5704,13 @@
     },
 
     /***/
-    19050: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    72813:
+    /*!****************************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/posts-filter-popover/posts-filter-popover.component.html ***!
+      \****************************************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5620,7 +5722,13 @@
     },
 
     /***/
-    56074: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    20995:
+    /*!******************************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/reply-options-popover/reply-options-popover.component.html ***!
+      \******************************************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5632,7 +5740,13 @@
     },
 
     /***/
-    69495: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+    6404:
+    /*!****************************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/components/up-down-vote-buttons/up-down-vote-buttons.component.html ***!
+      \****************************************************************************************************************************************************/
+
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -5641,6 +5755,160 @@
 
       __webpack_exports__["default"] = "<ion-toolbar style=\"--background: none;\">\n  <ion-buttons slot=\"start\">\n    <ion-button *ngIf=\"!upVoted\" class=\"upvote\" (click)=\"upVotePost()\">\n      <ion-icon size=\"large\" src=\"../assets/icon/caret-up-outline.svg\"></ion-icon>\n      {{upVoteLength}}\n    </ion-button>\n    <ion-button *ngIf=\"upVoted\" class=\"upvote\" (click)=\"upVotePost()\">\n      <ion-icon  size=\"large\" src=\"../assets/icon/caret-up-outline-active.svg\"></ion-icon>\n      {{upVoteLength}}\n    </ion-button>\n\n    <!-- Downvotes -->\n    <ion-button *ngIf=\"!downVoted\" class=\"downvote\" (click)=\"downVotePost()\">\n      <ion-icon size=\"large\" src=\"../assets/icon/caret-down-outline.svg\">\n      </ion-icon>\n      {{downVoteLength}}\n    </ion-button>\n      <ion-button *ngIf=\"downVoted\" class=\"downvote\" (click)=\"downVotePost()\">\n        <ion-icon size=\"large\" src=\"../assets/icon/caret-down-outline-active.svg\"></ion-icon>\n        {{downVoteLength}}\n      </ion-button>\n\n      <ion-button *ngIf=\"!following\" class=\"follow-button\" (click)=\"follow(postID)\">Follow {{followingLength}}\n      </ion-button>\n      <ion-button *ngIf=\"following\" class=\"unfollow-button\" (click)=\"unFollow(postID)\">Unfollow {{followingLength}}\n      </ion-button>\n  </ion-buttons>\n</ion-toolbar>\n";
       /***/
+    },
+
+    /***/
+    53040:
+    /*!************************************!*\
+      !*** ./src/app/app.component.scss ***!
+      \************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LnNjc3MifQ== */";
+      /***/
+    },
+
+    /***/
+    71920:
+    /*!*****************************************************************************!*\
+      !*** ./src/app/components/comment-vote-bar/comment-vote-bar.component.scss ***!
+      \*****************************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = ".upvote {\n  border-radius: 5px;\n  width: 60px;\n  position: relative;\n  --color: #005191;\n}\n.upvote ion-icon {\n  color: #005191;\n  font-size: 40px;\n}\n.downvote {\n  border-radius: 5px;\n  width: 60px;\n  padding-left: 0px;\n  --color: #005191;\n}\n.downvote ion-icon {\n  color: #005191;\n  --font-size: 40px;\n}\n.upvoted-toast {\n  --background: #005191;\n}\n.downvoted-toast {\n  --background: #FFB351;\n}\n.followed-toast {\n  --background: #24d8a8;\n}\n.unfollowed-toast {\n  --background: #FFB351;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbW1lbnQtdm90ZS1iYXIuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0FBQ0o7QUFDSTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBQ047QUFFRTtFQUNFLGtCQUFBO0VBQ0EsV0FBQTtFQUNBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFDSjtBQUNJO0VBQ0UsY0FBQTtFQUNBLGlCQUFBO0FBQ047QUFHRTtFQUNFLHFCQUFBO0FBQUo7QUFFRTtFQUNFLHFCQUFBO0FBQ0o7QUFFRTtFQUNFLHFCQUFBO0FBQ0o7QUFDRTtFQUNFLHFCQUFBO0FBRUoiLCJmaWxlIjoiY29tbWVudC12b3RlLWJhci5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi51cHZvdGV7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHdpZHRoOiA2MHB4O1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAtLWNvbG9yOiAjMDA1MTkxO1xuXG4gICAgaW9uLWljb24ge1xuICAgICAgY29sb3I6ICMwMDUxOTE7XG4gICAgICBmb250LXNpemU6IDQwcHg7XG4gICAgfVxuICB9XG4gIC5kb3dudm90ZSB7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIHdpZHRoOiA2MHB4O1xuICAgIHBhZGRpbmctbGVmdDogMHB4O1xuICAgIC0tY29sb3I6ICMwMDUxOTE7XG4gIFxuICAgIGlvbi1pY29uIHtcbiAgICAgIGNvbG9yOiAjMDA1MTkxO1xuICAgICAgLS1mb250LXNpemU6IDQwcHg7XG4gICAgfVxuICB9XG4gIFxuICAudXB2b3RlZC10b2FzdCB7XG4gICAgLS1iYWNrZ3JvdW5kOiAjMDA1MTkxO1xuICB9XG4gIC5kb3dudm90ZWQtdG9hc3Qge1xuICAgIC0tYmFja2dyb3VuZDogI0ZGQjM1MTtcbiAgfVxuICBcbiAgLmZvbGxvd2VkLXRvYXN0IHtcbiAgICAtLWJhY2tncm91bmQ6ICMyNGQ4YTg7XG4gIH1cbiAgLnVuZm9sbG93ZWQtdG9hc3Qge1xuICAgIC0tYmFja2dyb3VuZDogI0ZGQjM1MTtcbiAgfSJdfQ== */";
+      /***/
+    },
+
+    /***/
+    22787:
+    /*!*****************************************************************************************!*\
+      !*** ./src/app/components/follow-comment-buttons/follow-comment-buttons.component.scss ***!
+      \*****************************************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = ".comment-button {\n  --color: #0055a5;\n  font-size: 1em;\n  font-size: 800;\n  border-radius: 5px;\n  position: relative;\n  right: 8px;\n}\n\nion-icon {\n  height: 40px;\n  width: 40px;\n  position: relative;\n  left: -5px;\n  font-weight: 600;\n}\n\n@media screen and (max-width: 567px) {\n  .comment-button {\n    font-size: 0.82em;\n    font-weight: 600;\n    width: 80px;\n    --width: 70px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvbGxvdy1jb21tZW50LWJ1dHRvbnMuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxjQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtFQUNBLFVBQUE7QUFDRjs7QUFDQTtFQUNFLFlBQUE7RUFDQSxXQUFBO0VBQ0Esa0JBQUE7RUFDQSxVQUFBO0VBQ0EsZ0JBQUE7QUFFRjs7QUFDQTtFQUNFO0lBQ0ksaUJBQUE7SUFDQSxnQkFBQTtJQUNBLFdBQUE7SUFDQSxhQUFBO0VBRUo7QUFDRiIsImZpbGUiOiJmb2xsb3ctY29tbWVudC1idXR0b25zLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbW1lbnQtYnV0dG9ue1xuICAtLWNvbG9yOiAjMDA1NWE1O1xuICBmb250LXNpemU6IDFlbTtcbiAgZm9udC1zaXplOiA4MDA7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICByaWdodDogOHB4O1xufVxuaW9uLWljb24ge1xuICBoZWlnaHQ6IDQwcHg7XG4gIHdpZHRoOiA0MHB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGxlZnQ6IC01cHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDU2N3B4KSB7XG4gIC5jb21tZW50LWJ1dHRvbntcbiAgICAgIGZvbnQtc2l6ZTogMC44MmVtO1xuICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgIHdpZHRoOiA4MHB4O1xuICAgICAgLS13aWR0aDogNzBweDtcbiAgfVxufVxuIl19 */";
+      /***/
+    },
+
+    /***/
+    51801:
+    /*!*******************************************************************!*\
+      !*** ./src/app/components/follow-icon/follow-icon.component.scss ***!
+      \*******************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "ion-icon {\n  --color: lightgrey;\n}\n\n@media screen and (max-width: 567px) {\n  .follow-button, .unfollow-button {\n    font-size: 0.52em;\n    font-weight: 600;\n    width: 80px;\n    --width: 70px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImZvbGxvdy1pY29uLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7QUFDRjs7QUFDQTtFQUNDO0lBQ0ssaUJBQUE7SUFDQSxnQkFBQTtJQUNBLFdBQUE7SUFDQSxhQUFBO0VBRUo7QUFDRiIsImZpbGUiOiJmb2xsb3ctaWNvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi1pY29uIHtcbiAgLS1jb2xvcjogbGlnaHRncmV5O1xufVxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogNTY3cHgpIHtcbiAuZm9sbG93LWJ1dHRvbiwgLnVuZm9sbG93LWJ1dHRvbiB7XG4gICAgICBmb250LXNpemU6IDAuNTJlbTtcbiAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgICB3aWR0aDogODBweDtcbiAgICAgIC0td2lkdGg6IDcwcHg7XG4gIH1cbn0iXX0= */";
+      /***/
+    },
+
+    /***/
+    95266:
+    /*!*****************************************************************!*\
+      !*** ./src/app/components/going-icon/going-icon.component.scss ***!
+      \*****************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "p {\n  transition: 0.5s;\n  opacity: 1;\n}\n\nion-button {\n  font-size: 1em;\n  font-weight: 800;\n  height: 20px;\n  width: 100px;\n  margin-left: 0px;\n  margin-right: 10px;\n  display: inline;\n}\n\n.not-going {\n  --color: white;\n  font-size: 0.65em;\n  --background: linear-gradient(#faa71b, #e99b14);\n}\n\n.grey-button {\n  margin-right: 10px;\n  --background: #222;\n  --color: #edf3f8;\n  font-size: 0.65em;\n}\n\n.going {\n  --color: white;\n  font-size: 0.65em;\n  --background: #24d8a8;\n  --background-hover: #24d8a8;\n}\n\n.not-going-mobile {\n  --color: white;\n  display: block;\n  width: 100%;\n  height: 40px;\n  font-size: 1em;\n  --background: linear-gradient(#faa71b, #e99b14);\n}\n\n.grey-button-mobile {\n  margin-right: 10px;\n  display: block;\n  width: 100%;\n  height: 40px;\n  --background: #0055a5;\n  --color: #edf3f8;\n  font-size: 1em;\n  top: -8px;\n  position: relative;\n}\n\n.going-mobile {\n  --color: white;\n  display: block;\n  width: 100%;\n  height: 40px;\n  font-size: 1em;\n  --background: #24d8a8;\n  --background-hover: #24d8a8;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdvaW5nLWljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBQTtFQUNBLFVBQUE7QUFDRjs7QUFDQTtFQUNFLGNBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGVBQUE7QUFFRjs7QUFBQTtFQUNFLGNBQUE7RUFDQSxpQkFBQTtFQUNBLCtDQUFBO0FBR0Y7O0FBREE7RUFDRSxrQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxpQkFBQTtBQUlGOztBQUZBO0VBQ0UsY0FBQTtFQUNBLGlCQUFBO0VBQ0EscUJBQUE7RUFDQSwyQkFBQTtBQUtGOztBQUhBO0VBQ0UsY0FBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSwrQ0FBQTtBQU1GOztBQUpBO0VBQ0Usa0JBQUE7RUFDQSxjQUFBO0VBQ0EsV0FBQTtFQUNBLFlBQUE7RUFDQSxxQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtFQUNBLFNBQUE7RUFDQSxrQkFBQTtBQU9GOztBQUxBO0VBQ0UsY0FBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0VBQ0EsWUFBQTtFQUNBLGNBQUE7RUFDQSxxQkFBQTtFQUNBLDJCQUFBO0FBUUYiLCJmaWxlIjoiZ29pbmctaWNvbi5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbInAge1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICBvcGFjaXR5OiAxO1xufVxuaW9uLWJ1dHRvbiB7XG4gIGZvbnQtc2l6ZTogMWVtO1xuICBmb250LXdlaWdodDogODAwO1xuICBoZWlnaHQ6IDIwcHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luLWxlZnQ6IDBweDtcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICBkaXNwbGF5OiBpbmxpbmU7XG59XG4ubm90LWdvaW5nIHtcbiAgLS1jb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMC42NWVtO1xuICAtLWJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgjZmFhNzFiLCAjZTk5YjE0KTtcbn1cbi5ncmV5LWJ1dHRvbntcbiAgbWFyZ2luLXJpZ2h0OiAxMHB4O1xuICAtLWJhY2tncm91bmQ6ICMyMjI7XG4gIC0tY29sb3I6ICNlZGYzZjg7XG4gIGZvbnQtc2l6ZTogMC42NWVtO1xufVxuLmdvaW5nIHtcbiAgLS1jb2xvcjogd2hpdGU7XG4gIGZvbnQtc2l6ZTogMC42NWVtO1xuICAtLWJhY2tncm91bmQ6ICMyNGQ4YTg7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogIzI0ZDhhODtcbn1cbi5ub3QtZ29pbmctbW9iaWxlICB7XG4gIC0tY29sb3I6IHdoaXRlO1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNDBweDtcbiAgZm9udC1zaXplOiAxZW07XG4gIC0tYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KCNmYWE3MWIsICNlOTliMTQpO1xufVxuLmdyZXktYnV0dG9uLW1vYmlsZSB7XG4gIG1hcmdpbi1yaWdodDogMTBweDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDQwcHg7XG4gIC0tYmFja2dyb3VuZDogIzAwNTVhNTtcbiAgLS1jb2xvcjogI2VkZjNmODtcbiAgZm9udC1zaXplOiAxZW07XG4gIHRvcDogLThweDtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xufVxuLmdvaW5nLW1vYmlsZSB7XG4gIC0tY29sb3I6IHdoaXRlO1xuICBkaXNwbGF5OiBibG9jaztcbiAgd2lkdGg6IDEwMCU7XG4gIGhlaWdodDogNDBweDtcbiAgZm9udC1zaXplOiAxZW07XG4gIC0tYmFja2dyb3VuZDogIzI0ZDhhODtcbiAgLS1iYWNrZ3JvdW5kLWhvdmVyOiAjMjRkOGE4O1xufVxuXG5cblxuIl19 */";
+      /***/
+    },
+
+    /***/
+    20970:
+    /*!*****************************************************************!*\
+      !*** ./src/app/components/heart-icon/heart-icon.component.scss ***!
+      \*****************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "ion-icon {\n  z-index: 9999;\n  position: relative;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImhlYXJ0LWljb24uY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxhQUFBO0VBQ0Esa0JBQUE7QUFDRiIsImZpbGUiOiJoZWFydC1pY29uLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWljb24ge1xuICB6LWluZGV4OiA5OTk5O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59Il19 */";
+      /***/
+    },
+
+    /***/
+    45634:
+    /*!***********************************************************************************!*\
+      !*** ./src/app/components/jobs-filter-popover/jobs-filter-popover.component.scss ***!
+      \***********************************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJqb2JzLWZpbHRlci1wb3BvdmVyLmNvbXBvbmVudC5zY3NzIn0= */";
+      /***/
+    },
+
+    /***/
+    59612:
+    /*!*************************************************************************!*\
+      !*** ./src/app/components/not-going-icon/not-going-icon.component.scss ***!
+      \*************************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJub3QtZ29pbmctaWNvbi5jb21wb25lbnQuc2NzcyJ9 */";
+      /***/
+    },
+
+    /***/
+    4511:
+    /*!*************************************************************************************!*\
+      !*** ./src/app/components/posts-filter-popover/posts-filter-popover.component.scss ***!
+      \*************************************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJwb3N0cy1maWx0ZXItcG9wb3Zlci5jb21wb25lbnQuc2NzcyJ9 */";
+      /***/
+    },
+
+    /***/
+    61778:
+    /*!***************************************************************************************!*\
+      !*** ./src/app/components/reply-options-popover/reply-options-popover.component.scss ***!
+      \***************************************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJyZXBseS1vcHRpb25zLXBvcG92ZXIuY29tcG9uZW50LnNjc3MifQ== */";
+      /***/
+    },
+
+    /***/
+    82993:
+    /*!*************************************************************************************!*\
+      !*** ./src/app/components/up-down-vote-buttons/up-down-vote-buttons.component.scss ***!
+      \*************************************************************************************/
+
+    /***/
+    function _(module) {
+      "use strict";
+
+      module.exports = "ion-buttons {\n  position: relative;\n  left: -10px;\n}\n\n.upvote {\n  border-radius: 5px;\n  position: relative;\n  --color: #005191;\n}\n\n.upvote ion-icon {\n  color: #005191;\n  font-size: 40px;\n}\n\n.downvote {\n  border-radius: 5px;\n  padding-left: 0px;\n  --color: #005191;\n}\n\n.downvote ion-icon {\n  color: #005191;\n  --font-size: 40px;\n}\n\n.upvoted-toast {\n  --background: #005191;\n}\n\n.downvoted-toast {\n  --background: #FFB351;\n}\n\n.followed-toast {\n  --background: #24d8a8;\n}\n\n.unfollowed-toast {\n  --background: #FFB351;\n}\n\n.follow-button {\n  --color: #888;\n  --border-style: solid;\n  --border-width: 3px;\n  --border-color: #888;\n  font-size: 0.6em;\n  font-weight: 800;\n  border-radius: 5px;\n  width: 100px;\n  margin-left: 10px;\n}\n\n.unfollow-button {\n  --color: #faa71b;\n  --border-style: solid;\n  --border-width: 3px;\n  --border-color: #faa71b;\n  font-size: 0.6em;\n  font-weight: 800;\n  border-radius: 5px;\n  width: 100px;\n  margin-left: 10px;\n}\n\n@media screen and (max-width: 567px) {\n  .follow-button, .unfollow-button {\n    font-size: 0.52em;\n    font-weight: 600;\n    width: 80px;\n    --width: 70px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVwLWRvd24tdm90ZS1idXR0b25zLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFDQSxXQUFBO0FBQ0Y7O0FBRUE7RUFDRSxrQkFBQTtFQUVBLGtCQUFBO0VBQ0EsZ0JBQUE7QUFBRjs7QUFFRTtFQUNFLGNBQUE7RUFDQSxlQUFBO0FBQUo7O0FBSUE7RUFDRSxrQkFBQTtFQUVBLGlCQUFBO0VBQ0EsZ0JBQUE7QUFGRjs7QUFJRTtFQUNFLGNBQUE7RUFDQSxpQkFBQTtBQUZKOztBQU1BO0VBQ0UscUJBQUE7QUFIRjs7QUFLQTtFQUNFLHFCQUFBO0FBRkY7O0FBS0E7RUFDRSxxQkFBQTtBQUZGOztBQUlBO0VBQ0UscUJBQUE7QUFERjs7QUFJQTtFQUNFLGFBQUE7RUFDQSxxQkFBQTtFQUNBLG1CQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxZQUFBO0VBQ0EsaUJBQUE7QUFERjs7QUFLQTtFQUNFLGdCQUFBO0VBQ0EscUJBQUE7RUFDQSxtQkFBQTtFQUNBLHVCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0VBQ0EsWUFBQTtFQUNBLGlCQUFBO0FBRkY7O0FBS0E7RUFDRTtJQUNJLGlCQUFBO0lBQ0EsZ0JBQUE7SUFDQSxXQUFBO0lBQ0EsYUFBQTtFQUZKO0FBQ0YiLCJmaWxlIjoidXAtZG93bi12b3RlLWJ1dHRvbnMuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24tYnV0dG9ucyB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgbGVmdDogLTEwcHg7XG59XG5cbi51cHZvdGV7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgLy8gd2lkdGg6IDYwcHg7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgLS1jb2xvcjogIzAwNTE5MTtcblxuICBpb24taWNvbiB7XG4gICAgY29sb3I6ICMwMDUxOTE7XG4gICAgZm9udC1zaXplOiA0MHB4O1xuICB9XG59XG5cbi5kb3dudm90ZSB7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgLy8gd2lkdGg6IDYwcHg7XG4gIHBhZGRpbmctbGVmdDogMHB4O1xuICAtLWNvbG9yOiAjMDA1MTkxO1xuXG4gIGlvbi1pY29uIHtcbiAgICBjb2xvcjogIzAwNTE5MTtcbiAgICAtLWZvbnQtc2l6ZTogNDBweDtcbiAgfVxufVxuXG4udXB2b3RlZC10b2FzdCB7XG4gIC0tYmFja2dyb3VuZDogIzAwNTE5MTtcbn1cbi5kb3dudm90ZWQtdG9hc3Qge1xuICAtLWJhY2tncm91bmQ6ICNGRkIzNTE7XG59XG5cbi5mb2xsb3dlZC10b2FzdCB7XG4gIC0tYmFja2dyb3VuZDogIzI0ZDhhODtcbn1cbi51bmZvbGxvd2VkLXRvYXN0IHtcbiAgLS1iYWNrZ3JvdW5kOiAjRkZCMzUxO1xufVxuXG4uZm9sbG93LWJ1dHRvbiB7XG4gIC0tY29sb3I6ICM4ODg7XG4gIC0tYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgLS1ib3JkZXItd2lkdGg6IDNweDtcbiAgLS1ib3JkZXItY29sb3I6ICM4ODg7XG4gIGZvbnQtc2l6ZTogMC42MGVtO1xuICBmb250LXdlaWdodDogODAwO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG59XG5cbi8vIENoYW5nZSBjb2xvclxuLnVuZm9sbG93LWJ1dHRvbiB7XG4gIC0tY29sb3I6ICNmYWE3MWI7XG4gIC0tYm9yZGVyLXN0eWxlOiBzb2xpZDtcbiAgLS1ib3JkZXItd2lkdGg6IDNweDtcbiAgLS1ib3JkZXItY29sb3I6ICNmYWE3MWI7XG4gIGZvbnQtc2l6ZTogMC42MGVtO1xuICBmb250LXdlaWdodDogODAwO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luLWxlZnQ6IDEwcHg7XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDU2N3B4KSB7XG4gIC5mb2xsb3ctYnV0dG9uLCAudW5mb2xsb3ctYnV0dG9uIHtcbiAgICAgIGZvbnQtc2l6ZTogMC41MmVtO1xuICAgICAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgICAgIHdpZHRoOiA4MHB4O1xuICAgICAgLS13aWR0aDogNzBweDtcbiAgfVxufSJdfQ== */";
+      /***/
     }
   },
   /******/
@@ -5648,11 +5916,6 @@
     // webpackRuntimeModules
 
     /******/
-    "use strict";
-    /******/
-
-    /******/
-
     var __webpack_exec__ = function __webpack_exec__(moduleId) {
       return __webpack_require__(__webpack_require__.s = moduleId);
     };

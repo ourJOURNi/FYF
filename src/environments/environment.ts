@@ -10,7 +10,8 @@
 
 import 'zone.js/plugins/zone-error';
 
-const ip = '10.0.1.7';
+const ip = '10.0.1.16';
+const mobileIp = '192.168.43.128';
 const wsEndpoint = 'ws://localhost:8081';
 const baseUrl = `http://${ip}:3000`;
 const fairsUrl = `http://${ip}:4000`;

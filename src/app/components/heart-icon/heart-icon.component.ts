@@ -28,7 +28,6 @@ import { ProfileService } from 'src/app/services/profile.service';
   ]
 })
 export class HeartIconComponent implements OnInit {
-
   favoriteState;
   public iconName = 'heart';
   @Input() job;

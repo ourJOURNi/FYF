@@ -15,6 +15,7 @@ import { Subscription } from 'rxjs';
 })
 export class FavoritesPage implements OnInit, OnDestroy {
   favoriteJobsObj;
+  favoritesLength;
   userEmail;
 
   favoriteSubs: Subscription;
@@ -56,7 +57,7 @@ export class FavoritesPage implements OnInit, OnDestroy {
     // getting all the favorite jobs that the user has on their profile
     this.profileSub = this.profile.getUserDetails().subscribe( data => {
       this.userEmail = data['email'];
-      // this.favoriteJobs = data['favoriteJobs']
+      this.favoritesLength = data['favoriteJobs'].length
       // console.log('Favorite Jobs:');
       // console.log(this.favoriteJobs);
 

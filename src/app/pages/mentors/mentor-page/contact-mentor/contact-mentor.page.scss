@@ -1,6 +1,14 @@
 ion-content {
     --background: #f4f5f8;
 }
+ion-toolbar {
+    --background: #0055a5;
+  }
+
+ion-back-button {
+    color: white;
+    width: auto;
+  }
 .blue-button-small {
     --background: #0055a5;
     opacity: 1;

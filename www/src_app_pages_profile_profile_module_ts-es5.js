@@ -1,4 +1,6 @@
 (function () {
+  "use strict";
+
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -7,9 +9,13 @@
 
   (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["src_app_pages_profile_profile_module_ts"], {
     /***/
-    41474: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    41474:
+    /*!*********************************************************!*\
+      !*** ./src/app/pages/profile/profile-routing.module.ts ***!
+      \*********************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -30,19 +36,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -138,7 +144,7 @@
           /*! import() */
           "common").then(__webpack_require__.bind(__webpack_require__,
           /*! ./resume/view-resume/view-resume.module */
-          65207)).then(function (m) {
+          47659)).then(function (m) {
             return m.ViewResumePageModule;
           });
         }
@@ -223,9 +229,13 @@
     },
 
     /***/
-    88558: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    88558:
+    /*!*************************************************!*\
+      !*** ./src/app/pages/profile/profile.module.ts ***!
+      \*************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -246,37 +256,37 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      38583);
+      54364);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/forms */
-      3679);
+      1707);
       /* harmony import */
 
 
@@ -311,9 +321,13 @@
     },
 
     /***/
-    64629: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    64629:
+    /*!***********************************************!*\
+      !*** ./src/app/pages/profile/profile.page.ts ***!
+      \***********************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -334,31 +348,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_profile_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./profile.page.html */
-      79291);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_profile_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./profile.page.html */
+      31654);
       /* harmony import */
 
 
       var _profile_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./profile.page.scss */
-      2777);
+      36713);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -376,19 +390,19 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! rxjs/operators */
-      45435);
+      9170);
       /* harmony import */
 
 
       var _ionic_storage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/storage */
-      38605);
+      12314);
 
       var _ProfilePage = /*#__PURE__*/function () {
         function ProfilePage(auth, profile, storage, router, toast, alert, loading) {
@@ -742,33 +756,37 @@
 
       _ProfilePage = (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_9__.Component)({
         selector: 'app-profile',
-        template: _raw_loader_profile_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_profile_page_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_profile_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_profile_page_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_6__.__metadata)("design:paramtypes", [_services_auth_service__WEBPACK_IMPORTED_MODULE_2__.AuthService, _services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService, _ionic_storage__WEBPACK_IMPORTED_MODULE_7__.Storage, _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router, _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.ToastController, _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.AlertController, _ionic_angular__WEBPACK_IMPORTED_MODULE_8__.LoadingController])], _ProfilePage);
       /***/
     },
 
     /***/
-    2777: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = ".profile-wrapper {\n  margin: 16px auto;\n}\n\n@media only screen and (max-width: 575px) {\n  .profile-wrapper {\n    margin: 24px auto;\n  }\n}\n\nion-alert {\n  --background: #e4405f;\n}\n\nion-list {\n  background: none;\n}\n\nion-item {\n  background: none;\n  --color: #0055a5;\n  margin: 8px auto;\n  box-shadow: 1px 10px 26px rgba(0, 0, 0, 0.05);\n  border-radius: 5px;\n}\n\n.desktop-toolbar {\n  --background: none;\n  padding-bottom: 16px;\n  border-bottom: 1px solid #33333326;\n}\n\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n\n#profile-info {\n  height: auto;\n  text-align: left;\n  margin-left: 24px;\n}\n\nh4 {\n  color: #000;\n  font-size: 1.9em;\n  opacity: 1;\n}\n\np {\n  font-size: 1em;\n  opacity: 1;\n  transition: 0.5s;\n}\n\nspan {\n  color: #0055a5;\n  font-weight: 600;\n  width: 64px;\n  display: inline-block;\n}\n\n#profile-picture {\n  height: 80px;\n  width: 80px;\n  border-radius: 100px;\n  margin: 0 auto 8px;\n  display: block;\n  opacity: 1;\n  border: 5px solid #0055a5;\n}\n\n.back-button {\n  opacity: 1;\n}\n\n.blue-button {\n  --background: #0055a5;\n  opacity: 1;\n  height: 24px;\n  width: 100px;\n  font-size: 0.5em;\n}\n\n.logout-button {\n  color: white;\n  --background: #e4405f;\n  --background-hover: #dd3252;\n  height: 24px;\n  width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);\n  margin-bottom: 52px auto;\n}\n\n@-webkit-keyframes text-slide-up {\n  0% {\n    transform: translateY(20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@keyframes text-slide-up {\n  0% {\n    transform: translateY(20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@-webkit-keyframes pic-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@keyframes pic-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@-webkit-keyframes header-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@keyframes header-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@-webkit-keyframes buttons-slide-up {\n  0% {\n    transform: translateY(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@keyframes buttons-slide-up {\n  0% {\n    transform: translateY(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@-webkit-keyframes buttons-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@keyframes buttons-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@media screen and (max-width: 992px) {\n  p {\n    font-size: 1em;\n  }\n\n  span {\n    color: #0055a5;\n    font-weight: 600;\n    width: 64px;\n    display: inline-block;\n    text-align: left;\n    margin-right: 10px;\n  }\n}\n\n@media screen and (min-width: 768px) {\n  #change-pro-pic-button {\n    position: absolute;\n    top: 75px;\n    left: 188px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2ZpbGUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQUE7QUFDRjs7QUFDQTtFQUNFO0lBQ0UsaUJBQUE7RUFFRjtBQUNGOztBQUFBO0VBQ0UscUJBQUE7QUFFRjs7QUFBQTtFQUNFLGdCQUFBO0FBR0Y7O0FBREE7RUFDRSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSw2Q0FBQTtFQUNBLGtCQUFBO0FBSUY7O0FBRkE7RUFDRSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0Esa0NBQUE7QUFLRjs7QUFIRTtFQUNFLGNBQUE7QUFLSjs7QUFGQTtFQUNFLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBS0Y7O0FBRkE7RUFDRSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxVQUFBO0FBS0Y7O0FBRkE7RUFDRSxjQUFBO0VBQ0EsVUFBQTtFQUNBLGdCQUFBO0FBS0Y7O0FBRkE7RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0VBQ0EscUJBQUE7QUFLRjs7QUFIQTtFQUNFLFlBQUE7RUFDQSxXQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxVQUFBO0VBQ0EseUJBQUE7QUFNRjs7QUFIQTtFQUNFLFVBQUE7QUFNRjs7QUFIQTtFQUNFLHFCQUFBO0VBQ0EsVUFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUFNRjs7QUFIQTtFQUNFLFlBQUE7RUFDQSxxQkFBQTtFQUNBLDJCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMkNBQUE7RUFDQSx3QkFBQTtBQU1GOztBQUZBO0VBQ0U7SUFDRSwyQkFBQTtFQUtGO0VBSEE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFLRjtBQUNGOztBQVpBO0VBQ0U7SUFDRSwyQkFBQTtFQUtGO0VBSEE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFLRjtBQUNGOztBQUZBO0VBQ0U7SUFDRSw0QkFBQTtFQUlGO0VBRkE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFJRjtBQUNGOztBQVhBO0VBQ0U7SUFDRSw0QkFBQTtFQUlGO0VBRkE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFJRjtBQUNGOztBQURBO0VBQ0U7SUFDRSw0QkFBQTtFQUdGO0VBREE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFHRjtBQUNGOztBQVZBO0VBQ0U7SUFDRSw0QkFBQTtFQUdGO0VBREE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFHRjtBQUNGOztBQUFBO0VBQ0U7SUFDRSw0QkFBQTtFQUVGO0VBQUE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFFRjtBQUNGOztBQVRBO0VBQ0U7SUFDRSw0QkFBQTtFQUVGO0VBQUE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFFRjtBQUNGOztBQUNBO0VBQ0U7SUFDRSw0QkFBQTtFQUNGO0VBQ0E7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFDRjtBQUNGOztBQVJBO0VBQ0U7SUFDRSw0QkFBQTtFQUNGO0VBQ0E7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFDRjtBQUNGOztBQUVBO0VBQ0U7SUFDRSxjQUFBO0VBQUY7O0VBRUM7SUFDQyxjQUFBO0lBQ0EsZ0JBQUE7SUFDQSxXQUFBO0lBQ0EscUJBQUE7SUFDQSxnQkFBQTtJQUNBLGtCQUFBO0VBQ0Y7QUFDRjs7QUFHQTtFQUNFO0lBQ0Usa0JBQUE7SUFDQSxTQUFBO0lBQ0EsV0FBQTtFQURGO0FBQ0YiLCJmaWxlIjoicHJvZmlsZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZmlsZS13cmFwcGVyIHtcbiAgbWFyZ2luOiAxNnB4IGF1dG87XG59XG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDU3NXB4KSB7XG4gIC5wcm9maWxlLXdyYXBwZXIge1xuICAgIG1hcmdpbjogMjRweCBhdXRvO1xuICB9XG59XG5pb24tYWxlcnQge1xuICAtLWJhY2tncm91bmQ6ICNlNDQwNWY7XG59XG5pb24tbGlzdCB7XG4gIGJhY2tncm91bmQ6IG5vbmU7XG59XG5pb24taXRlbSB7XG4gIGJhY2tncm91bmQ6IG5vbmU7XG4gIC0tY29sb3I6ICMwMDU1YTU7XG4gIG1hcmdpbjogOHB4IGF1dG87XG4gIGJveC1zaGFkb3c6IDFweCAxMHB4IDI2cHggcmdiYSgwLDAsMCwwLjA1KTtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xufVxuLmRlc2t0b3AtdG9vbGJhcntcbiAgLS1iYWNrZ3JvdW5kOiBub25lO1xuICBwYWRkaW5nLWJvdHRvbTogMTZweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMzMzMzMzMyNjtcblxuICBoMSB7XG4gICAgY29sb3I6ICMwMDU1YTU7XG4gIH1cbn1cbiNwcm9maWxlLWluZm8ge1xuICBoZWlnaHQ6IGF1dG87XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIG1hcmdpbi1sZWZ0OiAyNHB4O1xufVxuXG5oNCB7XG4gIGNvbG9yOiAjMDAwO1xuICBmb250LXNpemU6IDEuOWVtO1xuICBvcGFjaXR5OiAxO1xuICAvLyBhbmltYXRpb246IGhlYWRlci1zbGlkZS1yaWdodCAwLjVzIGN1YmljLWJlemllcigwLjE3NSwgMC44ODUsIDAuMzIsIDEuMjc1KSAxcyBmb3J3YXJkcztcbn1cbnAge1xuICBmb250LXNpemU6IDFlbTtcbiAgb3BhY2l0eTogMTtcbiAgdHJhbnNpdGlvbjogMC41cztcbiAgLy8gYW5pbWF0aW9uOiB0ZXh0LXNsaWRlLXVwIDAuNXMgY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpIDEuNXMgZm9yd2FyZHM7XG59XG5zcGFuIHtcbiAgY29sb3I6ICMwMDU1YTU7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIHdpZHRoOiA2NHB4O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59XG4jcHJvZmlsZS1waWN0dXJlIHtcbiAgaGVpZ2h0OiA4MHB4O1xuICB3aWR0aDogODBweDtcbiAgYm9yZGVyLXJhZGl1czogMTAwcHg7XG4gIG1hcmdpbjogMCBhdXRvIDhweDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG9wYWNpdHk6IDE7XG4gIGJvcmRlcjogNXB4IHNvbGlkICMwMDU1YTU7XG4gIC8vIGFuaW1hdGlvbjogcGljLXNsaWRlLXJpZ2h0IDAuNXMgY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpIDAuNXMgZm9yd2FyZHM7XG59XG4uYmFjay1idXR0b257XG4gIG9wYWNpdHk6IDE7XG4gIC8vIGFuaW1hdGlvbjogYnV0dG9ucy1zbGlkZS11cCAwLjVzIGN1YmljLWJlemllcigwLjE3NSwgMC44ODUsIDAuMzIsIDEuMjc1KSBmb3J3YXJkcztcbn1cbi5ibHVlLWJ1dHRvbntcbiAgLS1iYWNrZ3JvdW5kOiAjMDA1NWE1O1xuICBvcGFjaXR5OiAxO1xuICBoZWlnaHQ6IDI0cHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgZm9udC1zaXplOiAwLjVlbTtcbiAgLy8gYW5pbWF0aW9uOiBidXR0b25zLXNsaWRlLXJpZ2h0IDAuNXMgY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpIC45cyBmb3J3YXJkcztcbn1cbi5sb2dvdXQtYnV0dG9uIHtcbiAgY29sb3I6IHdoaXRlO1xuICAtLWJhY2tncm91bmQ6ICNlNDQwNWY7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogI2RkMzI1MjtcbiAgaGVpZ2h0OiAyNHB4O1xuICB3aWR0aDogMTAwcHg7XG4gIGZvbnQtc2l6ZTogMC41ZW07XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGJveC1zaGFkb3c6IDFweCAxcHggMTBweCByZ2JhKDAsMCwwLDAuMSk7XG4gIG1hcmdpbi1ib3R0b206IDUycHggYXV0bztcbiAgLy8gYW5pbWF0aW9uOiBidXR0b25zLXNsaWRlLXJpZ2h0IDAuNXMgY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpIDEuM3MgZm9yd2FyZHM7XG59XG5cbkBrZXlmcmFtZXMgdGV4dC1zbGlkZS11cCB7XG4gIDAle1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgyMHB4KTtcbiAgfVxuICAxMDAle1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7XG4gIH1cbn1cblxuQGtleWZyYW1lcyBwaWMtc2xpZGUtcmlnaHQge1xuICAwJXtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTIwcHgpO1xuICB9XG4gIDEwMCV7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMHB4KTtcbiAgfVxufVxuXG5Aa2V5ZnJhbWVzIGhlYWRlci1zbGlkZS1yaWdodCB7XG4gIDAle1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtMjBweCk7XG4gIH1cbiAgMTAwJXtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwcHgpO1xuICB9XG59XG5cbkBrZXlmcmFtZXMgYnV0dG9ucy1zbGlkZS11cCB7XG4gIDAle1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMjBweCk7XG4gIH1cbiAgMTAwJXtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgwcHgpO1xuICB9XG59XG5cbkBrZXlmcmFtZXMgYnV0dG9ucy1zbGlkZS1yaWdodCB7XG4gIDAle1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtMjBweCk7XG4gIH1cbiAgMTAwJXtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwcHgpO1xuICB9XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDk5MnB4KSB7XG4gIHAge1xuICAgIGZvbnQtc2l6ZTogMWVtO1xuICB9XG4gICBzcGFuIHtcbiAgICBjb2xvcjogIzAwNTVhNTtcbiAgICBmb250LXdlaWdodDogNjAwO1xuICAgIHdpZHRoOiA2NHB4O1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgIG1hcmdpbi1yaWdodDogMTBweDtcbiAgfVxufVxuXG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDc2OHB4KSB7XG4gICNjaGFuZ2UtcHJvLXBpYy1idXR0b24ge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB0b3A6IDc1cHg7XG4gICAgbGVmdDogMTg4cHg7XG4gIH1cbn0iXX0= */";
-      /***/
-    },
+    31654:
+    /*!****************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/pages/profile/profile.page.html ***!
+      \****************************************************************************************************************/
 
     /***/
-    79291: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
       __webpack_exports__["default"] = "<ion-header no-border class=\"ion-hide-lg-up\">\n  <ion-toolbar>\n    <ion-item style=\"--background: #0055a5;\">\n      <ion-avatar slot=\"start\">\n        <img style=\"border-radius: 80px;\" height=\"50\" src=\"../../../assets/icon/profile-icon.svg\">\n      </ion-avatar>\n    </ion-item>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n     <!-- Desktop Header -->\n     <ion-row style=\"padding-top: 80px; margin-bottom: 40px;\" class=\"ion-hide-lg-down ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"7\">\n        <ion-toolbar class=\"desktop-toolbar\">\n              <ion-buttons slot=\"start\">\n                  <img height=\"50\" src=\"../../../assets/icon/profile-icon-blue.svg\" alt=\"\" srcset=\"\">\n                  <h1>Profile</h1>\n              </ion-buttons>\n        </ion-toolbar>\n            <!-- <img height=\"50\" style=\"display: inline;\" src=\"../../../assets/icon/suitcase-blue.svg\" alt=\"\" srcset=\"\">\n            <h1 style=\"display: inline; margin-left: 15px;\">Jobs</h1> -->\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"profile-wrapper ion-justify-content-center ion-align-items-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"7\">\n        <ion-row style=\"background: rgb(228, 235, 241); padding: 1em; border-radius: 5px;\n        box-shadow: 1px 10px 26px rgba(0,0,0,0.05);\" >\n          <ion-col size-xs=\"11\" size-sm=\"3\" size-md=\"2\" size-lg=\"1.5\">\n            <ion-row class=\"ion-justify-content-center\">\n              <ion-col size=\"12\">\n                <img id=\"profile-picture\" src=\"{{this.userObject.profilePicture}}\" alt=\"User Profile Picture\">\n              </ion-col>\n              <ion-col class=\"ion-text-center\" size=\"12\">\n                <ion-button class=\"blue-button\" (click)=\"changeProfilePicture()\">\n                  Change Picture\n                </ion-button>\n              </ion-col>\n            </ion-row>\n          </ion-col>\n          <ion-col size-xs=\"11\" size-sm=\"6\" size-md=\"5\" size-lg=\"10\" size-xl=\"5\">\n            <ion-row>\n              <ion-col id=\"profile-info\" size=\"12\">\n                <p><span>About</span>{{userObject.about}}</p>\n                <p><span>Name:</span> {{userObject.fullName}}</p>\n                <p><span>Email:</span> {{userObject.email}}</p>\n                <p><span>Phone:</span> {{userObject.phone}}</p>\n                <p style=\"text-transform: capitalize;\"><span>Gender:</span> {{userObject.gender}}</p>\n                <p><span>School:</span> {{userObject.school}}</p>\n                <p><span>Grade:</span> {{userObject.grade}}</p>\n              </ion-col>\n            </ion-row>\n          </ion-col>\n        </ion-row>\n      </ion-col>\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"7\">\n        <ion-list>\n          <ion-item detail=\"true\" lines=\"none\" (click)=\"changeEmail()\">\n            <ion-label>Change Email</ion-label>\n          </ion-item>\n          <ion-item detail=\"true\" lines=\"none\"   (click)=\"changeAbout()\">\n            <ion-label>Change About Description</ion-label>\n          </ion-item>\n          <ion-item detail=\"true\" lines=\"none\"   (click)=\"changePassword()\">\n            <ion-label>Change Password</ion-label>\n          </ion-item>\n          <ion-item detail=\"true\" lines=\"none\"   (click)=\"changePhoneNumber()\">\n            <ion-label>Change Phone Number</ion-label>\n          </ion-item>\n          <ion-item detail=\"true\" lines=\"none\"   (click)=\"changeSchool()\">\n            <ion-label>Change School/Grade</ion-label>\n          </ion-item>\n          <ion-item detail=\"true\" lines=\"none\"   (click)=\"updateResume()\">\n            <ion-label>View/Update Resume</ion-label>\n          </ion-item>\n          <ion-item style=\"--background: #e3405f; --color: white;\" detail=\"true\" lines=\"none\"   (click)=\"confirmLogout()\">\n            <ion-label>Logout</ion-label>\n          </ion-item>\n      </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>";
+      /***/
+    },
+
+    /***/
+    36713:
+    /*!*************************************************!*\
+      !*** ./src/app/pages/profile/profile.page.scss ***!
+      \*************************************************/
+
+    /***/
+    function _(module) {
+      module.exports = ".profile-wrapper {\n  margin: 16px auto;\n}\n\n@media only screen and (max-width: 575px) {\n  .profile-wrapper {\n    margin: 24px auto;\n  }\n}\n\nion-alert {\n  --background: #e4405f;\n}\n\nion-list {\n  background: none;\n}\n\nion-item {\n  background: none;\n  --color: #0055a5;\n  margin: 8px auto;\n  box-shadow: 1px 10px 26px rgba(0, 0, 0, 0.05);\n  border-radius: 5px;\n}\n\n.desktop-toolbar {\n  --background: none;\n  padding-bottom: 16px;\n  border-bottom: 1px solid #33333326;\n}\n\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n\n#profile-info {\n  height: auto;\n  text-align: left;\n  margin-left: 24px;\n}\n\nh4 {\n  color: #000;\n  font-size: 1.9em;\n  opacity: 1;\n}\n\np {\n  font-size: 1em;\n  opacity: 1;\n  transition: 0.5s;\n}\n\nspan {\n  color: #0055a5;\n  font-weight: 600;\n  width: 64px;\n  display: inline-block;\n}\n\n#profile-picture {\n  height: 80px;\n  width: 80px;\n  border-radius: 100px;\n  margin: 0 auto 8px;\n  display: block;\n  opacity: 1;\n  border: 5px solid #0055a5;\n}\n\n.back-button {\n  opacity: 1;\n}\n\n.blue-button {\n  --background: #0055a5;\n  opacity: 1;\n  height: 24px;\n  width: 100px;\n  font-size: 0.5em;\n}\n\n.logout-button {\n  color: white;\n  --background: #e4405f;\n  --background-hover: #dd3252;\n  height: 24px;\n  width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);\n  margin-bottom: 52px auto;\n}\n\n@-webkit-keyframes text-slide-up {\n  0% {\n    transform: translateY(20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@keyframes text-slide-up {\n  0% {\n    transform: translateY(20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@-webkit-keyframes pic-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@keyframes pic-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@-webkit-keyframes header-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@keyframes header-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@-webkit-keyframes buttons-slide-up {\n  0% {\n    transform: translateY(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@keyframes buttons-slide-up {\n  0% {\n    transform: translateY(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateY(0px);\n  }\n}\n\n@-webkit-keyframes buttons-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@keyframes buttons-slide-right {\n  0% {\n    transform: translateX(-20px);\n  }\n  100% {\n    opacity: 1;\n    transform: translateX(0px);\n  }\n}\n\n@media screen and (max-width: 992px) {\n  p {\n    font-size: 1em;\n  }\n\n  span {\n    color: #0055a5;\n    font-weight: 600;\n    width: 64px;\n    display: inline-block;\n    text-align: left;\n    margin-right: 10px;\n  }\n}\n\n@media screen and (min-width: 768px) {\n  #change-pro-pic-button {\n    position: absolute;\n    top: 75px;\n    left: 188px;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2ZpbGUucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQUE7QUFDRjs7QUFDQTtFQUNFO0lBQ0UsaUJBQUE7RUFFRjtBQUNGOztBQUFBO0VBQ0UscUJBQUE7QUFFRjs7QUFBQTtFQUNFLGdCQUFBO0FBR0Y7O0FBREE7RUFDRSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSw2Q0FBQTtFQUNBLGtCQUFBO0FBSUY7O0FBRkE7RUFDRSxrQkFBQTtFQUNBLG9CQUFBO0VBQ0Esa0NBQUE7QUFLRjs7QUFIRTtFQUNFLGNBQUE7QUFLSjs7QUFGQTtFQUNFLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBS0Y7O0FBRkE7RUFDRSxXQUFBO0VBQ0EsZ0JBQUE7RUFDQSxVQUFBO0FBS0Y7O0FBRkE7RUFDRSxjQUFBO0VBQ0EsVUFBQTtFQUNBLGdCQUFBO0FBS0Y7O0FBRkE7RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0VBQ0EscUJBQUE7QUFLRjs7QUFIQTtFQUNFLFlBQUE7RUFDQSxXQUFBO0VBQ0Esb0JBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxVQUFBO0VBQ0EseUJBQUE7QUFNRjs7QUFIQTtFQUNFLFVBQUE7QUFNRjs7QUFIQTtFQUNFLHFCQUFBO0VBQ0EsVUFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7QUFNRjs7QUFIQTtFQUNFLFlBQUE7RUFDQSxxQkFBQTtFQUNBLDJCQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsMkNBQUE7RUFDQSx3QkFBQTtBQU1GOztBQUZBO0VBQ0U7SUFDRSwyQkFBQTtFQUtGO0VBSEE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFLRjtBQUNGOztBQVpBO0VBQ0U7SUFDRSwyQkFBQTtFQUtGO0VBSEE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFLRjtBQUNGOztBQUZBO0VBQ0U7SUFDRSw0QkFBQTtFQUlGO0VBRkE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFJRjtBQUNGOztBQVhBO0VBQ0U7SUFDRSw0QkFBQTtFQUlGO0VBRkE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFJRjtBQUNGOztBQURBO0VBQ0U7SUFDRSw0QkFBQTtFQUdGO0VBREE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFHRjtBQUNGOztBQVZBO0VBQ0U7SUFDRSw0QkFBQTtFQUdGO0VBREE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFHRjtBQUNGOztBQUFBO0VBQ0U7SUFDRSw0QkFBQTtFQUVGO0VBQUE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFFRjtBQUNGOztBQVRBO0VBQ0U7SUFDRSw0QkFBQTtFQUVGO0VBQUE7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFFRjtBQUNGOztBQUNBO0VBQ0U7SUFDRSw0QkFBQTtFQUNGO0VBQ0E7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFDRjtBQUNGOztBQVJBO0VBQ0U7SUFDRSw0QkFBQTtFQUNGO0VBQ0E7SUFDRSxVQUFBO0lBQ0EsMEJBQUE7RUFDRjtBQUNGOztBQUVBO0VBQ0U7SUFDRSxjQUFBO0VBQUY7O0VBRUM7SUFDQyxjQUFBO0lBQ0EsZ0JBQUE7SUFDQSxXQUFBO0lBQ0EscUJBQUE7SUFDQSxnQkFBQTtJQUNBLGtCQUFBO0VBQ0Y7QUFDRjs7QUFHQTtFQUNFO0lBQ0Usa0JBQUE7SUFDQSxTQUFBO0lBQ0EsV0FBQTtFQURGO0FBQ0YiLCJmaWxlIjoicHJvZmlsZS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIucHJvZmlsZS13cmFwcGVyIHtcbiAgbWFyZ2luOiAxNnB4IGF1dG87XG59XG5AbWVkaWEgb25seSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDU3NXB4KSB7XG4gIC5wcm9maWxlLXdyYXBwZXIge1xuICAgIG1hcmdpbjogMjRweCBhdXRvO1xuICB9XG59XG5pb24tYWxlcnQge1xuICAtLWJhY2tncm91bmQ6ICNlNDQwNWY7XG59XG5pb24tbGlzdCB7XG4gIGJhY2tncm91bmQ6IG5vbmU7XG59XG5pb24taXRlbSB7XG4gIGJhY2tncm91bmQ6IG5vbmU7XG4gIC0tY29sb3I6ICMwMDU1YTU7XG4gIG1hcmdpbjogOHB4IGF1dG87XG4gIGJveC1zaGFkb3c6IDFweCAxMHB4IDI2cHggcmdiYSgwLDAsMCwwLjA1KTtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xufVxuLmRlc2t0b3AtdG9vbGJhcntcbiAgLS1iYWNrZ3JvdW5kOiBub25lO1xuICBwYWRkaW5nLWJvdHRvbTogMTZweDtcbiAgYm9yZGVyLWJvdHRvbTogMXB4IHNvbGlkICMzMzMzMzMyNjtcblxuICBoMSB7XG4gICAgY29sb3I6ICMwMDU1YTU7XG4gIH1cbn1cbiNwcm9maWxlLWluZm8ge1xuICBoZWlnaHQ6IGF1dG87XG4gIHRleHQtYWxpZ246IGxlZnQ7XG4gIG1hcmdpbi1sZWZ0OiAyNHB4O1xufVxuXG5oNCB7XG4gIGNvbG9yOiAjMDAwO1xuICBmb250LXNpemU6IDEuOWVtO1xuICBvcGFjaXR5OiAxO1xuICAvLyBhbmltYXRpb246IGhlYWRlci1zbGlkZS1yaWdodCAwLjVzIGN1YmljLWJlemllcigwLjE3NSwgMC44ODUsIDAuMzIsIDEuMjc1KSAxcyBmb3J3YXJkcztcbn1cbnAge1xuICBmb250LXNpemU6IDFlbTtcbiAgb3BhY2l0eTogMTtcbiAgdHJhbnNpdGlvbjogMC41cztcbiAgLy8gYW5pbWF0aW9uOiB0ZXh0LXNsaWRlLXVwIDAuNXMgY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpIDEuNXMgZm9yd2FyZHM7XG59XG5zcGFuIHtcbiAgY29sb3I6ICMwMDU1YTU7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIHdpZHRoOiA2NHB4O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG59XG4jcHJvZmlsZS1waWN0dXJlIHtcbiAgaGVpZ2h0OiA4MHB4O1xuICB3aWR0aDogODBweDtcbiAgYm9yZGVyLXJhZGl1czogMTAwcHg7XG4gIG1hcmdpbjogMCBhdXRvIDhweDtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG9wYWNpdHk6IDE7XG4gIGJvcmRlcjogNXB4IHNvbGlkICMwMDU1YTU7XG4gIC8vIGFuaW1hdGlvbjogcGljLXNsaWRlLXJpZ2h0IDAuNXMgY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpIDAuNXMgZm9yd2FyZHM7XG59XG4uYmFjay1idXR0b257XG4gIG9wYWNpdHk6IDE7XG4gIC8vIGFuaW1hdGlvbjogYnV0dG9ucy1zbGlkZS11cCAwLjVzIGN1YmljLWJlemllcigwLjE3NSwgMC44ODUsIDAuMzIsIDEuMjc1KSBmb3J3YXJkcztcbn1cbi5ibHVlLWJ1dHRvbntcbiAgLS1iYWNrZ3JvdW5kOiAjMDA1NWE1O1xuICBvcGFjaXR5OiAxO1xuICBoZWlnaHQ6IDI0cHg7XG4gIHdpZHRoOiAxMDBweDtcbiAgZm9udC1zaXplOiAwLjVlbTtcbiAgLy8gYW5pbWF0aW9uOiBidXR0b25zLXNsaWRlLXJpZ2h0IDAuNXMgY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpIC45cyBmb3J3YXJkcztcbn1cbi5sb2dvdXQtYnV0dG9uIHtcbiAgY29sb3I6IHdoaXRlO1xuICAtLWJhY2tncm91bmQ6ICNlNDQwNWY7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogI2RkMzI1MjtcbiAgaGVpZ2h0OiAyNHB4O1xuICB3aWR0aDogMTAwcHg7XG4gIGZvbnQtc2l6ZTogMC41ZW07XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGJveC1zaGFkb3c6IDFweCAxcHggMTBweCByZ2JhKDAsMCwwLDAuMSk7XG4gIG1hcmdpbi1ib3R0b206IDUycHggYXV0bztcbiAgLy8gYW5pbWF0aW9uOiBidXR0b25zLXNsaWRlLXJpZ2h0IDAuNXMgY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpIDEuM3MgZm9yd2FyZHM7XG59XG5cbkBrZXlmcmFtZXMgdGV4dC1zbGlkZS11cCB7XG4gIDAle1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgyMHB4KTtcbiAgfVxuICAxMDAle1xuICAgIG9wYWNpdHk6IDE7XG4gICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDBweCk7XG4gIH1cbn1cblxuQGtleWZyYW1lcyBwaWMtc2xpZGUtcmlnaHQge1xuICAwJXtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoLTIwcHgpO1xuICB9XG4gIDEwMCV7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVgoMHB4KTtcbiAgfVxufVxuXG5Aa2V5ZnJhbWVzIGhlYWRlci1zbGlkZS1yaWdodCB7XG4gIDAle1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtMjBweCk7XG4gIH1cbiAgMTAwJXtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwcHgpO1xuICB9XG59XG5cbkBrZXlmcmFtZXMgYnV0dG9ucy1zbGlkZS11cCB7XG4gIDAle1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMjBweCk7XG4gIH1cbiAgMTAwJXtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgwcHgpO1xuICB9XG59XG5cbkBrZXlmcmFtZXMgYnV0dG9ucy1zbGlkZS1yaWdodCB7XG4gIDAle1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgtMjBweCk7XG4gIH1cbiAgMTAwJXtcbiAgICBvcGFjaXR5OiAxO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWCgwcHgpO1xuICB9XG59XG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtYXgtd2lkdGg6IDk5MnB4KSB7XG4gIHAge1xuICAgIGZvbnQtc2l6ZTogMWVtO1xuICB9XG4gICBzcGFuIHtcbiAgICBjb2xvcjogIzAwNTVhNTtcbiAgICBmb250LXdlaWdodDogNjAwO1xuICAgIHdpZHRoOiA2NHB4O1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgIG1hcmdpbi1yaWdodDogMTBweDtcbiAgfVxufVxuXG5cbkBtZWRpYSBzY3JlZW4gYW5kIChtaW4td2lkdGg6IDc2OHB4KSB7XG4gICNjaGFuZ2UtcHJvLXBpYy1idXR0b24ge1xuICAgIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgICB0b3A6IDc1cHg7XG4gICAgbGVmdDogMTg4cHg7XG4gIH1cbn0iXX0= */";
       /***/
     }
   }]);

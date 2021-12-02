@@ -1,4 +1,6 @@
 (function () {
+  "use strict";
+
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -7,9 +9,13 @@
 
   (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["default-src_app_modals_upload-resume-modal_upload-resume-modal_module_ts"], {
     /***/
-    2831: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    2831:
+    /*!**********************************************************************************!*\
+      !*** ./src/app/modals/upload-resume-modal/upload-resume-modal-routing.module.ts ***!
+      \**********************************************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -30,19 +36,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -67,9 +73,13 @@
     },
 
     /***/
-    49969: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    49969:
+    /*!**************************************************************************!*\
+      !*** ./src/app/modals/upload-resume-modal/upload-resume-modal.module.ts ***!
+      \**************************************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -90,31 +100,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/common */
-      38583);
+      54364);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/forms */
-      3679);
+      1707);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -140,9 +150,13 @@
     },
 
     /***/
-    84455: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    84455:
+    /*!************************************************************************!*\
+      !*** ./src/app/modals/upload-resume-modal/upload-resume-modal.page.ts ***!
+      \************************************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -163,37 +177,37 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_upload_resume_modal_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./upload-resume-modal.page.html */
-      12443);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_upload_resume_modal_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./upload-resume-modal.page.html */
+      40242);
       /* harmony import */
 
 
       var _upload_resume_modal_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./upload-resume-modal.page.scss */
-      93306);
+      93433);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -408,16 +422,20 @@
 
       _UploadResumeModalPage = (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_7__.Component)({
         selector: 'app-upload-resume-modal',
-        template: _raw_loader_upload_resume_modal_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_upload_resume_modal_page_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_upload_resume_modal_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_upload_resume_modal_page_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__metadata)("design:paramtypes", [src_app_services_resume_service__WEBPACK_IMPORTED_MODULE_3__.ResumeService, _angular_router__WEBPACK_IMPORTED_MODULE_5__.Router, src_app_services_profile_service__WEBPACK_IMPORTED_MODULE_2__.ProfileService, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.AlertController, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ToastController, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.LoadingController])], _UploadResumeModalPage);
       /***/
     },
 
     /***/
-    14153: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    14153:
+    /*!********************************************!*\
+      !*** ./src/app/services/resume.service.ts ***!
+      \********************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -438,19 +456,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common/http */
-      91841);
+      53882);
       /* harmony import */
 
 
@@ -462,19 +480,19 @@
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! rxjs/operators */
-      68307);
+      98636);
       /* harmony import */
 
 
       var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! rxjs/operators */
-      5304);
+      18293);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -486,7 +504,7 @@
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
 
       var _ResumeService = /*#__PURE__*/function () {
         function ResumeService(http, toast, auth, router) {
@@ -583,26 +601,30 @@
     },
 
     /***/
-    93306: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "ion-toolbar {\n  --background: #0055a5;\n}\n\nion-icon, ion-title {\n  color: white;\n}\n\nion-icon {\n  position: relative;\n  left: 1em;\n}\n\nh4 {\n  margin: 45px auto;\n  color: #005191;\n}\n\ninput[type=file] {\n  display: block;\n  color: white;\n  font-size: 1.2em;\n  font-weight: 600;\n  border: #005191 1px solid;\n  background: linear-gradient(#0672c4, #005191);\n  width: 400px;\n  height: 50px;\n  border-radius: 5px;\n  padding: 20px 0 0 20px;\n  text-align: center;\n  cursor: pointer;\n}\n\ninput[type=file]::-webkit-file-upload-button {\n  visibility: hidden;\n}\n\nion-button {\n  margin-top: 1em;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVwbG9hZC1yZXN1bWUtbW9kYWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UscUJBQUE7QUFDRjs7QUFDQTtFQUNFLFlBQUE7QUFFRjs7QUFBQTtFQUNFLGtCQUFBO0VBQ0EsU0FBQTtBQUdGOztBQURBO0VBQ0UsaUJBQUE7RUFDQSxjQUFBO0FBSUY7O0FBREE7RUFDRSxjQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSx5QkFBQTtFQUNBLDZDQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0FBSUY7O0FBREE7RUFDRSxrQkFBQTtBQUlGOztBQUZBO0VBQ0UsZUFBQTtBQUtGIiwiZmlsZSI6InVwbG9hZC1yZXN1bWUtbW9kYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRvb2xiYXIge1xuICAtLWJhY2tncm91bmQ6ICMwMDU1YTU7XG59XG5pb24taWNvbiwgaW9uLXRpdGxlIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuaW9uLWljb24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGxlZnQ6IDFlbTtcbn1cbmg0IHtcbiAgbWFyZ2luOiA0NXB4IGF1dG87XG4gIGNvbG9yOiAjMDA1MTkxO1xufVxuXG5pbnB1dFt0eXBlPWZpbGVdIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxLjJlbTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgYm9yZGVyOiAjMDA1MTkxIDFweCBzb2xpZDtcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KCMwNjcyYzQsICMwMDUxOTEpO1xuICB3aWR0aDogNDAwcHg7XG4gIGhlaWdodDogNTBweDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBwYWRkaW5nOiAyMHB4IDAgMCAyMHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGN1cnNvcjogcG9pbnRlcjtcblxufVxuaW5wdXRbdHlwZT1maWxlXTo6LXdlYmtpdC1maWxlLXVwbG9hZC1idXR0b24ge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG5pb24tYnV0dG9uIHtcbiAgbWFyZ2luLXRvcDogMWVtO1xufVxuIl19 */";
-      /***/
-    },
+    40242:
+    /*!*****************************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/modals/upload-resume-modal/upload-resume-modal.page.html ***!
+      \*****************************************************************************************************************************************/
 
     /***/
-    12443: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
       __webpack_exports__["default"] = "<ion-header class=\"ion-hide-lg-up\">\n  <ion-toolbar>\n    <ion-buttons (click)=\"cancel()\" slot=\"start\">\n      <ion-icon slot=\"start\" name=\"close\"></ion-icon>\n      <ion-title>Upload Resume</ion-title>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row class=\"ion-hide-md-down\" style=\"margin: 5% 0% 3% 0%;\">\n      <ion-col offset=\"2.8\" size=\"2.5\">\n        <h1>Update Resume</h1>\n      </ion-col>\n      <ion-col push=\"2.5\" size=\"2\">\n        <ion-button class=\"blue-button\" (click)=\"back()\">\n           Back\n        </ion-button>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"ion-justify-content-center ion-hide-md-down\">\n      <ion-col size=\"6\">\n        <hr style=\"background: #666;\" />\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"ion-justify-content-center\">\n      <ion-col class=\"ion-text-center\" size-xs=\"12\" size-sm=\"10\" size-md=\"8\" size-lg=\"6\">\n        <!-- Need to express to User formats that are acceptable -->\n        <!-- pdf, ect -->\n        <p class=\"text-header\">Please upload a resume from your phone</p>\n      </ion-col>\n      <ion-col class=\"ion-text-center\" size-xs=\"11\" size-sm=\"10\" size-md=\"8\" size-lg=\"6\">\n        <form\n        (ngSubmit)=\"uploadResume()\" id=\"changeResumeForm\">\n          <input\n            name=\"resume-update\"\n            (change)=\"getFormData($event)\" placeholder=\"Upload Resume\"\n            type=\"file\"/>\n\n          <ion-button\n            type=\"submit\"\n            class=\"orange-button\"\n            [disabled]=\"!uploadedPhotoURL\">Submit\n          </ion-button>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n";
+      /***/
+    },
+
+    /***/
+    93433:
+    /*!**************************************************************************!*\
+      !*** ./src/app/modals/upload-resume-modal/upload-resume-modal.page.scss ***!
+      \**************************************************************************/
+
+    /***/
+    function _(module) {
+      module.exports = "ion-toolbar {\n  --background: #0055a5;\n}\n\nion-icon, ion-title {\n  color: white;\n}\n\nion-icon {\n  position: relative;\n  left: 1em;\n}\n\nh4 {\n  margin: 45px auto;\n  color: #005191;\n}\n\ninput[type=file] {\n  display: block;\n  color: white;\n  font-size: 1.2em;\n  font-weight: 600;\n  border: #005191 1px solid;\n  background: linear-gradient(#0672c4, #005191);\n  width: 400px;\n  height: 50px;\n  border-radius: 5px;\n  padding: 20px 0 0 20px;\n  text-align: center;\n  cursor: pointer;\n}\n\ninput[type=file]::-webkit-file-upload-button {\n  visibility: hidden;\n}\n\nion-button {\n  margin-top: 1em;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInVwbG9hZC1yZXN1bWUtbW9kYWwucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UscUJBQUE7QUFDRjs7QUFDQTtFQUNFLFlBQUE7QUFFRjs7QUFBQTtFQUNFLGtCQUFBO0VBQ0EsU0FBQTtBQUdGOztBQURBO0VBQ0UsaUJBQUE7RUFDQSxjQUFBO0FBSUY7O0FBREE7RUFDRSxjQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSx5QkFBQTtFQUNBLDZDQUFBO0VBQ0EsWUFBQTtFQUNBLFlBQUE7RUFDQSxrQkFBQTtFQUNBLHNCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0FBSUY7O0FBREE7RUFDRSxrQkFBQTtBQUlGOztBQUZBO0VBQ0UsZUFBQTtBQUtGIiwiZmlsZSI6InVwbG9hZC1yZXN1bWUtbW9kYWwucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRvb2xiYXIge1xuICAtLWJhY2tncm91bmQ6ICMwMDU1YTU7XG59XG5pb24taWNvbiwgaW9uLXRpdGxlIHtcbiAgY29sb3I6IHdoaXRlO1xufVxuaW9uLWljb24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIGxlZnQ6IDFlbTtcbn1cbmg0IHtcbiAgbWFyZ2luOiA0NXB4IGF1dG87XG4gIGNvbG9yOiAjMDA1MTkxO1xufVxuXG5pbnB1dFt0eXBlPWZpbGVdIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIGNvbG9yOiB3aGl0ZTtcbiAgZm9udC1zaXplOiAxLjJlbTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgYm9yZGVyOiAjMDA1MTkxIDFweCBzb2xpZDtcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KCMwNjcyYzQsICMwMDUxOTEpO1xuICB3aWR0aDogNDAwcHg7XG4gIGhlaWdodDogNTBweDtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBwYWRkaW5nOiAyMHB4IDAgMCAyMHB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGN1cnNvcjogcG9pbnRlcjtcblxufVxuaW5wdXRbdHlwZT1maWxlXTo6LXdlYmtpdC1maWxlLXVwbG9hZC1idXR0b24ge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG5pb24tYnV0dG9uIHtcbiAgbWFyZ2luLXRvcDogMWVtO1xufVxuIl19 */";
       /***/
     }
   }]);

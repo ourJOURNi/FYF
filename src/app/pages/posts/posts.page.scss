@@ -6,6 +6,42 @@
   position: relative;
   top: 0px;
 }
+.filter-toolbar-wrapper{
+  width: 100%;
+  border-bottom: 3px ​solid #0055a5;
+
+  ion-toolbar {
+    --background: #ededed;
+    --border-width: 0px 0px 3px 0px;
+    --border-style: solid;
+    --border-color: #0055a5;
+    margin: 2em 0em;
+    transition: 0.5s;
+  }
+}
+.filter-message{
+  font-weight: 600;
+  font-size: 1em;
+  opacity: 0;
+  transition: 0.5s;
+  animation: filter-selection-slide 2s ease-in-out 0.5s forwards;
+
+}
+@keyframes filter-selection-slide {
+  0%{
+    transform: translateX(-100px);
+    color: #a5a5a5;
+  }
+  50%{
+    transform: translateX(-50px);
+    color: #faa71b;
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(10px);
+    color: #a5a5a5;
+  }
+}
 .spacer {
   margin: 21px 0;
 }
@@ -16,6 +52,7 @@
 }
 
 .post {
+  margin-top: 4%;
   padding: 24px 0;
   border-radius: 10px;
   box-shadow: 1px 10px 26px rgba(0,0,0,0.05);
@@ -56,37 +93,12 @@
 ion-content {
   background: #edf3f8;
 }
-.filter-toolbar-wrapper{
-  background: #0057a9b8;
-  position: fixed;
-  width: 100%;
-  height: 50px;
-  z-index: 9999;
-  // box-shadow: 1px 10px 26px rgba(0,0,0,0.05);
 
-  ion-toolbar {
-    --background: none;
-  }
-}
 .top-button-wrapper{
   // background: #0055a5;
   width: 100%;
   position: relative;
   top: 100px;
-}
-.filter-toolbar{
-  position: relative;
-  top: -16px;
-}
-.filter-message{
-  color: white;
-  font-size: 0.85em;
-  display: inline;
-  position: relative;
-
-  span {
-    font-weight: 600;
-  }
 }
 @media only screen and (min-width: 992px) {
   .filter-message  {
@@ -123,17 +135,10 @@ ion-content {
 .searchbar {
   font-weight: 600;
   color: #0055a5;
-  background: #0055a5
 }
 .searchbar-desktop {
   font-weight: 600;
   color: #0055a5;
-}
-.hash{
-  margin-right: 8px;
-  font-size: 2em;
-  font-weight: 600;
-  color: white;
 }
 .hash-desktop{
   margin-right: 8px;
@@ -163,7 +168,10 @@ ion-content {
   top: -32px;
 }
 .post-content {
-  font-size: 1em;
+  font-size: 0.85em;
+  position: relative;
+  top: -62px;
+  line-height: 1.3em;
   color: #111;
   height: auto;
   overflow: hidden;
@@ -186,51 +194,6 @@ ion-content {
   font-size: 0.6em;
   font-weight: 600;
 }
-
-.ellipsis {
-  float: right;
-  position: relative;
-  right: 20px;
-  top: -18px;
-  font-size: 1.5em;
-}
-
-#searchbar-wrapper {
-  transition: 0.5s;
-  height: 60px;
-  background: #f4f5f8;
- }
-
- .searchbar-input-container .sc-ion-searchbar-md {
-  display: block;
-    position: relative;
-    -ms-flex-negative: 1;
-    flex-shrink: 1;
-    width: 96%;
-    position: relative;
-    left: 4px;
- }
-
- #search-options {
-  padding: 10px;
-  color: white;
-  font-weight: 500;
-  font-size: 0.8em;
-  background: #0055a5;
-
-  .cancel-button {
-    display: block;
-    --background: #0055a5;
-  }
-  .search-button{
-    display: block;
-    font-weight: 600;
-    margin-bottom: 16px;
-    --background: #faa71b;
-  }
- }
-
-
 .user-details {
   position: fixed;
   margin-top: 16%;
@@ -520,7 +483,6 @@ ion-buttons {
   --background: #FFB351;
 }
 
-
 ion-fab-button {
   --background: #00c400;
   --color-focused: white;
@@ -533,6 +495,59 @@ ion-fab-button {
   transition: 0.5s;
   animation: fab-slide-in 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s forwards;
 }
+
+@keyframes fab-slide-in {
+  0% {
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+ion-footer {
+  height: 135px;
+  background: #ecf3ff;
+}
+.hash{
+  margin-right: 8px;
+  font-size: 2em;
+  font-weight: 600;
+  color: #0055a5;
+}
+#search-button{
+  display: inline-block;
+  width: 100%;
+  font-weight: 600;
+  margin: 1.2em 0em 2em 0em;
+  --background: none;
+  // --background: #c3e2ff;
+  color: #0055a5;
+  font-size: 0.65em;
+}
+#searchbar-wrapper {
+ }
+
+ .searchbar-input-container .sc-ion-searchbar-md {
+  display: block;
+    position: relative;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    width: 96%;
+    position: relative;
+    left: 4px;
+ }
+
+ #search-options {
+  padding: 4px;
+  color: #333;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.7em;
+  position: relative;
+  top: -15px;
+ }
 
 @keyframes fab-slide-in {
   0% {

@@ -1,6 +1,6 @@
 (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["default-src_app_modals_image-cropper_image-cropper_module_ts"],{
 
-/***/ 11966:
+/***/ 96923:
 /*!************************************************!*\
   !*** ./node_modules/cropperjs/dist/cropper.js ***!
   \************************************************/
@@ -3644,9 +3644,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ImageCropperPageRoutingModule": function() { return /* binding */ ImageCropperPageRoutingModule; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 71258);
 /* harmony import */ var _image_cropper_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image-cropper.page */ 64151);
 
 
@@ -3682,11 +3682,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ImageCropperPageModule": function() { return /* binding */ ImageCropperPageModule; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 38583);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ 7602);
 /* harmony import */ var _image_cropper_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./image-cropper-routing.module */ 32550);
 /* harmony import */ var _image_cropper_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image-cropper.page */ 64151);
 
@@ -3725,13 +3725,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ImageCropperPage": function() { return /* binding */ ImageCropperPage; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _raw_loader_image_cropper_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./image-cropper.page.html */ 35280);
-/* harmony import */ var _image_cropper_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image-cropper.page.scss */ 28555);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var cropperjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! cropperjs */ 11966);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_image_cropper_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./image-cropper.page.html */ 45209);
+/* harmony import */ var _image_cropper_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image-cropper.page.scss */ 61466);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var cropperjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! cropperjs */ 96923);
 /* harmony import */ var cropperjs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(cropperjs__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ 7602);
 
 
 
@@ -3812,8 +3812,8 @@ ImageCropperPage.propDecorators = {
 ImageCropperPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_4__.Component)({
         selector: 'app-image-cropper',
-        template: _raw_loader_image_cropper_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
-        styles: [_image_cropper_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_image_cropper_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        styles: [_image_cropper_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     }),
     (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__metadata)("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__.ModalController,
         _ionic_angular__WEBPACK_IMPORTED_MODULE_3__.NavParams,
@@ -3825,27 +3825,26 @@ ImageCropperPage = (0,tslib__WEBPACK_IMPORTED_MODULE_5__.__decorate)([
 
 /***/ }),
 
-/***/ 28555:
-/*!**************************************************************!*\
-  !*** ./src/app/modals/image-cropper/image-cropper.page.scss ***!
-  \**************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".img-container {\n  width: 100%;\n  height: auto;\n  margin: 10px auto;\n  position: relative;\n  background: #edf3f8;\n  right: 5px;\n}\n\n@media screen and (min-width: 959px) {\n  .text-header {\n    padding: 1em 2em;\n  }\n\n  .img-container {\n    height: auto;\n  }\n}\n\n.img-preview {\n  width: 100px;\n  height: 100px;\n  border-radius: 100px;\n  margin-top: 10px;\n  margin-bottom: 10px;\n  border: 1px solid #005191;\n}\n\n.img-preview::after {\n  width: 130px;\n  height: 130px;\n  border-radius: 100px;\n  margin-top: 10px;\n  margin-bottom: 10px;\n  border: 1px solid #fab17f;\n}\n\n.buttons {\n  margin-top: 40px;\n}\n\n.blue-button, .orange-button {\n  margin: 5px auto;\n}\n\np {\n  margin-top: 50px;\n  font-size: 1.1em;\n  color: #666;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImltYWdlLWNyb3BwZXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxVQUFBO0FBQ0Y7O0FBRUE7RUFDRTtJQUNFLGdCQUFBO0VBQ0Y7O0VBQ0E7SUFDRSxZQUFBO0VBRUY7QUFDRjs7QUFDQTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7QUFDRjs7QUFFQTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7QUFDRjs7QUFDQTtFQUNFLGdCQUFBO0FBRUY7O0FBQUE7RUFDRSxnQkFBQTtBQUdGOztBQUFBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtBQUdGIiwiZmlsZSI6ImltYWdlLWNyb3BwZXIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltZy1jb250YWluZXIge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBtYXJnaW46IDEwcHggYXV0bztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBiYWNrZ3JvdW5kOiAjZWRmM2Y4O1xuICByaWdodDogNXB4O1xufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA5NTlweCkge1xuICAudGV4dC1oZWFkZXIge1xuICAgIHBhZGRpbmc6IDFlbSAyZW07XG4gIH1cbiAgLmltZy1jb250YWluZXIge1xuICAgIGhlaWdodDogYXV0bztcbiAgfVxufVxuXG4uaW1nLXByZXZpZXcge1xuICB3aWR0aDogMTAwcHg7XG4gIGhlaWdodDogMTAwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDEwMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMDA1MTkxO1xufVxuXG4uaW1nLXByZXZpZXc6OmFmdGVyIHtcbiAgd2lkdGg6IDEzMHB4O1xuICBoZWlnaHQ6IDEzMHB4O1xuICBib3JkZXItcmFkaXVzOiAxMDBweDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2ZhYjE3Zjtcbn1cbi5idXR0b25zIHtcbiAgbWFyZ2luLXRvcDogNDBweDtcbn1cbi5ibHVlLWJ1dHRvbiwgLm9yYW5nZS1idXR0b24ge1xuICBtYXJnaW46IDVweCBhdXRvO1xufVxuXG5wIHtcbiAgbWFyZ2luLXRvcDogNTBweDtcbiAgZm9udC1zaXplOiAxLjFlbTtcbiAgY29sb3I6ICM2NjY7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn0iXX0= */");
-
-/***/ }),
-
-/***/ 35280:
-/*!****************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modals/image-cropper/image-cropper.page.html ***!
-  \****************************************************************************************************/
+/***/ 45209:
+/*!*****************************************************************************************************************************!*\
+  !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/modals/image-cropper/image-cropper.page.html ***!
+  \*****************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ion-header style=\"display: none;\"></ion-header>\n\n<ion-content>\n  <ion-grid>\n    <ion-row class=\"ion-justify-content-center\">\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <h6 class=\"text-header\">Please crop your photo to get the highest quality.<br> You can zoom in and out to make sure you get the best fit within the frame.</h6>\n      </ion-col>\n    </ion-row>\n\n    <!-- Selected Image -->\n    <ion-row class=\"ion-justify-content-center\">\n      <ion-col class=\"ion-text-center\" size=\"6\">\n        <img [src]=\"imageDestination\" class=\"img-preview\">\n      </ion-col>\n    </ion-row>\n\n    <!-- Image Container -->\n    <ion-row>\n      <ion-col size=\"12\">\n       <div class=\"img-container\">\n        <img #image [src]=\"uploadedPhotoURL\" crossorigin>\n      </div>\n     </ion-col>\n    </ion-row>\n\n    <!-- Buttons -->\n    <ion-row class=\"ion-justify-content-center\">\n      <ion-col class=\"ion-text-center\" size=\"8\">\n        <ion-button class=\"orange-button\" (click)=\"crop(imageDestination)\">\n          Crop\n        </ion-button>\n     </ion-col>\n     <ion-col class=\"ion-text-center\" size=\"8\">\n       <ion-button class=\"blue-button\" (click)=\"back()\">\n         Cancel\n       </ion-button>\n    </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n");
+
+/***/ }),
+
+/***/ 61466:
+/*!**************************************************************!*\
+  !*** ./src/app/modals/image-cropper/image-cropper.page.scss ***!
+  \**************************************************************/
+/***/ (function(module) {
+
+"use strict";
+module.exports = ".img-container {\n  width: 100%;\n  height: auto;\n  margin: 10px auto;\n  position: relative;\n  background: #edf3f8;\n  right: 5px;\n}\n\n@media screen and (min-width: 959px) {\n  .text-header {\n    padding: 1em 2em;\n  }\n\n  .img-container {\n    height: auto;\n  }\n}\n\n.img-preview {\n  width: 100px;\n  height: 100px;\n  border-radius: 100px;\n  margin-top: 10px;\n  margin-bottom: 10px;\n  border: 1px solid #005191;\n}\n\n.img-preview::after {\n  width: 130px;\n  height: 130px;\n  border-radius: 100px;\n  margin-top: 10px;\n  margin-bottom: 10px;\n  border: 1px solid #fab17f;\n}\n\n.buttons {\n  margin-top: 40px;\n}\n\n.blue-button, .orange-button {\n  margin: 5px auto;\n}\n\np {\n  margin-top: 50px;\n  font-size: 1.1em;\n  color: #666;\n  text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImltYWdlLWNyb3BwZXIucGFnZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBQ0EsbUJBQUE7RUFDQSxVQUFBO0FBQ0Y7O0FBRUE7RUFDRTtJQUNFLGdCQUFBO0VBQ0Y7O0VBQ0E7SUFDRSxZQUFBO0VBRUY7QUFDRjs7QUFDQTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7QUFDRjs7QUFFQTtFQUNFLFlBQUE7RUFDQSxhQUFBO0VBQ0Esb0JBQUE7RUFDQSxnQkFBQTtFQUNBLG1CQUFBO0VBQ0EseUJBQUE7QUFDRjs7QUFDQTtFQUNFLGdCQUFBO0FBRUY7O0FBQUE7RUFDRSxnQkFBQTtBQUdGOztBQUFBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7RUFDQSxrQkFBQTtBQUdGIiwiZmlsZSI6ImltYWdlLWNyb3BwZXIucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmltZy1jb250YWluZXIge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBtYXJnaW46IDEwcHggYXV0bztcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBiYWNrZ3JvdW5kOiAjZWRmM2Y4O1xuICByaWdodDogNXB4O1xufVxuXG5AbWVkaWEgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA5NTlweCkge1xuICAudGV4dC1oZWFkZXIge1xuICAgIHBhZGRpbmc6IDFlbSAyZW07XG4gIH1cbiAgLmltZy1jb250YWluZXIge1xuICAgIGhlaWdodDogYXV0bztcbiAgfVxufVxuXG4uaW1nLXByZXZpZXcge1xuICB3aWR0aDogMTAwcHg7XG4gIGhlaWdodDogMTAwcHg7XG4gIGJvcmRlci1yYWRpdXM6IDEwMHB4O1xuICBtYXJnaW4tdG9wOiAxMHB4O1xuICBtYXJnaW4tYm90dG9tOiAxMHB4O1xuICBib3JkZXI6IDFweCBzb2xpZCAjMDA1MTkxO1xufVxuXG4uaW1nLXByZXZpZXc6OmFmdGVyIHtcbiAgd2lkdGg6IDEzMHB4O1xuICBoZWlnaHQ6IDEzMHB4O1xuICBib3JkZXItcmFkaXVzOiAxMDBweDtcbiAgbWFyZ2luLXRvcDogMTBweDtcbiAgbWFyZ2luLWJvdHRvbTogMTBweDtcbiAgYm9yZGVyOiAxcHggc29saWQgI2ZhYjE3Zjtcbn1cbi5idXR0b25zIHtcbiAgbWFyZ2luLXRvcDogNDBweDtcbn1cbi5ibHVlLWJ1dHRvbiwgLm9yYW5nZS1idXR0b24ge1xuICBtYXJnaW46IDVweCBhdXRvO1xufVxuXG5wIHtcbiAgbWFyZ2luLXRvcDogNTBweDtcbiAgZm9udC1zaXplOiAxLjFlbTtcbiAgY29sb3I6ICM2NjY7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn0iXX0= */";
 
 /***/ })
 

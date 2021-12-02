@@ -1,9 +1,6 @@
 ion-header {
   box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
 
-  ion-icon {
-    font-size: 2em;
-  }
 }
 
 ion-card {
@@ -28,6 +25,48 @@ ion-searchbar {
   --icon-color: #005191;
   transition: 0.5s;
 }
+
+.filter-toolbar-wrapper{
+  width: 100%;
+  border-bottom: 3px ​solid #0055a5;
+
+  ion-toolbar {
+    --background: #ededed;
+    --border-width: 0px 0px 3px 0px;
+    --border-style: solid;
+    --border-color: #0055a5;
+    margin: 2em 0em;
+    transition: 0.5s;
+  }
+}
+.filter-message{
+  font-weight: 600;
+  font-size: 1em;
+  opacity: 0;
+  transition: 0.5s;
+  animation: filter-selection-slide 2s ease-in-out 0.5s forwards;
+
+}
+@keyframes filter-selection-slide {
+  0%{
+    transform: translateX(-100px);
+    color: #a5a5a5;
+  }
+  50%{
+    transform: translateX(-50px);
+    color: #faa71b;
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(10px);
+    color: #a5a5a5;
+  }
+}
+
+.filter-icon {
+  color: #a5a5a5;
+  font-size: 1.4em;
+}
 .job-section {
   height: 230px;
   color: #777;
@@ -51,20 +90,21 @@ h6.text-header {
 
 ion-button {
   --background: none;
-
-  ion-icon {
-    font-size: 2.5em;
-  }
 }
 .desktop-toolbar{
-  --background: none;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #33333326;
-
+  --background: linear-gradient(30deg, #004785, #0055a5);
+  box-shadow: 1px 1px 19px #36363636;
+  border-radius: 100px;
   h1 {
-    color: #0055a5;
+    color: white;
+  }
+  ion-buttons:nth-child(1){
     position: relative;
-    left: 8px;
+    left: 3em;
+  }
+  ion-buttons:nth-child(2){
+    position: relative;
+    right: 3em;
   }
 }
 .my-events-button {
@@ -78,10 +118,13 @@ ion-button {
   display: block;
 }
 ion-card-title {
-  font-size: 1em;
+  font-size: 1.5em;
   font-weight: 600;
   color: #0055a5;
 }
 ion-card-subtitle {
-  font-size: 1em;
+  font-size: 0.85em;
+  line-height: 0.7em;
+  font-weight: 600;
+  color: #c0bebe;
 }

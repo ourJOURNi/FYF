@@ -1,12 +1,14 @@
 <ion-header class="ion-hide-lg-up">
   <!-- Mobile & Tablet Toolbar -->
   <ion-toolbar>
-    <ion-icon style="position: relative; left: 24px" color="light" name="calendar-outline"></ion-icon>
-       <ion-buttons slot="end">
-        <ion-button style="width: 100px; --background: #faa71b; font-weight: 600;" (click)="myEvents()">
-         <!-- My Events ({{ eventsGoingLength }}) -->
-         My Events
-     </ion-button>
+    <ion-buttons slot="start">
+      <ion-icon style="position: relative; left: 8px; color: #0055a5;"name="calendar"></ion-icon>
+    </ion-buttons>
+    <ion-title>Events</ion-title>
+    <ion-buttons slot="end">
+        <ion-button (click)="my">
+          <ion-icon slot="start" src="../../assets/icon/jobs-favorites-heart-red-outline.svg"></ion-icon>
+        </ion-button>
        </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -19,22 +21,36 @@
   <ion-grid>
      <!-- Desktop Header -->
      <ion-row style="padding-top: 80px; margin-bottom: 40px;" class="ion-hide-lg-down ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+      <ion-col style="padding: 0 2em;" size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
         <ion-toolbar class="desktop-toolbar">
               <ion-buttons slot="start">
                   <img height="50" src="../../../assets/icon/my-events-icon.svg" alt="" srcset="">
                   <h1>Events</h1>
               </ion-buttons>
               <ion-buttons slot="end">
-                <ion-button class="my-events-button" (click)="myEvents()">
-                  My Events
-                </ion-button>
+                <ion-icon slot="start" src="../../assets/icon/jobs-favorites-heart-blue.svg"></ion-icon>
               </ion-buttons>
         </ion-toolbar>
             <!-- <img height="50" style="display: inline;" src="../../../assets/icon/suitcase-blue.svg" alt="" srcset="">
             <h1 style="display: inline; margin-left: 15px;">Jobs</h1> -->
       </ion-col>
     </ion-row>
+
+      <!-- Filter Toolbar -->
+      <ion-row class="filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center">
+        <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+          <ion-toolbar (click)="filterMenu()" class="filter-toolbar">
+            <ion-buttons slot="start">
+              <p class="filter-message">{{this.jobFilter}}</p>
+            </ion-buttons>
+            <ion-buttons slot="end">
+                <ion-button>
+                  <ion-icon class="filter-icon" slot="start" name="filter"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-col>
+      </ion-row>
     <!-- Card List -->
     <ion-row class="ion-justify-content-center">
       <div class="spacer ion-hide-lg-down"></div>

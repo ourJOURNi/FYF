@@ -20,30 +20,39 @@
 }
 .filter-toolbar-wrapper{
   width: 100%;
-  z-index: 9999;
-  // box-shadow: 1px 10px 26px rgba(0,0,0,0.05);
+  border-bottom: 3px ​solid #0055a5;
 
   ion-toolbar {
-    --background: linear-gradient(30deg, #004785, #0055a5);
-    position: relative;
-    top: 10px;
-    box-shadow: 1px 1px 8px #36363654;
-    border-radius: 100px;
-    p {
-      font-weight: 600;
-      color: white;
-    }
+    --background: #e7a12b;
+    --border-width: 0px 0px 3px 0px;
+    --border-style: solid;
+    --border-color: #0055a5;
+    margin: 2em 0em;
+    transition: 0.5s;
   }
 }
-.filter-toolbar{
-}
 .filter-message{
-  color: #222;
-  font-size: 1.2em;
-  position: relative;
-  left: 16px;
+  font-weight: 600;
+  font-size: 1em;
+  color: #fff;
+  opacity: 0;
+  transition: 0.5s;
+  animation: filter-selection-slide 2s ease-in-out 0.5s forwards;
 
-  
+}
+@keyframes filter-selection-slide {
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  50%{
+    transform: translateX(-50px);
+    opacity: 0.5;
+  }
+  100%{
+    transform: translateX(10px);
+    opacity: 1;
+  }
 }
 @media only screen and (min-width: 992px) {
   .filter-message  {
@@ -54,8 +63,8 @@
   }
 }
 .filter-icon {
-  color: white;
-  font-size: 1.4em;
+  color: #fff;
+  font-size: 1em;
 }
 .job-details {
   --background: white;
@@ -163,7 +172,7 @@ h6, p {
   font-weight: 500;
   position: relative;
   top: -15px;
-  color: #111;
+  color: #0055a5;
 }
 
 #job-rate {

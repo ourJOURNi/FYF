@@ -1,7 +1,13 @@
 (function () {
   (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["polyfills-css-shim"], {
     /***/
-    35745: function _() {
+    94883:
+    /*!****************************************************************!*\
+      !*** ./node_modules/@ionic/core/dist/esm/css-shim-419db344.js ***!
+      \****************************************************************/
+
+    /***/
+    function _() {
       /*
        Stencil Client Patch Esm v2.1.2 | MIT Licensed | https://stenciljs.com
        */

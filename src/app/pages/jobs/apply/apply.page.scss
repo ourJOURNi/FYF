@@ -49,8 +49,8 @@ ion-back-button {
 }
 .back-button {
   --color: white;
-  --background: #e3405f;
-  --background-hover: linear-gradient(#e3405f, #0d2e4d);
+  --background: #ffa71b;
+  --background-hover: linear-gradient(#ffa71b, #ffa81b80);
   height: 24px;
   --border-radius: 5px;
   width: 50px;
@@ -60,10 +60,13 @@ ion-back-button {
 }
 .instructions {
   line-height: 1em;
-  width: 400px;
-  color: #333;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 600;
+  color: #fff;
+  padding: 0.6em 0.2em 0.6em 1em;
+  background: #005191;
+  width: 330px;
+  height: auto;
 }
 
 .info-section{
@@ -99,11 +102,12 @@ ion-back-button {
 #instructions {
   margin-top: 25px;
   font-size: 1em;
+  font-weight: 600;
   color: #111;
 }
 @media only screen and (min-width: 992px) {
   #instructions {
-    font-size: 0.9em;
+    font-size: 1.2em;
   }
 }
 .custom-file-input {

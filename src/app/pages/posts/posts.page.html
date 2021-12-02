@@ -1,21 +1,19 @@
  <!-- Mobile Toolbar -->
 <ion-header no-border class="ion-hide-lg-up">
   <ion-toolbar>
-    <ion-icon style="color: white; font-size: 1.5em; margin-left: 16px;" slot="start" name="newspaper-outline"></ion-icon>
-    <ion-title>
-      <img class="profile-picture" src="{{userProfilePicture}}" alt="">
-      <!-- {{userFullName}} -->
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-icon style="color: #0055a5;"name="newspaper-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Posts</ion-title>
     <ion-buttons slot="end">
       <!-- Notifications -->
       <ion-button (click)="notificationsPage()">
-        <ion-icon class="header-icons" src="../../assets/icon/notifications-icon.svg"></ion-icon>
-        <span style="color: #ffb351; height: 25px; width: 25px; border-radius: 100px; position: relative; font-size: 1.4em; font-weight: 600;">{{notificationsLength}}</span>
+        <img height="30" class="header-icons" src="../../../assets/icon/posts-notification-bell-grey.svg">
+        <span style="color: #666; height: 25px; width: 25px; border-radius: 100px; position: relative; font-size: 1.4em; font-weight: 600;">{{notificationsLength}}</span>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <!-- fab placed to the bottom end -->
   <ion-fab [@inOutAnimation] id="fab-wrapper" class="ion-hide-lg-up" vertical="bottom" horizontal="end" slot="fixed">
@@ -28,8 +26,7 @@
         <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
   <!-- Spinner -->
-<ion-spinner *ngIf="searching" name="crescent"></ion-spinner>
-
+  <ion-spinner *ngIf="searching" name="crescent"></ion-spinner>
   <!-- Desktop -->
   <ion-grid class="ion-hide-lg-down">
     <!-- Search & Filter -->
@@ -184,6 +181,20 @@
   <ion-grid class="ion-hide-lg-up">
     <!-- Filter Toolbar -->
     <ion-row class="filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center">
+        <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+          <ion-toolbar (click)="filterMenu()" class="filter-toolbar">
+            <ion-buttons slot="start">
+              <p class="filter-message">{{this.jobFilter}}</p>
+            </ion-buttons>
+            <ion-buttons slot="end">
+                <ion-button>
+                  <ion-icon class="filter-icon" slot="start" name="filter"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-col>
+    </ion-row>
+    <!-- <ion-row class="filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
         <ion-toolbar class="filter-toolbar">
           <ion-buttons slot="start">
@@ -200,7 +211,7 @@
           </ion-buttons>
         </ion-toolbar>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
     <!-- Followed Posts and My Posts -->
     <!-- <ion-row class="top-button-wrapper ion-hide-lg-up ion-justify-content-center">
       <div class="spacer"></div>
@@ -217,143 +228,130 @@
     </ion-row> -->
     <!-- Posts -->
     <ion-row class="ion-justify-content-center">
+      <!-- Posts -->
       <ion-col *ngIf="noPosts" size-xs="12" size-sm="11" size-md="10" size-lg="8" size-xl="5">
         <p>No Posts with those #Hashtags. Please try again.</p>
       </ion-col>
-    </ion-row>
-    <ion-row class="ion-justify-content-center">
-      <!-- Posts -->
-      <ion-col style="padding: 0; position: relative; top: 88px;" size-xs="12" size-sm="11" pull-md="1.5" size-md="8" size-lg="8" size-xl="5">
-        <div class="post" *ngFor="let post of allPosts" style="margin-top: 1%;">
-      <!-- Profile Header -->
-      <ion-row class="ion-justify-content-center">
-            <!-- Profile Picture -->
-            <ion-col size="1">
-              <img src="{{post.creatorProfilePicture}}" style="background: #999; border-radius: 100px; height: 35xpx; width: 35px;">
-            </ion-col>
+      <ion-col size-xs="12" size-sm="11" pull-md="1.5" size-md="8" size-lg="8" size-xl="5"> 
+        <div class="post" *ngFor="let post of allPosts">
+        <!-- Profile Header -->
+        <ion-row class="ion-justify-content-center">
+              <!-- Profile Picture -->
+              <ion-col size="1">
+                <img src="{{post.creatorProfilePicture}}" style="background: #999; border-radius: 100px; height: 35xpx; width: 35px;">
+              </ion-col>
 
-            <!-- Post Creator's Name -->
-            <ion-col push="0.2" size="10">
-              <p class="post-name">{{post.creatorName}}</p>
-              <p class="post-date">{{this.formatDistanceToNow(post.date)}}</p>
-            </ion-col>
+              <!-- Post Creator's Name -->
+              <ion-col push="0.2" size="10">
+                <p class="post-name">{{post.creatorName}}</p>
+                <p class="post-date">{{this.formatDistanceToNow(post.date)}}</p>
+              </ion-col>
 
-      </ion-row>
-      <!-- Post Content -->
-      <ion-row class="ion-justify-content-center">
-        <!-- (click)="postPage(post)"  -->
-        <!-- 1080x1350 -->
-        <ion-col size="11">
-          <p class="post-title">{{post.title}}</p>
-          <div class="hashtags">
-            <p class="hashtag" *ngFor="let tag of post.hashtags">
-              #{{tag}}
+        </ion-row>
+        <!-- Post Content -->
+        <ion-row class="ion-justify-content-center">
+          <!-- (click)="postPage(post)"  -->
+          <!-- 1080x1350 -->
+          <ion-col size="11">
+            <p class="post-title">{{post.title}}</p>
+            <div class="hashtags">
+              <p class="hashtag" *ngFor="let tag of post.hashtags">
+                #{{tag}}
+              </p>
+            </div>
+            <p class="no-tags" *ngIf="post.hashtags.length === 0">
+              No #hashtags for this post
             </p>
-          </div>
-          <p class="no-tags" *ngIf="post.hashtags.length === 0">
-            No #hashtags for this post
-          </p>
-          <p [ngClass]="{'show-less': showShortDesciption}" class="post-content">{{post.post}}</p>
-          <span class="ellipsis" *ngIf="post.post.length > 400 && showShortDesciption">...</span>
-          <button *ngIf="post.post.length > 400" class="show-more-or-less-button" type="button" (click)="alterDescriptionText(post.post)">
-            {{ showShortDesciption ? 'Read More': 'Hide' }}
-          </button>
-        </ion-col>
-      </ion-row>
-      <!-- Comment -->
-      <ion-row class="ion-justify-content-center">
-        <ion-col size="12">
-          <ion-item  style="height: auto;" lines="none">
-            <form (ngSubmit)="comment(post._id, this.userFullName, this.userEmail, this.userProfilePicture, this.commentForm.value)" [formGroup]="commentForm">
-              <ion-textarea
-                (ionBlur)="this.commentBlur()"
-                (ionFocus)="this.commentFocus()"
-                class="comment-input-mobile"
-                autogrow="true"
-                autocapitalize="true"
-                rows="1"
-                spellcheck="true"
-                wrap="soft"
-                type="text"
-                #postComment
-                placeholder="Add a Comment"
-                formControlName="comment">
-              </ion-textarea>
+            <p [ngClass]="{'show-less': showShortDesciption}" class="post-content">{{post.post}}</p>
+            <span class="ellipsis" *ngIf="post.post.length > 400 && showShortDesciption">...</span>
+            <button *ngIf="post.post.length > 400" class="show-more-or-less-button" type="button" (click)="alterDescriptionText(post.post)">
+              {{ showShortDesciption ? 'Read More': 'Hide' }}
+            </button>
+          </ion-col>
+        </ion-row>
+        <!-- Comment -->
+        <ion-row class="ion-justify-content-center">
+          <ion-col size="12">
+            <ion-item  style="height: auto;" lines="none">
+              <form (ngSubmit)="comment(post._id, this.userFullName, this.userEmail, this.userProfilePicture, this.commentForm.value)" [formGroup]="commentForm">
+                <ion-textarea
+                  (ionBlur)="this.commentBlur()"
+                  (ionFocus)="this.commentFocus()"
+                  class="comment-input-mobile"
+                  autogrow="true"
+                  autocapitalize="true"
+                  rows="1"
+                  spellcheck="true"
+                  wrap="soft"
+                  type="text"
+                  #postComment
+                  placeholder="Add a Comment"
+                  formControlName="comment">
+                </ion-textarea>
 
-              <!-- Textarea that appears after User focuses on Comment Input -->
-              <!-- Comment Post Button -->
-              <ion-button
-                style="float: right;"
-                *ngIf="postComment.value.length >= 2;"
-                class="comment-post-button"
-                name="send"
-                type="submit">Post Comment
-              </ion-button>
-            </form>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <!-- Post Buttons -->
-      <ion-row class="ion-justify-content-center">
-        <!-- Upvote & Downvote-->
-        <ion-col size="8">
-          <app-up-down-vote-buttons [postID]="post._id" [postEmail]="post.creatorEmail"></app-up-down-vote-buttons>
-        </ion-col>
-        <!-- Follow & Comment -->
-        <ion-col size="3">
-          <app-follow-comment-buttons [postID]="post._id" [commentLength]="post.comments.length"></app-follow-comment-buttons>
-        </ion-col>
-      </ion-row>
+                <!-- Textarea that appears after User focuses on Comment Input -->
+                <!-- Comment Post Button -->
+                <ion-button
+                  style="float: right;"
+                  *ngIf="postComment.value.length >= 2;"
+                  class="comment-post-button"
+                  name="send"
+                  type="submit">Post Comment
+                </ion-button>
+              </form>
+            </ion-item>
+          </ion-col>
+          </ion-row>
+        <!-- Post Buttons -->
+        <ion-row class="ion-justify-content-center">
+          <!-- Upvote & Downvote-->
+          <ion-col size="8">
+            <app-up-down-vote-buttons [postID]="post._id" [postEmail]="post.creatorEmail"></app-up-down-vote-buttons>
+          </ion-col>
+          <!-- Follow & Comment -->
+          <ion-col size="3">
+            <app-follow-comment-buttons [postID]="post._id" [commentLength]="post.comments.length"></app-follow-comment-buttons>
+          </ion-col>
+        </ion-row>
         </div>
       </ion-col>
-     </ion-row>
+    </ion-row>
     <!-- Spacer -->
     <div style="margin-bottom: 200px;" ></div>
   </ion-grid>
-
 </ion-content>
-
 <ion-footer class="ion-hide-lg-up">
-  <!-- <ion-textarea
-    class="comment-input-mobile-focused"
-    autogrow="true"
-    autocapitalize="true"
-    rows="1"
-    spellcheck="true"
-    wrap="soft"
-    type="text"
-    #postComment
-    placeholder="Add a Comment">
-  </ion-textarea> -->
-  <div
-  id="searchbar-wrapper">
-  <!-- (keyup)="addHashTag($event)"-->
-    <ion-searchbar
-      class="searchbar"
-      animated="true"
-      searchIcon="none"
-      cancelButtonText=""
-      showCancelButton="true"
-      placeholder="Search Posts by Hashtags"
-      (ionFocus)="searchBarFocus()"
-      (ionChange)="search($event)">
-      <span class="hash">#</span>
-    </ion-searchbar>
-    <div id="search-options">
-      <p>You can choose up to five hashtags.
-        <br>Please seperate each tag with a comma ( , ).
-        <br>Example: "Computers, Science, Technology"</p>
-      <div>
-        <ion-button
-        (click)="searchLoading()" class="search-button">
-          Search
-        </ion-button>
-        <ion-button
-        (click)="searchBarBlur()" class="cancel-button">
-          Cancel
-        </ion-button>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="9">
+      <div
+      id="searchbar-wrapper">
+      <!-- (keyup)="addHashTag($event)"-->
+        <!-- <div id="search-options">
+          <p>You can choose up to five hashtags.
+            <br>Please seperate each tag with a comma ( , ).
+            <br>Example: "Computers, Science, Technology"</p>
+          <div>
+          </div>
+        </div> -->
+        <ion-searchbar
+          class="searchbar"
+          animated="true"
+          searchIcon="none"
+          cancelButtonText=""
+          showCancelButton="true"
+          placeholder="Search Posts by Hashtags"
+          (ionFocus)="searchBarFocus()"
+          (ionBlur)="searchBarBlur()"
+          (ionChange)="search($event)">
+          <span class="hash">#</span>
+        </ion-searchbar>
       </div>
-    </div>
-  </div>
+    </ion-col>
+    <ion-col size="2">
+     <ion-button id="search-button"
+      (click)="searchLoading()" class="search-button">
+        Search
+      </ion-button>
+    </ion-col>
+  </ion-row>
 </ion-footer>
-

@@ -1,6 +1,6 @@
 (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["src_app_pages_auth_sign-up_profile-picture_profile-picture_module_ts"],{
 
-/***/ 7777:
+/***/ 62292:
 /*!**************************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/core-plugin-definitions.js ***!
   \**************************************************************************/
@@ -174,11 +174,11 @@ var StatusBarAnimation;
      */
     StatusBarAnimation["Fade"] = "FADE";
 })(StatusBarAnimation || (StatusBarAnimation = {}));
-//# sourceMappingURL=core-plugin-definitions.js.map
+
 
 /***/ }),
 
-/***/ 32653:
+/***/ 14857:
 /*!*********************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/global.js ***!
   \*********************************************************/
@@ -190,7 +190,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Capacitor": function() { return /* binding */ Capacitor; },
 /* harmony export */   "Plugins": function() { return /* binding */ Plugins; }
 /* harmony export */ });
-/* harmony import */ var _web_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./web-runtime */ 31994);
+/* harmony import */ var _web_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./web-runtime */ 66131);
 
 // Create our default Capacitor instance, which will be
 // overridden on native platforms
@@ -205,11 +205,11 @@ var Capacitor = (function (globalThis) {
 typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {});
 var Plugins = Capacitor.Plugins;
 
-//# sourceMappingURL=global.js.map
+
 
 /***/ }),
 
-/***/ 51188:
+/***/ 19889:
 /*!********************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/index.js ***!
   \********************************************************/
@@ -275,19 +275,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "mergeWebPlugin": function() { return /* reexport safe */ _web_index__WEBPACK_IMPORTED_MODULE_3__.mergeWebPlugin; },
 /* harmony export */   "mergeWebPlugins": function() { return /* reexport safe */ _web_index__WEBPACK_IMPORTED_MODULE_3__.mergeWebPlugins; }
 /* harmony export */ });
-/* harmony import */ var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-plugin-definitions */ 7777);
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global */ 32653);
-/* harmony import */ var _web_plugins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./web-plugins */ 59339);
-/* harmony import */ var _web_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./web/index */ 76605);
+/* harmony import */ var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core-plugin-definitions */ 62292);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./global */ 14857);
+/* harmony import */ var _web_plugins__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./web-plugins */ 74754);
+/* harmony import */ var _web_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./web/index */ 883);
 
 
 
 
-//# sourceMappingURL=index.js.map
+
 
 /***/ }),
 
-/***/ 56949:
+/***/ 85135:
 /*!*******************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/util.js ***!
   \*******************************************************/
@@ -321,11 +321,11 @@ var uuid4 = function () {
         return v.toString(16);
     });
 };
-//# sourceMappingURL=util.js.map
+
 
 /***/ }),
 
-/***/ 59339:
+/***/ 74754:
 /*!**************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web-plugins.js ***!
   \**************************************************************/
@@ -370,25 +370,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ToastPluginWeb": function() { return /* reexport safe */ _web_toast__WEBPACK_IMPORTED_MODULE_18__.ToastPluginWeb; },
 /* harmony export */   "registerWebPlugin": function() { return /* binding */ registerWebPlugin; }
 /* harmony export */ });
-/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global */ 32653);
-/* harmony import */ var _web_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./web/index */ 76605);
-/* harmony import */ var _web_accessibility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./web/accessibility */ 35825);
-/* harmony import */ var _web_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./web/app */ 319);
-/* harmony import */ var _web_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./web/browser */ 3538);
-/* harmony import */ var _web_camera__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./web/camera */ 29842);
-/* harmony import */ var _web_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./web/clipboard */ 96362);
-/* harmony import */ var _web_filesystem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./web/filesystem */ 5);
-/* harmony import */ var _web_geolocation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./web/geolocation */ 35956);
-/* harmony import */ var _web_device__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./web/device */ 9747);
-/* harmony import */ var _web_local_notifications__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./web/local-notifications */ 62146);
-/* harmony import */ var _web_share__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./web/share */ 17881);
-/* harmony import */ var _web_modals__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./web/modals */ 54374);
-/* harmony import */ var _web_motion__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./web/motion */ 73813);
-/* harmony import */ var _web_network__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./web/network */ 10840);
-/* harmony import */ var _web_permissions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./web/permissions */ 14383);
-/* harmony import */ var _web_splash_screen__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./web/splash-screen */ 55477);
-/* harmony import */ var _web_storage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./web/storage */ 23030);
-/* harmony import */ var _web_toast__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./web/toast */ 31814);
+/* harmony import */ var _global__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./global */ 14857);
+/* harmony import */ var _web_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./web/index */ 883);
+/* harmony import */ var _web_accessibility__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./web/accessibility */ 58359);
+/* harmony import */ var _web_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./web/app */ 33458);
+/* harmony import */ var _web_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./web/browser */ 81282);
+/* harmony import */ var _web_camera__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./web/camera */ 17872);
+/* harmony import */ var _web_clipboard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./web/clipboard */ 2300);
+/* harmony import */ var _web_filesystem__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./web/filesystem */ 13378);
+/* harmony import */ var _web_geolocation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./web/geolocation */ 40356);
+/* harmony import */ var _web_device__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./web/device */ 30461);
+/* harmony import */ var _web_local_notifications__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./web/local-notifications */ 56247);
+/* harmony import */ var _web_share__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./web/share */ 80683);
+/* harmony import */ var _web_modals__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./web/modals */ 40705);
+/* harmony import */ var _web_motion__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./web/motion */ 83546);
+/* harmony import */ var _web_network__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./web/network */ 56451);
+/* harmony import */ var _web_permissions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./web/permissions */ 46201);
+/* harmony import */ var _web_splash_screen__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./web/splash-screen */ 51923);
+/* harmony import */ var _web_storage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./web/storage */ 99081);
+/* harmony import */ var _web_toast__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./web/toast */ 61135);
 
 
 
@@ -412,11 +412,11 @@ __webpack_require__.r(__webpack_exports__);
 var registerWebPlugin = function (plugin) {
     (0,_web_index__WEBPACK_IMPORTED_MODULE_1__.mergeWebPlugin)(_global__WEBPACK_IMPORTED_MODULE_0__.Plugins, plugin);
 };
-//# sourceMappingURL=web-plugins.js.map
+
 
 /***/ }),
 
-/***/ 31994:
+/***/ 66131:
 /*!**************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web-runtime.js ***!
   \**************************************************************/
@@ -481,11 +481,11 @@ var CapacitorWeb = /** @class */ (function () {
     return CapacitorWeb;
 }());
 
-//# sourceMappingURL=web-runtime.js.map
+
 
 /***/ }),
 
-/***/ 35825:
+/***/ 58359:
 /*!********************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/accessibility.js ***!
   \********************************************************************/
@@ -497,8 +497,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AccessibilityPluginWeb": function() { return /* binding */ AccessibilityPluginWeb; },
 /* harmony export */   "Accessibility": function() { return /* binding */ Accessibility; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var AccessibilityPluginWeb = /** @class */ (function (_super) {
@@ -528,11 +528,11 @@ var AccessibilityPluginWeb = /** @class */ (function (_super) {
 
 var Accessibility = new AccessibilityPluginWeb();
 
-//# sourceMappingURL=accessibility.js.map
+
 
 /***/ }),
 
-/***/ 319:
+/***/ 33458:
 /*!**********************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/app.js ***!
   \**********************************************************/
@@ -544,8 +544,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "AppPluginWeb": function() { return /* binding */ AppPluginWeb; },
 /* harmony export */   "App": function() { return /* binding */ App; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var AppPluginWeb = /** @class */ (function (_super) {
@@ -586,11 +586,11 @@ var AppPluginWeb = /** @class */ (function (_super) {
 
 var App = new AppPluginWeb();
 
-//# sourceMappingURL=app.js.map
+
 
 /***/ }),
 
-/***/ 3538:
+/***/ 81282:
 /*!**************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/browser.js ***!
   \**************************************************************/
@@ -602,8 +602,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "BrowserPluginWeb": function() { return /* binding */ BrowserPluginWeb; },
 /* harmony export */   "Browser": function() { return /* binding */ Browser; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var BrowserPluginWeb = /** @class */ (function (_super) {
@@ -643,11 +643,11 @@ var BrowserPluginWeb = /** @class */ (function (_super) {
 
 var Browser = new BrowserPluginWeb();
 
-//# sourceMappingURL=browser.js.map
+
 
 /***/ }),
 
-/***/ 29842:
+/***/ 17872:
 /*!*************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/camera.js ***!
   \*************************************************************/
@@ -659,9 +659,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CameraPluginWeb": function() { return /* binding */ CameraPluginWeb; },
 /* harmony export */   "Camera": function() { return /* binding */ Camera; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
-/* harmony import */ var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core-plugin-definitions */ 7777);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
+/* harmony import */ var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core-plugin-definitions */ 62292);
 
 
 
@@ -839,11 +839,11 @@ var CameraPluginWeb = /** @class */ (function (_super) {
 
 var Camera = new CameraPluginWeb();
 
-//# sourceMappingURL=camera.js.map
+
 
 /***/ }),
 
-/***/ 96362:
+/***/ 2300:
 /*!****************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/clipboard.js ***!
   \****************************************************************/
@@ -855,8 +855,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ClipboardPluginWeb": function() { return /* binding */ ClipboardPluginWeb; },
 /* harmony export */   "Clipboard": function() { return /* binding */ Clipboard; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var ClipboardPluginWeb = /** @class */ (function (_super) {
@@ -983,11 +983,11 @@ var ClipboardPluginWeb = /** @class */ (function (_super) {
 
 var Clipboard = new ClipboardPluginWeb();
 
-//# sourceMappingURL=clipboard.js.map
+
 
 /***/ }),
 
-/***/ 9747:
+/***/ 30461:
 /*!*************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/device.js ***!
   \*************************************************************/
@@ -999,9 +999,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "DevicePluginWeb": function() { return /* binding */ DevicePluginWeb; },
 /* harmony export */   "Device": function() { return /* binding */ Device; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ 56949);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ 85135);
 
 
 
@@ -1127,11 +1127,11 @@ var DevicePluginWeb = /** @class */ (function (_super) {
 
 var Device = new DevicePluginWeb();
 
-//# sourceMappingURL=device.js.map
+
 
 /***/ }),
 
-/***/ 5:
+/***/ 13378:
 /*!*****************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/filesystem.js ***!
   \*****************************************************************/
@@ -1143,9 +1143,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FilesystemPluginWeb": function() { return /* binding */ FilesystemPluginWeb; },
 /* harmony export */   "Filesystem": function() { return /* binding */ Filesystem; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
-/* harmony import */ var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core-plugin-definitions */ 7777);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
+/* harmony import */ var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core-plugin-definitions */ 62292);
 
 
 
@@ -1833,11 +1833,11 @@ var FilesystemPluginWeb = /** @class */ (function (_super) {
 
 var Filesystem = new FilesystemPluginWeb();
 
-//# sourceMappingURL=filesystem.js.map
+
 
 /***/ }),
 
-/***/ 35956:
+/***/ 40356:
 /*!******************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/geolocation.js ***!
   \******************************************************************/
@@ -1849,9 +1849,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "GeolocationPluginWeb": function() { return /* binding */ GeolocationPluginWeb; },
 /* harmony export */   "Geolocation": function() { return /* binding */ Geolocation; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
-/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ 56949);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util */ 85135);
 
 
 
@@ -1900,11 +1900,11 @@ var GeolocationPluginWeb = /** @class */ (function (_super) {
 
 var Geolocation = new GeolocationPluginWeb();
 
-//# sourceMappingURL=geolocation.js.map
+
 
 /***/ }),
 
-/***/ 76605:
+/***/ 883:
 /*!************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/index.js ***!
   \************************************************************/
@@ -2072,11 +2072,11 @@ var mergeWebPlugin = function (knownPlugins, plugin) {
     }
     knownPlugins[plugin.config.name] = plugin;
 };
-//# sourceMappingURL=index.js.map
+
 
 /***/ }),
 
-/***/ 62146:
+/***/ 56247:
 /*!**************************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/local-notifications.js ***!
   \**************************************************************************/
@@ -2088,8 +2088,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "LocalNotificationsPluginWeb": function() { return /* binding */ LocalNotificationsPluginWeb; },
 /* harmony export */   "LocalNotifications": function() { return /* binding */ LocalNotifications; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var LocalNotificationsPluginWeb = /** @class */ (function (_super) {
@@ -2206,11 +2206,11 @@ var LocalNotificationsPluginWeb = /** @class */ (function (_super) {
 
 var LocalNotifications = new LocalNotificationsPluginWeb();
 
-//# sourceMappingURL=local-notifications.js.map
+
 
 /***/ }),
 
-/***/ 54374:
+/***/ 40705:
 /*!*************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/modals.js ***!
   \*************************************************************/
@@ -2222,8 +2222,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ModalsPluginWeb": function() { return /* binding */ ModalsPluginWeb; },
 /* harmony export */   "Modals": function() { return /* binding */ Modals; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var ModalsPluginWeb = /** @class */ (function (_super) {
@@ -2302,11 +2302,11 @@ var ModalsPluginWeb = /** @class */ (function (_super) {
 
 var Modals = new ModalsPluginWeb();
 
-//# sourceMappingURL=modals.js.map
+
 
 /***/ }),
 
-/***/ 73813:
+/***/ 83546:
 /*!*************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/motion.js ***!
   \*************************************************************/
@@ -2318,8 +2318,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "MotionPluginWeb": function() { return /* binding */ MotionPluginWeb; },
 /* harmony export */   "Motion": function() { return /* binding */ Motion; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var MotionPluginWeb = /** @class */ (function (_super) {
@@ -2337,11 +2337,11 @@ var MotionPluginWeb = /** @class */ (function (_super) {
 
 var Motion = new MotionPluginWeb();
 
-//# sourceMappingURL=motion.js.map
+
 
 /***/ }),
 
-/***/ 10840:
+/***/ 56451:
 /*!**************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/network.js ***!
   \**************************************************************/
@@ -2353,8 +2353,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NetworkPluginWeb": function() { return /* binding */ NetworkPluginWeb; },
 /* harmony export */   "Network": function() { return /* binding */ Network; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var NetworkPluginWeb = /** @class */ (function (_super) {
@@ -2404,11 +2404,11 @@ var NetworkPluginWeb = /** @class */ (function (_super) {
 
 var Network = new NetworkPluginWeb();
 
-//# sourceMappingURL=network.js.map
+
 
 /***/ }),
 
-/***/ 14383:
+/***/ 46201:
 /*!******************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/permissions.js ***!
   \******************************************************************/
@@ -2420,9 +2420,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "PermissionsPluginWeb": function() { return /* binding */ PermissionsPluginWeb; },
 /* harmony export */   "Permissions": function() { return /* binding */ Permissions; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
-/* harmony import */ var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core-plugin-definitions */ 7777);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
+/* harmony import */ var _core_plugin_definitions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../core-plugin-definitions */ 62292);
 
 
 
@@ -2459,11 +2459,11 @@ var PermissionsPluginWeb = /** @class */ (function (_super) {
 
 var Permissions = new PermissionsPluginWeb();
 
-//# sourceMappingURL=permissions.js.map
+
 
 /***/ }),
 
-/***/ 17881:
+/***/ 80683:
 /*!************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/share.js ***!
   \************************************************************/
@@ -2475,8 +2475,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SharePluginWeb": function() { return /* binding */ SharePluginWeb; },
 /* harmony export */   "Share": function() { return /* binding */ Share; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var SharePluginWeb = /** @class */ (function (_super) {
@@ -2502,11 +2502,11 @@ var SharePluginWeb = /** @class */ (function (_super) {
 
 var Share = new SharePluginWeb();
 
-//# sourceMappingURL=share.js.map
+
 
 /***/ }),
 
-/***/ 55477:
+/***/ 51923:
 /*!********************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/splash-screen.js ***!
   \********************************************************************/
@@ -2518,8 +2518,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "SplashScreenPluginWeb": function() { return /* binding */ SplashScreenPluginWeb; },
 /* harmony export */   "SplashScreen": function() { return /* binding */ SplashScreen; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var SplashScreenPluginWeb = /** @class */ (function (_super) {
@@ -2541,11 +2541,11 @@ var SplashScreenPluginWeb = /** @class */ (function (_super) {
 
 var SplashScreen = new SplashScreenPluginWeb();
 
-//# sourceMappingURL=splash-screen.js.map
+
 
 /***/ }),
 
-/***/ 23030:
+/***/ 99081:
 /*!**************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/storage.js ***!
   \**************************************************************/
@@ -2557,8 +2557,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "StoragePluginWeb": function() { return /* binding */ StoragePluginWeb; },
 /* harmony export */   "Storage": function() { return /* binding */ Storage; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var StoragePluginWeb = /** @class */ (function (_super) {
@@ -2624,11 +2624,11 @@ var StoragePluginWeb = /** @class */ (function (_super) {
 
 var Storage = new StoragePluginWeb();
 
-//# sourceMappingURL=storage.js.map
+
 
 /***/ }),
 
-/***/ 31814:
+/***/ 61135:
 /*!************************************************************!*\
   !*** ./node_modules/@capacitor/core/dist/esm/web/toast.js ***!
   \************************************************************/
@@ -2640,8 +2640,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ToastPluginWeb": function() { return /* binding */ ToastPluginWeb; },
 /* harmony export */   "Toast": function() { return /* binding */ Toast; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 76605);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index */ 883);
 
 
 var ToastPluginWeb = /** @class */ (function (_super) {
@@ -2673,11 +2673,11 @@ var ToastPluginWeb = /** @class */ (function (_super) {
 
 var Toast = new ToastPluginWeb();
 
-//# sourceMappingURL=toast.js.map
+
 
 /***/ }),
 
-/***/ 4937:
+/***/ 61630:
 /*!******************************************************!*\
   !*** ./node_modules/compressorjs/dist/compressor.js ***!
   \******************************************************/
@@ -3668,9 +3668,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProfilePicturePageRoutingModule": function() { return /* binding */ ProfilePicturePageRoutingModule; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 39895);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ 71258);
 /* harmony import */ var _profile_picture_page__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./profile-picture.page */ 83289);
 
 
@@ -3710,11 +3710,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProfilePicturePageModule": function() { return /* binding */ ProfilePicturePageModule; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 38583);
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 3679);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ 54364);
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ 1707);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/angular */ 7602);
 /* harmony import */ var _profile_picture_routing_module__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./profile-picture-routing.module */ 60793);
 /* harmony import */ var _profile_picture_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile-picture.page */ 83289);
 /* harmony import */ var src_app_modals_image_cropper_image_cropper_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/modals/image-cropper/image-cropper.module */ 72228);
@@ -3757,18 +3757,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ProfilePicturePage": function() { return /* binding */ ProfilePicturePage; }
 /* harmony export */ });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 64762);
-/* harmony import */ var _raw_loader_profile_picture_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !raw-loader!./profile-picture.page.html */ 94827);
-/* harmony import */ var _profile_picture_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile-picture.page.scss */ 87187);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 37716);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 39895);
-/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/core */ 51188);
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 80476);
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tslib */ 3786);
+/* harmony import */ var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_profile_picture_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./profile-picture.page.html */ 34859);
+/* harmony import */ var _profile_picture_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./profile-picture.page.scss */ 15854);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/core */ 2316);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ 71258);
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/core */ 19889);
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @ionic/angular */ 7602);
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../services/auth.service */ 37556);
 /* harmony import */ var _services_photo_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../services/photo.service */ 61957);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../environments/environment */ 92340);
 /* harmony import */ var src_app_modals_image_cropper_image_cropper_page__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/modals/image-cropper/image-cropper.page */ 64151);
-/* harmony import */ var compressorjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! compressorjs */ 4937);
+/* harmony import */ var compressorjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! compressorjs */ 61630);
 /* harmony import */ var compressorjs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(compressorjs__WEBPACK_IMPORTED_MODULE_7__);
 
 
@@ -3980,9 +3980,9 @@ ProfilePicturePage.ctorParameters = () => [
 ProfilePicturePage = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
     (0,_angular_core__WEBPACK_IMPORTED_MODULE_11__.Component)({
         selector: 'app-profile-picture',
-        template: _raw_loader_profile_picture_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_profile_picture_page_html__WEBPACK_IMPORTED_MODULE_0__.default,
         providers: [],
-        styles: [_profile_picture_page_scss__WEBPACK_IMPORTED_MODULE_1__.default]
+        styles: [_profile_picture_page_scss__WEBPACK_IMPORTED_MODULE_1__]
     }),
     (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__metadata)("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router,
         _ionic_angular__WEBPACK_IMPORTED_MODULE_10__.AlertController,
@@ -3997,27 +3997,26 @@ ProfilePicturePage = (0,tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([
 
 /***/ }),
 
-/***/ 87187:
-/*!******************************************************************************!*\
-  !*** ./src/app/pages/auth/sign-up/profile-picture/profile-picture.page.scss ***!
-  \******************************************************************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".image-cropper {\n  height: 100%;\n  width: 100%;\n}\n\n.desktop-toolbar {\n  --background: none;\n  padding-bottom: 16px;\n  border-bottom: 1px solid #33333326;\n}\n\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n\n.back-button {\n  --color: white;\n  --background: #0055a5;\n  --background-hover: linear-gradient(#0055a5, #0c375f);\n  height: 24px;\n  --border-radius: 5px;\n  width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n}\n\n.orange-button {\n  width: unset;\n  display: block;\n  margin: 8px auto;\n  width: 200px;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 1;\n}\n\n.skip-button {\n  display: block;\n  --background: #e6e6e6;\n  --background-hover: #999;\n  color: #888;\n  width: 200px;\n  font-weight: 600;\n  margin: 8px auto;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 0.5;\n}\n\n#default-picture-wrapper {\n  height: 100px;\n  width: 100px;\n  margin: 0 auto;\n  border-radius: 50px;\n  background-image: url('default-pro-picture.svg');\n}\n\n#uploaded-photo {\n  height: 100px;\n  box-shadow: 1px 1px 28px rgba(0, 0, 0, 0.2);\n  border-radius: 100px;\n}\n\n#upload-picture-wrapper {\n  height: 100px;\n  width: 100px;\n  margin: 0 auto;\n  border-radius: 50px;\n}\n\nspan {\n  color: #0055a5;\n  font-weight: 600;\n  background: white;\n  padding: 6px;\n  line-height: 1.5em;\n  border-radius: 5px;\n}\n\n#next-button {\n  width: 100%;\n  height: 60px;\n  margin: 8px auto;\n  background: lightgray;\n  position: absolute;\n  bottom: 0;\n  font-size: 1em;\n}\n\n.cancel-button {\n  color: #e4405f;\n  --background: none;\n  --background-hover: linear-gradient(#f15b77, #e4405f);\n  height: 50px;\n  width: 200px;\n  transition: 0.5s;\n  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\n.cancel-button:hover {\n  color: white;\n}\n\n.get-picture-button {\n  --background: #1FCC6D;\n  --color: white;\n  height: 50px;\n  font-weight: 600;\n  margin: 32px auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2ZpbGUtcGljdHVyZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBQUNGOztBQUNBO0VBQ0Usa0JBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0FBRUY7O0FBQUU7RUFDRSxjQUFBO0FBRUo7O0FBQ0E7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxxREFBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUVGOztBQUFBO0VBQ0UsWUFBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSx1QkFBQTtVQUFBLGVBQUE7RUFDQSxVQUFBO0FBR0Y7O0FBREE7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSx3QkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLHVCQUFBO1VBQUEsZUFBQTtFQUNBLFlBQUE7QUFJRjs7QUFGQTtFQUNFLGFBQUE7RUFBZSxZQUFBO0VBQ2YsY0FBQTtFQUNBLG1CQUFBO0VBQ0EsZ0RBQUE7QUFNRjs7QUFKQTtFQUNFLGFBQUE7RUFFQSwyQ0FBQTtFQUNBLG9CQUFBO0FBTUY7O0FBSkE7RUFDRSxhQUFBO0VBQWUsWUFBQTtFQUNmLGNBQUE7RUFDQSxtQkFBQTtBQVFGOztBQUxBO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtBQVFGOztBQU5BO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsY0FBQTtBQVNGOztBQVBBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EscURBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUVBQUE7QUFVRjs7QUFQQTtFQUNFLFlBQUE7QUFVRjs7QUFSQTtFQUNFLHFCQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBV0YiLCJmaWxlIjoicHJvZmlsZS1waWN0dXJlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZS1jcm9wcGVyIHtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbn1cbi5kZXNrdG9wLXRvb2xiYXJ7XG4gIC0tYmFja2dyb3VuZDogbm9uZTtcbiAgcGFkZGluZy1ib3R0b206IDE2cHg7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMzMzMzMzMjY7XG5cbiAgaDEge1xuICAgIGNvbG9yOiAjMDA1NWE1O1xuICB9XG59XG4uYmFjay1idXR0b24ge1xuICAtLWNvbG9yOiB3aGl0ZTtcbiAgLS1iYWNrZ3JvdW5kOiAjMDA1NWE1O1xuICAtLWJhY2tncm91bmQtaG92ZXI6IGxpbmVhci1ncmFkaWVudCgjMDA1NWE1LCAjMGMzNzVmKTtcbiAgaGVpZ2h0OiAyNHB4O1xuICAtLWJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IDEwMHB4O1xuICBmb250LXNpemU6IDAuNWVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5vcmFuZ2UtYnV0dG9uIHtcbiAgd2lkdGg6IHVuc2V0O1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiA4cHggYXV0bztcbiAgd2lkdGg6IDIwMHB4O1xuICBhbmltYXRpb246IG5vbmU7XG4gIG9wYWNpdHk6IDE7XG59XG4uc2tpcC1idXR0b257XG4gIGRpc3BsYXk6IGJsb2NrO1xuICAtLWJhY2tncm91bmQ6ICNlNmU2ZTY7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogIzk5OTtcbiAgY29sb3I6ICM4ODg7XG4gIHdpZHRoOiAyMDBweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgbWFyZ2luOiA4cHggYXV0bztcbiAgYW5pbWF0aW9uOiBub25lO1xuICBvcGFjaXR5OiAwLjU7XG59XG4jZGVmYXVsdC1waWN0dXJlLXdyYXBwZXIge1xuICBoZWlnaHQ6IDEwMHB4OyB3aWR0aDogMTAwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBib3JkZXItcmFkaXVzOiA1MHB4O1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uLy4uLy4uLy4uLy4uL2Fzc2V0cy9pY29uL2RlZmF1bHQtcHJvLXBpY3R1cmUuc3ZnJyk7XG59XG4jdXBsb2FkZWQtcGhvdG8ge1xuICBoZWlnaHQ6IDEwMHB4O1xuICAvLyBib3JkZXI6IDVweCBzb2xpZCAjZmFhNzFiO1xuICBib3gtc2hhZG93OiAxcHggMXB4IDI4cHggcmdiKDAgMCAwIC8gMjAlKTtcbiAgYm9yZGVyLXJhZGl1czogMTAwcHg7XG59XG4jdXBsb2FkLXBpY3R1cmUtd3JhcHBlciB7XG4gIGhlaWdodDogMTAwcHg7IHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGJvcmRlci1yYWRpdXM6IDUwcHg7XG4gIC8vIGJvcmRlci1yYWRpdXM6IDUwcHg7XG59XG5zcGFue1xuICBjb2xvcjogIzAwNTVhNTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgYmFja2dyb3VuZDogd2hpdGU7XG4gIHBhZGRpbmc6IDZweDtcbiAgbGluZS1oZWlnaHQ6IDEuNWVtO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG59XG4jbmV4dC1idXR0b257XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDYwcHg7XG4gIG1hcmdpbjogOHB4IGF1dG87XG4gIGJhY2tncm91bmQ6IGxpZ2h0Z3JheTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBib3R0b206IDA7XG4gIGZvbnQtc2l6ZTogMWVtO1xufVxuLmNhbmNlbC1idXR0b24ge1xuICBjb2xvcjogI2U0NDA1ZjtcbiAgLS1iYWNrZ3JvdW5kOiAgbm9uZTtcbiAgLS1iYWNrZ3JvdW5kLWhvdmVyOiBsaW5lYXItZ3JhZGllbnQoI2YxNWI3NywgI2U0NDA1Zik7XG4gIGhlaWdodDogNTBweDtcbiAgd2lkdGg6IDIwMHB4O1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICB0cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpO1xufVxuXG4uY2FuY2VsLWJ1dHRvbjpob3ZlciB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5nZXQtcGljdHVyZS1idXR0b24ge1xuICAtLWJhY2tncm91bmQ6ICMxRkNDNkQ7XG4gIC0tY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDUwcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIG1hcmdpbjogMzJweCBhdXRvO1xufVxuXG4iXX0= */");
-
-/***/ }),
-
-/***/ 94827:
-/*!********************************************************************************************************************!*\
-  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/auth/sign-up/profile-picture/profile-picture.page.html ***!
-  \********************************************************************************************************************/
+/***/ 34859:
+/*!*********************************************************************************************************************************************!*\
+  !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/pages/auth/sign-up/profile-picture/profile-picture.page.html ***!
+  \*********************************************************************************************************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-hide-md-up\">\n  <ion-toolbar mode=\"md\">\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n    </ion-buttons>\n    <ion-buttons slot=\"end\">\n      <img style=\"margin-right: 16px;\" height=\"32\" src=\"../../../../../assets/icon/fyf-white-icon.svg\">\n    </ion-buttons>\n    <ion-title size=\"small\">Profile Picture</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content class=\"ion-text-center\">\n  <div class=\"spacer ion-hide-lg-down\"></div>\n  <ion-grid>\n    <!-- Desktop Header -->\n    <ion-row style=\"padding-top: 80px; margin-bottom: 40px;\" class=\"ion-hide-lg-down ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <ion-toolbar class=\"desktop-toolbar\">\n              <ion-buttons slot=\"start\">\n                  <img height=\"50\" src=\"../../../../../assets/icon/Logo 2.0.svg\" alt=\"\" srcset=\"\">\n              </ion-buttons>\n              <ion-buttons slot=\"end\">\n                <ion-button class=\"back-button\" (click)=\"cancel()\">\n                  Back\n                </ion-button>\n              </ion-buttons>\n        </ion-toolbar>\n            <!-- <img height=\"50\" style=\"display: inline;\" src=\"../../../assets/icon/suitcase-blue.svg\" alt=\"\" srcset=\"\">\n            <h1 style=\"display: inline; margin-left: 15px;\">Jobs</h1> -->\n      </ion-col>\n    </ion-row>\n\n    <!-- Header -->\n    <ion-row class=\"ion-justify-content-center header\">\n      <ion-col class=\"ion-text-center\" size=\"12\">\n        <h6 class=\"text-header\">Please upload your Profile Picture</h6>\n      </ion-col>\n    </ion-row>\n\n    <ion-row class=\"ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <!-- Picture Wrappers -->\n        <ion-col  size-lg=\"3\" size-md=\"7\" size-xs=\"11\" class=\"ion-align-items-center\">\n          <!-- Default Picture if user does not select profile picture Wrapper -->\n          <canvas\n            #defaultPicture\n            id=\"default-picture-wrapper\"\n            *ngIf=\"!uploadedPhoto\"></canvas>\n\n          <!-- User has uploaded cropped profile picture -->\n          <img id=\"uploaded-photo\" *ngIf=\"this.uploadedPhoto\" src=\"{{imageSrc}}\">\n\n            <!-- User has cropped profile picture -->\n            <!-- <img\n              id=\"upload-picture-wrapper\"\n              *ngIf=\"uploadedPhoto\"\n              src=\"{{croppedPhotoURL}}\" /> -->\n        </ion-col>\n      <!-- Get Picture Button -->\n      <ion-row class=\"ion-justify-content-center\">\n        <ion-col size=\"10\">\n          <img height=\"80\" *ngIf=\"!this.uploadedPhoto\" src=\"../../../../../assets/icons/carrier-candidate.svg\" alt=\"\" srcset=\"\">\n        </ion-col>\n        <ion-button (click)=\"takePicture()\" class=\"get-picture-button\">\n          Tap to get Profile Picture\n          <!-- <span>Only .png, .jpg, and .jpeg are allowed.</span> -->\n        </ion-button>\n      </ion-row>\n      <!-- Skip & Cancel Buttons -->\n      <ion-row class=\"ion-justify-content-center\" style=\"margin-top: 16px;\">\n        <ion-col size=\"10\">\n          <ion-button\n            (click)=\"uploadPhoto()\"\n            class=\"orange-button\">\n            Next\n          </ion-button>\n          <!-- <ion-button class=\"skip-button\">\n            Skip\n          </ion-button> -->\n          <ion-button (click)=\"this.auth.cancelSignUp()\" class=\"cancel-button\">\n            Cancel\n          </ion-button>\n        </ion-col>\n      </ion-row>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>\n");
+
+/***/ }),
+
+/***/ 15854:
+/*!******************************************************************************!*\
+  !*** ./src/app/pages/auth/sign-up/profile-picture/profile-picture.page.scss ***!
+  \******************************************************************************/
+/***/ (function(module) {
+
+"use strict";
+module.exports = ".image-cropper {\n  height: 100%;\n  width: 100%;\n}\n\n.desktop-toolbar {\n  --background: none;\n  padding-bottom: 16px;\n  border-bottom: 1px solid #33333326;\n}\n\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n\n.back-button {\n  --color: white;\n  --background: #0055a5;\n  --background-hover: linear-gradient(#0055a5, #0c375f);\n  height: 24px;\n  --border-radius: 5px;\n  width: 100px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n}\n\n.orange-button {\n  width: unset;\n  display: block;\n  margin: 8px auto;\n  width: 200px;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 1;\n}\n\n.skip-button {\n  display: block;\n  --background: #e6e6e6;\n  --background-hover: #999;\n  color: #888;\n  width: 200px;\n  font-weight: 600;\n  margin: 8px auto;\n  -webkit-animation: none;\n          animation: none;\n  opacity: 0.5;\n}\n\n#default-picture-wrapper {\n  height: 100px;\n  width: 100px;\n  margin: 0 auto;\n  border-radius: 50px;\n  background-image: url('default-pro-picture.svg');\n}\n\n#uploaded-photo {\n  height: 100px;\n  box-shadow: 1px 1px 28px rgba(0, 0, 0, 0.2);\n  border-radius: 100px;\n}\n\n#upload-picture-wrapper {\n  height: 100px;\n  width: 100px;\n  margin: 0 auto;\n  border-radius: 50px;\n}\n\nspan {\n  color: #0055a5;\n  font-weight: 600;\n  background: white;\n  padding: 6px;\n  line-height: 1.5em;\n  border-radius: 5px;\n}\n\n#next-button {\n  width: 100%;\n  height: 60px;\n  margin: 8px auto;\n  background: lightgray;\n  position: absolute;\n  bottom: 0;\n  font-size: 1em;\n}\n\n.cancel-button {\n  color: #e4405f;\n  --background: none;\n  --background-hover: linear-gradient(#f15b77, #e4405f);\n  height: 50px;\n  width: 200px;\n  transition: 0.5s;\n  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\n.cancel-button:hover {\n  color: white;\n}\n\n.get-picture-button {\n  --background: #1FCC6D;\n  --color: white;\n  height: 50px;\n  font-weight: 600;\n  margin: 32px auto;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInByb2ZpbGUtcGljdHVyZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBQUNGOztBQUNBO0VBQ0Usa0JBQUE7RUFDQSxvQkFBQTtFQUNBLGtDQUFBO0FBRUY7O0FBQUU7RUFDRSxjQUFBO0FBRUo7O0FBQ0E7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxxREFBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQUVGOztBQUFBO0VBQ0UsWUFBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtFQUNBLFlBQUE7RUFDQSx1QkFBQTtVQUFBLGVBQUE7RUFDQSxVQUFBO0FBR0Y7O0FBREE7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSx3QkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLHVCQUFBO1VBQUEsZUFBQTtFQUNBLFlBQUE7QUFJRjs7QUFGQTtFQUNFLGFBQUE7RUFBZSxZQUFBO0VBQ2YsY0FBQTtFQUNBLG1CQUFBO0VBQ0EsZ0RBQUE7QUFNRjs7QUFKQTtFQUNFLGFBQUE7RUFFQSwyQ0FBQTtFQUNBLG9CQUFBO0FBTUY7O0FBSkE7RUFDRSxhQUFBO0VBQWUsWUFBQTtFQUNmLGNBQUE7RUFDQSxtQkFBQTtBQVFGOztBQUxBO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0VBQ0EsaUJBQUE7RUFDQSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxrQkFBQTtBQVFGOztBQU5BO0VBQ0UsV0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLHFCQUFBO0VBQ0Esa0JBQUE7RUFDQSxTQUFBO0VBQ0EsY0FBQTtBQVNGOztBQVBBO0VBQ0UsY0FBQTtFQUNBLGtCQUFBO0VBQ0EscURBQUE7RUFDQSxZQUFBO0VBQ0EsWUFBQTtFQUNBLGdCQUFBO0VBQ0EsbUVBQUE7QUFVRjs7QUFQQTtFQUNFLFlBQUE7QUFVRjs7QUFSQTtFQUNFLHFCQUFBO0VBQ0EsY0FBQTtFQUNBLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGlCQUFBO0FBV0YiLCJmaWxlIjoicHJvZmlsZS1waWN0dXJlLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5pbWFnZS1jcm9wcGVyIHtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMTAwJTtcbn1cbi5kZXNrdG9wLXRvb2xiYXJ7XG4gIC0tYmFja2dyb3VuZDogbm9uZTtcbiAgcGFkZGluZy1ib3R0b206IDE2cHg7XG4gIGJvcmRlci1ib3R0b206IDFweCBzb2xpZCAjMzMzMzMzMjY7XG5cbiAgaDEge1xuICAgIGNvbG9yOiAjMDA1NWE1O1xuICB9XG59XG4uYmFjay1idXR0b24ge1xuICAtLWNvbG9yOiB3aGl0ZTtcbiAgLS1iYWNrZ3JvdW5kOiAjMDA1NWE1O1xuICAtLWJhY2tncm91bmQtaG92ZXI6IGxpbmVhci1ncmFkaWVudCgjMDA1NWE1LCAjMGMzNzVmKTtcbiAgaGVpZ2h0OiAyNHB4O1xuICAtLWJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IDEwMHB4O1xuICBmb250LXNpemU6IDAuNWVtO1xuICBmb250LXdlaWdodDogNjAwO1xuICBkaXNwbGF5OiBibG9jaztcbn1cbi5vcmFuZ2UtYnV0dG9uIHtcbiAgd2lkdGg6IHVuc2V0O1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiA4cHggYXV0bztcbiAgd2lkdGg6IDIwMHB4O1xuICBhbmltYXRpb246IG5vbmU7XG4gIG9wYWNpdHk6IDE7XG59XG4uc2tpcC1idXR0b257XG4gIGRpc3BsYXk6IGJsb2NrO1xuICAtLWJhY2tncm91bmQ6ICNlNmU2ZTY7XG4gIC0tYmFja2dyb3VuZC1ob3ZlcjogIzk5OTtcbiAgY29sb3I6ICM4ODg7XG4gIHdpZHRoOiAyMDBweDtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgbWFyZ2luOiA4cHggYXV0bztcbiAgYW5pbWF0aW9uOiBub25lO1xuICBvcGFjaXR5OiAwLjU7XG59XG4jZGVmYXVsdC1waWN0dXJlLXdyYXBwZXIge1xuICBoZWlnaHQ6IDEwMHB4OyB3aWR0aDogMTAwcHg7XG4gIG1hcmdpbjogMCBhdXRvO1xuICBib3JkZXItcmFkaXVzOiA1MHB4O1xuICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uLy4uLy4uLy4uLy4uL2Fzc2V0cy9pY29uL2RlZmF1bHQtcHJvLXBpY3R1cmUuc3ZnJyk7XG59XG4jdXBsb2FkZWQtcGhvdG8ge1xuICBoZWlnaHQ6IDEwMHB4O1xuICAvLyBib3JkZXI6IDVweCBzb2xpZCAjZmFhNzFiO1xuICBib3gtc2hhZG93OiAxcHggMXB4IDI4cHggcmdiKDAgMCAwIC8gMjAlKTtcbiAgYm9yZGVyLXJhZGl1czogMTAwcHg7XG59XG4jdXBsb2FkLXBpY3R1cmUtd3JhcHBlciB7XG4gIGhlaWdodDogMTAwcHg7IHdpZHRoOiAxMDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGJvcmRlci1yYWRpdXM6IDUwcHg7XG4gIC8vIGJvcmRlci1yYWRpdXM6IDUwcHg7XG59XG5zcGFue1xuICBjb2xvcjogIzAwNTVhNTtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbiAgYmFja2dyb3VuZDogd2hpdGU7XG4gIHBhZGRpbmc6IDZweDtcbiAgbGluZS1oZWlnaHQ6IDEuNWVtO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG59XG4jbmV4dC1idXR0b257XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IDYwcHg7XG4gIG1hcmdpbjogOHB4IGF1dG87XG4gIGJhY2tncm91bmQ6IGxpZ2h0Z3JheTtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBib3R0b206IDA7XG4gIGZvbnQtc2l6ZTogMWVtO1xufVxuLmNhbmNlbC1idXR0b24ge1xuICBjb2xvcjogI2U0NDA1ZjtcbiAgLS1iYWNrZ3JvdW5kOiAgbm9uZTtcbiAgLS1iYWNrZ3JvdW5kLWhvdmVyOiBsaW5lYXItZ3JhZGllbnQoI2YxNWI3NywgI2U0NDA1Zik7XG4gIGhlaWdodDogNTBweDtcbiAgd2lkdGg6IDIwMHB4O1xuICB0cmFuc2l0aW9uOiAwLjVzO1xuICB0cmFuc2l0aW9uLXRpbWluZy1mdW5jdGlvbjogY3ViaWMtYmV6aWVyKDAuMTc1LCAwLjg4NSwgMC4zMiwgMS4yNzUpO1xufVxuXG4uY2FuY2VsLWJ1dHRvbjpob3ZlciB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbi5nZXQtcGljdHVyZS1idXR0b24ge1xuICAtLWJhY2tncm91bmQ6ICMxRkNDNkQ7XG4gIC0tY29sb3I6IHdoaXRlO1xuICBoZWlnaHQ6IDUwcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIG1hcmdpbjogMzJweCBhdXRvO1xufVxuXG4iXX0= */";
 
 /***/ })
 

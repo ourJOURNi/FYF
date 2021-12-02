@@ -12,7 +12,7 @@
   <ion-grid>
     <!-- Desktop Header -->
     <ion-row style="padding-top: 40px;" class="ion-hide-lg-down ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
         <ion-toolbar class="desktop-toolbar">
               <ion-buttons slot="start">
                 <img style="border-radius: 50px;" height="75" src="{{this.jobLogo}}">
@@ -44,16 +44,16 @@
     </ion-row>
     <!-- Instructions -->
     <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
         <p id="instructions">Please go over your information before you send your application. You can edit your profile's phone number and Resume from here. After you hit submit, an email with your FYF Profile, Resume, and application message will be sent to the employer.</p>
       </ion-col>
     </ion-row>
     <!-- Forms -->
     <ion-row class="ion-justify-content-center" style="margin: 20px auto;">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
         <form *ngIf="applyPageForm" [formGroup]="applyPageForm">
-          <div class="info-section">
-            <p class="instructions" >Phone Number</p>
+          <div class="info-section" style="border-top: 1px solid #99999973; padding-top: 2em;">
+            <p class="instructions">Phone Number</p>
             <ion-list class="line-input">
               <ion-item>
                 <ion-input formControlName="phoneNumber" maxlength="10" inputmode="tel"></ion-input>
@@ -62,7 +62,7 @@
           </div>
           <div class="info-section">
             <p class="instructions" >Resume</p>
-            <ion-button class="blue-button" style="height: 45px;" (click)="viewResumeModal()">
+            <ion-button class="grey-button" style="height: 45px;" (click)="viewResumeModal()">
                         View Resume
             </ion-button>
                       <!-- <p>or</p> -->
@@ -81,7 +81,7 @@
           </div>
           <ion-row>
             <ion-col class="ion-text-center" size="12">
-              <ion-button (click)="finishApplication()" class="orange-button next-button">Submit</ion-button>
+              <ion-button (click)="finishApplication()" class="orange-button next-button" style="margin-bottom: 10em">Submit</ion-button>
             </ion-col>
           </ion-row>
         </form>

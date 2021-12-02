@@ -1,4 +1,6 @@
 (function () {
+  "use strict";
+
   function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
   function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
@@ -7,9 +9,13 @@
 
   (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["src_app_pages_jobs_apply_apply_module_ts"], {
     /***/
-    20207: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    76371:
+    /*!***********************************************************!*\
+      !*** ./node_modules/date-fns/esm/_lib/toInteger/index.js ***!
+      \***********************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -44,9 +50,13 @@
     },
 
     /***/
-    95428: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    4185:
+    /*!**********************************************************************!*\
+      !*** ./node_modules/date-fns/esm/differenceInCalendarYears/index.js ***!
+      \**********************************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -67,13 +77,13 @@
 
       var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../toDate/index.js */
-      94513);
+      62711);
       /* harmony import */
 
 
       var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ../_lib/requiredArgs/index.js */
-      43463);
+      24252);
       /**
        * @name differenceInCalendarYears
        * @category Year Helpers
@@ -112,9 +122,13 @@
     },
 
     /***/
-    76059: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    81305:
+    /*!**************************************************************!*\
+      !*** ./node_modules/date-fns/esm/differenceInYears/index.js ***!
+      \**************************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -135,25 +149,25 @@
 
       var _toDate_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../toDate/index.js */
-      94513);
+      62711);
       /* harmony import */
 
 
       var _differenceInCalendarYears_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! ../differenceInCalendarYears/index.js */
-      95428);
+      4185);
       /* harmony import */
 
 
       var _compareAsc_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ../compareAsc/index.js */
-      24487);
+      17986);
       /* harmony import */
 
 
       var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ../_lib/requiredArgs/index.js */
-      43463);
+      24252);
       /**
        * @name differenceInYears
        * @category Year Helpers
@@ -200,9 +214,13 @@
     },
 
     /***/
-    30331: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    98048:
+    /*!*****************************************************!*\
+      !*** ./node_modules/date-fns/esm/parseISO/index.js ***!
+      \*****************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -223,13 +241,13 @@
 
       var _lib_toInteger_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ../_lib/toInteger/index.js */
-      20207);
+      76371);
       /* harmony import */
 
 
       var _lib_requiredArgs_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ../_lib/requiredArgs/index.js */
-      43463);
+      24252);
 
       var MILLISECONDS_IN_HOUR = 3600000;
       var MILLISECONDS_IN_MINUTE = 60000;
@@ -524,9 +542,13 @@
     },
 
     /***/
-    62934: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    62934:
+    /*!******************************************************************!*\
+      !*** ./src/app/modals/view-resume/view-resume-routing.module.ts ***!
+      \******************************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -547,19 +569,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -584,9 +606,13 @@
     },
 
     /***/
-    703: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    703:
+    /*!**********************************************************!*\
+      !*** ./src/app/modals/view-resume/view-resume.module.ts ***!
+      \**********************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -607,31 +633,31 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/common */
-      38583);
+      54364);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/forms */
-      3679);
+      1707);
       /* harmony import */
 
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -663,9 +689,13 @@
     },
 
     /***/
-    68098: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    68098:
+    /*!********************************************************!*\
+      !*** ./src/app/modals/view-resume/view-resume.page.ts ***!
+      \********************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -686,37 +716,37 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_view_resume_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./view-resume.page.html */
-      78148);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_view_resume_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./view-resume.page.html */
+      10236);
       /* harmony import */
 
 
       var _view_resume_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./view-resume.page.scss */
-      53900);
+      73174);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
       var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/platform-browser */
-      39075);
+      71570);
       /* harmony import */
 
 
@@ -728,7 +758,7 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -823,16 +853,20 @@
 
       _ViewResumePage = (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_8__.Component)({
         selector: 'app-view-resume',
-        template: _raw_loader_view_resume_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_view_resume_page_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_view_resume_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_view_resume_page_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_4__.__metadata)("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_5__.Router, _ionic_angular__WEBPACK_IMPORTED_MODULE_6__.ModalController, src_app_services_profile_service__WEBPACK_IMPORTED_MODULE_2__.ProfileService, _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.DomSanitizer])], _ViewResumePage);
       /***/
     },
 
     /***/
-    95691: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    95691:
+    /*!**********************************************************!*\
+      !*** ./src/app/pages/jobs/apply/apply-routing.module.ts ***!
+      \**********************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -853,19 +887,19 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -901,9 +935,13 @@
     },
 
     /***/
-    29382: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    29382:
+    /*!**************************************************!*\
+      !*** ./src/app/pages/jobs/apply/apply.module.ts ***!
+      \**************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -924,25 +962,25 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! @angular/common */
-      38583);
+      54364);
       /* harmony import */
 
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/forms */
-      3679);
+      1707);
       /* harmony import */
 
 
@@ -954,7 +992,7 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
       /* harmony import */
 
 
@@ -986,9 +1024,13 @@
     },
 
     /***/
-    26042: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    26042:
+    /*!************************************************!*\
+      !*** ./src/app/pages/jobs/apply/apply.page.ts ***!
+      \************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony export */
 
@@ -1009,37 +1051,37 @@
 
       var tslib__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
       /*! tslib */
-      64762);
+      3786);
       /* harmony import */
 
 
-      var _raw_loader_apply_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-      /*! !raw-loader!./apply.page.html */
-      65996);
+      var _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apply_page_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! !./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./apply.page.html */
+      68490);
       /* harmony import */
 
 
       var _apply_page_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./apply.page.scss */
-      58933);
+      1256);
       /* harmony import */
 
 
       var _angular_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
       /*! @angular/core */
-      37716);
+      2316);
       /* harmony import */
 
 
       var _angular_common__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
       /*! @angular/common */
-      38583);
+      54364);
       /* harmony import */
 
 
       var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
       /*! @angular/router */
-      39895);
+      71258);
       /* harmony import */
 
 
@@ -1057,19 +1099,19 @@
 
       var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
       /*! @angular/forms */
-      3679);
+      1707);
       /* harmony import */
 
 
       var date_fns__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
       /*! date-fns */
-      76059);
+      81305);
       /* harmony import */
 
 
       var date_fns__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
       /*! date-fns */
-      30331);
+      98048);
       /* harmony import */
 
 
@@ -1081,7 +1123,7 @@
 
       var _ionic_angular__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
       /*! @ionic/angular */
-      80476);
+      7602);
 
       var _ApplyPage = /*#__PURE__*/function () {
         function ApplyPage(router, activatedRoute, jobs, profile, formBuilder, location, modal) {
@@ -1208,40 +1250,20 @@
 
       _ApplyPage = (0, tslib__WEBPACK_IMPORTED_MODULE_8__.__decorate)([(0, _angular_core__WEBPACK_IMPORTED_MODULE_12__.Component)({
         selector: 'app-apply',
-        template: _raw_loader_apply_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
-        styles: [_apply_page_scss__WEBPACK_IMPORTED_MODULE_1__["default"]]
+        template: _Users_ferro_Desktop_United_Way_FYF_node_modules_ngtools_webpack_src_loaders_direct_resource_js_apply_page_html__WEBPACK_IMPORTED_MODULE_0__["default"],
+        styles: [_apply_page_scss__WEBPACK_IMPORTED_MODULE_1__]
       }), (0, tslib__WEBPACK_IMPORTED_MODULE_8__.__metadata)("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_9__.Router, _angular_router__WEBPACK_IMPORTED_MODULE_9__.ActivatedRoute, _services_jobs_service__WEBPACK_IMPORTED_MODULE_2__.JobsService, _services_profile_service__WEBPACK_IMPORTED_MODULE_3__.ProfileService, _angular_forms__WEBPACK_IMPORTED_MODULE_7__.FormBuilder, _angular_common__WEBPACK_IMPORTED_MODULE_10__.Location, _ionic_angular__WEBPACK_IMPORTED_MODULE_11__.ModalController])], _ApplyPage);
       /***/
     },
 
     /***/
-    53900: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "ion-toolbar {\n  --background: #0055a5;\n}\n\nion-icon, ion-title {\n  color: white;\n}\n\nion-icon {\n  position: relative;\n  left: 1em;\n}\n\nh4 {\n  margin: 45px auto;\n  color: #005191;\n}\n\n#upload-button {\n  position: relative;\n  top: 4px;\n  font-size: 10px;\n  font-weight: 600;\n  right: 20px;\n  --width: 60px;\n  --background: #ffba1930;\n  --border-style: solid;\n  --border-color: #ffba19;\n  --border-width: 2px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpZXctcmVzdW1lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHFCQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxZQUFBO0FBRUY7O0FBQUE7RUFDRSxrQkFBQTtFQUNBLFNBQUE7QUFHRjs7QUFEQTtFQUNFLGlCQUFBO0VBQ0EsY0FBQTtBQUlGOztBQURBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLHFCQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQUlGIiwiZmlsZSI6InZpZXctcmVzdW1lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10b29sYmFyIHtcbiAgLS1iYWNrZ3JvdW5kOiAjMDA1NWE1O1xufVxuaW9uLWljb24sIGlvbi10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbmlvbi1pY29uIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBsZWZ0OiAxZW07XG59XG5oNCB7XG4gIG1hcmdpbjogNDVweCBhdXRvO1xuICBjb2xvcjogIzAwNTE5MTtcbn1cblxuI3VwbG9hZC1idXR0b24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogNHB4O1xuICBmb250LXNpemU6IDEwcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIHJpZ2h0OiAyMHB4O1xuICAtLXdpZHRoOiA2MHB4O1xuICAtLWJhY2tncm91bmQ6ICNmZmJhMTkzMDtcbiAgLS1ib3JkZXItc3R5bGU6IHNvbGlkO1xuICAtLWJvcmRlci1jb2xvcjogI2ZmYmExOTtcbiAgLS1ib3JkZXItd2lkdGg6IDJweDtcbn0iXX0= */";
-      /***/
-    },
+    10236:
+    /*!*************************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/modals/view-resume/view-resume.page.html ***!
+      \*************************************************************************************************************************/
 
     /***/
-    58933: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
-      __webpack_require__.r(__webpack_exports__);
-      /* harmony default export */
-
-
-      __webpack_exports__["default"] = "ion-title {\n  margin: 0;\n  color: white;\n}\n\nion-toolbar {\n  --background: #0055a5;\n}\n\n#mobile-toolbar-icon {\n  height: 32px;\n  position: relative;\n}\n\nion-back-button {\n  color: white;\n  width: auto;\n}\n\n.desktop-toolbar {\n  --background: none;\n}\n\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n\n.toolbar-company-info {\n  display: inline-block;\n  margin-left: 1em;\n  --background: none;\n}\n\n.toolbar-company-info h2, .toolbar-company-info h3, .toolbar-company-info p {\n  margin: 0;\n}\n\n.toolbar-company-info h2 {\n  color: #0055a5;\n  font-weight: 600;\n}\n\n.toolbar-company-info h3 {\n  font-size: 1em;\n  color: #666;\n}\n\n.toolbar-company-info p {\n  color: white;\n  margin-top: 0.7em;\n  text-align: center;\n  background: #4dc066;\n  width: 50px;\n  padding: 4px;\n  font-size: 0.7em;\n  font-weight: 600;\n  border-radius: 5px;\n}\n\n.back-button {\n  --color: white;\n  --background: #e3405f;\n  --background-hover: linear-gradient(#e3405f, #0d2e4d);\n  height: 24px;\n  --border-radius: 5px;\n  width: 50px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n}\n\n.instructions {\n  line-height: 1em;\n  width: 400px;\n  color: #333;\n  font-size: 1em;\n  font-weight: 600;\n}\n\n.info-section {\n  margin-bottom: 20px;\n}\n\n.message-input {\n  background: white;\n  height: auto;\n  margin: 20px 0 10px 0;\n  box-shadow: none;\n  padding: 10px;\n  border: 3px solid #0055a5;\n  border-radius: 2px;\n  transition: 1s;\n  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\n.company-logo {\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n}\n\n.job-title {\n  font-size: 2em;\n  margin-top: 15px;\n  margin-bottom: 5px;\n  color: #005191;\n}\n\n#company-name {\n  margin-top: 22px;\n  margin-left: 8px;\n  color: #222;\n}\n\n#instructions {\n  margin-top: 25px;\n  font-size: 1em;\n  color: #111;\n}\n\n@media only screen and (min-width: 992px) {\n  #instructions {\n    font-size: 0.9em;\n  }\n}\n\n.custom-file-input {\n  visibility: hidden;\n}\n\n.custom-file-input::before {\n  content: \"Select some files\";\n  display: inline-block;\n  background: linear-gradient(to top, #f9f9f9, #e3e3e3);\n  border: 1px solid #999;\n  border-radius: 3px;\n  padding: 5px 8px;\n  outline: none;\n  white-space: nowrap;\n  -webkit-user-select: none;\n  cursor: pointer;\n  text-shadow: 1px 1px #fff;\n  font-weight: 700;\n  font-size: 10pt;\n}\n\n.custom-file-input:hover::before {\n  border-color: black;\n}\n\n.custom-file-input:active::before {\n  background: -webkit-linear-gradient(to top, #e3e3e3, #f9f9f9);\n}\n\nion-label {\n  margin-top: 25px;\n  font-size: 1.3em;\n  color: #666;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcGx5LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFNBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxxQkFBQTtBQUVGOztBQUFBO0VBQ0UsWUFBQTtFQUNBLGtCQUFBO0FBR0Y7O0FBREE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBQUlGOztBQUZBO0VBQ0Usa0JBQUE7QUFLRjs7QUFKRTtFQUNFLGNBQUE7QUFNSjs7QUFIQTtFQUNFLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtBQU1GOztBQUpFO0VBQ0UsU0FBQTtBQU1KOztBQUpFO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0FBTUo7O0FBSkU7RUFDRSxjQUFBO0VBQ0EsV0FBQTtBQU1KOztBQUpFO0VBQ0UsWUFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FBTUo7O0FBSEE7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxxREFBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQU1GOztBQUpBO0VBQ0UsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtBQU9GOztBQUpBO0VBQ0UsbUJBQUE7QUFPRjs7QUFMQTtFQUNFLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxtRUFBQTtBQVFGOztBQU5BO0VBQ0UsNEJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0FBU0Y7O0FBUEE7RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7QUFVRjs7QUFSQTtFQUNFLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBV0Y7O0FBVEE7RUFDRSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0FBWUY7O0FBVkE7RUFDRTtJQUNFLGdCQUFBO0VBYUY7QUFDRjs7QUFYQTtFQUNFLGtCQUFBO0FBYUY7O0FBWEE7RUFDRSw0QkFBQTtFQUNBLHFCQUFBO0VBQ0EscURBQUE7RUFDQSxzQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQWNGOztBQVpBO0VBQ0UsbUJBQUE7QUFlRjs7QUFiQTtFQUNFLDZEQUFBO0FBZ0JGOztBQWJBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7QUFnQkYiLCJmaWxlIjoiYXBwbHkucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRpdGxlIHtcbiAgbWFyZ2luOiAwO1xuICBjb2xvcjogd2hpdGU7XG59XG5pb24tdG9vbGJhciB7XG4gIC0tYmFja2dyb3VuZDogIzAwNTVhNTtcbn1cbiNtb2JpbGUtdG9vbGJhci1pY29uIHtcbiAgaGVpZ2h0OiAzMnB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5pb24tYmFjay1idXR0b24ge1xuICBjb2xvcjogd2hpdGU7XG4gIHdpZHRoOiBhdXRvO1xufVxuLmRlc2t0b3AtdG9vbGJhcntcbiAgLS1iYWNrZ3JvdW5kOiBub25lO1xuICBoMSB7XG4gICAgY29sb3I6ICMwMDU1YTU7XG4gIH1cbn1cbi50b29sYmFyLWNvbXBhbnktaW5mb3tcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tbGVmdDogMWVtO1xuICAtLWJhY2tncm91bmQ6IG5vbmU7XG5cbiAgaDIsIGgzLCBwIHtcbiAgICBtYXJnaW46IDA7XG4gIH1cbiAgaDIge1xuICAgIGNvbG9yOiAjMDA1NWE1O1xuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIH1cbiAgaDMge1xuICAgIGZvbnQtc2l6ZTogMWVtO1xuICAgIGNvbG9yOiAjNjY2XG4gIH1cbiAgcCB7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIG1hcmdpbi10b3A6IDAuN2VtO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBiYWNrZ3JvdW5kOiAjNGRjMDY2O1xuICAgIHdpZHRoOiA1MHB4O1xuICAgIHBhZGRpbmc6IDRweDtcbiAgICBmb250LXNpemU6IDAuN2VtO1xuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICB9XG59XG4uYmFjay1idXR0b24ge1xuICAtLWNvbG9yOiB3aGl0ZTtcbiAgLS1iYWNrZ3JvdW5kOiAjZTM0MDVmO1xuICAtLWJhY2tncm91bmQtaG92ZXI6IGxpbmVhci1ncmFkaWVudCgjZTM0MDVmLCAjMGQyZTRkKTtcbiAgaGVpZ2h0OiAyNHB4O1xuICAtLWJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IDUwcHg7XG4gIGZvbnQtc2l6ZTogMC41ZW07XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuLmluc3RydWN0aW9ucyB7XG4gIGxpbmUtaGVpZ2h0OiAxZW07XG4gIHdpZHRoOiA0MDBweDtcbiAgY29sb3I6ICMzMzM7XG4gIGZvbnQtc2l6ZTogMWVtO1xuICBmb250LXdlaWdodDogNjAwO1xufVxuXG4uaW5mby1zZWN0aW9ue1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuLm1lc3NhZ2UtaW5wdXQge1xuICBiYWNrZ3JvdW5kOiB3aGl0ZTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBtYXJnaW46IDIwcHggMCAxMHB4IDA7XG4gIGJveC1zaGFkb3c6IG5vbmU7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJvcmRlcjogM3B4IHNvbGlkICMwMDU1YTU7XG4gIGJvcmRlci1yYWRpdXM6IDJweDtcbiAgdHJhbnNpdGlvbjogMXM7XG4gIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoMC4xNzUsIDAuODg1LCAwLjMyLCAxLjI3NSk7XG59XG4uY29tcGFueS1sb2dvIHtcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgYmFja2dyb3VuZC1zaXplOiBjb250YWluO1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG59XG4uam9iLXRpdGxlIHtcbiAgZm9udC1zaXplOiAyZW07XG4gIG1hcmdpbi10b3A6IDE1cHg7XG4gIG1hcmdpbi1ib3R0b206IDVweDtcbiAgY29sb3I6ICMwMDUxOTE7XG59XG4jY29tcGFueS1uYW1lIHtcbiAgbWFyZ2luLXRvcDogMjJweDtcbiAgbWFyZ2luLWxlZnQ6IDhweDtcbiAgY29sb3I6ICMyMjI7XG59XG4jaW5zdHJ1Y3Rpb25zIHtcbiAgbWFyZ2luLXRvcDogMjVweDtcbiAgZm9udC1zaXplOiAxZW07XG4gIGNvbG9yOiAjMTExO1xufVxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA5OTJweCkge1xuICAjaW5zdHJ1Y3Rpb25zIHtcbiAgICBmb250LXNpemU6IDAuOWVtO1xuICB9XG59XG4uY3VzdG9tLWZpbGUtaW5wdXQge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG4uY3VzdG9tLWZpbGUtaW5wdXQ6OmJlZm9yZSB7XG4gIGNvbnRlbnQ6ICdTZWxlY3Qgc29tZSBmaWxlcyc7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KHRvIHRvcCwgI2Y5ZjlmOSwgI2UzZTNlMyk7XG4gIGJvcmRlcjogMXB4IHNvbGlkICM5OTk7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgcGFkZGluZzogNXB4IDhweDtcbiAgb3V0bGluZTogbm9uZTtcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICB0ZXh0LXNoYWRvdzogMXB4IDFweCAjZmZmO1xuICBmb250LXdlaWdodDogNzAwO1xuICBmb250LXNpemU6IDEwcHQ7XG59XG4uY3VzdG9tLWZpbGUtaW5wdXQ6aG92ZXI6OmJlZm9yZSB7XG4gIGJvcmRlci1jb2xvcjogYmxhY2s7XG59XG4uY3VzdG9tLWZpbGUtaW5wdXQ6YWN0aXZlOjpiZWZvcmUge1xuICBiYWNrZ3JvdW5kOiAtd2Via2l0LWxpbmVhci1ncmFkaWVudCh0byB0b3AsICNlM2UzZTMsICNmOWY5ZjkpO1xufVxuXG5pb24tbGFiZWwge1xuICBtYXJnaW4tdG9wOiAyNXB4O1xuICBmb250LXNpemU6IDEuM2VtO1xuICBjb2xvcjogIzY2Njtcbn1cblxuIl19 */";
-      /***/
-    },
-
-    /***/
-    78148: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
-
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
@@ -1251,14 +1273,42 @@
     },
 
     /***/
-    65996: function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-      "use strict";
+    68490:
+    /*!*****************************************************************************************************************!*\
+      !*** ./node_modules/@ngtools/webpack/src/loaders/direct-resource.js!./src/app/pages/jobs/apply/apply.page.html ***!
+      \*****************************************************************************************************************/
 
+    /***/
+    function _(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
       __webpack_require__.r(__webpack_exports__);
       /* harmony default export */
 
 
       __webpack_exports__["default"] = "<ion-header class=\"ion-hide-lg-up\">\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-back-button></ion-back-button>\n      <img id=\"mobile-toolbar-icon\" src=\"../../../../assets/logos/White-FYF-LOGO.svg\" alt=\"White FYF Logo\">\n    </ion-buttons>\n  <ion-title>Application</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-grid>\n    <!-- Desktop Header -->\n    <ion-row style=\"padding-top: 40px;\" class=\"ion-hide-lg-down ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <ion-toolbar class=\"desktop-toolbar\">\n              <ion-buttons slot=\"start\">\n                <img style=\"border-radius: 50px;\" height=\"75\" src=\"{{this.jobLogo}}\">\n                <div class=\"toolbar-company-info\">\n                  <h2>{{jobCompanyName}}</h2>\n                  <h3>{{jobTitle}}</h3>\n                  <p>${{jobRateOfPay}} / hr</p>\n                </div>\n              </ion-buttons>\n              <ion-buttons slot=\"end\">\n                <ion-button class=\"back-button\" (click)=\"goBack()\">\n                  Back\n                </ion-button>\n              </ion-buttons>\n        </ion-toolbar>\n      </ion-col>\n    </ion-row>\n    <ion-row class=\"ion-justify-content-center ion-hide-lg-up\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\">\n        <div class=\"spacer\"></div>\n        <img style=\"border-radius: 50px;\" height=\"75\" src=\"{{this.jobLogo}}\">\n        <div class=\"toolbar-company-info\">\n          <h2>{{jobCompanyName}}</h2>\n          <h3>{{jobTitle}}</h3>\n          <p>${{jobRateOfPay}} / hr</p>\n        </div>\n        <div class=\"spacer\"></div>\n      </ion-col>\n    </ion-row>\n    <!-- Instructions -->\n    <ion-row class=\"ion-justify-content-center\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <p id=\"instructions\">Please go over your information before you send your application. You can edit your profile's phone number and Resume from here. After you hit submit, an email with your FYF Profile, Resume, and application message will be sent to the employer.</p>\n      </ion-col>\n    </ion-row>\n    <!-- Forms -->\n    <ion-row class=\"ion-justify-content-center\" style=\"margin: 20px auto;\">\n      <ion-col size-xs=\"11\" size-sm=\"10\" size-md=\"10\" size-lg=\"8\" size-xl=\"6\">\n        <form *ngIf=\"applyPageForm\" [formGroup]=\"applyPageForm\">\n          <div class=\"info-section\">\n            <p class=\"instructions\" >Phone Number</p>\n            <ion-list class=\"line-input\">\n              <ion-item>\n                <ion-input formControlName=\"phoneNumber\" maxlength=\"10\" inputmode=\"tel\"></ion-input>\n              </ion-item>\n            </ion-list>\n          </div>\n          <div class=\"info-section\">\n            <p class=\"instructions\" >Resume</p>\n            <ion-button class=\"blue-button\" style=\"height: 45px;\" (click)=\"viewResumeModal()\">\n                        View Resume\n            </ion-button>\n                      <!-- <p>or</p> -->\n            <ion-input type=\"file\" class=\"custom-file-input \">\n            <label style=\"margin-right: 10px;\">Upload Resume</label>\n            </ion-input>\n          </div>\n          <div class=\"info-section\">\n            <p class=\"instructions\" >Why are you a good fit for this job?</p>\n            <ion-textarea\n              class=\"message-input\"\n              formControlName=\"reasonTextArea\"\n              maxlength=\"2500\"\n              rows=\"15\"\n              placeholder=\"Add message here - 2500 characters max\"></ion-textarea>\n          </div>\n          <ion-row>\n            <ion-col class=\"ion-text-center\" size=\"12\">\n              <ion-button (click)=\"finishApplication()\" class=\"orange-button next-button\">Submit</ion-button>\n            </ion-col>\n          </ion-row>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n";
+      /***/
+    },
+
+    /***/
+    73174:
+    /*!**********************************************************!*\
+      !*** ./src/app/modals/view-resume/view-resume.page.scss ***!
+      \**********************************************************/
+
+    /***/
+    function _(module) {
+      module.exports = "ion-toolbar {\n  --background: #0055a5;\n}\n\nion-icon, ion-title {\n  color: white;\n}\n\nion-icon {\n  position: relative;\n  left: 1em;\n}\n\nh4 {\n  margin: 45px auto;\n  color: #005191;\n}\n\n#upload-button {\n  position: relative;\n  top: 4px;\n  font-size: 10px;\n  font-weight: 600;\n  right: 20px;\n  --width: 60px;\n  --background: #ffba1930;\n  --border-style: solid;\n  --border-color: #ffba19;\n  --border-width: 2px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInZpZXctcmVzdW1lLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLHFCQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxZQUFBO0FBRUY7O0FBQUE7RUFDRSxrQkFBQTtFQUNBLFNBQUE7QUFHRjs7QUFEQTtFQUNFLGlCQUFBO0VBQ0EsY0FBQTtBQUlGOztBQURBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsZUFBQTtFQUNBLGdCQUFBO0VBQ0EsV0FBQTtFQUNBLGFBQUE7RUFDQSx1QkFBQTtFQUNBLHFCQUFBO0VBQ0EsdUJBQUE7RUFDQSxtQkFBQTtBQUlGIiwiZmlsZSI6InZpZXctcmVzdW1lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImlvbi10b29sYmFyIHtcbiAgLS1iYWNrZ3JvdW5kOiAjMDA1NWE1O1xufVxuaW9uLWljb24sIGlvbi10aXRsZSB7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbmlvbi1pY29uIHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICBsZWZ0OiAxZW07XG59XG5oNCB7XG4gIG1hcmdpbjogNDVweCBhdXRvO1xuICBjb2xvcjogIzAwNTE5MTtcbn1cblxuI3VwbG9hZC1idXR0b24ge1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG4gIHRvcDogNHB4O1xuICBmb250LXNpemU6IDEwcHg7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIHJpZ2h0OiAyMHB4O1xuICAtLXdpZHRoOiA2MHB4O1xuICAtLWJhY2tncm91bmQ6ICNmZmJhMTkzMDtcbiAgLS1ib3JkZXItc3R5bGU6IHNvbGlkO1xuICAtLWJvcmRlci1jb2xvcjogI2ZmYmExOTtcbiAgLS1ib3JkZXItd2lkdGg6IDJweDtcbn0iXX0= */";
+      /***/
+    },
+
+    /***/
+    1256:
+    /*!**************************************************!*\
+      !*** ./src/app/pages/jobs/apply/apply.page.scss ***!
+      \**************************************************/
+
+    /***/
+    function _(module) {
+      module.exports = "ion-title {\n  margin: 0;\n  color: white;\n}\n\nion-toolbar {\n  --background: #0055a5;\n}\n\n#mobile-toolbar-icon {\n  height: 32px;\n  position: relative;\n}\n\nion-back-button {\n  color: white;\n  width: auto;\n}\n\n.desktop-toolbar {\n  --background: none;\n}\n\n.desktop-toolbar h1 {\n  color: #0055a5;\n}\n\n.toolbar-company-info {\n  display: inline-block;\n  margin-left: 1em;\n  --background: none;\n}\n\n.toolbar-company-info h2, .toolbar-company-info h3, .toolbar-company-info p {\n  margin: 0;\n}\n\n.toolbar-company-info h2 {\n  color: #0055a5;\n  font-weight: 600;\n}\n\n.toolbar-company-info h3 {\n  font-size: 1em;\n  color: #666;\n}\n\n.toolbar-company-info p {\n  color: white;\n  margin-top: 0.7em;\n  text-align: center;\n  background: #4dc066;\n  width: 50px;\n  padding: 4px;\n  font-size: 0.7em;\n  font-weight: 600;\n  border-radius: 5px;\n}\n\n.back-button {\n  --color: white;\n  --background: #e3405f;\n  --background-hover: linear-gradient(#e3405f, #0d2e4d);\n  height: 24px;\n  --border-radius: 5px;\n  width: 50px;\n  font-size: 0.5em;\n  font-weight: 600;\n  display: block;\n}\n\n.instructions {\n  line-height: 1em;\n  width: 400px;\n  color: #333;\n  font-size: 1em;\n  font-weight: 600;\n}\n\n.info-section {\n  margin-bottom: 20px;\n}\n\n.message-input {\n  background: white;\n  height: auto;\n  margin: 20px 0 10px 0;\n  box-shadow: none;\n  padding: 10px;\n  border: 3px solid #0055a5;\n  border-radius: 2px;\n  transition: 1s;\n  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n\n.company-logo {\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n}\n\n.job-title {\n  font-size: 2em;\n  margin-top: 15px;\n  margin-bottom: 5px;\n  color: #005191;\n}\n\n#company-name {\n  margin-top: 22px;\n  margin-left: 8px;\n  color: #222;\n}\n\n#instructions {\n  margin-top: 25px;\n  font-size: 1em;\n  color: #111;\n}\n\n@media only screen and (min-width: 992px) {\n  #instructions {\n    font-size: 0.9em;\n  }\n}\n\n.custom-file-input {\n  visibility: hidden;\n}\n\n.custom-file-input::before {\n  content: \"Select some files\";\n  display: inline-block;\n  background: linear-gradient(to top, #f9f9f9, #e3e3e3);\n  border: 1px solid #999;\n  border-radius: 3px;\n  padding: 5px 8px;\n  outline: none;\n  white-space: nowrap;\n  -webkit-user-select: none;\n  cursor: pointer;\n  text-shadow: 1px 1px #fff;\n  font-weight: 700;\n  font-size: 10pt;\n}\n\n.custom-file-input:hover::before {\n  border-color: black;\n}\n\n.custom-file-input:active::before {\n  background: -webkit-linear-gradient(to top, #e3e3e3, #f9f9f9);\n}\n\nion-label {\n  margin-top: 25px;\n  font-size: 1.3em;\n  color: #666;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFwcGx5LnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLFNBQUE7RUFDQSxZQUFBO0FBQ0Y7O0FBQ0E7RUFDRSxxQkFBQTtBQUVGOztBQUFBO0VBQ0UsWUFBQTtFQUNBLGtCQUFBO0FBR0Y7O0FBREE7RUFDRSxZQUFBO0VBQ0EsV0FBQTtBQUlGOztBQUZBO0VBQ0Usa0JBQUE7QUFLRjs7QUFKRTtFQUNFLGNBQUE7QUFNSjs7QUFIQTtFQUNFLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtBQU1GOztBQUpFO0VBQ0UsU0FBQTtBQU1KOztBQUpFO0VBQ0UsY0FBQTtFQUNBLGdCQUFBO0FBTUo7O0FBSkU7RUFDRSxjQUFBO0VBQ0EsV0FBQTtBQU1KOztBQUpFO0VBQ0UsWUFBQTtFQUNBLGlCQUFBO0VBQ0Esa0JBQUE7RUFDQSxtQkFBQTtFQUNBLFdBQUE7RUFDQSxZQUFBO0VBQ0EsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLGtCQUFBO0FBTUo7O0FBSEE7RUFDRSxjQUFBO0VBQ0EscUJBQUE7RUFDQSxxREFBQTtFQUNBLFlBQUE7RUFDQSxvQkFBQTtFQUNBLFdBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0EsY0FBQTtBQU1GOztBQUpBO0VBQ0UsZ0JBQUE7RUFDQSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGNBQUE7RUFDQSxnQkFBQTtBQU9GOztBQUpBO0VBQ0UsbUJBQUE7QUFPRjs7QUFMQTtFQUNFLGlCQUFBO0VBQ0EsWUFBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EseUJBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7RUFDQSxtRUFBQTtBQVFGOztBQU5BO0VBQ0UsNEJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0FBU0Y7O0FBUEE7RUFDRSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxrQkFBQTtFQUNBLGNBQUE7QUFVRjs7QUFSQTtFQUNFLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBV0Y7O0FBVEE7RUFDRSxnQkFBQTtFQUNBLGNBQUE7RUFDQSxXQUFBO0FBWUY7O0FBVkE7RUFDRTtJQUNFLGdCQUFBO0VBYUY7QUFDRjs7QUFYQTtFQUNFLGtCQUFBO0FBYUY7O0FBWEE7RUFDRSw0QkFBQTtFQUNBLHFCQUFBO0VBQ0EscURBQUE7RUFDQSxzQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkFBQTtFQUNBLGVBQUE7RUFDQSx5QkFBQTtFQUNBLGdCQUFBO0VBQ0EsZUFBQTtBQWNGOztBQVpBO0VBQ0UsbUJBQUE7QUFlRjs7QUFiQTtFQUNFLDZEQUFBO0FBZ0JGOztBQWJBO0VBQ0UsZ0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7QUFnQkYiLCJmaWxlIjoiYXBwbHkucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLXRpdGxlIHtcbiAgbWFyZ2luOiAwO1xuICBjb2xvcjogd2hpdGU7XG59XG5pb24tdG9vbGJhciB7XG4gIC0tYmFja2dyb3VuZDogIzAwNTVhNTtcbn1cbiNtb2JpbGUtdG9vbGJhci1pY29uIHtcbiAgaGVpZ2h0OiAzMnB4O1xuICBwb3NpdGlvbjogcmVsYXRpdmU7XG59XG5pb24tYmFjay1idXR0b24ge1xuICBjb2xvcjogd2hpdGU7XG4gIHdpZHRoOiBhdXRvO1xufVxuLmRlc2t0b3AtdG9vbGJhcntcbiAgLS1iYWNrZ3JvdW5kOiBub25lO1xuICBoMSB7XG4gICAgY29sb3I6ICMwMDU1YTU7XG4gIH1cbn1cbi50b29sYmFyLWNvbXBhbnktaW5mb3tcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tbGVmdDogMWVtO1xuICAtLWJhY2tncm91bmQ6IG5vbmU7XG5cbiAgaDIsIGgzLCBwIHtcbiAgICBtYXJnaW46IDA7XG4gIH1cbiAgaDIge1xuICAgIGNvbG9yOiAjMDA1NWE1O1xuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIH1cbiAgaDMge1xuICAgIGZvbnQtc2l6ZTogMWVtO1xuICAgIGNvbG9yOiAjNjY2XG4gIH1cbiAgcCB7XG4gICAgY29sb3I6IHdoaXRlO1xuICAgIG1hcmdpbi10b3A6IDAuN2VtO1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBiYWNrZ3JvdW5kOiAjNGRjMDY2O1xuICAgIHdpZHRoOiA1MHB4O1xuICAgIHBhZGRpbmc6IDRweDtcbiAgICBmb250LXNpemU6IDAuN2VtO1xuICAgIGZvbnQtd2VpZ2h0OiA2MDA7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICB9XG59XG4uYmFjay1idXR0b24ge1xuICAtLWNvbG9yOiB3aGl0ZTtcbiAgLS1iYWNrZ3JvdW5kOiAjZTM0MDVmO1xuICAtLWJhY2tncm91bmQtaG92ZXI6IGxpbmVhci1ncmFkaWVudCgjZTM0MDVmLCAjMGQyZTRkKTtcbiAgaGVpZ2h0OiAyNHB4O1xuICAtLWJvcmRlci1yYWRpdXM6IDVweDtcbiAgd2lkdGg6IDUwcHg7XG4gIGZvbnQtc2l6ZTogMC41ZW07XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuLmluc3RydWN0aW9ucyB7XG4gIGxpbmUtaGVpZ2h0OiAxZW07XG4gIHdpZHRoOiA0MDBweDtcbiAgY29sb3I6ICMzMzM7XG4gIGZvbnQtc2l6ZTogMWVtO1xuICBmb250LXdlaWdodDogNjAwO1xufVxuXG4uaW5mby1zZWN0aW9ue1xuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xufVxuLm1lc3NhZ2UtaW5wdXQge1xuICBiYWNrZ3JvdW5kOiB3aGl0ZTtcbiAgaGVpZ2h0OiBhdXRvO1xuICBtYXJnaW46IDIwcHggMCAxMHB4IDA7XG4gIGJveC1zaGFkb3c6IG5vbmU7XG4gIHBhZGRpbmc6IDEwcHg7XG4gIGJvcmRlcjogM3B4IHNvbGlkICMwMDU1YTU7XG4gIGJvcmRlci1yYWRpdXM6IDJweDtcbiAgdHJhbnNpdGlvbjogMXM7XG4gIHRyYW5zaXRpb24tdGltaW5nLWZ1bmN0aW9uOiBjdWJpYy1iZXppZXIoMC4xNzUsIDAuODg1LCAwLjMyLCAxLjI3NSk7XG59XG4uY29tcGFueS1sb2dvIHtcbiAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgYmFja2dyb3VuZC1zaXplOiBjb250YWluO1xuICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG59XG4uam9iLXRpdGxlIHtcbiAgZm9udC1zaXplOiAyZW07XG4gIG1hcmdpbi10b3A6IDE1cHg7XG4gIG1hcmdpbi1ib3R0b206IDVweDtcbiAgY29sb3I6ICMwMDUxOTE7XG59XG4jY29tcGFueS1uYW1lIHtcbiAgbWFyZ2luLXRvcDogMjJweDtcbiAgbWFyZ2luLWxlZnQ6IDhweDtcbiAgY29sb3I6ICMyMjI7XG59XG4jaW5zdHJ1Y3Rpb25zIHtcbiAgbWFyZ2luLXRvcDogMjVweDtcbiAgZm9udC1zaXplOiAxZW07XG4gIGNvbG9yOiAjMTExO1xufVxuQG1lZGlhIG9ubHkgc2NyZWVuIGFuZCAobWluLXdpZHRoOiA5OTJweCkge1xuICAjaW5zdHJ1Y3Rpb25zIHtcbiAgICBmb250LXNpemU6IDAuOWVtO1xuICB9XG59XG4uY3VzdG9tLWZpbGUtaW5wdXQge1xuICB2aXNpYmlsaXR5OiBoaWRkZW47XG59XG4uY3VzdG9tLWZpbGUtaW5wdXQ6OmJlZm9yZSB7XG4gIGNvbnRlbnQ6ICdTZWxlY3Qgc29tZSBmaWxlcyc7XG4gIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KHRvIHRvcCwgI2Y5ZjlmOSwgI2UzZTNlMyk7XG4gIGJvcmRlcjogMXB4IHNvbGlkICM5OTk7XG4gIGJvcmRlci1yYWRpdXM6IDNweDtcbiAgcGFkZGluZzogNXB4IDhweDtcbiAgb3V0bGluZTogbm9uZTtcbiAgd2hpdGUtc3BhY2U6IG5vd3JhcDtcbiAgLXdlYmtpdC11c2VyLXNlbGVjdDogbm9uZTtcbiAgY3Vyc29yOiBwb2ludGVyO1xuICB0ZXh0LXNoYWRvdzogMXB4IDFweCAjZmZmO1xuICBmb250LXdlaWdodDogNzAwO1xuICBmb250LXNpemU6IDEwcHQ7XG59XG4uY3VzdG9tLWZpbGUtaW5wdXQ6aG92ZXI6OmJlZm9yZSB7XG4gIGJvcmRlci1jb2xvcjogYmxhY2s7XG59XG4uY3VzdG9tLWZpbGUtaW5wdXQ6YWN0aXZlOjpiZWZvcmUge1xuICBiYWNrZ3JvdW5kOiAtd2Via2l0LWxpbmVhci1ncmFkaWVudCh0byB0b3AsICNlM2UzZTMsICNmOWY5ZjkpO1xufVxuXG5pb24tbGFiZWwge1xuICBtYXJnaW4tdG9wOiAyNXB4O1xuICBmb250LXNpemU6IDEuM2VtO1xuICBjb2xvcjogIzY2Njtcbn1cblxuIl19 */";
       /***/
     }
   }]);

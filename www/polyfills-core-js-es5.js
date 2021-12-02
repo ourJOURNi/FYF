@@ -1,7 +1,13 @@
 (function () {
   (self["webpackChunkfind_you_future_app"] = self["webpackChunkfind_you_future_app"] || []).push([["polyfills-core-js"], {
     /***/
-    47656: function _() {
+    10294:
+    /*!****************************************************************!*\
+      !*** ./node_modules/@ionic/core/dist/esm/polyfills/core-js.js ***!
+      \****************************************************************/
+
+    /***/
+    function _() {
       /**
        * core-js 3.6.5
        * https://github.com/zloirock/core-js

@@ -1,6 +1,9 @@
 ion-toolbar {
   --background: #0055a5;
 }
+ion-content {
+  background: white;
+}
 #job-header-wrapper {
   margin-top: 1em
 }
@@ -103,11 +106,11 @@ span {
   top: -43px
 }
 #job-full-description {
-  font-size: 1em;
+  font-size: 1.2em;
+  font-weight: 600;
   line-height: 1.4em;
-  color: #333;
-  background: white;
-  box-shadow: 1px 4px 5px rgb(0 0 0 / 5%);
+  color: #222;
+  border-top: 1px solid #22222221;
   padding: 1em;
   margin-top: 2em;
 }

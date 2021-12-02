@@ -43,15 +43,20 @@ export class EventsPage implements OnInit {
     private eventEmitterService: EventsEventEmitterService
     ) { }
   ngOnInit() {
+    this.getProfileDetails();
+    this.eventFavorites();
     this.deleteEvent();
     this.trackRoute();
-
+    this.eventEmitterSubscription();
+  }
+  eventEmitterSubscription() {
     if (this.eventEmitterService.subsVar == undefined) {
       this.eventEmitterService.subsVar = this.eventEmitterService.invokeEventsPageRefresh.subscribe(() => {
         this.getEvents();
       });
     }
-
+  }
+  getProfileDetails() {
     // Get the User's details
     this.profileSub = this.profile.getUserDetails().subscribe( details => {
 
@@ -69,44 +74,46 @@ export class EventsPage implements OnInit {
       console.log('User id: ' + this.id);
       console.log('User email: ' + this.userEmail);
     });
+    
+  }
+  eventFavorites() {
+  this.eventsGoing = this.events.getEvents().subscribe( events => {
 
-    this.eventsGoing = this.events.getEvents().subscribe( events => {
+    // I am using two arrays for the same data to improve the loading of the data. As a User searches through the list events,
+    // .
 
-      // I am using two arrays for the same data to improve the loading of the data. As a User searches through the list events,
-      // .
+    // First Array of Events
+    // this.allEvents = Object.values(events);
+    this.allEvents = Object.values(events);
+    this.allEventsLength  = this.allEvents.length;
+    this.allEvents.reverse();
 
-      // First Array of Events
-      // this.allEvents = Object.values(events);
-      this.allEvents = Object.values(events);
-      this.allEventsLength  = this.allEvents.length;
-      this.allEvents.reverse();
+    console.log(this.allEvents);
 
-      console.log(this.allEvents);
+    // Second Array of Events
+    this.loadedAllEvents = Object.values(events);
+    this.loadedAllEvents.reverse();
 
-      // Second Array of Events
-      this.loadedAllEvents = Object.values(events);
-      this.loadedAllEvents.reverse();
+    // Loop each Event and format the dates. Also, delete an Event if its scheduled date
+    for (const event of this.allEvents) {
+      // First date Event Date
+      // Second date Current Date
 
-      // Loop each Event and format the dates. Also, delete an Event if its scheduled date
-      for (const event of this.allEvents) {
-        // First date Event Date
-        // Second date Current Date
+      // If the Current Date is After the Event Date, Delete
+      // If True, Delete event.
 
-        // If the Current Date is After the Event Date, Delete
-        // If True, Delete event.
-
-        if (isAfter(new Date(Date.now()), new Date(event.date))) {
-          this.deleteEventSub = this.events.deleteEvent(event._id).subscribe();
-        }
-
-        event.date = format( new Date(event.date), 'MMMM dd, yyyy');
-        event.time = format( new Date(event.date), 'hh:mm a');
-        event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
-          includeSeconds: true,
-          addSuffix: true
-        });
+      if (isAfter(new Date(Date.now()), new Date(event.date))) {
+        this.deleteEventSub = this.events.deleteEvent(event._id).subscribe();
       }
-    });
+
+      event.date = format( new Date(event.date), 'MMMM dd, yyyy');
+      event.time = format( new Date(event.date), 'hh:mm a');
+      event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
+        includeSeconds: true,
+        addSuffix: true
+      });
+    }
+  });
   }
   trackRoute() {
     this.routerSub = this.router.events.pipe(
@@ -132,17 +139,14 @@ export class EventsPage implements OnInit {
     console.log(result);
 
   }
-
-    eventPage(event) {
+  eventPage(event) {
     // tslint:disable-next-line: max-line-length
     this.router.navigate(['/home/events/events-page', event._id, event.title, event.addressOne,  event.addressOne,  event.city,  event.state, event.zip, event.dateCreated, event.date, event.time, event.photo, event.description]);
   }
-
-    myEvents() {
+  myEvents() {
     this.router.navigate(['/home/events/going']);
   }
-
-    filter($event) {
+  filter($event) {
 
     this.initializeItems();
     let searchTerm = $event.detail.value;
@@ -202,12 +206,10 @@ export class EventsPage implements OnInit {
       this.searching = false;
       this.getEvents();
     }
-    }
-
-    initializeItems(): void {
+  }
+  initializeItems(): void {
     this.allEvents = this.loadedAllEvents;
   }
-
   async presentLoadingWithOptions() {
     const loading = await this.loading.create({
       duration: 1000,
@@ -218,7 +220,6 @@ export class EventsPage implements OnInit {
     });
     return await loading.present();
   }
-
   async doRefresh(event) {
 
     this.allEvents = [];
@@ -256,7 +257,6 @@ export class EventsPage implements OnInit {
 
     await console.log('Refreshing Events Page..');
   }
-
   async getEvents() {
     this.eventsSub = this.events.getEvents().subscribe( events => {
 
@@ -276,5 +276,4 @@ export class EventsPage implements OnInit {
       }
     });
   }
-
 }

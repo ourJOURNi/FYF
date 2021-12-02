@@ -3,9 +3,9 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      <img height="30" src="../../../../assets/icon/jobs-favorites-heart-blue.svg" alt="" srcset="">
+      <img height="30" src="../../../../assets/icon/jobs-favorites-heart-red.svg" alt="" srcset="">
     </ion-buttons>
-    <ion-title>Favorites</ion-title>
+    <ion-title>Favorites ({{favoritesLength}})</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,10 +13,10 @@
   <ion-grid>
     <!-- Desktop Header -->
     <ion-row class="ion-hide-lg-down ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
         <ion-toolbar class="desktop-toolbar">
               <ion-buttons slot="start">
-                  <img height="36" src="../../../../assets/icon/jobs-favorites-heart-white.svg" alt="Favorites-Icon">
+                  <img height="36" src="../../../../assets/icon/jobs-favorites-heart-red.svg" alt="Favorites-Icon">
                   <h1>Favorites</h1>
               </ion-buttons>
               <ion-buttons slot="end">
@@ -30,14 +30,14 @@
 
     <!-- No Favorites -->
     <ion-row class="ion-justify-content-center">
-      <ion-col *ngIf="noFavorites" size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+      <ion-col *ngIf="noFavorites" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
         <h1 id="no-favorites">You have no favorites.</h1>
       </ion-col>
     </ion-row>
 
     <!-- Favorite Jobs -->
     <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+      <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="6" size-xl="5">
       <ion-row class="job-section ion-justify-content-center" *ngFor="let job of favoriteJobsObj">
             <ion-col push="0.3" size="1">
               <img class="company-logo" src="{{job.companyLogo}}">

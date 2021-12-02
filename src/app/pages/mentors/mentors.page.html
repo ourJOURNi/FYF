@@ -1,11 +1,9 @@
 <ion-header no-border class="ion-hide-lg-up">
   <ion-toolbar>
-    <ion-item style="--background: #0055a5;">
-      <ion-avatar slot="start">
-        <img height="80" src="../../../assets/icon/mentor-icon.svg">
-      </ion-avatar>
-      <ion-label style="font-size: 1.2em; color: white;">Mentors</ion-label>
-    </ion-item>
+    <ion-buttons slot="start">
+      <img height="35" style="position: relative; left: 8px;" src="../../../assets/icon/mentor-icon-blue.png">
+      <ion-title>Mentors</ion-title>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -27,24 +25,24 @@
     </ion-row>
     <ion-row class="ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="4">
-        <p class="ion-hide-md-up" style="font-size: 1em;">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through Find Your Future's list of Mentors, and contact them if you have any questions!</p>
+        <p class="ion-hide-md-up message-mobile">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through Find Your Future's list of Mentors, and contact them if you have any questions!</p>
         <p class="ion-hide-md-down" style="font-size: 1.1em; margin-top: 24px;">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through Find Your Future's list of Mentors, and contact them if you have any questions!</p>
       </ion-col>
     </ion-row>
-    <ion-row class="ion-justify-content-center"  style=" margin-top: 20px;">
-      <ion-col  size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="4">
+    <ion-row class="ion-justify-content-center">
+      <ion-col  size-xs="12" size-sm="10" size-md="10" size-lg="8" size-xl="4">
         <ion-list>
           <ion-item class="mentor" *ngFor="let mentor of allMentors" lines="none">
             <ion-avatar slot="start">
               <img src="{{mentor.photo}}" />
             </ion-avatar>
             <ion-label>
-              <h2>{{mentor.name}}</h2>
+              <h2 class="mentor-name">{{mentor.name}}</h2>
               <p>{{mentor.title}}</p>
             </ion-label>
             <ion-buttons slot="end">
               <ion-button class="info-button" (click)="mentorPage(mentor)">
-                Info
+                <img height="20" src="../../../assets/icon/right-chevron.svg" alt="Right Chevron">
               </ion-button>
               <!-- <ion-button (click)="newMessage()">
                 <ion-icon size="large"  class="new-message" slot="start" name="create"></ion-icon>

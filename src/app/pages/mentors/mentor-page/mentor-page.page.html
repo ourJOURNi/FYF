@@ -2,6 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
+      <img height="30" id="mobile-toolbar-icon" src="../../../../assets/logos/White-FYF-LOGO.svg" alt="White FYF Logo">
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button style="--width: 50px;" class="toolbar-contact-button" (click)="contactMentor()">
@@ -26,16 +27,19 @@
 
     <!-- Mentors -->
     <ion-row class="mentor ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5">
-        <div id="mentor-profile-picture"></div>
-            <p id="mentor-name">{{mentorName}}</p>
-            <p id="mentor-title">{{mentorTitle}}</p>
-            <p id="mentor-location">{{mentorCity}}, {{mentorState}}</p>
-            <p id="mentor-description">{{mentorDescription}}</p>
+      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5">
+        <p class="ion-hide-md-up message-mobile">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through Find Your Future's list of Mentors, and contact them if you have any questions!</p>
+        <div id="mentor-card">
+          <img src="{{this.mentorPhoto}}" id="mentor-profile-picture"/>
+          <p id="mentor-name">{{mentorName}}</p>
+          <p id="mentor-title">{{mentorTitle}}</p>
+          <p id="mentor-location">{{mentorCity}}, {{mentorState}}</p>
+        </div>
       </ion-col>
-    </ion-row>
-    <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="9" size-md="2" class="ion-text-center">
+      <ion-col size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5">
+        <p id="mentor-description">{{mentorDescription}}</p>
+      </ion-col>
+      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5">
         <ion-button class="orange-button"  (click)="contactMentor()">
           Contact
         </ion-button>

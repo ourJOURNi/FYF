@@ -2,12 +2,13 @@
   <!-- Mobile & Tablet Toolbar -->
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-icon style="position: relative; left: 24px; color: #0055a5;"name="briefcase-outline"></ion-icon>
+      <ion-icon style="position: relative; left: 8px; color: #0055a5;"name="briefcase-outline"></ion-icon>
     </ion-buttons>
     <ion-title>Jobs</ion-title>
        <ion-buttons slot="end">
         <ion-button (click)="favoritesPage()">
-          <ion-icon slot="start" src="../../assets/icon/jobs-favorites-heart-blue.svg"></ion-icon>
+          <ion-icon slot="start" style="font-size: 2em;" src="../../assets/icon/jobs-favorites-heart-red.svg"></ion-icon>
+          <p style="color: red; font-size: 1.2em; position: relative; right: 4px;">3</p>
         </ion-button>
         <!-- <ion-button (click)="filterMenu()">
           <ion-icon slot="start" name="filter"></ion-icon>
@@ -27,10 +28,10 @@
     <div *ngIf="this.data">
       <!-- Desktop Header -->
       <ion-row style="padding-top: 40px; margin-bottom: 40px;" class="ion-hide-lg-down ion-justify-content-center">
-        <ion-col style="padding: 0 2em;" size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+        <ion-col style="padding: 0 2em;" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
           <ion-toolbar class="desktop-toolbar">
             <ion-buttons slot="start">
-              <ion-icon style="font-size: 2em; color: white; margin-right: 8px;" name="briefcase-outline"></ion-icon>
+              <ion-icon style="font-size: 2em; margin-right: 8px;" name="briefcase-outline"></ion-icon>
               <h1 style="margin-top: 12px;">Jobs |</h1>
               <p *ngIf="this.jobFilter === 'htol'" class="filter-message">Pay - High to Low</p>
               <p *ngIf="this.jobFilter === 'ltoh'" class="filter-message">Pay - Low to High</p>
@@ -49,9 +50,9 @@
         </ion-col>
       </ion-row>
 
-      <!-- Filter Toolbar -->
+      <!-- Filter Toolbar (Mobile) -->
       <ion-row class="filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+        <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
           <ion-toolbar (click)="filterMenu()" class="filter-toolbar">
             <ion-buttons slot="start">
               <p class="filter-message">{{this.jobFilter}}</p>
@@ -67,7 +68,7 @@
 
       <!-- Jobs -->
       <ion-row class="ion-justify-content-center">
-        <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+        <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="6" size-xl="5">
           <div class="spacer ion-hide-lg-up"></div>
           <ion-row class="job-section ion-justify-content-center" *ngFor="let job of allJobs">
                 <ion-col push="0.3" size="1">

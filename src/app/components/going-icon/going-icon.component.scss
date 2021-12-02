@@ -1,61 +1,18 @@
-p {
-  transition: 0.5s;
-  opacity: 1;
-}
-ion-button {
-  font-size: 1em;
-  font-weight: 800;
-  height: 20px;
-  width: 100px;
-  margin-left: 0px;
+.details-button-mobile {
   margin-right: 10px;
-  display: inline;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  --background: none;
+  --border-color: #0055a5;
+  --border-style: solid;
+  --border-width: 2px;
+  --border-radius: 5px;
+  --color: #0055a5;
+  font-size: 0.7em;
+  font-weight: 700;
 }
-.not-going {
-  --color: white;
-  font-size: 0.65em;
-  --background: linear-gradient(#faa71b, #e99b14);
-}
-.grey-button{
-  margin-right: 10px;
-  --background: #222;
-  --color: #edf3f8;
-  font-size: 0.65em;
-}
-.going {
-  --color: white;
-  font-size: 0.65em;
-  --background: #24d8a8;
-  --background-hover: #24d8a8;
-}
-.not-going-mobile  {
-  --color: white;
-  display: block;
-  width: 100%;
-  height: 40px;
-  font-size: 1em;
-  --background: linear-gradient(#faa71b, #e99b14);
-}
-.grey-button-mobile {
-  margin-right: 10px;
-  display: block;
-  width: 100%;
-  height: 40px;
-  --background: #0055a5;
-  --color: #edf3f8;
-  font-size: 1em;
-  top: -8px;
-  position: relative;
-}
-.going-mobile {
-  --color: white;
-  display: block;
-  width: 100%;
-  height: 40px;
-  font-size: 1em;
-  --background: #24d8a8;
-  --background-hover: #24d8a8;
-}
+
 
 
 
