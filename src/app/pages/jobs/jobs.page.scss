@@ -37,29 +37,26 @@
   color: #fff;
   opacity: 0;
   transition: 0.5s;
-  animation: filter-selection-slide 2s ease-in-out 0.5s forwards;
+  animation: filter-selection-slide 1s ease-in-out 0.5s forwards;
 
-}
-@keyframes filter-selection-slide {
-  0%{
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  50%{
-    transform: translateX(-50px);
-    opacity: 0.5;
-  }
-  100%{
-    transform: translateX(10px);
-    opacity: 1;
-  }
 }
 @media only screen and (min-width: 992px) {
   .filter-message  {
     color: #fbb606;
     font-weight: 600;
+    font-size: 1.4em;
     position: relative;
-    top: 3px;
+    top: 2px;
+  }
+}
+@keyframes filter-selection-slide {
+  0%{
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100%{
+    transform: translateX(10px);
+    opacity: 1;
   }
 }
 .filter-icon {

@@ -1,20 +1,5 @@
 <ion-grid>
-    <ion-row class="ion-hide-lg-down ion-justify-content-center">
-        <ion-col size="5">
-            <ion-button class="grey-button" (click)="eventPage(event)">
-                    Details
-            </ion-button>
-        </ion-col>
-        <ion-col size="5">
-            <ion-button class="going" *ngIf='!going' (click)="toggleGoingState(event)">
-                Go
-            </ion-button>
-            <ion-button class="not-going" *ngIf='going' (click)="toggleGoingState(event)">
-                Cancel
-            </ion-button>
-        </ion-col>
-    </ion-row>
-    <ion-row class="ion-hide-lg-up ion-justify-content-end">
+    <ion-row class="ion-justify-content-end">
         <ion-toolbar>
             <ion-buttons slot="start">
                 <ion-icon (click)="toggleLikeState()" tappable [@heart]="this.favoriteState" style="font-size: 2em" [name]="iconName"></ion-icon>

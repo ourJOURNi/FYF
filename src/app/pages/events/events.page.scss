@@ -31,7 +31,7 @@ ion-searchbar {
   border-bottom: 3px ​solid #0055a5;
 
   ion-toolbar {
-    --background: #ededed;
+    --background: #e7a12b;
     --border-width: 0px 0px 3px 0px;
     --border-style: solid;
     --border-color: #0055a5;
@@ -42,29 +42,34 @@ ion-searchbar {
 .filter-message{
   font-weight: 600;
   font-size: 1em;
+  color: #fff;
   opacity: 0;
   transition: 0.5s;
-  animation: filter-selection-slide 2s ease-in-out 0.5s forwards;
+  animation: filter-selection-slide 1s ease-in-out 0.5s forwards;
 
+}
+@media only screen and (min-width: 992px) {
+  .filter-message  {
+    color: #fbb606;
+    font-weight: 600;
+    font-size: 1.4em;
+    position: relative;
+    top: 2px;
+  }
 }
 @keyframes filter-selection-slide {
   0%{
-    transform: translateX(-100px);
-    color: #a5a5a5;
-  }
-  50%{
-    transform: translateX(-50px);
-    color: #faa71b;
+    transform: translateX(-10px);
+    opaacity: 0;
   }
   100%{
-    opacity: 1;
     transform: translateX(10px);
-    color: #a5a5a5;
+    opaacity: 1;
   }
 }
 
 .filter-icon {
-  color: #a5a5a5;
+  color: #fff;
   font-size: 1.4em;
 }
 .job-section {
@@ -106,6 +111,27 @@ ion-button {
     position: relative;
     right: 3em;
   }
+}
+.favorites-button {
+  --color: white;
+  --background: none;
+  --background-hover: linear-gradient(#e3405f, #5f4045);
+  height: 24px;
+  width: 70px;
+  font-size: 0.6em;
+  font-weight: 600;
+  display: block;
+}
+.filter-button {
+  --color: white;
+  --background: none;
+  --background-hover: linear-gradient(#e3405f, #da3a57);
+  height: 24px;
+  --border-radius: 5px;
+  width: 70px;
+  font-size: 0.8em;
+  font-weight: 600;
+  display: block;
 }
 .my-events-button {
   --color: white;

@@ -6,6 +6,36 @@
   position: relative;
   top: 0px;
 }
+#search-wrapper {
+  background-color: #fff; 
+  box-shadow: 1px 10px 26px rgba(0,0,0,0.05); 
+  position: fixed; 
+  width: 100%; 
+  z-index: 999;
+  height: 70px;
+  
+  h3 {
+    position: relative;
+    left: 8px;
+    top: 4px;
+    display: inline;
+  }
+
+  #posts-icon {
+    position: relative;
+    top: 12px;
+  }
+  
+  #search-button {
+    --background: #d9d9d975;
+    --color: #0055a5;
+    width: 72px; 
+    font-size: 0.8em; 
+    font-weight: 600;
+    z-index: 999;
+  }
+}
+
 .filter-toolbar-wrapper{
   width: 100%;
   border-bottom: 3px ​solid #0055a5;
@@ -20,27 +50,20 @@
   }
 }
 .filter-message{
+  display: inline;
   font-weight: 600;
-  font-size: 1em;
-  opacity: 0;
+  font-size: 1em;    
+  color: #0055a5;
   transition: 0.5s;
-  animation: filter-selection-slide 2s ease-in-out 0.5s forwards;
-
+  box-shadow: 1px 1px 8px #b8b8b8ab;
+  border-radius: 5px;
+  padding: 6px;
+  position: relative;
+  left: 12px;
 }
-@keyframes filter-selection-slide {
-  0%{
-    transform: translateX(-100px);
-    color: #a5a5a5;
-  }
-  50%{
-    transform: translateX(-50px);
-    color: #faa71b;
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(10px);
-    color: #a5a5a5;
-  }
+.filter-message:hover {
+  background: #0055a5;
+  color: white;
 }
 .spacer {
   margin: 21px 0;
@@ -50,7 +73,9 @@
   opacity: 0.5;
   margin-top: 10px;
 }
-
+#posts-wrapper {
+  padding-bottom: 400px;
+}
 .post {
   margin-top: 4%;
   padding: 24px 0;
@@ -100,21 +125,6 @@ ion-content {
   position: relative;
   top: 100px;
 }
-@media only screen and (min-width: 992px) {
-  .filter-message  {
-    color: #0055a5;
-    background-color: white;
-    border: 2px solid #0055a5;
-    padding: 0.5em;
-    border-radius: 50px;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.05);
-  .filter-icon {
-      font-size: 2.5em;
-      color: #0055a5;
-    }
-
-  }
-}
 .filter-icon {
   font-size: 2.5em;
   color: white;
@@ -138,7 +148,8 @@ ion-content {
 }
 .searchbar-desktop {
   font-weight: 600;
-  color: #0055a5;
+  color: #222;
+  font-size: 1.2em;
 }
 .hash-desktop{
   margin-right: 8px;

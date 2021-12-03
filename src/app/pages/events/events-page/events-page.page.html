@@ -11,21 +11,27 @@
 <ion-content>
     <ion-grid>
 
-        <!-- Picture Header -->
-        <ion-row style="
-        background: url({{eventPhoto}});" class="ion-hide-sm-up ion-justify-content-center event-image">
+        <!-- Picture Header Mobile -->
+        <ion-row class="ion-hide-sm-up ion-justify-content-center event-image">
+          <ion-col 
+            size-xs="11" size-sm="10"
+            class="event-image" 
+            style="background-image: url({{eventPhoto}});">
+          </ion-col>
         </ion-row>
+
+        <!-- Picture Header Desktop -->
         <ion-row class="ion-hide-sm-down ion-justify-content-center">
-          <ion-col class="ion-text-center" style="margin: 2em 0em;" size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
-            <img height="350" src="{{this.eventPhoto}}">
+          <ion-col size-md="10" size-lg="6" size-xl="6" 
+            class="event-image" 
+            style="background-image: url({{eventPhoto}});">
           </ion-col>
         </ion-row>
 
         <!-- Event Details -->
         <ion-row class="ion-justify-content-center ion-align-items-center">
-          <ion-col class="details" size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
-            <h3>Event Title</h3>
-            <p>{{ eventTitle }}</p>
+          <ion-col class="details" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="4">
+            <h1 id="event-title">{{ eventTitle }}</h1>
             <h3>Address </h3>
             <p>{{ eventAddressOne }} {{ eventAddressTwo }}, {{ eventCity }}, {{ eventState }}, {{ eventZip}}</p>
             <h3>Date</h3>
@@ -41,27 +47,36 @@
 
         <!-- GOING? -->
         <ion-row *ngIf="!going" class="going ion-justify-content-center">
-            <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
-              <p class="going-text">Do you want to go to this event?<br> By clicking 'Yes', this event will be added to your Your Events.</p>
+            <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
+              <div>
+                <img height="70" src="../../../../assets/icon/jobs-favorites-heart-grey-outline.svg" alt="Favorite Icon">
+              </div>
+              <p class="going-text">Favorite this Event?</p>
               <ion-button class="going-button" (click)="goingToEvent()">
                    Yes.
                 </ion-button><br><br>
               <a class="going-link" routerLink="/home/events" (click)="callEventEmitter()">Go back to Events Page</a><br><br>
-               <a class="going-link" routerLink="/home/events/going">View My Events</a>
+               <a class="going-link" routerLink="/home/events/going">View Favorites</a>
                  </ion-col>
         </ion-row>
 
         <!-- NOT GOING -->
         <ion-row *ngIf="going" class="going ion-justify-content-center">
-              <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
-                <p class="going-text">Do you want to go to this event?<br> By clicking 'No', this event will be deleted from your Your Events.</p>
+              <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
+                <div>
+                  <img height="70" src="../../../../assets/icon/jobs-favorites-heart-red.svg" alt="Favorite Icon">
+                </div>
+                <p class="going-text">Un-favorite this Event?</p>
                 <ion-button class="not-going-button" (click)="notGoingToEvent()">
                  No.
                 </ion-button><br><br>
-                <a class="not-going-link" routerLink="/home/events" (click)="callEventEmitter()">Go back to Events Page</a><br><br>
-                <a class="not-going-link" routerLink="/home/events/going">View My Events</a>
+                <a class="not-going-link" routerLink="/home/events" (click)="callEventEmitter()">
+                  
+                  Go back to Events Page</a><br><br>
+                <a class="not-going-link" routerLink="/home/events/going">View Favorites</a>
                </ion-col>
       </ion-row>
+      <div style="padding-bottom: 4em"></div>
 
       </ion-grid>
 </ion-content>

@@ -24,6 +24,7 @@ export class EventsPage implements OnInit {
   eventsGoingSub: Subscription;
   deleteEventSub: Subscription;
   routerSub: Subscription;
+  jobFilter = 'newest';
   eventsGoing;
   eventsGoingLength;
   searching = false;
@@ -48,6 +49,19 @@ export class EventsPage implements OnInit {
     this.deleteEvent();
     this.trackRoute();
     this.eventEmitterSubscription();
+    this.filterEvents();
+  }
+  filterEvents() {
+    // this.filterJobsService.filterBehaviorSub.subscribe(
+    //   data => {
+    //     console.log('Data from Filter Behavior Subject')
+    //     console.log(data);
+    //     this.jobFilter = data;
+    //     this.getJobs(data);
+    //   }
+    // )
+    // this.getFavoriteJobs();
+    // this.trackRoute();
   }
   eventEmitterSubscription() {
     if (this.eventEmitterService.subsVar == undefined) {
@@ -55,6 +69,7 @@ export class EventsPage implements OnInit {
         this.getEvents();
       });
     }
+    
   }
   getProfileDetails() {
     // Get the User's details
@@ -143,7 +158,7 @@ export class EventsPage implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.router.navigate(['/home/events/events-page', event._id, event.title, event.addressOne,  event.addressOne,  event.city,  event.state, event.zip, event.dateCreated, event.date, event.time, event.photo, event.description]);
   }
-  myEvents() {
+  favoritesPage() {
     this.router.navigate(['/home/events/going']);
   }
   filter($event) {

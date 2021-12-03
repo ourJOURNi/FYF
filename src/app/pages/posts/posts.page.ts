@@ -16,7 +16,6 @@ import { PostsFilterPopoverComponent } from 'src/app/components/posts-filter-pop
 import { FilterPostsService } from 'src/app/emitters/filter-posts.service';
 
 
-
 @Component({
   selector: 'app-posts',
   templateUrl: 'posts.page.html',
@@ -86,8 +85,8 @@ export class PostsPage implements OnInit, OnDestroy {
     this.posts.followingSubject$.unsubscribe();
   }
   ngOnInit() {
-    this.getUserInfo();
     this.getPosts();
+    this.getUserInfo();
     this.getFollowingPosts();
     this.trackRoute();
     // To collect comment data
