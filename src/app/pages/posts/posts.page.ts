@@ -235,7 +235,16 @@ export class PostsPage implements OnInit, OnDestroy {
     console.log('Loading dismissed!');
   }
   searchBarFocus() {
+    console.clear()
     console.log('Focusing on Searchbar');
+    let searchMessageWrapper = document.getElementById('search-message-wrapper');
+    let searchMessageOverlay = document.getElementById('search-message-overlay');
+    let searchMessageButton = document.getElementById('search-button');
+
+    searchMessageWrapper.style.transform = 'translateY(36px)';
+    searchMessageOverlay.style.opacity = '1';
+    searchMessageOverlay.style.display = 'block';
+    searchMessageButton.style.background = "red";
 
     setTimeout(() => {
       let searchBarWrapper = document.getElementById('searchbar-wrapper');
@@ -251,6 +260,13 @@ export class PostsPage implements OnInit, OnDestroy {
   }
   searchBarBlur() {
     console.log('Blurring out of Searchbar');
+    let searchMessageWrapper = document.getElementById('search-message-wrapper');
+    let searchMessageOverlay = document.getElementById('search-message-overlay');
+    let searchMessageButton = document.getElementById('search-button');
+    searchMessageWrapper.style.transform = 'translateY(-36px)';
+    searchMessageOverlay.style.opacity = '0';
+    searchMessageOverlay.style.display = 'none';
+    searchMessageButton.style.background = "blue";
 
     setTimeout(() => {
       let searchBarWrapper = document.getElementById('searchbar-wrapper');

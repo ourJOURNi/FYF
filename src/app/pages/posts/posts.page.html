@@ -15,35 +15,35 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <!-- fab placed to the bottom end -->
-  <ion-fab [@inOutAnimation] id="fab-wrapper" class="ion-hide-lg-up" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button id="add-post-button" (click)="addPost()">
-      <ion-icon name="add" size="large"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
   <!-- Refresher -->
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
+    <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
+
   <!-- Spinner -->
   <ion-spinner *ngIf="searching" name="crescent"></ion-spinner>
+
   <!-- Desktop -->
   <ion-grid class="ion-hide-lg-down">
     <!-- Search & Filter -->
     <ion-row id="search-wrapper" class="ion-justify-content-center">
-      <ion-col size="1">
+      <!-- Posts Page Icon -->
+      <ion-col size="1" push="0.2" pull-lg="2">
         <ion-icon id="posts-icon" size="large" name="newspaper-outline"></ion-icon>
         <h3>| Posts</h3>
       </ion-col>
-      <ion-col size="4.5">
+      <!-- Searchbar Element -->
+      <ion-col size="2.5">
         <ion-searchbar
           class="searchbar-desktop"
           animated="true"
           (keyup.enter)="searchLoading()"
           cancelButtonText=""
           showCancelButton="true"
-          placeholder="Search Posts by Hashtags"
+          placeholder="Search Posts by #Hashtags"
           (ionFocus)="searchBarFocus()"
+          (ionBlur)="searchBarBlur()"
           (ionChange)="search($event)">
           <span class="hash-desktop">
             <ion-icon name="search-outline" style="font-size: 0.8em; color: #0055a5;"></ion-icon>
@@ -51,24 +51,46 @@
 
         </ion-searchbar>
       </ion-col>
-      <ion-col size="2">
+      <!-- Search Button -->
+      <ion-col size="0.8">
+        <div style="margin-top: 11px;"></div>
         <ion-button id="search-button" (click)="searchLoading()">
           Search
         </ion-button>
-        <ion-icon class="filter-icon" slot="start" name="filter" 
-          style="position: relative; left: 12px;">
-        </ion-icon>
-        <p *ngIf="this.postFilter === 'mostc'" (click)="filterMenu()" class="filter-message"><span>Filter</span>: Most Comments</p>
-        <p *ngIf="this.postFilter === 'mostu'" (click)="filterMenu()" class="filter-message"><span>Filter</span>: Most Upvotes</p>
-        <p *ngIf="this.postFilter === 'mostf'" (click)="filterMenu()" class="filter-message"><span>Filter</span>: Most Followers</p>
-        <p *ngIf="this.postFilter === 'newest'" (click)="filterMenu()" class="filter-message"><span>Filter</span>: Newest</p>
-        <p *ngIf="this.postFilter === 'oldest'" (click)="filterMenu()" class="filter-message"><span>Filter</span> {{this.postFilter}}</p>
       </ion-col>
-      <!-- <ion-col  size-md="7.5" size-lg="6" pull-xl="0.5" size-xl="5">
-        
-        
-        <p style="color: #333; font-size: 1em;">You can choose up to five hashtags. Please seperate each tag with a comma ( , ). Example: "Computers, Science, Technology".</p>
-      </ion-col> -->
+      <!-- Filter-Button -->
+      <ion-col size="1.4">
+        <div class="spacer-1x"></div>
+        <div class="filter-message">
+          <ion-icon name="filter-outline"></ion-icon>
+          <p *ngIf="this.postFilter === 'mostc'" (click)="filterMenu()"> Most Comments</p>
+          <p *ngIf="this.postFilter === 'mostu'" (click)="filterMenu()"> Most Upvotes</p>
+          <p *ngIf="this.postFilter === 'mostf'" (click)="filterMenu()"> Most Followers</p>
+          <p *ngIf="this.postFilter === 'newest'" (click)="filterMenu()"> Newest</p>
+          <p *ngIf="this.postFilter === 'oldest'" (click)="filterMenu()"> Oldest</p>
+        </div>
+      </ion-col>
+      <!-- Notifications -->
+      <ion-col size="1" push="0.2">
+        <!-- TODO: Switch to Grey Icon when Notifications count == 0 -->
+        <div class="spacer-1x"></div>
+        <img height="25" src="../../../assets/icon/posts-notification-bell-red.svg"/>
+        <span id="notifications-count">3</span>
+      </ion-col>
+    </ion-row>
+    
+    <!-- Search message -->
+    <ion-row id="search-message-wrapper">
+      <ion-col size="12">
+        <p>You can choose up to five hashtags. 
+          Please seperate each tag with a comma ( , ). 
+          Example: "Computers, Science, Technology".</p>
+      </ion-col>
+    </ion-row>
+
+    <!-- Search Message Overlay -->
+    <ion-row id="search-message-overlay">
+      <ion-col size="12"></ion-col>
     </ion-row>
 
     <!-- If Filtering -->
@@ -82,18 +104,18 @@
     <ion-row *ngIf="!this.filtering" class="ion-justify-content-center">
       <!-- Posts -->
       <ion-col id="posts-wrapper" size-md="7.5" size-lg="5" size-xl="4.5">
-        <div class="post" *ngFor="let post of allPosts" style="margin-top: 16%;">
+        <div class="post" *ngFor="let post of allPosts">
           <!-- Profile Header -->
           <ion-row>
-                <!-- Profile Picture -->
-                <ion-col class="ion-text-center" push="0.2" size="1">
-                  <img src="{{post.creatorProfilePicture}}" style="border-radius: 100px; height: 35xpx; width: 35px;">
-                </ion-col>
-                <!-- Post Creator's Name -->
-                <ion-col push="0.2" size="10">
-                  <p class="post-name">{{post.creatorName}}</p>
-                  <p class="post-date">{{this.formatDistanceToNow(post.date)}}</p>
-                </ion-col>
+            <!-- Profile Picture -->
+            <ion-col class="ion-text-center" push="0.2" size="1">
+              <img src="{{post.creatorProfilePicture}}" style="border-radius: 100px; height: 35xpx; width: 35px;">
+            </ion-col>
+            <!-- Post Creator's Name -->
+            <ion-col push="0.2" size="10">
+              <p class="post-name">{{post.creatorName}}</p>
+              <p class="post-date">{{this.formatDistanceToNow(post.date)}}</p>
+            </ion-col>
           </ion-row>
           <!-- Post Content -->
           <ion-row class="ion-justify-content-center">
@@ -109,7 +131,7 @@
               <p class="no-tags" *ngIf="post.hashtags.length === 0">
                 No #hashtags for this post
               </p>
-              <p style="border-top: 1px solid #999; padding: 18px 0px;"  [ngClass]="{'show-less': showShortDesciption}" class="post-content">{{post.post}}</p>
+              <p [ngClass]="{'show-less': showShortDesciption}" class="post-content">{{post.post}}</p>
               <span class="ellipsis" *ngIf="post.post.length > 400 && showShortDesciption">...</span>
               <button *ngIf="post.post.length > 400" class="show-more-or-less-button" type="button" (click)="alterDescriptionText(post.post)">
                 {{ showShortDesciption ? 'Read More': 'Hide' }}
@@ -160,21 +182,19 @@
       </ion-col>
       <!-- Sidebar with User Info -->
       <ion-col size="2">
-        <ion-row class="user-details">
+        <ion-row id="user-details">
           <ion-col size="12">
-            <img src="{{userProfilePicture}}" style="border-radius: 100px; height: 55px; width: 55px;">
-            <ion-button style="--background: none; --background: none; position: relative; top: 16px;" (click)="notificationsPage()">
-              <ion-icon style="font-size: 1.5em;" src="../../assets/icon/notifications-icon-blue.svg"></ion-icon>
-              <span style="color: #e4405f; height: 25px; width: 25px; border-radius: 100px; position: relative; font-size: 1.4em; font-weight: 600;">{{notificationsLength}}</span>
-            </ion-button>
-            <h6 style="font-size: 1.2em;">{{userFullName}}</h6>
-            <ion-button class="my-post-button"  (click)="myPosts()">
-              My Posts
-            </ion-button>
-            <ion-button class="following-button" (click)="following()">
-              Following ({{followedPostCount}})
-            </ion-button>
-            <ion-button class="add-button"  (click)="addPost()">
+            <img id="posts-profile-picture" src="{{userProfilePicture}}">
+            <span>{{userFullName}}</span>
+            <div class="spacer"></div>
+            <a class="my-post-button"  (click)="myPosts()">
+              My Posts {{myPostsLength}}
+            </a>
+            <a class="following-button" (click)="following()">
+              Following {{followedPostCount}}
+            </a>
+            <ion-button id="add-button"  (click)="addPost()">
+              <ion-icon slot="start" name="add-outline" style="color: white; font-size: 2em;"></ion-icon>
               Add Post
             </ion-button>
           </ion-col>
@@ -182,6 +202,13 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <!-- Fab placed to the bottom end -->
+  <ion-fab [@inOutAnimation] id="fab-wrapper" class="ion-hide-lg-up" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button id="add-post-button" (click)="addPost()">
+        <ion-icon name="add" size="large"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
   <!-- Mobile -->
   <ion-grid class="ion-hide-lg-up">
     <!-- Filter Toolbar -->
@@ -324,6 +351,7 @@
     <!-- Spacer -->
     <div style="margin-bottom: 200px;" ></div>
   </ion-grid>
+
 </ion-content>
 <ion-footer class="ion-hide-lg-up">
   <ion-row class="ion-justify-content-center">
