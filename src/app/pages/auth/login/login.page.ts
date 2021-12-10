@@ -86,8 +86,8 @@ export class LoginPage implements OnInit {
   async presentLoading() {
     const loading = await this.loading.create({
       message: 'Logging in...',
-      duration: 1000,
-      cssClass: 'success-toast',
+      duration: 2000,
+      cssClass: 'success-loading',
       keyboardClose: true,
     });
     await loading.present();

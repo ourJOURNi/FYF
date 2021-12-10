@@ -7,6 +7,8 @@ import { environment } from '../../environments/environment';
 })
 
 export class MentorsService {
+  activeEmail: string;
+  allMentors = [];
   BACKEND_URL = environment.url;
 
   constructor(
@@ -15,7 +17,14 @@ export class MentorsService {
 
   getMentors() {
     console.log('Getting Mentors');
-    return this.http.get(`${this.BACKEND_URL}/api/mentors`);
+    return this.http.get(`${this.BACKEND_URL}/api/mentors`)
+    .subscribe(
+      mentors => {
+        this.allMentors = Object.values(mentors);
+        console.log(this.allMentors)
+        return this.allMentors;
+      }
+    );;
   }
 
   sendMentorAnEmail(

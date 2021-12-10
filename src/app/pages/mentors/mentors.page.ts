@@ -54,19 +54,19 @@ export class MentorsPage implements OnInit {
       });
   }
   getMentors() {
-    this.mentors.getMentors().subscribe(
-      mentors => {
-        this.allMentors = Object.values(mentors);
-        console.log(this.allMentors);
+    // this.mentors.getMentors().subscribe(
+    //   mentors => {
+    //     this.allMentors = Object.values(mentors);
+    //     console.log(this.allMentors);
         
-        this.allMentorsLength = this.allMentors.length;
-        this.allMentors.reverse();
+    //     this.allMentorsLength = this.allMentors.length;
+    //     this.allMentors.reverse();
 
-        this.loadedAllMentors = Object.values(mentors);
-        this.loadedAllMentors.reverse();
-        this.searching = false;
-      }
-    );
+    //     this.loadedAllMentors = Object.values(mentors);
+    //     this.loadedAllMentors.reverse();
+    //     this.searching = false;
+    //   }
+    // );
   }
 
   chat() {

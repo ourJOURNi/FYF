@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { HeartIconComponent } from './heart-icon/heart-icon.component';
-import { GoingIconComponent } from './going-icon/going-icon.component';
+import { EventsFavoritesIconComponent } from './events-favorites-icon/events-favorites-icon.component';
 import { NotGoingIconComponent } from './not-going-icon/not-going-icon.component';
 import { FollowIconComponent } from './follow-icon/follow-icon.component';
 import { UpDownVoteButtonsComponent } from './up-down-vote-buttons/up-down-vote-buttons.component';
@@ -19,7 +19,7 @@ import { ReplyOptionsPopoverComponent } from './reply-options-popover/reply-opti
      ],
     declarations: [
         HeartIconComponent,
-        GoingIconComponent,
+        EventsFavoritesIconComponent,
         NotGoingIconComponent,
         FollowIconComponent,
         UpDownVoteButtonsComponent,
@@ -31,7 +31,7 @@ import { ReplyOptionsPopoverComponent } from './reply-options-popover/reply-opti
     ],
     exports: [
         HeartIconComponent,
-        GoingIconComponent,
+        EventsFavoritesIconComponent,
         NotGoingIconComponent,
         FollowIconComponent,
         UpDownVoteButtonsComponent,

@@ -51,7 +51,7 @@ export class NotGoingIconComponent implements OnInit {
       this.iconName = 'close-circle-outline';
       this.goingToast();
       console.log(`Going to event, ${event.title}`);
-      this.events.goingToEvent(event._id, this.userEmail, this.id).subscribe();
+      this.events.favoritingEvent(event._id, this.userEmail, this.id).subscribe();
 
 
     } else {
@@ -60,7 +60,7 @@ export class NotGoingIconComponent implements OnInit {
       this.iconName = 'add-circle-outline';
       this.notGoingToast();
       console.log('No longer going to Event');
-      this.events.notGoingToEvent(event._id, this.userEmail, this.id).subscribe();
+      this.events.unFavoritingEvent(event._id, this.userEmail, this.id).subscribe();
 
     }
 

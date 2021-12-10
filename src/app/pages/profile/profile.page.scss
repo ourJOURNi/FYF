@@ -30,10 +30,17 @@ ion-item {
 }
 #profile-info {
   height: auto;
-  text-align: left;
-  margin-left: 24px;
+ 
 }
-
+#logout-item {
+  --background: none;
+  --color: #e3405f;
+  font-weight: 600;
+  --border-color: #e3405f;
+  --border-style: solid;
+  --border-width: 2px;
+  margin-bottom: 100px;
+}
 h4 {
   color: #000;
   font-size: 1.9em;
@@ -53,13 +60,12 @@ span {
   display: inline-block;
 }
 #profile-picture {
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
   border-radius: 100px;
   margin: 0 auto 8px;
   display: block;
   opacity: 1;
-  border: 5px solid #0055a5;
   // animation: pic-slide-right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards;
 }
 .back-button{

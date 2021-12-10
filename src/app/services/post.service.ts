@@ -11,9 +11,11 @@ import { ProfileService } from '../services/profile.service';
 
 export class PostsService {
   BACKEND_URL = environment.url;
+  allPosts = [];
+  activeEmail: string;
   postsSubject$ = new BehaviorSubject([]);
   commentsSubject$ = new BehaviorSubject([]);
-  followingSubject$ = new BehaviorSubject([]);
+  favoritePosts$ = new BehaviorSubject([]);
   myPostSubject$ = new BehaviorSubject([]);
 
   constructor(
@@ -22,8 +24,14 @@ export class PostsService {
   ) {}
 
   getPosts() {
-    // console.log('Getting Posts');
-    return this.http.get(`${this.BACKEND_URL}/api/posts/`);
+    return this.http.get(`${this.BACKEND_URL}/api/posts/`)
+    .subscribe(
+      posts => {
+        this.allPosts = Object.values(posts);
+        console.log(this.allPosts)
+        return this.allPosts;
+      }
+    );;
   }
 
   getMyPosts(email) {
@@ -92,7 +100,7 @@ export class PostsService {
       email: userEmail
     }).subscribe( data => {
       let updatedFollowingPosts = [...Object.values(data)];
-      this.followingSubject$.next(updatedFollowingPosts);
+      this.favoritePosts$.next(updatedFollowingPosts);
     });
   }
 
@@ -103,7 +111,7 @@ export class PostsService {
       email: userEmail
     }).subscribe( data => {
       let updatedFollowingPosts = [...Object.values(data)];
-      this.followingSubject$.next(updatedFollowingPosts);
+      this.favoritePosts$.next(updatedFollowingPosts);
     });
   }
 

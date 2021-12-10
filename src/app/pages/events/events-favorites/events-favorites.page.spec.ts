@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { GoingPage } from './going.page';
+import { EventsFavoritesPage } from './events-favorites.page';
 
-describe('GoingPage', () => {
-  let component: GoingPage;
-  let fixture: ComponentFixture<GoingPage>;
+describe('EventsFavoritesPage', () => {
+  let component: EventsFavoritesPage;
+  let fixture: ComponentFixture<EventsFavoritesPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ GoingPage ],
+      declarations: [ EventsFavoritesPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(GoingPage);
+    fixture = TestBed.createComponent(EventsFavoritesPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

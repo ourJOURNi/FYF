@@ -82,7 +82,7 @@ export class PostsPage implements OnInit, OnDestroy {
     this.postsEmitterService.subsVar.unsubscribe();
     this.profileSub.unsubscribe();
     this.routerSub.unsubscribe();
-    this.posts.followingSubject$.unsubscribe();
+    this.posts.favoritePosts$.unsubscribe();
   }
   ngOnInit() {
     this.getPosts();
@@ -110,27 +110,45 @@ export class PostsPage implements OnInit, OnDestroy {
     }
 
   }
+
+  // Tracks Route Change in Navigator
+  // When the user navigates from the main
+  // posts page @ /home/posts, the Tab Bar
+  // at the bottom of the page will be hidden
   trackRoute() {
     this.routerSub = this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)).subscribe(
       data => {
-        console.log(data['url']);
+
         let url = data['url'];
+        let tabBar = document.getElementById('tabBar');
+        let tabBarFab = document.getElementById('tab-bar-fab');
+
         if(
           url.includes('/home/posts/post-page/') ||
           url.includes('/home/posts/my-posts/') ||
           url.includes('/home/posts/notifications/') ||
           url.includes('/home/posts/following')
           ) {
-          console.log('Hide Tab Bar!');
-          let tabBar = document.getElementById('tabBar');
-          tabBar.style.height = '0px'
-          tabBar.style.transition = '1s'
+  
+          tabBar.style.transition = '0.5s'
+          tabBar.style.opacity = '0'
+          tabBar.style.pointerEvents = 'none';
+
+          tabBarFab.style.transition = '0.5s'
+          tabBarFab.style.opacity = '0';
+          tabBarFab.style.pointerEvents = 'none';
+
         } else {
-          let tabBar = document.getElementById('tabBar');
-          console.log(tabBar);
-          tabBar.style.height = '50px'
-          tabBar.style.transition = '1s'
+
+          tabBar.style.transition = '0.5s'
+          tabBar.style.opacity = '1'
+          tabBar.style.pointerEvents = 'auto';
+          
+          tabBarFab.style.transition = '0.5s'
+          tabBarFab.style.opacity = '1';
+          tabBarFab.style.pointerEvents = 'auto';
+
         }
       });
   }
@@ -326,14 +344,14 @@ export class PostsPage implements OnInit, OnDestroy {
     // Get the user's posts he/she is following
     this.profileSub = this.profile.getUserDetails().subscribe( details => {
 
-      this.posts.followingSubject$.next(this.followedPost);
-      this.posts.followingSubject$.subscribe( posts => {
+      this.posts.favoritePosts$.next(this.followedPost);
+      this.posts.favoritePosts$.subscribe( posts => {
         this.followedPostCount = posts.length;
       });
       // TODO:
       // Add My Posts Counter
-      // this.posts.followingSubject$.next(this.myPosts);
-      // this.posts.followingSubject$.subscribe( posts => {
+      // this.posts.favoritePosts$.next(this.myPosts);
+      // this.posts.favoritePosts$.subscribe( posts => {
       //   this.myPostCount = posts.length;
       // });
     });
@@ -348,16 +366,16 @@ export class PostsPage implements OnInit, OnDestroy {
 
     this.getFollowingPosts();
 
-    this.postsSub = this.posts.getPosts().subscribe( posts => {
-      this.allPosts = Object.values(posts).reverse();
+    // this.postsSub = this.posts.getPosts().subscribe( posts => {
+    //   this.allPosts = Object.values(posts).reverse();
 
-      for (const post of this.allPosts) {
-        post.date = formatDistanceToNow( new Date(post.date), {
-          includeSeconds: true,
-          addSuffix: true
-        });
-      }
-    });
+    //   for (const post of this.allPosts) {
+    //     post.date = formatDistanceToNow( new Date(post.date), {
+    //       includeSeconds: true,
+    //       addSuffix: true
+    //     });
+    //   }
+    // });
 
     // Present Toast
     setTimeout(() => {
@@ -370,80 +388,80 @@ export class PostsPage implements OnInit, OnDestroy {
     }, 2000);
   }
   async getPosts() {
-    this.postsSub = this.posts.getPosts().subscribe( posts => {
-      this.allPosts = Object.values(posts);
-      this.loadedAllPosts = Object.values(posts);
-    // Filter Logic
-    switch (this.postFilter) {
-        case 'mostc':
-          console.log('Most Comments');
-          this.filtering = true;
-          this.postFilter = 'mostc';
+    // this.postsSub = this.posts.getPosts().subscribe( posts => {
+    //   this.allPosts = Object.values(posts);
+    //   this.loadedAllPosts = Object.values(posts);
+    // // Filter Logic
+    // switch (this.postFilter) {
+    //     case 'mostc':
+    //       console.log('Most Comments');
+    //       this.filtering = true;
+    //       this.postFilter = 'mostc';
 
-          function mostComments(a, b){
-            console.log('Sorting Posts')
-            return a.comments.length - b.comments.length;
-          }
-          this.allPosts.sort(mostComments);
-          this.allPosts.reverse();
-          this.searching = false;
-          break;
-        case 'mostu':
-          console.log('Most Upvotes');
-          this.filtering = true;
-          this.postFilter = 'mostu';
-          function mostUpvotes(a, b){
-            console.log('Sorting Posts')
-            return a.upvotes - b.upvotes;
-          }
-          this.allPosts.sort(mostUpvotes);
-          this.allPosts.reverse();
-          this.searching = false;
-          break;
-        case 'mostf':
-          console.log('Most Followers');
-          this.filtering = true;
-          this.postFilter = 'mostf';
-          function mostFollowers(a, b){
-            console.log('Sorting Posts')
-            return a.followers.length - b.followers.length;
-          }
-          this.allPosts.sort(mostFollowers);
-          this.allPosts.reverse();
-          this.searching = false;
-          break;
-        case 'newest':
-          console.log('Newest');
-          this.filtering = true;
-          this.postFilter = 'newest';
-          function newestPost(a, b){
-            console.log('Sorting Posts')
-            return a.date - b.date;
-          }
-          this.allPosts.sort(newestPost);
-          this.allPosts.reverse();
-          this.searching = false;
-          break;
-        case 'oldest':
-          console.log('Oldest');
-          this.filtering = true;
-          this.postFilter = 'oldest';
-          function oldestPost(a, b){
-            console.log('Sorting Posts')
-            return b.date - a.date;
-          }
-          this.allPosts.sort(oldestPost);
-          this.searching = false;
-          break;
+    //       function mostComments(a, b){
+    //         console.log('Sorting Posts')
+    //         return a.comments.length - b.comments.length;
+    //       }
+    //       this.allPosts.sort(mostComments);
+    //       this.allPosts.reverse();
+    //       this.searching = false;
+    //       break;
+    //     case 'mostu':
+    //       console.log('Most Upvotes');
+    //       this.filtering = true;
+    //       this.postFilter = 'mostu';
+    //       function mostUpvotes(a, b){
+    //         console.log('Sorting Posts')
+    //         return a.upvotes - b.upvotes;
+    //       }
+    //       this.allPosts.sort(mostUpvotes);
+    //       this.allPosts.reverse();
+    //       this.searching = false;
+    //       break;
+    //     case 'mostf':
+    //       console.log('Most Followers');
+    //       this.filtering = true;
+    //       this.postFilter = 'mostf';
+    //       function mostFollowers(a, b){
+    //         console.log('Sorting Posts')
+    //         return a.followers.length - b.followers.length;
+    //       }
+    //       this.allPosts.sort(mostFollowers);
+    //       this.allPosts.reverse();
+    //       this.searching = false;
+    //       break;
+    //     case 'newest':
+    //       console.log('Newest');
+    //       this.filtering = true;
+    //       this.postFilter = 'newest';
+    //       function newestPost(a, b){
+    //         console.log('Sorting Posts')
+    //         return a.date - b.date;
+    //       }
+    //       this.allPosts.sort(newestPost);
+    //       this.allPosts.reverse();
+    //       this.searching = false;
+    //       break;
+    //     case 'oldest':
+    //       console.log('Oldest');
+    //       this.filtering = true;
+    //       this.postFilter = 'oldest';
+    //       function oldestPost(a, b){
+    //         console.log('Sorting Posts')
+    //         return b.date - a.date;
+    //       }
+    //       this.allPosts.sort(oldestPost);
+    //       this.searching = false;
+    //       break;
 
-        default:
-          break;
-    }
+    //     default:
+    //       break;
+    // }
 
-    return setTimeout(() => {
-        this.filtering = false;
-      }, 1000);
-    });
+    // return setTimeout(() => {
+    //     this.filtering = false;
+    //   }, 1000);
+    // });
   }
   addPost() {
     this.router.navigate(['/home/posts/add-post']);

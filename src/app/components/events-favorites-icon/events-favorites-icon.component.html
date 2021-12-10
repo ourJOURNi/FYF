@@ -2,7 +2,11 @@
     <ion-row class="ion-justify-content-end">
         <ion-toolbar>
             <ion-buttons slot="start">
-                <ion-icon (click)="toggleLikeState()" tappable [@heart]="this.favoriteState" style="font-size: 2em" [name]="iconName"></ion-icon>
+                <ion-icon (click)="toggleLikeState()" 
+                tappable 
+                [@heart]="this.favoriteState" 
+                style="font-size: 2em" 
+                [name]="iconName"></ion-icon>
             </ion-buttons>
             <ion-buttons slot="end">
                 <ion-button class="details-button-mobile" (click)="eventPage(event)">

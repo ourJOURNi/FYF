@@ -4,6 +4,11 @@
 /** Ionic CSS Variables **/
 :root {
 
+  .success-loading {
+    width: 100% !important;
+    background: #dee7ff;
+  }
+
   .success-alert {
     --background: #797;
 

@@ -32,8 +32,8 @@ export class EventsPagePage implements OnInit, OnDestroy {
   eventPhoto;
 
   eventsSub: Subscription;
-  goingToEventSub: Subscription;
-  notGoingToEventSub: Subscription;
+  favoritingEventSub: Subscription;
+  unFavoritingEventSub: Subscription;
   profileSub: Subscription;
 
   constructor(
@@ -102,10 +102,10 @@ export class EventsPagePage implements OnInit, OnDestroy {
         // Get all the events that the user is going to.
 
         this.id = details['_id'];
-        let eventsGoing = details['eventsGoing'];
-        console.log(eventsGoing);
+        let favoriteEvents = details['favoriteEvents'];
+        console.log(favoriteEvents);
 
-        if (eventsGoing.includes(this.eventId)) {
+        if (favoriteEvents.includes(this.eventId)) {
           this.going = true;
         } else {
           this.going = false;
@@ -116,43 +116,43 @@ export class EventsPagePage implements OnInit, OnDestroy {
     );
   }
 
-  goingToEvent() {
+  favoritingEvent() {
 
     this.going = true;
     this.presentGoingToast();
-    console.log(`Adding ${this.eventId} to this Users eventsGoing property`);
+    console.log(`Adding ${this.eventId} to this Users favoriteEvents property`);
 
-    this.goingToEventSub = this.events.goingToEvent(this.eventId, this.userEmail, this.id)
+    this.favoritingEventSub = this.events.favoritingEvent(this.eventId, this.userEmail, this.id)
       .subscribe(events => {
 
-        let updatedEvents = [...Object.values(events['eventsGoing']), this.eventId];
-        this.events.eventsGoing$.next(updatedEvents);
-        console.log(this.events.eventsGoing$.getValue());
+        let updatedEvents = [...Object.values(events['favoriteEvents']), this.eventId];
+        this.events.favoriteEvents$.next(updatedEvents);
+        console.log(this.events.favoriteEvents$.getValue());
 
-        // this.events.getEventsGoing(this.id).subscribe(
-        //   eventsGoing => {
-        //     console.log(eventsGoing);
+        // this.events.getfavoriteEvents(this.id).subscribe(
+        //   favoriteEvents => {
+        //     console.log(favoriteEvents);
         //   }
         // );
     });
   }
 
-  notGoingToEvent() {
+  unFavoritingEvent() {
     this.going = false;
     this.presentNotGoingToast();
-    console.log(`Removing ${this.eventId} from this Users eventsGoing property`);;
-    this.notGoingToEventSub = this.events.notGoingToEvent(this.eventId, this.userEmail, this.id).subscribe(
+    console.log(`Removing ${this.eventId} from this Users favoriteEvents property`);;
+    this.unFavoritingEventSub = this.events.unFavoritingEvent(this.eventId, this.userEmail, this.id).subscribe(
       events => {
-        const eventsGoing = this.events.eventsGoing$.getValue();
+        const favoriteEvents = this.events.favoriteEvents$.getValue();
 
-        for (let i = 0; i < eventsGoing.length; i++) {
-          if (eventsGoing[i] === this.eventId) {
-            eventsGoing.splice(i, 1);
+        for (let i = 0; i < favoriteEvents.length; i++) {
+          if (favoriteEvents[i] === this.eventId) {
+            favoriteEvents.splice(i, 1);
           }
         }
-        console.log(eventsGoing);
+        console.log(favoriteEvents);
 
-        this.events.eventsGoing$.next(eventsGoing);
+        this.events.favoriteEvents$.next(favoriteEvents);
       }
     );
   }

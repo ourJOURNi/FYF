@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { GoingIconComponent } from './going-icon.component';
+import { GoingIconComponent } from './events-favorites-icon.component';
 
 describe('GoingIconComponent', () => {
   let component: GoingIconComponent;

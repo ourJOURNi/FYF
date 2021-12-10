@@ -5,9 +5,9 @@ import { CustomComponentsModule } from '../../../components/custom-component.mod
 
 import { IonicModule } from '@ionic/angular';
 
-import { GoingPageRoutingModule } from './going-routing.module';
+import { GoingPageRoutingModule } from './events-favorites-routing.module';
 
-import { GoingPage } from './going.page';
+import { EventsFavoritesPage } from './events-favorites.page';
 
 @NgModule({
   imports: [
@@ -16,6 +16,6 @@ import { GoingPage } from './going.page';
     CustomComponentsModule,
     IonicModule,
     GoingPageRoutingModule  ],
-  declarations: [GoingPage]
+  declarations: [EventsFavoritesPage]
 })
-export class GoingPageModule {}
+export class EventsFavoritesPageModule {}

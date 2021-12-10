@@ -9,30 +9,36 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 
 export class EventsService {
-  eventsGoing$ = new BehaviorSubject([]);
+  favoriteEvents$ = new BehaviorSubject([]);
+  allEvents = [];
+  activeEmail: string;
   BACKEND_URL = environment.url;
 
   constructor(
     private http: HttpClient,
-    private profile: ProfileService
   ) {}
 
   getEvents() {
     console.log('Getting Events');
-    return this.http.get(`${this.BACKEND_URL}/api/events`);
+    this.http.get(`${this.BACKEND_URL}/api/events`)
+    .subscribe(
+      events => {
+        this.allEvents = Object.values(events);
+        console.log(this.allEvents)
+        return this.allEvents;
+      }
+    );
   }
 
-  getEventsGoing(id) {
+  getEventsFavorites(id) {
     return this.http.post(`${this.BACKEND_URL}/api/events/events-going`, {_id: id});
   }
 
-  goingToEvent(eventID, userEmail, id) {
-
-    console.log(this.profile);
+  favoritingEvent(eventID, userEmail, id) {
     return this.http.post(`${this.BACKEND_URL}/api/events/go-to-event`, { eventID, userEmail, id });
   }
 
-  notGoingToEvent(eventID, userEmail, id) {
+  unFavoritingEvent(eventID, userEmail, id) {
     return this.http.post(`${this.BACKEND_URL}/api/events/dont-go-to-event`,  {
       userEmail,
       eventID,

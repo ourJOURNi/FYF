@@ -4,15 +4,15 @@ import { EventsService } from '../../services/events.service';
 import { ToastController } from '@ionic/angular';
 import { ProfileService } from 'src/app/services/profile.service';
 import { Router } from '@angular/router';
-import { FavoritesService } from 'src/app/services/favorites.service';
+import { FavoriteJobsService } from 'src/app/services/favorite-jobs.service';
 import { EventsEventEmitterService } from 'src/app/emitters/events-event-emitter.service';
 
 
 
 @Component({
-  selector: 'app-going-icon',
-  templateUrl: './going-icon.component.html',
-  styleUrls: ['./going-icon.component.scss'],
+  selector: 'app-events-favorites-icon',
+  templateUrl: './events-favorites-icon.component.html',
+  styleUrls: ['./events-favorites-icon.component.scss'],
   animations: [
     trigger('heart', [
       state('unfavorited', style({
@@ -31,10 +31,9 @@ import { EventsEventEmitterService } from 'src/app/emitters/events-event-emitter
   ])
 ]
 })
-export class GoingIconComponent implements OnInit {
-  favoriteState;
-  going = false;
-  goingState = 'not-going';
+export class EventsFavoritesIconComponent implements OnInit {
+  favorite = false;
+  favoriteState = 'not-favorite';
   public iconName = 'heart';
   @Input() event;
   @Input() favoriteEvents;
@@ -49,23 +48,16 @@ export class GoingIconComponent implements OnInit {
     private profile: ProfileService) { }
 
   ngOnInit() {
+    console.log('Favorite Events');
+    console.log(this.favoriteEvents);
 
-    // Get the User's details
-    this.profile.getUserDetails().subscribe(
-     details => {
-
-       this.userEmail = details['email'];
-       let eventsGoing = details['eventsGoing'];
-       
-       if (eventsGoing.includes(this.event._id)) {
-         this.going = true;
-         this.goingState = 'going';
-       } else {
-         this.going = false;
-         this.goingState = 'not-going';
-       }
-
-     });
+    if (this.favoriteEvents.includes(this.event._id)) {
+      this.favorite = true;
+      this.favoriteState = 'favorited';
+    } else {
+      this.favorite = false;
+      this.favoriteState = 'unfavorited';
+    }
 
 
     this.favoriteState = 'unfavorited';
@@ -100,46 +92,46 @@ export class GoingIconComponent implements OnInit {
     this.iconName = 'heart';
   }
 
-  toggleGoingState(event) {
+  togglefavoriteState(event) {
 
-    if (this.goingState === 'not-going') {
+    if (this.favoriteState === 'not-favorite') {
 
-      // Going
-      this.goingState = 'going';
+      // favorite
+      this.favoriteState = 'favorite';
       this.iconName = 'close-circle-outline';
-      this.going = true;
-      this.goingToast();
-      console.log(`Going to event, ${event.title}`);
+      this.favorite = true;
+      this.favoriteToast();
+      console.log(`favorite to event, ${event.title}`);
 
 
-      this.events.goingToEvent(event._id, this.userEmail, this.id).subscribe(events => {
+      this.events.favoritingEvent(event._id, this.userEmail, this.id).subscribe(events => {
 
-        let updatedEvents = [...Object.values(events['eventsGoing']), this.event._id];
-        this.events.eventsGoing$.next(updatedEvents);
-        console.log(this.events.eventsGoing$.getValue());
+        let updatedEvents = [...Object.values(events['eventsfavorite']), this.event._id];
+        this.events.favoriteEvents$.next(updatedEvents);
+        console.log(this.events.favoriteEvents$.getValue());
 
       });
 
 
     } else {
 
-      // Not Going
-      this.goingState = 'not-going';
+      // Not favorite
+      this.favoriteState = 'not-favorite';
       this.iconName = 'add-circle-outline';
-      this.going = false;
-      this.notGoingToast();
-      console.log('No longer going to Event');
-      this.events.notGoingToEvent(event._id, this.userEmail, this.id).subscribe(events => {
-        const eventsGoing = this.events.eventsGoing$.getValue();
+      this.favorite = false;
+      this.notfavoriteToast();
+      console.log('No longer favorite to Event');
+      this.events.unFavoritingEvent(event._id, this.userEmail, this.id).subscribe(events => {
+        const eventsfavorite = this.events.favoriteEvents$.getValue();
 
-        for (let i = 0; i < eventsGoing.length; i++) {
-          if (eventsGoing[i] === this.event._id) {
-            eventsGoing.splice(i, 1);
+        for (let i = 0; i < eventsfavorite.length; i++) {
+          if (eventsfavorite[i] === this.event._id) {
+            eventsfavorite.splice(i, 1);
           }
         }
-        console.log(eventsGoing);
+        console.log(eventsfavorite);
 
-        this.events.eventsGoing$.next(eventsGoing);
+        this.events.favoriteEvents$.next(eventsfavorite);
 
       });
 
@@ -147,17 +139,17 @@ export class GoingIconComponent implements OnInit {
 
   }
 
-  async goingToast() {
+  async favoriteToast() {
     const toast = await this.toast.create({
-      message: 'You are going to this event.',
+      message: 'You are favorite to this event.',
       duration: 2000
     });
     toast.present();
   }
 
-  async notGoingToast() {
+  async notfavoriteToast() {
     const toast = await this.toast.create({
-      message: 'You are no longer going to this event.',
+      message: 'You are no longer favorite to this event.',
       duration: 2000
     });
     toast.present();

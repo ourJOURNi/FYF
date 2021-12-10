@@ -1,14 +1,11 @@
 import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { Platform, AlertController } from '@ionic/angular';
-import { AuthService } from '../services/auth.service';
 import { BehaviorSubject } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-import { Storage } from '@ionic/storage';
+import { catchError } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -35,15 +32,11 @@ export class ProfileService {
 
   constructor(
     private http: HttpClient,
-    private storage: Storage,
-    private alertController: AlertController,
-    private helper: JwtHelperService,
-    private auth: AuthService,
+    // private auth: AuthService,
     private router: Router,
     private toastController: ToastController) {
 
       // Needs the User's email address from the JSON Web Token stored on device.
-      this.activeEmail = this.auth.user.email;
      }
 
   getAllUsers() {
@@ -212,9 +205,5 @@ export class ProfileService {
           return console.log('Passwords dont match');
         }
       });
-  }
-    // Delete User
-  delete() {
-    console.log('Deleted User');
   }
 }

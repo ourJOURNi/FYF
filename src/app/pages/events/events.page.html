@@ -6,7 +6,7 @@
     </ion-buttons>
     <ion-title>Events</ion-title>
     <ion-buttons slot="end">
-        <ion-button (click)="my">
+        <ion-button (click)="favoritesPage()">
           <ion-icon slot="start" src="../../assets/icon/jobs-favorites-heart-red.svg" style="font-size: 2em;"></ion-icon>
           <p style="color: red; font-size: 1.2em; position: relative; right: 4px;">3</p>
         </ion-button>
@@ -85,7 +85,7 @@
               </ion-card-header>
               <ion-card-content class="ion-text-center">
                 <ion-toolbar style="--background: none; height: auto;">
-                  <app-going-icon [event]="event" [userEmail]="userEmail" [id]="id"></app-going-icon>
+                  <app-events-favorites-icon [event]="event" [userEmail]="userEmail" [id]="id" [favoriteEvents]="favoriteEvents"></app-events-favorites-icon>
                 </ion-toolbar>
               </ion-card-content>
             </ion-card>

@@ -62,7 +62,10 @@ export class ProfilePage implements OnInit, OnDestroy {
 
     ngOnInit() {
       this.trackRoute();
-      this.detailsSub = this.profile.getUserDetails()
+      this.getUserDetails()
+  }
+  getUserDetails() {
+    this.detailsSub = this.profile.getUserDetails()
         .subscribe(
           res => {
             console.log(res);
@@ -145,27 +148,51 @@ export class ProfilePage implements OnInit, OnDestroy {
               this.userObject.phone = data;
             }
           );
-    });
+      });
   }
+
+  // Tracks Route Change in Navigator
+  // When the user navigates from the main
+  // profile page @ /home/profile, the Tab Bar
+  // at the bottom of the page will be hidden
   trackRoute() {
     this.routerSub = this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)).subscribe(
       data => {
-        console.log(data['url']);
+
         let url = data['url'];
-        if(url.includes('/home/profile/change') ||
+        let tabBar = document.getElementById('tabBar');
+        let tabBarFab = document.getElementById('tab-bar-fab');
+
+        console.log('\nURL: ')
+        console.log(url)
+
+        if(url.includes('/home/profile/change-email') ||
+           url.includes('/home/profile/change-about') ||
+           url.includes('/home/profile/change-password') ||
+           url.includes('/home/profile/change-phone') ||
+           url.includes('/home/profile/change-school') ||
            url.includes('/home/profile/view-resume') ||
            url.includes('/home/profile/update-resume')
         ) {
-          console.log('Hide Tab Bar!');
-          let tabBar = document.getElementById('tabBar');
-          tabBar.style.height = '0px'
-          tabBar.style.transition = '1s'
+  
+          tabBar.style.transition = '0.5s'
+          tabBar.style.opacity = '0'
+          tabBar.style.pointerEvents = 'none';
+
+          tabBarFab.style.transition = '0.5s'
+          tabBarFab.style.opacity = '0';
+          tabBarFab.style.pointerEvents = 'none';
         } else {
-          let tabBar = document.getElementById('tabBar');
-          console.log(tabBar);
-          tabBar.style.height = '50px'
-          tabBar.style.transition = '1s'
+    
+          tabBar.style.transition = '0.5s'
+          tabBar.style.opacity = '1'
+          tabBar.style.pointerEvents = 'auto';
+          
+          tabBarFab.style.transition = '0.5s'
+          tabBarFab.style.opacity = '1';
+          tabBarFab.style.pointerEvents = 'auto';
+
         }
       });
   }

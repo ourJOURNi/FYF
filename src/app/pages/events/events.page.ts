@@ -21,12 +21,12 @@ export class EventsPage implements OnInit {
 
   eventsSub: Subscription;
   profileSub: Subscription;
-  eventsGoingSub: Subscription;
+  favoriteEventsSub: Subscription;
   deleteEventSub: Subscription;
   routerSub: Subscription;
   jobFilter = 'newest';
-  eventsGoing;
-  eventsGoingLength;
+  favoriteEvents;
+  favoriteEventsLength;
   searching = false;
   noSearchInput = false;
   searchTerm;
@@ -42,10 +42,19 @@ export class EventsPage implements OnInit {
     private profile: ProfileService,
     public loading: LoadingController,
     private eventEmitterService: EventsEventEmitterService
-    ) { }
+    ) { 
+      this.allEvents = this.events.allEvents;
+      this.favoriteEventsSub = this.events.favoriteEvents$.subscribe(
+        events => {
+          console.log('Favorite Events')
+          console.log(events)
+          return;
+        }
+      )
+    }
   ngOnInit() {
     this.getProfileDetails();
-    this.eventFavorites();
+    this.getFavoriteEvents();
     this.deleteEvent();
     this.trackRoute();
     this.eventEmitterSubscription();
@@ -78,12 +87,12 @@ export class EventsPage implements OnInit {
       this.id = details['_id'];
       this.userEmail = details['email'];
 
-      this.events.eventsGoing$.next(details['eventsGoing']);
+      this.events.favoriteEvents$.next(details['favoriteEvents']);
 
-      this.eventsGoingSub = this.events.eventsGoing$.subscribe(
+      this.favoriteEventsSub = this.events.favoriteEvents$.subscribe(
         events => {
-          console.log(events.length);
-          this.eventsGoingLength = events.length;
+          // console.log(events.length);
+          // this.favoriteEventsLength = events.length;
         }
       );
       console.log('User id: ' + this.id);
@@ -91,61 +100,55 @@ export class EventsPage implements OnInit {
     });
     
   }
-  eventFavorites() {
-  this.eventsGoing = this.events.getEvents().subscribe( events => {
 
-    // I am using two arrays for the same data to improve the loading of the data. As a User searches through the list events,
-    // .
+  // Searches user by ID in Database
 
-    // First Array of Events
-    // this.allEvents = Object.values(events);
-    this.allEvents = Object.values(events);
-    this.allEventsLength  = this.allEvents.length;
-    this.allEvents.reverse();
-
-    console.log(this.allEvents);
-
-    // Second Array of Events
-    this.loadedAllEvents = Object.values(events);
-    this.loadedAllEvents.reverse();
-
-    // Loop each Event and format the dates. Also, delete an Event if its scheduled date
-    for (const event of this.allEvents) {
-      // First date Event Date
-      // Second date Current Date
-
-      // If the Current Date is After the Event Date, Delete
-      // If True, Delete event.
-
-      if (isAfter(new Date(Date.now()), new Date(event.date))) {
-        this.deleteEventSub = this.events.deleteEvent(event._id).subscribe();
-      }
-
-      event.date = format( new Date(event.date), 'MMMM dd, yyyy');
-      event.time = format( new Date(event.date), 'hh:mm a');
-      event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
-        includeSeconds: true,
-        addSuffix: true
-      });
-    }
-  });
+  getFavoriteEvents() {
+    this.favoriteEvents = this.events.getEventsFavorites(this.id).subscribe( favoriteEvents => {
+      console.clear()
+      console.log('Getting Favorite Events')
+      console.log(favoriteEvents)
+      return favoriteEvents;
+    });
   }
+
+  // Tracks Route Change in Navigator
+  // When the user navigates from the main
+  // profile page @ /home/events, the Tab Bar
+  // at the bottom of the page will be hidden
   trackRoute() {
     this.routerSub = this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)).subscribe(
       data => {
-        console.log(data['url']);
+
         let url = data['url'];
-        if(url.includes('/home/events/event-page/')) {
-          console.log('Hide Tab Bar!');
-          let tabBar = document.getElementById('tabBar');
-          tabBar.style.height = '0px'
-          tabBar.style.transition = '1s'
+        let tabBar = document.getElementById('tabBar');
+        let tabBarFab = document.getElementById('tab-bar-fab');
+
+        console.log('\nURL: ')
+        console.log(url)
+
+        if(url.includes('/home/events/events-page') ||
+           url.includes('/home/events/events-favorites')        ) 
+           {
+  
+          tabBar.style.transition = '0.5s'
+          tabBar.style.opacity = '0'
+          tabBar.style.pointerEvents = 'none';
+
+          tabBarFab.style.transition = '0.5s'
+          tabBarFab.style.opacity = '0';
+          tabBarFab.style.pointerEvents = 'none';
         } else {
-          let tabBar = document.getElementById('tabBar');
-          console.log(tabBar);
-          tabBar.style.height = '50px'
-          tabBar.style.transition = '1s'
+    
+          tabBar.style.transition = '0.5s'
+          tabBar.style.opacity = '1'
+          tabBar.style.pointerEvents = 'auto';
+          
+          tabBarFab.style.transition = '0.5s'
+          tabBarFab.style.opacity = '1';
+          tabBarFab.style.pointerEvents = 'auto';
+
         }
       });
   }
@@ -159,7 +162,7 @@ export class EventsPage implements OnInit {
     this.router.navigate(['/home/events/events-page', event._id, event.title, event.addressOne,  event.addressOne,  event.city,  event.state, event.zip, event.dateCreated, event.date, event.time, event.photo, event.description]);
   }
   favoritesPage() {
-    this.router.navigate(['/home/events/going']);
+    this.router.navigate(['/home/events/events-favorites']);
   }
   filter($event) {
 
@@ -238,32 +241,32 @@ export class EventsPage implements OnInit {
   async doRefresh(event) {
 
     this.allEvents = [];
-    this.eventsSub = this.events.getEvents().subscribe( events => {
+    // this.eventsSub = this.events.getEvents().subscribe( events => {
 
-      this.allEvents = Object.values(events);
-      this.allEventsLength = this.allEvents.length;
-      this.allEvents.reverse();
-      this.searching = false;
+    //   this.allEvents = Object.values(events);
+    //   this.allEventsLength = this.allEvents.length;
+    //   this.allEvents.reverse();
+    //   this.searching = false;
 
-      // Format Times
-      for (const event of this.allEvents) {
-        // First date Event Date
-        // Second date Current Date
+    //   // Format Times
+    //   for (const event of this.allEvents) {
+    //     // First date Event Date
+    //     // Second date Current Date
 
-        // If the Current Date is After the Event Date, Delete
-        // If True, Delete event.
+    //     // If the Current Date is After the Event Date, Delete
+    //     // If True, Delete event.
 
-        if (isAfter(new Date(Date.now()), new Date(event.date))) {
-          this.deleteEventSub = this.events.deleteEvent(event._id).subscribe();
-        }
-        event.date = format( new Date(event.date), 'MMMM dd, yyyy');
-        event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
-          includeSeconds: true,
-          addSuffix: true
-        });
-        event.time = format( new Date(event.date), 'hh:mm a');
-      }
-    });
+    //     if (isAfter(new Date(Date.now()), new Date(event.date))) {
+    //       this.deleteEventSub = this.events.deleteEvent(event._id).subscribe();
+    //     }
+    //     event.date = format( new Date(event.date), 'MMMM dd, yyyy');
+    //     event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
+    //       includeSeconds: true,
+    //       addSuffix: true
+    //     });
+    //     event.time = format( new Date(event.date), 'hh:mm a');
+    //   }
+    // });
 
     setTimeout(() => {
       event.target.complete();
@@ -273,22 +276,22 @@ export class EventsPage implements OnInit {
     await console.log('Refreshing Events Page..');
   }
   async getEvents() {
-    this.eventsSub = this.events.getEvents().subscribe( events => {
+    // this.eventsSub = this.events.getEvents().subscribe( events => {
 
-      this.allEvents = Object.values(events);
-      this.allEventsLength = this.allEvents.length;
-      this.allEvents.reverse();
-      this.searching = false;
+    //   this.allEvents = Object.values(events);
+    //   this.allEventsLength = this.allEvents.length;
+    //   this.allEvents.reverse();
+    //   this.searching = false;
 
-      // Format Times
-      for (const event of this.allEvents) {
-        event.date = format( new Date(event.date), 'MMMM dd, yyyy');
-        event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
-          includeSeconds: true,
-          addSuffix: true
-        });
-        event.time = format( new Date(event.date), 'hh:mm a');
-      }
-    });
+    //   // Format Times
+    //   for (const event of this.allEvents) {
+    //     event.date = format( new Date(event.date), 'MMMM dd, yyyy');
+    //     event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
+    //       includeSeconds: true,
+    //       addSuffix: true
+    //     });
+    //     event.time = format( new Date(event.date), 'hh:mm a');
+    //   }
+    // });
   }
 }

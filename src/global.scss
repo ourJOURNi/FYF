@@ -57,7 +57,9 @@ ion-header {
   }
   ion-title {
     color: #ca7200;
-    font-weight: 700;
+    font-weight: 500;
+    position: relative;
+    right: 5px;
   }
 }
 ion-skeleton-text {

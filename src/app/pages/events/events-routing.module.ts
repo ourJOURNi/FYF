@@ -13,8 +13,8 @@ const routes: Routes = [
     loadChildren: () => import('./events-page/events-page.module').then( m => m.EventsPagePageModule)
   },
   {
-    path: 'going',
-    loadChildren: () => import('./going/going.module').then( m => m.GoingPageModule)
+    path: 'events-favorites',
+    loadChildren: () => import('./events-favorites/events-favorites.module').then( m => m.EventsFavoritesPageModule)
   }
 ];
 

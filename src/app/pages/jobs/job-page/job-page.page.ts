@@ -3,7 +3,7 @@ import { Subscription} from 'rxjs';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { ProfileService } from 'src/app/services/profile.service';
-import { FavoritesService } from 'src/app/services/favorites.service';
+import { FavoriteJobsService } from 'src/app/services/favorite-jobs.service';
 import { JobsService } from 'src/app/services/jobs.service';
 import { FavoritesEventEmitterService } from 'src/app/emitters/favorites-event-emitter.service';
 import { PlatformLocation } from '@angular/common';
@@ -38,7 +38,7 @@ export class JobPagePage implements OnInit, OnDestroy {
     private router: Router,
     private toastController: ToastController,
     private profile: ProfileService,
-    private favorites: FavoritesService,
+    private favorites: FavoriteJobsService,
     private jobs: JobsService,
     private eventEmitterService: FavoritesEventEmitterService,
     private location: PlatformLocation
@@ -81,34 +81,34 @@ export class JobPagePage implements OnInit, OnDestroy {
     this.jobSummary = summary;
     this.jobFullJobDescription = fullJobDescription;
     this.jobRateOfPay = rateOfPay;
-    this.getFavoriteJobs();
+    // this.getFavoriteJobs();
   }
 
-  getFavoriteJobs() {
-    // getting all the favorite jobs that the user has on their profile
-    this.profileSub = this.profile.getUserDetails().subscribe(
-      data => {
-        let favoriteJobs = data['favoriteJobs']
+  // getFavoriteJobs() {
+  //   // getting all the favorite jobs that the user has on their profile
+  //   this.profileSub = this.profile.getUserDetails().subscribe(
+  //     data => {
+  //       let favoriteJobs = data['favoriteJobs']
 
-        this.favorites.favoriteJobs$.next(favoriteJobs);
-        this.favoriteJobsSub = this.favorites.favoriteJobs$.subscribe(
-          favs => {
-            console.log(`Favorite Jobs in Service: ${favs}`);
-            this.jobsSub = this.jobs.getJobs().subscribe( jobs => {
-              for (const job of Object.values(jobs)) {
-                if (this.jobId == job._id) {
-                  this.jobObj = job;
-                }
-              }
-            });
-            this.favoritesSub = this.favorites.getFavorites(data['email']).subscribe( favDetails => {
-              this.favoriteJobsObj = favDetails;
-            });
-          }
-        );
-      }
-    );
-  }
+  //       this.favorites.favoriteJobs$.next(favoriteJobs);
+  //       this.favoriteJobsSub = this.favorites.favoriteJobs$.subscribe(
+  //         favs => {
+  //           console.log(`Favorite Jobs in Service: ${favs}`);
+  //           // this.jobsSub = this.jobs.getJobs().subscribe( jobs => {
+  //           //   for (const job of Object.values(jobs)) {
+  //           //     if (this.jobId == job._id) {
+  //           //       this.jobObj = job;
+  //           //     }
+  //           //   }
+  //           // });
+  //           this.favoritesSub = this.favorites.getFavorites(data['email']).subscribe( favDetails => {
+  //             this.favoriteJobsObj = favDetails;
+  //           });
+  //         }
+  //       );
+  //     }
+  //   );
+  // }
 
   applyForJob() {
     // tslint:disable-next-line: max-line-length

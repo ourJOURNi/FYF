@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { FavoritesService } from '../../services/favorites.service';
-import { ProfileService } from 'src/app/services/profile.service';
-
+import { JobsService } from 'src/app/services/jobs.service';
 
 @Component({
   selector: 'app-heart-icon',
@@ -34,27 +32,30 @@ export class HeartIconComponent implements OnInit {
   @Input() favoriteJobs;
 
   constructor(
-    private favorites: FavoritesService,
-    private profile: ProfileService
+    private jobs: JobsService,
   ) { }
 
   ngOnInit() {
     this.favoriteState = 'unfavorited';
     for (const favJob of this.favoriteJobs) {
-      if (this.job._id === favJob['_id']) {
+      if (this.job === favJob) {
         console.log('There was a match!')
-        return this.setFavoriteStateOn();
+        console.log(favJob)
+         this.setFavoriteStateOn();
+      } else {
+         this.setFavoriteStateOff()
       }
     }
+    return;
   }
   toggleLikeState() {
     if (this.favoriteState === 'unfavorited') {
       this.setFavoriteStateOn()
-      return this.favorites.favoriteThisJob(this.job);
+      return this.jobs.favoriteThisJob(this.job);
     }
     else {
       this.setFavoriteStateOff()
-      return this.favorites.unFavoriteThisJob(this.job);
+      return this.jobs.unFavoriteThisJob(this.job);
     }
 
   }

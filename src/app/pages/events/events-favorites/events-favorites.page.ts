@@ -9,15 +9,16 @@ import { EventsEventEmitterService } from 'src/app/emitters/events-event-emitter
 import { PlatformLocation } from '@angular/common';
 
 @Component({
-  selector: 'app-going',
-  templateUrl: './going.page.html',
-  styleUrls: ['./going.page.scss'],
+  selector: 'app-events-favorites',
+  templateUrl: './events-favorites.page.html',
+  styleUrls: ['./events-favorites.page.scss'],
 })
-export class GoingPage implements OnInit {
+export class EventsFavoritesPage implements OnInit {
   profileSub: Subscription;
-  eventsGoingSub: Subscription;
+  favoriteEventsSub: Subscription;
   cancelSub: Subscription;
-  goingToEvents = [];
+  favoriteEventsLength;
+  favoriteEvents = [];
   userEmail;
   id;
 
@@ -32,7 +33,7 @@ export class GoingPage implements OnInit {
     private location: PlatformLocation
     ) { }
   ngOnInit() {
-
+    this.getFavoriteEvents()
     this.location.onPopState(() => {
       this.eventEmitterService.onBackAction();
     });
@@ -42,13 +43,17 @@ export class GoingPage implements OnInit {
      details => {
        this.id = details['_id'];
        this.userEmail = details['email'];
-       this.eventsGoingSub = this.events.eventsGoing$.subscribe(
+       this.favoriteEventsSub = this.events.favoriteEvents$.subscribe(
          events => {
-           this.goingToEvents = events;
+           console.clear()
+           console.log('Events: ')
+           console.log(events)
+          this.favoriteEvents = events;
+          this.favoriteEventsLength = events.length;
+          return;
          });
 
        console.log('getting event user ' + this.id + ' is going to');
-       this.refreshGoingEvents();
      });
   }
 
@@ -62,13 +67,32 @@ export class GoingPage implements OnInit {
     this.router.navigate(['/home/events']);
   }
 
-  refreshGoingEvents() {
-    this.eventsGoingSub = this.events.getEventsGoing(this.id).subscribe( eventsGoing => {
-        this.goingToEvents = Object.values(eventsGoing);
-        this.goingToEvents.reverse();
-        console.log(`Updated events going list: ${this.goingToEvents}`);
+  getFavoriteEvents() {
+    this.favoriteEventsSub = this.events.getEventsFavorites(this.id).subscribe( eventsGoing => {
+        this.favoriteEvents = Object.values(eventsGoing);
+        this.favoriteEvents.reverse();
+        console.log(`Updated events going list: ${this.favoriteEvents}`);
 
-        for (const event of this.goingToEvents) {
+        for (const event of this.favoriteEvents) {
+          event.date = format( new Date(event.date), 'MMMM dd, yyyy');
+          event.time = format( new Date(event.date), 'hh:mm a');
+          event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
+            includeSeconds: true,
+            addSuffix: true
+          });
+        }
+
+        this.eventEmitterService.resetEvents();
+      });
+  }
+
+  refreshFavoriteEvents() {
+    this.favoriteEventsSub = this.events.getEventsFavorites(this.id).subscribe( eventsGoing => {
+        this.favoriteEvents = Object.values(eventsGoing);
+        this.favoriteEvents.reverse();
+        console.log(`Updated events going list: ${this.favoriteEvents}`);
+
+        for (const event of this.favoriteEvents) {
           event.date = format( new Date(event.date), 'MMMM dd, yyyy');
           event.time = format( new Date(event.date), 'hh:mm a');
           event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {

@@ -3,8 +3,6 @@ import { AuthService } from './services/auth.service';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { NotificationsService } from './services/notifications.service';
-import { catchError, tap, switchAll , map} from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-root',
@@ -33,42 +31,47 @@ export class AppComponent implements OnInit, OnDestroy {
 
   }
 
+  /**
+   * Initializes App; Depending on the state of the Token
+   * in the Auth Service, will navigate directly to home page
+   */
+  initializeApp() {
+    this.platform.ready().then(() => {
+      // State for the User. If Authentication State == False, the app reverts back to the landing page
+      this.auth.authenticationState.subscribe(async state => {
+        if (state) {
+          this.router.navigate(['home']);
+        } else {
+          this.router.navigate(['']);
+        }
+        return;
+      });
+    });
+  }
   ngOnDestroy() {
     this.auth.authenticationState.unsubscribe();
   }
+}
 
-  initializeApp() {
-    this.auth.checkToken();
-    // this.notifications.connect();
-    this.notifications.messages$
-    .pipe(
-      // map(rows => rows.data),
-      catchError(error => { throw error }),
-      tap({
-        error: error => console.log('[Live component] Error:', error),
-        complete: () => console.log('[Live component] Connection Closed')
-      }
-      )
-    )
-    .subscribe(
-      (e) => {
-        console.log(e)
-      });
+
+   // this.notifications.connect();
+    // this.notifications.messages$
+    // .pipe(
+    //   // map(rows => rows.data),
+    //   catchError(error => { throw error }),
+    //   tap({
+    //     error: error => console.log('[Live component] Error:', error),
+    //     complete: () => console.log('[Live component] Connection Closed')
+    //   }
+    //   )
+    // )
+    // .subscribe(
+    //   (e) => {
+    //     console.log(e)
+    //   });
     // Notification.requestPermission((e) => {
     //   console.log(e);
     // });
-    let img = '../assets/icons/icon-72x72.svg';
-    let text = 'This is a notification.';
+    // let img = '../assets/icons/icon-72x72.svg';
+    // let text = 'This is a notification.';
     // let notification = new Notification('To do list', {body: text, icon: img});
-    this.platform.ready().then(() => {
-    });
-    // State for the User. If Authentication State == False, the app reverts back to the landing page
-    this.auth.authenticationState.subscribe(async state => {
-      if (state) {
-        this.router.navigate(['home']);
-      } else {
-        this.router.navigate(['']);
-      }
-    });
-  }
-}
