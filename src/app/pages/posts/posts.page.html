@@ -2,14 +2,30 @@
 <ion-header no-border class="ion-hide-lg-up">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-icon style="color: #0055a5;"name="newspaper-outline"></ion-icon>
     </ion-buttons>
-    <ion-title>Posts</ion-title>
+    <!-- 
+     <ion-button id="search-button"
+      (click)="searchLoading()" class="search-button">
+        Search
+      </ion-button> -->
+    <ion-searchbar
+    class="searchbar"
+    animated="true"
+    searchIcon="none"
+    placeholder="Search"
+    (ionFocus)="searchBarFocus()"
+    (ionBlur)="searchBarBlur()"
+    (ionChange)="search($event)">
+    <span class="hash">#</span>
+  </ion-searchbar>
     <ion-buttons slot="end">
       <!-- Notifications -->
       <ion-button (click)="notificationsPage()">
-        <img height="30" class="header-icons" src="../../../assets/icon/posts-notification-bell-grey.svg">
+        <img height="25" class="header-icons" src="../../../assets/icon/posts-notification-bell-grey.svg">
         <span style="color: #666; height: 25px; width: 25px; border-radius: 100px; position: relative; font-size: 1.4em; font-weight: 600;">{{notificationsLength}}</span>
+      </ion-button>
+      <ion-button id="my-documents-button" (click)="myPosts()" fill="clear">
+        <ion-icon name="documents-outline" size="large"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -131,11 +147,14 @@
               <p class="no-tags" *ngIf="post.hashtags.length === 0">
                 No #hashtags for this post
               </p>
-              <p [ngClass]="{'show-less': showShortDesciption}" class="post-content">{{post.post}}</p>
-              <span class="ellipsis" *ngIf="post.post.length > 400 && showShortDesciption">...</span>
-              <button *ngIf="post.post.length > 400" class="show-more-or-less-button" type="button" (click)="alterDescriptionText(post.post)">
-                {{ showShortDesciption ? 'Read More': 'Hide' }}
-              </button>
+              <p [ngClass]="{'show-less': showShortDesciption}" 
+                class="post-content">
+                {{post.post}}
+                <button *ngIf="post.post.length > 400" class="show-more-or-less-button" type="button" (click)="alterDescriptionText(post.post)">
+                  {{ showShortDesciption ? '... Read More': 'Show Less' }}
+                </button>
+              </p>
+              
             </ion-col>
           </ion-row>
           <!-- Comment -->
@@ -211,21 +230,7 @@
   </ion-fab>
   <!-- Mobile -->
   <ion-grid class="ion-hide-lg-up">
-    <!-- Filter Toolbar -->
-    <ion-row class="filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
-          <ion-toolbar (click)="filterMenu()" class="filter-toolbar">
-            <ion-buttons slot="start">
-              <p class="filter-message">{{this.jobFilter}}</p>
-            </ion-buttons>
-            <ion-buttons slot="end">
-                <ion-button>
-                  <ion-icon class="filter-icon" slot="start" name="filter"></ion-icon>
-                </ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-col>
-    </ion-row>
+ 
     <!-- <ion-row class="filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
         <ion-toolbar class="filter-toolbar">
@@ -295,9 +300,8 @@
               No #hashtags for this post
             </p>
             <p [ngClass]="{'show-less': showShortDesciption}" class="post-content">{{post.post}}</p>
-            <span class="ellipsis" *ngIf="post.post.length > 400 && showShortDesciption">...</span>
             <button *ngIf="post.post.length > 400" class="show-more-or-less-button" type="button" (click)="alterDescriptionText(post.post)">
-              {{ showShortDesciption ? 'Read More': 'Hide' }}
+              {{ showShortDesciption ? '... Read More': 'Show Less ...' }}
             </button>
           </ion-col>
         </ion-row>
@@ -353,38 +357,3 @@
   </ion-grid>
 
 </ion-content>
-<ion-footer class="ion-hide-lg-up">
-  <ion-row class="ion-justify-content-center">
-    <ion-col size="9">
-      <div
-      id="searchbar-wrapper">
-      <!-- (keyup)="addHashTag($event)"-->
-        <!-- <div id="search-options">
-          <p>You can choose up to five hashtags.
-            <br>Please seperate each tag with a comma ( , ).
-            <br>Example: "Computers, Science, Technology"</p>
-          <div>
-          </div>
-        </div> -->
-        <ion-searchbar
-          class="searchbar"
-          animated="true"
-          searchIcon="none"
-          cancelButtonText=""
-          showCancelButton="true"
-          placeholder="Search Posts by Hashtags"
-          (ionFocus)="searchBarFocus()"
-          (ionBlur)="searchBarBlur()"
-          (ionChange)="search($event)">
-          <span class="hash">#</span>
-        </ion-searchbar>
-      </div>
-    </ion-col>
-    <ion-col size="2">
-     <ion-button id="search-button"
-      (click)="searchLoading()" class="search-button">
-        Search
-      </ion-button>
-    </ion-col>
-  </ion-row>
-</ion-footer>

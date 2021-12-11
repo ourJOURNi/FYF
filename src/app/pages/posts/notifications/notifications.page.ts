@@ -33,33 +33,7 @@ export class NotificationsPage implements OnInit, OnDestroy {
       .subscribe(
         userDetails => {
           this.userEmail = userDetails['email'];
-          this.notificationsSub = this.notifications.getNotifications(this.userEmail)
-            .subscribe(
-              notifications => {
-                  console.log(notifications);
-                  this.allNotifications = Object.values(notifications);
-                  // Track if No Notifications
-                  if (this.allNotifications.length <= 0 || this.allNotifications === []) {
-                    this.noNotifications = true;
-                  } else {
-                    this.noNotifications = false;
-                  }
-                  this.notifications.notifications$.next(Object.values(notifications));
-                  this.notifications.notifications$.subscribe( data => {
-                    for (let n of this.allNotifications) {
-                    n.date = formatDistanceToNow( new Date(n.date), {
-                      includeSeconds: true,
-                      addSuffix: false
-                    });
-                    this.allNotifications = Object.values(notifications);
-                    console.log(this.allNotifications)
-                  }
-                });
-
-                  // TODO: replaces 'minutes' with M
-                  // let minutes = ;
-                }
-            );
+        
         }
       );
   }
@@ -68,32 +42,6 @@ export class NotificationsPage implements OnInit, OnDestroy {
     .subscribe(
       data => {
 
-        this.notificationsSub = this.notifications.getNotifications(this.userEmail)
-          .subscribe(
-            notifications => {
-                console.log(notifications);
-                this.notifications.notifications$.next(Object.values(notifications));
-                this.notifications.notifications$.subscribe( data => {
-                  this.allNotifications = Object.values(data);
-                  for (let n of this.allNotifications) {
-                  n.date = formatDistanceToNow( new Date(n.date), {
-                    includeSeconds: true,
-                    addSuffix: false
-                  });
-                }
-                // Track if No Notifications
-                if (this.allNotifications.length <= 0 || this.allNotifications === []) {
-                  this.noNotifications = true;
-                } else {
-                  this.noNotifications = false;
-                  this.clearedToast();
-                }
-              });
-
-                // TODO: replaces 'minutes' with M
-                // let minutes = ;
-              }
-          );
       }
     );
   }

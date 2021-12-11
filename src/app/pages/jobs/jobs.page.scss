@@ -18,6 +18,10 @@
   border-radius: 50px;
   width: 100%;
 }
+#mobile-filter-toolbar {
+  --background: #e0e7ed;
+  z-index: 999;
+}
 .filter-toolbar-wrapper{
   width: 100%;
   border-bottom: 3px ​solid #0055a5;
@@ -34,15 +38,14 @@
 .filter-message{
   font-weight: 600;
   font-size: 1em;
-  color: #fff;
+  color: #0055a5;
   opacity: 0;
   transition: 0.5s;
   animation: filter-selection-slide 1s ease-in-out 0.5s forwards;
-
 }
 @media only screen and (min-width: 992px) {
   .filter-message  {
-    color: #fbb606;
+    color: #0055a5;
     font-weight: 600;
     font-size: 1.4em;
     position: relative;
@@ -60,8 +63,8 @@
   }
 }
 .filter-icon {
-  color: #fff;
-  font-size: 1em;
+  color: #0055a5;
+  font-size: 1.4em;
 }
 .job-details {
   --background: white;
@@ -93,6 +96,17 @@
     right: 3em;
   }
 }
+#fav-amount {
+  color: red; 
+  font-size: 1.2em; 
+  position: relative; 
+  right: 4px;
+}
+#favorites-page-button {
+  position: relative;
+  right: 6px;
+}
+
 .favorites-button {
   --color: white;
   --background: none;
@@ -104,7 +118,7 @@
   display: block;
 }
 .filter-button {
-  --color: white;
+  --color: #0055a5;
   --background: none;
   --background-hover: linear-gradient(#e3405f, #da3a57);
   height: 24px;

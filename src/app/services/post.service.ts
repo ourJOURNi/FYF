@@ -4,7 +4,6 @@ import { environment } from '../../environments/environment';
 import { BehaviorSubject } from 'rxjs';
 import { ProfileService } from '../services/profile.service';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,6 +11,7 @@ import { ProfileService } from '../services/profile.service';
 export class PostsService {
   BACKEND_URL = environment.url;
   allPosts = [];
+  myPosts = [];
   activeEmail: string;
   postsSubject$ = new BehaviorSubject([]);
   commentsSubject$ = new BehaviorSubject([]);
@@ -21,7 +21,9 @@ export class PostsService {
   constructor(
     private http: HttpClient,
     private profile: ProfileService
-  ) {}
+  ) {
+    
+  }
 
   getPosts() {
     return this.http.get(`${this.BACKEND_URL}/api/posts/`)

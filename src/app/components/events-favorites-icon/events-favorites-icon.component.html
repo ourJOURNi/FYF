@@ -7,6 +7,9 @@
                 [@heart]="this.favoriteState" 
                 style="font-size: 2em" 
                 [name]="iconName"></ion-icon>
+                <p *ngIf="this.favoriteState === 'favorited'"
+                   id="favorited-caption"
+                >FAVORITED</p>
             </ion-buttons>
             <ion-buttons slot="end">
                 <ion-button class="details-button-mobile" (click)="eventPage(event)">

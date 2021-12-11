@@ -110,6 +110,12 @@ export class AuthService {
   this.http.post(`${this.BACKEND_URL}/api/signup`, this.user).subscribe();
   }
   
+  /**
+   * Log in to FYF. Will create and set a JWT for Auth, 
+   * then pre populate data in all pages
+   * @param data - Form Data from LoginComponent 
+   * @returns - void
+   */
   login(data) {
   console.log('Logging in');
   return this.loginSub = this.http.post(`${this.BACKEND_URL}/api`,
@@ -120,10 +126,16 @@ export class AuthService {
       tap(res => {
         if (!res) {
           console.log('There was no response.');
+          return;
         }
+
+        // Set Token
         this.storage.set(this.TOKEN_KEY, res['token']);
+
+        // Get User information from Token
         this.user = this.helper.decodeToken( res['token']);
-        console.log('Active User: ' + this.user.email);
+
+        // Populate Pages with initial
         this.didPopulateUserData(this.user.email)
       }),
       catchError(e => {
@@ -140,6 +152,8 @@ export class AuthService {
         throw new Error(e);
       })
     )
+    // If everything is successfull, set the Auth State to true,
+    // which will navigate to Home page (Tabs Module initial route)
     .subscribe( data => {
       this.authenticationState.next(true);
       console.log('Successfully Logged In.');
@@ -164,6 +178,7 @@ export class AuthService {
         let usersFavoriteJobs = userDetails['favoriteJobs'];
         let usersFavoriteEvents = userDetails['eventsGoing'];
         let usersFavoritePosts = userDetails['followedPost'];
+        // TODO: ---
         let usersCreatedPosts = userDetails['posts']; 
                        
 
@@ -175,13 +190,14 @@ export class AuthService {
         this.events.activeEmail = this.activeEmail;
         
         this.posts.favoritePosts$.next(usersFavoritePosts)
-        this.events.favoriteEvents$.next(usersCreatedPosts)
+        this.posts.activeEmail = this.activeEmail;
+
         this.userProfilePicture = userDetails['profilePicture'];
 
         // Get initial Jobs, Events, Posts, and Mentors
+        this.posts.getPosts();
         this.jobs.getJobs();
         this.events.getEvents();
-        this.posts.getPosts();
         this.mentors.getMentors();
 
 

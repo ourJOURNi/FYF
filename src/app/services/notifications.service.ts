@@ -11,8 +11,12 @@ import {WebSocketSubject, webSocket} from 'rxjs/webSocket';
   providedIn: 'root'
 })
 export class NotificationsService {
-  BACKEND_URL = environment.url;
   notifications$ = new BehaviorSubject([]);
+  notifications = [];
+  activeEmail: string;
+  BACKEND_URL = environment.url;
+  allNotifications: unknown[];
+
 
   constructor(
     private http: HttpClient) { }
@@ -20,7 +24,14 @@ export class NotificationsService {
   getNotifications(email) {
       console.log('Getting Notifications');
       console.log(email);
-      return this.http.post(`${this.BACKEND_URL}/api/notifications`, {email: email});
+      return this.http.post(`${this.BACKEND_URL}/api/notifications`, {email: email})
+        .subscribe(
+          notifications => {
+            this.allNotifications = Object.values(notifications);
+            console.log(this.allNotifications)
+            return this.allNotifications;
+          }
+        );
   }
   clearNotifications(email) {
     console.log('Clearing Notifications');

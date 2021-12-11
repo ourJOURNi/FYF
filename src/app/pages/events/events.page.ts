@@ -21,12 +21,12 @@ export class EventsPage implements OnInit {
 
   eventsSub: Subscription;
   profileSub: Subscription;
-  favoriteEventsSub: Subscription;
+  favoriteEventsSub$: Subscription;
   deleteEventSub: Subscription;
   routerSub: Subscription;
   jobFilter = 'newest';
   favoriteEvents;
-  favoriteEventsLength;
+  favoriteEventsAmount;
   searching = false;
   noSearchInput = false;
   searchTerm;
@@ -43,18 +43,28 @@ export class EventsPage implements OnInit {
     public loading: LoadingController,
     private eventEmitterService: EventsEventEmitterService
     ) { 
+
       this.allEvents = this.events.allEvents;
-      this.favoriteEventsSub = this.events.favoriteEvents$.subscribe(
+      // Format Times
+      for (const event of this.allEvents) {
+        event.date = format( new Date(event.date), 'MMMM dd, yyyy');
+        event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
+          includeSeconds: true,
+          addSuffix: true
+        });
+        event.time = format( new Date(event.date), 'hh:mm a');
+      }
+      this.favoriteEventsSub$ = this.events.favoriteEvents$.subscribe(
         events => {
-          console.log('Favorite Events')
-          console.log(events)
-          return;
+          this.favoriteEventsAmount = events.length
+          this.favoriteEvents = this.events.favoriteEvents
+          console.log('\nFavorite Events:')
+          console.log(this.favoriteEvents)
+          console.log(this.favoriteEventsAmount)
         }
       )
     }
   ngOnInit() {
-    this.getProfileDetails();
-    this.getFavoriteEvents();
     this.deleteEvent();
     this.trackRoute();
     this.eventEmitterSubscription();
@@ -80,37 +90,10 @@ export class EventsPage implements OnInit {
     }
     
   }
-  getProfileDetails() {
-    // Get the User's details
-    this.profileSub = this.profile.getUserDetails().subscribe( details => {
-
-      this.id = details['_id'];
-      this.userEmail = details['email'];
-
-      this.events.favoriteEvents$.next(details['favoriteEvents']);
-
-      this.favoriteEventsSub = this.events.favoriteEvents$.subscribe(
-        events => {
-          // console.log(events.length);
-          // this.favoriteEventsLength = events.length;
-        }
-      );
-      console.log('User id: ' + this.id);
-      console.log('User email: ' + this.userEmail);
-    });
-    
-  }
+  
 
   // Searches user by ID in Database
 
-  getFavoriteEvents() {
-    this.favoriteEvents = this.events.getEventsFavorites(this.id).subscribe( favoriteEvents => {
-      console.clear()
-      console.log('Getting Favorite Events')
-      console.log(favoriteEvents)
-      return favoriteEvents;
-    });
-  }
 
   // Tracks Route Change in Navigator
   // When the user navigates from the main
@@ -154,7 +137,7 @@ export class EventsPage implements OnInit {
   }
   deleteEvent() {
     var result = isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11));
-    console.log(result);
+    // console.log(result);
 
   }
   eventPage(event) {
@@ -283,15 +266,7 @@ export class EventsPage implements OnInit {
     //   this.allEvents.reverse();
     //   this.searching = false;
 
-    //   // Format Times
-    //   for (const event of this.allEvents) {
-    //     event.date = format( new Date(event.date), 'MMMM dd, yyyy');
-    //     event.dateCreated = formatDistanceToNow( new Date(event.dateCreated), {
-    //       includeSeconds: true,
-    //       addSuffix: true
-    //     });
-    //     event.time = format( new Date(event.date), 'hh:mm a');
-    //   }
+    //   
     // });
   }
 }

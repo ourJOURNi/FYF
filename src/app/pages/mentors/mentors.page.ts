@@ -28,7 +28,9 @@ export class MentorsPage implements OnInit {
     private router: Router,
     private mentors: MentorsService,
     public loading: LoadingController,
-    private modal: ModalController) { }
+    private modal: ModalController) { 
+      this.allMentors = this.mentors.allMentors;
+    }
 
   ngOnInit() {
     this.getMentors();

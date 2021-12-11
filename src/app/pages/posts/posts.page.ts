@@ -75,7 +75,9 @@ export class PostsPage implements OnInit, OnDestroy {
     private filterPostsService: FilterPostsService,
     private studentChat: StudentChatService,
     private notifications: NotificationsService
-  ) {}
+  ) {
+    this.allPosts = this.posts.allPosts;
+  }
   ngOnDestroy(): void {
     this.postsSub.unsubscribe();
     this.notificationsSub.unsubscribe();
@@ -85,29 +87,14 @@ export class PostsPage implements OnInit, OnDestroy {
     this.posts.favoritePosts$.unsubscribe();
   }
   ngOnInit() {
-    this.getPosts();
-    this.getUserInfo();
-    this.getFollowingPosts();
+    // this.getPosts();
+    // this.getUserInfo();
+    // this.getFollowingPosts();
     this.trackRoute();
     // To collect comment data
    this.commentForm = this.formBuilder.group({
      comment: ['']
    });
-    // When Users updated their Profile Picture, Unfollow/Follow, Up/Downvote, or Comment on an individual
-    if (this.postsEmitterService.subsVar === undefined) {
-      this.postsEmitterService.subsVar = this.postsEmitterService.invokePostsPageRefresh.subscribe(() => {
-        this.getPosts();
-        this.getUserInfo();
-      });
-    }
-    // Filter Jobs from Popover
-    if (this.filterPostsService.subsVar == undefined) {
-      this.filterPostsService.subsVar = this.filterPostsService.filterPostsEmitter.subscribe(data => {
-        // Filter jobs
-        this.postFilter = data;
-        this.getPosts();
-      });
-    }
 
   }
 
@@ -206,7 +193,6 @@ export class PostsPage implements OnInit, OnDestroy {
           // console.log('Search term is empty; showing all events instead');
           this.noSearchInput = false;
           this.searching = false;
-          this.getPosts();
         }
         this.noSearchInput = true;
       });
@@ -248,7 +234,6 @@ export class PostsPage implements OnInit, OnDestroy {
     await loading.present();
 
     await loading.onDidDismiss().then(() => {
-      this.getPosts();
     });
     console.log('Loading dismissed!');
   }
@@ -323,39 +308,8 @@ export class PostsPage implements OnInit, OnDestroy {
     // tslint:disable-next-line: max-line-length
     this.router.navigate(['/home/posts/post-page', post._id]);
   }
-  getUserInfo() {
-    this.postsSub = this.profile.getUserDetails().subscribe( details => {
-      // console.log(details);
-      this.userEmail = details['email'];
-      this.userProfilePicture = details['profilePicture'];
-      this.userFullName = details['fullName'];
-      this.myPostsLength = details['posts'].length;
-      this.followedPost = details['followedPost'];
+ 
 
-      this.notifications.getNotifications(this.userEmail)
-      .subscribe(
-        notifications => {
-            console.log(notifications);
-            this.notificationsLength = Object.values(notifications).length;
-        })
-    });
-  }
-  getFollowingPosts() {
-    // Get the user's posts he/she is following
-    this.profileSub = this.profile.getUserDetails().subscribe( details => {
-
-      this.posts.favoritePosts$.next(this.followedPost);
-      this.posts.favoritePosts$.subscribe( posts => {
-        this.followedPostCount = posts.length;
-      });
-      // TODO:
-      // Add My Posts Counter
-      // this.posts.favoritePosts$.next(this.myPosts);
-      // this.posts.favoritePosts$.subscribe( posts => {
-      //   this.myPostCount = posts.length;
-      // });
-    });
-  }
   formatDistanceToNow(date) {
     return formatDistanceToNow( new Date(date), {
       includeSeconds: true,
@@ -364,18 +318,6 @@ export class PostsPage implements OnInit, OnDestroy {
   }
   doRefresh(event) {
 
-    this.getFollowingPosts();
-
-    // this.postsSub = this.posts.getPosts().subscribe( posts => {
-    //   this.allPosts = Object.values(posts).reverse();
-
-    //   for (const post of this.allPosts) {
-    //     post.date = formatDistanceToNow( new Date(post.date), {
-    //       includeSeconds: true,
-    //       addSuffix: true
-    //     });
-    //   }
-    // });
 
     // Present Toast
     setTimeout(() => {
@@ -387,82 +329,7 @@ export class PostsPage implements OnInit, OnDestroy {
       toast.then(toast => toast.present());
     }, 2000);
   }
-  async getPosts() {
-    // this.postsSub = this.posts.getPosts().subscribe( posts => {
-    //   this.allPosts = Object.values(posts);
-    //   this.loadedAllPosts = Object.values(posts);
-    // // Filter Logic
-    // switch (this.postFilter) {
-    //     case 'mostc':
-    //       console.log('Most Comments');
-    //       this.filtering = true;
-    //       this.postFilter = 'mostc';
-
-    //       function mostComments(a, b){
-    //         console.log('Sorting Posts')
-    //         return a.comments.length - b.comments.length;
-    //       }
-    //       this.allPosts.sort(mostComments);
-    //       this.allPosts.reverse();
-    //       this.searching = false;
-    //       break;
-    //     case 'mostu':
-    //       console.log('Most Upvotes');
-    //       this.filtering = true;
-    //       this.postFilter = 'mostu';
-    //       function mostUpvotes(a, b){
-    //         console.log('Sorting Posts')
-    //         return a.upvotes - b.upvotes;
-    //       }
-    //       this.allPosts.sort(mostUpvotes);
-    //       this.allPosts.reverse();
-    //       this.searching = false;
-    //       break;
-    //     case 'mostf':
-    //       console.log('Most Followers');
-    //       this.filtering = true;
-    //       this.postFilter = 'mostf';
-    //       function mostFollowers(a, b){
-    //         console.log('Sorting Posts')
-    //         return a.followers.length - b.followers.length;
-    //       }
-    //       this.allPosts.sort(mostFollowers);
-    //       this.allPosts.reverse();
-    //       this.searching = false;
-    //       break;
-    //     case 'newest':
-    //       console.log('Newest');
-    //       this.filtering = true;
-    //       this.postFilter = 'newest';
-    //       function newestPost(a, b){
-    //         console.log('Sorting Posts')
-    //         return a.date - b.date;
-    //       }
-    //       this.allPosts.sort(newestPost);
-    //       this.allPosts.reverse();
-    //       this.searching = false;
-    //       break;
-    //     case 'oldest':
-    //       console.log('Oldest');
-    //       this.filtering = true;
-    //       this.postFilter = 'oldest';
-    //       function oldestPost(a, b){
-    //         console.log('Sorting Posts')
-    //         return b.date - a.date;
-    //       }
-    //       this.allPosts.sort(oldestPost);
-    //       this.searching = false;
-    //       break;
-
-    //     default:
-    //       break;
-    // }
-
-    // return setTimeout(() => {
-    //     this.filtering = false;
-    //   }, 1000);
-    // });
-  }
+ 
   addPost() {
     this.router.navigate(['/home/posts/add-post']);
   }

@@ -122,7 +122,7 @@ export class EventsPagePage implements OnInit, OnDestroy {
     this.presentGoingToast();
     console.log(`Adding ${this.eventId} to this Users favoriteEvents property`);
 
-    this.favoritingEventSub = this.events.favoritingEvent(this.eventId, this.userEmail, this.id)
+    this.favoritingEventSub = this.events.favoriteThisEvent(this.id)
       .subscribe(events => {
 
         let updatedEvents = [...Object.values(events['favoriteEvents']), this.eventId];
@@ -141,7 +141,7 @@ export class EventsPagePage implements OnInit, OnDestroy {
     this.going = false;
     this.presentNotGoingToast();
     console.log(`Removing ${this.eventId} from this Users favoriteEvents property`);;
-    this.unFavoritingEventSub = this.events.unFavoritingEvent(this.eventId, this.userEmail, this.id).subscribe(
+    this.unFavoritingEventSub = this.events.unFavoriteThisEvent(this.id).subscribe(
       events => {
         const favoriteEvents = this.events.favoriteEvents$.getValue();
 

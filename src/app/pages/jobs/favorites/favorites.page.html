@@ -5,12 +5,25 @@
       <ion-back-button></ion-back-button>
       <img height="30" src="../../../../assets/icon/jobs-favorites-heart-red.svg" alt="Favorite Jobs Icon">
     </ion-buttons>
-    <ion-title>Favorites ({{favoritesLength}})</ion-title>
+    <ion-title>Favorites ({{allFavoriteJobs.length}})</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
+  <ion-grid *ngIf="this.skeletonData">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="11" size-sm="11" size-md="10" size-lg="6" size-xl="5">
+        <div *ngIf="this.skeletonData" class="ion-padding custom-skeleton">
+          <ion-skeleton-text animated style="width: 100px; line-height: 100px;"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 100%; line-height: 15px;"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 100%; line-height: 15px;"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 100%; line-height: 15px;"></ion-skeleton-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="!this.skeletonData">
     <!-- Desktop Header -->
     <ion-row class="ion-hide-lg-down ion-justify-content-center">
       <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
@@ -38,7 +51,7 @@
     <!-- Favorite Jobs -->
     <ion-row class="ion-justify-content-center">
       <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="6" size-xl="5">
-      <ion-row class="job-section ion-justify-content-center" *ngFor="let job of favoriteJobsObj">
+      <ion-row class="job-section ion-justify-content-center" *ngFor="let job of allFavoriteJobs">
             <ion-col push="0.3" size="1">
               <img class="company-logo" src="{{job.companyLogo}}">
             </ion-col>

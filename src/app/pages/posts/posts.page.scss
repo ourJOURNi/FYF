@@ -6,7 +6,9 @@
   position: relative;
   top: 0px;
 }
-
+#my-documents-button {
+  --color: #d0d0d0;
+}
 // Desktop Search Bar Div
 #search-wrapper {
   background-color: #fff; 
@@ -249,13 +251,10 @@ ion-content {
 
 .show-more-or-less-button {
   float: right;
-  position: relative;
-  right: 0px;
-  margin-top: 35px;
-  padding: 0.5em;
-  background: #666;
+  padding: 0.5em 1em;
+  background: #a7a7a7;
   color: white;
-  border-radius: 5px;
+  border-radius: 30px;
   font-size: 0.6em;
   font-weight: 600;
 }

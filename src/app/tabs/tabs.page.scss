@@ -28,8 +28,8 @@
       margin: 0 10px 0 10px;
       text-decoration: none;
       color: white;
-      font-size: 1.2em;
-			font-weight: 600;
+      font-size: 1em;
+	  font-weight: 600;
       float: right;
     }
 
@@ -70,7 +70,7 @@ ion-tabs{
 			position: absolute;
 		}
 		ion-tab-button {
-			--background: linear-gradient(30deg, #004785, #0055a5);
+			--background: #0055a5;
 
 			ion-icon, ion-label {
 				color: white;

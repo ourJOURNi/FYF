@@ -43,6 +43,8 @@ export class JobsService {
 
 
   getFavorites(email) {
+    console.clear()
+    console.log(email)
     console.log('Getting Favorites');
     return this.http.post(`${this.BACKEND_URL}/api/jobs/get-favorites`, { email : email });
   }
@@ -51,7 +53,7 @@ export class JobsService {
     return this.http.post(`${this.BACKEND_URL}/api/jobs/favorite`, 
     { email : this.activeEmail, _id : job }).subscribe(
       data => {
-        console.log('Posting Favorite Job to Database..');
+        console.log("Favorites: ", data);
         this.favoriteJobs$.next(this.favoriteJobs.concat([job]))
         this.presentToastFavorited('You favorited this job!');
       }
@@ -63,14 +65,13 @@ export class JobsService {
     return this.http.post(`${this.BACKEND_URL}/api/jobs/unfavorite`, 
     { email : this.activeEmail, _id: job}).subscribe(
       data => {
-        console.log("Unfavorite data value: ", data);
-        let updatedFavorites = [...Object.values(data)];
-        // for (let i = 0; i < updatedFavorites.length; i++) {
-        //   if (updatedFavorites[i] === job) {
-        //     updatedFavorites.splice(i, 1);
-        //   }
-        // }
-        this.favoriteJobs$.next(updatedFavorites)
+        console.log("Favorites: ", data);
+        for (let i = 0; i < this.favoriteJobs.length; i++) {
+          if (this.favoriteJobs[i] === job) {
+            this.favoriteJobs.splice(i, 1);
+          }
+        }
+        this.favoriteJobs$.next(this.favoriteJobs)
         this.presentToastUnfavorited('You removed this job from Favorites.');
       }
     );

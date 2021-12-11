@@ -1,16 +1,36 @@
-<ion-header class="ion-hide-lg-up">
+<ion-header no-shadow class="ion-hide-lg-up">
   <!-- Mobile & Tablet Toolbar -->
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-icon style="position: relative; left: 8px; color: #0055a5;"name="calendar"></ion-icon>
+      <ion-icon style="position: relative; left: 8px; color: #0055a5;"name="briefcase-outline"></ion-icon>
+      <ion-title>Events |</ion-title>
     </ion-buttons>
-    <ion-title>Events</ion-title>
-    <ion-buttons slot="end">
-        <ion-button (click)="favoritesPage()">
-          <ion-icon slot="start" src="../../assets/icon/jobs-favorites-heart-red.svg" style="font-size: 2em;"></ion-icon>
-          <p style="color: red; font-size: 1.2em; position: relative; right: 4px;">3</p>
+    <ion-searchbar></ion-searchbar>
+       <ion-buttons slot="end">
+        <ion-button (click)="favoritesPage()">             
+          <!-- Favorites Icon -->
+          <svg id="favorites-page-button" width="35px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>jobs-favorites-heart-red</title>
+            <defs>
+                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-134">
+                    <stop stop-color="#E80404" offset="0%"></stop>
+                    <stop stop-color="#980000" offset="100%"></stop>
+                </linearGradient>
+                <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-135">
+                    <stop stop-color="#777" offset="0%"></stop>
+                    <stop stop-color="#999" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+            <g id="jobs-favorites-heart-red" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <path d="M343.54238,63.6069503 C305.547015,30.6673745 249.039314,36.5922661 214.164009,73.1996318 L200.505092,87.5181196 L186.846154,73.1996318 C152.040204,36.5922661 95.4631671,30.6673745 57.4678045,63.6069503 C13.9256735,101.413401 11.6376316,169.267517 50.6036789,210.248017 L184.766137,351.175794 C193.432963,360.274735 207.507886,360.274735 216.174713,351.175794 L350.337169,210.248017 C389.372552,169.267517 387.08451,101.413401 343.54238,63.6069503 Z" 
+                      id="heart-path" 
+                      fill="url(#linearGradient-134)" 
+                      fill-rule="nonzero"></path>
+            </g>
+          </svg>
+          <p id="fav-amount">{{favoriteEventsAmount}}</p>
         </ion-button>
-       </ion-buttons>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -51,28 +71,28 @@
       </ion-col>
     </ion-row>
 
-      <!-- Filter Toolbar -->
-    <ion-row class="filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center">
-        <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
-          <ion-toolbar (click)="filterMenu()" class="filter-toolbar">
-            <ion-buttons slot="start">
-              <p class="filter-message">{{this.jobFilter}}</p>
-            </ion-buttons>
-            <ion-buttons slot="end">
-                <ion-button>
-                  <ion-icon class="filter-icon" slot="start" name="filter"></ion-icon>
-                </ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-col>
-    </ion-row>
+    <!-- Mobile Filter Toolbar -->
+    <ion-toolbar 
+        style="position: fixed; z-index: 999; --background: #e0e7ed;" 
+        id="mobile-filter-toolbar"
+        class="ion-hide-lg-up">
+      <ion-buttons slot="start">
+        <p class="filter-message">
+          Filter: Newest</p>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="onClick()">
+          <!-- Filter -->
+          <ion-icon class="filter-icon" name="filter-outline"></ion-icon> 
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
 
     <!-- Card List Wrapper for consistant aligment & padding -->
     <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="8" size-xl="7">
       <!-- Card List Inner Wrapper -->
-        <ion-row class="ion-justify-content-center">
           <div class="spacer ion-hide-lg-down"></div>
+          
           <ion-col size-xs="12" size-sm="10" size-md="9" size-lg="5" size-xl="3" *ngFor="let event of allEvents">
             <ion-card class="event-card">
               <img src="{{event.photo}}" />
@@ -85,14 +105,15 @@
               </ion-card-header>
               <ion-card-content class="ion-text-center">
                 <ion-toolbar style="--background: none; height: auto;">
-                  <app-events-favorites-icon [event]="event" [userEmail]="userEmail" [id]="id" [favoriteEvents]="favoriteEvents"></app-events-favorites-icon>
+                  <app-events-favorites-icon 
+                  [event]="event" 
+                  [userEmail]="userEmail" 
+                  [id]="id"></app-events-favorites-icon>
                 </ion-toolbar>
               </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
-      </ion-col>
-    </ion-row>
   </ion-grid>
 </ion-content>
 

@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, NavigationStart, ActivatedRoute } from '@angular/router';
-import { FavoriteJobsService } from '../../../services/favorite-jobs.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { formatDistanceToNow } from 'date-fns';
 import { FavoritesEventEmitterService } from 'src/app/emitters/favorites-event-emitter.service';
 import { PlatformLocation } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { JobsService } from 'src/app/services/jobs.service';
 
 
 @Component({
@@ -14,9 +14,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./favorites.page.scss'],
 })
 export class FavoritesPage implements OnInit, OnDestroy {
-  favoriteJobsObj;
+  allFavoriteJobs;
   favoritesLength;
   userEmail;
+  skeletonData = true;
 
   favoriteSubs: Subscription;
   profileSub: Subscription;
@@ -24,65 +25,38 @@ export class FavoritesPage implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private favorites: FavoriteJobsService,
-    private profile: ProfileService,
+    private jobs: JobsService,
     private eventEmitterService: FavoritesEventEmitterService,
     private location: PlatformLocation
-  ) { }
+  ) { 
+    this.allFavoriteJobs = this.jobs.favoriteJobs
+  }
 
   ngOnDestroy(): void {
     // this.favoriteSubs.unsubscribe();
-    // this.favorites.favoriteJobs$.unsubscribe();
-    this.profileSub.unsubscribe();
+    // this.jobs.favoriteJobs$.unsubscribe();
   }
 
   ngOnInit() {
-    this.location.onPopState(() => {
-      this.eventEmitterService.onBackAction();
-      // this.favorites.getFavorites(this.userEmail);
-    })
+    this.jobs.favoriteJobs$.subscribe(
+      favs => {
+        console.log(favs)
+        this.favoritesLength = favs
 
-    // this.favorites.favoriteJobs$.subscribe(favorites => {
-    //   this.favoriteJobs = Object.values(favorites);
-    // });
-    // this.getFavoriteJobs();
+        this.jobs.getFavorites(this.jobs.activeEmail).subscribe(
+          favs => {
+            this.allFavoriteJobs = favs
+            return this.skeletonData = false;
+          }
+        )
+      }
+    )
   }
 
   back() {
     this.eventEmitterService.onBackAction();
     this.router.navigate(['/home/jobs']);
   }
-
-  // getFavoriteJobs() {
-  //   // getting all the favorite jobs that the user has on their profile
-  //   this.profileSub = this.profile.getUserDetails().subscribe( data => {
-  //     this.userEmail = data['email'];
-  //     this.favoritesLength = data['favoriteJobs'].length
-  //     // console.log('Favorite Jobs:');
-  //     // console.log(this.favoriteJobs);
-
-  //     // this.favorites.favoriteJobs$.next(this.favoriteJobs);
-  //     this.favorites.favoriteJobs$.subscribe(
-  //       favs => {
-  //         console.log(`Favorite Jobs in Service: ${favs}`);
-  //         this.favoriteSubs = this.favorites.getFavorites(this.userEmail).subscribe( favDetails => {
-  //           this.favoriteJobsObj = favDetails;
-  //           console.log('Favorite jobs:')
-  //           console.log(favDetails)
-  //           if(this.favoriteJobsObj.length == 0) {
-  //             console.log('wassup');
-  //             this.noFavorites = true;
-  //           } else {
-  //             this.noFavorites = false;
-  //           }
-  //           for (const job of this.favoriteJobsObj) {
-  //             job.dateCreated = formatDistanceToNow( new Date(job.dateCreated), { addSuffix: true });
-  //           }
-  //         });
-  //       }
-  //     )
-  //   });
-  // }
 
   jobPage(job) {
     console.log(job);
@@ -96,6 +70,5 @@ export class FavoritesPage implements OnInit, OnDestroy {
   favoriteJobPage() {
     console.log('Going to favorite bad');
   }
-
 
 }

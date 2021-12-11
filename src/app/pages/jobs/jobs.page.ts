@@ -23,8 +23,14 @@ export class JobsPage implements OnInit, OnDestroy {
   jobFilter = 'newest';
   allJobs;
   allJobsLength;
+
   favoriteJobs;
   favoriteJobsAmount;
+  // What a user taps on a heart icon to favorite/unfavorite a job,
+  // this will trigger an animation event on the Favorites counter
+  // in the header toolbar. 
+  favorited = false;
+  unFavorited = false;
   searching = false;
   searchTerm;
   noSearchInput = false;
@@ -48,8 +54,9 @@ export class JobsPage implements OnInit, OnDestroy {
       jobs => {
         this.favoriteJobs = jobs
         this.favoriteJobsAmount = jobs.length
-        // console.log(this.favoriteJobs)
-        // console.log(this.favoriteJobsAmount)
+        console.log('\nFavorite Jobs with Favorites:')
+        console.log(this.favoriteJobs)
+        console.log(this.favoriteJobsAmount)
       }
     )
   }
@@ -111,9 +118,60 @@ export class JobsPage implements OnInit, OnDestroy {
     // tslint:disable-next-line: max-line-length
     this.router.navigate(['/home/jobs/job-page', job._id, job.title, job.companyLogo, job.companyName, job.companyEmail, job.summary, job.fullJobDescription, job.rateOfPay]);
   }
+
+  // Favorites
+  /**
+   * Scales the Heart Icon to appear to be pop out when the user favorites a job
+   * @param e event value passed
+   */
+
+  
+
+  favoriteAnimation(e) {
+    console.clear()
+    console.log(e)
+    let headerToolbarFavoriteIconWrapper = document.getElementById('favorites-page-button');
+    headerToolbarFavoriteIconWrapper.style.transition = '0.3s';
+    headerToolbarFavoriteIconWrapper.style.transitionTimingFunction = 'ease-in';
+    headerToolbarFavoriteIconWrapper.animate([
+      { transform: 'scale(0.85)'},
+      { transform: 'scale(1.15)'},
+      { transform: 'scale(1)'},
+    ], {
+      duration: 1000,
+    })
+    
+  }
+  unFavoriteAnimation(e) {
+    console.clear()
+    console.log(e)
+    // SVG Wrapper Scales
+    let headerToolbarFavoriteIconWrapper = document.getElementById('favorites-page-button');
+    headerToolbarFavoriteIconWrapper.style.transition = '0.3s';
+    headerToolbarFavoriteIconWrapper.style.transitionTimingFunction = 'ease-in';
+    headerToolbarFavoriteIconWrapper.animate([
+      { transform: 'scale(1)'},
+      { transform: 'scale(0.8)'},
+      { transform: 'scale(1)'},
+    ], {
+      duration: 1000,
+    })
+
+    // Heart turns gray when something is unfavorited
+    let headerToolbarFavoriteIcon = document.getElementById('heart-path');
+    headerToolbarFavoriteIcon.style.transitionTimingFunction = 'ease';
+    headerToolbarFavoriteIcon.animate([
+        {fill: 'url(#linearGradient-135)'},
+    ], {
+      duration: 1000,
+    })
+  }
   favoritesPage() {
     this.router.navigate(['/home/jobs/favorites']);
   }
+
+
+
   async doRefresh(job) {
 
     this.allJobs = [];

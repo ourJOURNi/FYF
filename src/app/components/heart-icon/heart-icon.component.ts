@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { JobsService } from 'src/app/services/jobs.service';
 
@@ -30,6 +30,8 @@ export class HeartIconComponent implements OnInit {
   public iconName = 'heart';
   @Input() job;
   @Input() favoriteJobs;
+  @Output() favoritedAnimation = new EventEmitter<Object>();
+  @Output() unFavoritedAnimation = new EventEmitter<Object>();
 
   constructor(
     private jobs: JobsService,
@@ -37,13 +39,14 @@ export class HeartIconComponent implements OnInit {
 
   ngOnInit() {
     this.favoriteState = 'unfavorited';
+    console.log(this.favoriteJobs);
     for (const favJob of this.favoriteJobs) {
       if (this.job === favJob) {
         console.log('There was a match!')
         console.log(favJob)
-         this.setFavoriteStateOn();
+        this.favoriteState = 'favorited';
       } else {
-         this.setFavoriteStateOff()
+        this.favoriteState = 'unfavorited';
       }
     }
     return;
@@ -61,12 +64,17 @@ export class HeartIconComponent implements OnInit {
   }
   setFavoriteStateOn() {
     this.favoriteState = 'favorited';
-    this.iconName = 'heart';
-
+    this.favoritedAnimation.emit({
+      favorited: true,
+      msg: `${this.job} was favorited`
+      })
  }
   setFavoriteStateOff() {
     this.favoriteState = 'unfavorited';
-    this.iconName = 'heart';
+    this.unFavoritedAnimation.emit({
+      favorited: false,
+      msg: `${this.job} was unfavorited`
+      })
   }
 
 }

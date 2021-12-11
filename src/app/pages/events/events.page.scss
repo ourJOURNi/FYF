@@ -5,18 +5,16 @@ ion-header {
 
 ion-card {
   --background: white;
-  margin: 0px 0 50px 0;
+  margin-bottom: 8px;
   // padding-bottom: 20px;
   position: relative;
   padding-bottom: 32px;
-  box-shadow: 1px 10px 10px rgba(0,0,0,0.1);
+  box-shadow: 1px px 6px rgba(0,0,0,0.1);
 }
 ion-searchbar {
   --background: white;
-  margin-left: 10px;
   border-radius: 5px;
   --height: 30px;
-  width: 95%;
   font-size: 0.8em;
   --box-shadow: none;
   --cancel-button-color: #005191;
@@ -25,7 +23,10 @@ ion-searchbar {
   --icon-color: #005191;
   transition: 0.5s;
 }
-
+#mobile-filter-toolbar {
+  z-index: 999;
+  --background: #e0e7ed;
+}
 .filter-toolbar-wrapper{
   width: 100%;
   border-bottom: 3px ​solid #0055a5;
@@ -42,15 +43,14 @@ ion-searchbar {
 .filter-message{
   font-weight: 600;
   font-size: 1em;
-  color: #fff;
+  color: #0055a5;
   opacity: 0;
   transition: 0.5s;
   animation: filter-selection-slide 1s ease-in-out 0.5s forwards;
-
 }
 @media only screen and (min-width: 992px) {
   .filter-message  {
-    color: #fbb606;
+    color: #0055a5;
     font-weight: 600;
     font-size: 1.4em;
     position: relative;
@@ -60,16 +60,16 @@ ion-searchbar {
 @keyframes filter-selection-slide {
   0%{
     transform: translateX(-10px);
-    opaacity: 0;
+    opacity: 0;
   }
   100%{
     transform: translateX(10px);
-    opaacity: 1;
+    opacity: 1;
   }
 }
 
 .filter-icon {
-  color: #fff;
+  color: #0055a5;
   font-size: 1.4em;
 }
 .job-section {
