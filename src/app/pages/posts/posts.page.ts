@@ -6,7 +6,7 @@ import { PostsService } from '../../services/post.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { ToastController, LoadingController } from '@ionic/angular';
 import { formatDistanceToNow } from 'date-fns';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { PostPageEmitterService } from 'src/app/emitters/post-page-emitter.service';
 import { StudentChatService } from 'src/app/services/student-chat.service';
 import { NotificationsService } from 'src/app/services/notifications.service';
@@ -49,7 +49,7 @@ export class PostsPage implements OnInit, OnDestroy {
   profileSub: Subscription;
   routerSub: Subscription;
 
-  commentForm: FormGroup;
+  commentForm: UntypedFormGroup;
   postFilter = 'newest';
   allPosts;
   followedPost;
@@ -69,7 +69,7 @@ export class PostsPage implements OnInit, OnDestroy {
     private profile: ProfileService,
     private toast: ToastController,
     private loading: LoadingController,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private popoverController: PopoverController,
     private postsEmitterService: PostPageEmitterService,
     private filterPostsService: FilterPostsService,

@@ -3,7 +3,7 @@ import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { JobsService } from '../../../services/jobs.service';
 import { ProfileService } from '../../../services/profile.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { differenceInYears, parseISO } from 'date-fns';
 import { ViewResumePage } from 'src/app/modals/view-resume/view-resume.page';
 import { ModalController } from '@ionic/angular';
@@ -25,7 +25,7 @@ export class ApplyPage implements OnInit, OnDestroy {
   phoneNumber;
   reason;
 
-  applyPageForm: FormGroup;
+  applyPageForm: UntypedFormGroup;
   profileSub: Subscription;
   sendAppSub: Subscription;
 
@@ -37,7 +37,7 @@ export class ApplyPage implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private jobs: JobsService,
     private profile: ProfileService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private location: Location,
     private modal: ModalController
   ) { }

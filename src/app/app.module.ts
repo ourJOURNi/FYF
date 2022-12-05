@@ -43,38 +43,37 @@ export function jwtOptionsFactory(storage) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [
-    IonBottomDrawerModule,
-    CustomComponentsModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    // SocketIoModule.forRoot(config),
-    IonicStorageModule.forRoot(),
-    JwtModule.forRoot({
-      jwtOptionsProvider: {
-        provide: JWT_OPTIONS,
-        useFactory: jwtOptionsFactory,
-        deps: [Storage],
-      }
-    }),
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
-  ],
-  providers: [
-    PostPageEmitterService,
-    FavoritesEventEmitterService,
-    Camera,
-    File,
-    FilePath,
-    WebView,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [
+        IonBottomDrawerModule,
+        CustomComponentsModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        IonicModule.forRoot(),
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule,
+        // SocketIoModule.forRoot(config),
+        IonicStorageModule.forRoot(),
+        JwtModule.forRoot({
+            jwtOptionsProvider: {
+                provide: JWT_OPTIONS,
+                useFactory: jwtOptionsFactory,
+                deps: [Storage],
+            }
+        }),
+        ServiceWorkerModule.register('ngsw-worker.js', { enabled: true }),
+    ],
+    providers: [
+        PostPageEmitterService,
+        FavoritesEventEmitterService,
+        Camera,
+        File,
+        FilePath,
+        WebView,
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

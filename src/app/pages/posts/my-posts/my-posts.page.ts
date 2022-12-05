@@ -5,7 +5,7 @@ import { ProfileService } from 'src/app/services/profile.service';
 import { ToastController, ModalController } from '@ionic/angular';
 import { format } from 'date-fns';
 import { formatDistanceToNow } from 'date-fns';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { PostPageEmitterService } from 'src/app/emitters/post-page-emitter.service';
 import { PlatformLocation } from '@angular/common';
 
@@ -16,7 +16,7 @@ import { PlatformLocation } from '@angular/common';
 })
 export class MyPostsPage implements OnInit {
 
-  commentForm: FormGroup;
+  commentForm: UntypedFormGroup;
   showShortDesciption = true
   userEmail;
   isUser = true;
@@ -32,7 +32,7 @@ export class MyPostsPage implements OnInit {
     private posts: PostsService,
     private profile: ProfileService,
     private toast: ToastController,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private eventEmitterService: PostPageEmitterService,
     private modal: ModalController,
     private location: PlatformLocation) { }

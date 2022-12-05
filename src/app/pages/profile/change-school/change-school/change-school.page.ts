@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../../../../services/profile.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -11,14 +11,14 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./change-school.page.scss'],
 })
 export class ChangeSchoolPage implements OnInit {
-  changeSchool: FormGroup;
+  changeSchool: UntypedFormGroup;
   activeEmail = this.profile.email.getValue();
   school = this.profile.school.getValue();
   grade = this.profile.grade.getValue();
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private profile: ProfileService,
     private auth: AuthService,
     private router: Router) {

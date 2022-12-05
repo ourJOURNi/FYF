@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy, AfterViewInit, ViewChild  } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { IonInput } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../../services/auth.service';
@@ -12,7 +12,7 @@ import { AuthService } from '../../../../services/auth.service';
 export class PersonalInfoPage implements OnInit {
 
   @ViewChild('ioninput', {static: false})  inputElement: IonInput;
-  userInfoForm: FormGroup;
+  userInfoForm: UntypedFormGroup;
 
   validationMessasges = {
     phone: [
@@ -26,7 +26,7 @@ export class PersonalInfoPage implements OnInit {
 
   constructor(
     // private auth: AuthService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     public auth: AuthService
   ) { }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ProfileService } from '../../../../services/profile.service';
 import { MentorsService } from '../../../../services/mentor.service';
 import {Location} from '@angular/common';
@@ -15,7 +15,7 @@ import {Location} from '@angular/common';
 })
 export class ContactMentorPage implements OnInit {
 
-  contactMenorForm: FormGroup;
+  contactMenorForm: UntypedFormGroup;
   mentorId;
   mentorName;
   mentorEmail;
@@ -37,7 +37,7 @@ export class ContactMentorPage implements OnInit {
     private profile: ProfileService,
     private mentors: MentorsService,
     private activatedRoute: ActivatedRoute,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private location: Location) { }
 

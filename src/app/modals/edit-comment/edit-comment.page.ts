@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ModalController, NavParams, LoadingController, AlertController } from '@ionic/angular';
 import { PostsService } from 'src/app/services/post.service';
 import { PostPageEmitterService } from 'src/app/emitters/post-page-emitter.service';
@@ -12,14 +12,14 @@ import { formatDistanceToNow } from 'date-fns';
   styleUrls: ['./edit-comment.page.scss'],
 })
 export class EditCommentPage implements OnInit {
-  editCommentForm: FormGroup;
+  editCommentForm: UntypedFormGroup;
   postID: string;
   commentContents: string;
   commentID: string;
   userEmail: any;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private modal: ModalController,
     private navParams: NavParams,
     private loading: LoadingController,

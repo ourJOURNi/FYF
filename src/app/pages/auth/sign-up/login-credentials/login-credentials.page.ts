@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IonInput, AlertController } from '@ionic/angular';
 import { AuthService } from '../../../../services/auth.service';
@@ -14,7 +14,7 @@ import { catchError, tap } from 'rxjs/operators';
 export class LoginCredentialsPage implements OnInit, OnDestroy {
 
   @ViewChild('autoFucousInput', {static: false})  inputElement: IonInput;
-  credentialsForm: FormGroup;
+  credentialsForm: UntypedFormGroup;
   passwordsMatch = false;
   code = '';
   email;
@@ -30,7 +30,7 @@ export class LoginCredentialsPage implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private auth: AuthService,
     private alert: AlertController
     ) { }

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
 import { PostsService } from 'src/app/services/post.service';
 import { ProfileService } from 'src/app/services/profile.service';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -22,7 +22,7 @@ export class AddPostPage implements OnInit, AfterViewInit {
   char;
   hashtags = [];
 
-  textPostForm: FormGroup;
+  textPostForm: UntypedFormGroup;
 
   // Do some sort of Validation Later
   validationMessages = {};
@@ -33,7 +33,7 @@ export class AddPostPage implements OnInit, AfterViewInit {
     private loading: LoadingController,
     private posts: PostsService,
     private profile: ProfileService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
   ) { }
   ngAfterViewInit() {
   }
