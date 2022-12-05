@@ -5,7 +5,7 @@
   "homepage": "findyourfuturesem.org",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 10.0.1.16",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
