@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ModalController, NavParams, LoadingController, AlertController } from '@ionic/angular';
 import { PostsService } from 'src/app/services/post.service';
 import { PostPageEmitterService } from 'src/app/emitters/post-page-emitter.service';
@@ -11,7 +11,7 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
   styleUrls: ['./reply-comment.page.scss'],
 })
 export class ReplyCommentPage implements OnInit {
-  replyCommentForm: FormGroup;
+  replyCommentForm: UntypedFormGroup;
   postID: string;
   userProfilePicture: string;
   userEmail: string;
@@ -22,7 +22,7 @@ export class ReplyCommentPage implements OnInit {
   comment: any;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private modal: ModalController,
     private navParams: NavParams,
     private loading: LoadingController,

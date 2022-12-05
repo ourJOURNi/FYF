@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { ToastController, LoadingController, IonInput, IonSpinner } from '@ionic/angular';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   @ViewChild('autoFocusInput', {static: false})  inputElement: IonInput;
   @ViewChild('initialLoadingIcon', {static: false})  initialLoadingIcon: IonSpinner;
   @ViewChild('initialLoadingSpinner', {static: false})  initialLoadingISpinner: HTMLImageElement;
@@ -31,7 +31,7 @@ export class LoginPage implements OnInit {
   };
   constructor(
     // private auth: AuthService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private auth: AuthService,
     private loading: LoadingController,
     private toast: ToastController,

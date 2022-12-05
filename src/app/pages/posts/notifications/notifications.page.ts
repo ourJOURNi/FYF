@@ -82,11 +82,11 @@ export class NotificationsPage implements OnInit, OnDestroy {
           console.log(this.allNotifications)
         }
         // Track if No Notifications
-        if (this.allNotifications.length <= 0 || this.allNotifications === []) {
-          this.noNotifications = true;
-        } else {
-          this.noNotifications = false;
-        }
+        // if (this.allNotifications.length <= 0 || this.allNotifications === []) {
+        //   this.noNotifications = true;
+        // } else {
+        //   this.noNotifications = false;
+        // }
       });
   }
   async deletedToast() {

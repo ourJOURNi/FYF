@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { ModalController, NavParams, LoadingController, AlertController, IonContent, IonTextarea, PopoverController} from '@ionic/angular';
 import { ProfileService } from 'src/app/services/profile.service';
 import { PostsService } from 'src/app/services/post.service';
@@ -19,7 +19,7 @@ export class RepliesPagePage implements OnInit {
   @ViewChild(IonContent, {static: true}) content: IonContent;
   @ViewChild('replyTextArea', {static: true}) replyTextArea: IonTextarea;
 
-  repliesForm: FormGroup;
+  repliesForm: UntypedFormGroup;
   replies$ = new BehaviorSubject([]);
   replies;
   replyValue;
@@ -39,7 +39,7 @@ export class RepliesPagePage implements OnInit {
   votes = document.getElementById('votes');
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private modal: ModalController,
     private popover: PopoverController,
     private navParams: NavParams,

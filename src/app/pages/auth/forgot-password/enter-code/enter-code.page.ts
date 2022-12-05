@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastController } from '@ionic/angular';
 
@@ -11,7 +11,7 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./enter-code.page.scss'],
 })
 export class EnterCodePage implements OnInit {
-  enterCodeForm: FormGroup;
+  enterCodeForm: UntypedFormGroup;
   code = '';
   userEmail = '';
   codesMatched: boolean;
@@ -24,7 +24,7 @@ export class EnterCodePage implements OnInit {
 
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private auth: AuthService,
     private activatedRoute: ActivatedRoute,
     private toast: ToastController) { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ModalController, NavParams, LoadingController, AlertController } from '@ionic/angular';
 import { PostsService } from 'src/app/services/post.service';
 import { PostPageEmitterService } from 'src/app/emitters/post-page-emitter.service';
@@ -11,12 +11,12 @@ import { PostPageEmitterService } from 'src/app/emitters/post-page-emitter.servi
   styleUrls: ['./edit-post.page.scss'],
 })
 export class EditPostPage implements OnInit {
-  editPostForm: FormGroup;
+  editPostForm: UntypedFormGroup;
   postID: string;
   post: string;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private modal: ModalController,
     private navParams: NavParams,
     private loading: LoadingController,

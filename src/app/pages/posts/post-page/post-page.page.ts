@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, OnDestroy, ChangeDetectorRef } from '@ang
 import { PostsService } from 'src/app/services/post.service';
 import { ProfileService } from 'src/app/services/profile.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 // tslint:disable-next-line: max-line-length
 import { ToastController, AlertController, ModalController, IonContent, LoadingController, IonTextarea } from '@ionic/angular';
 import { formatDistanceToNow } from 'date-fns';
@@ -66,7 +66,7 @@ export class PostPagePage implements OnInit, OnDestroy {
 
   // debugging
   scroll = '';
-  commentForm: FormGroup;
+  commentForm: UntypedFormGroup;
   // Footer Comment
   commentInputValue: any;
 
@@ -87,7 +87,7 @@ export class PostPagePage implements OnInit, OnDestroy {
     private changeDetectorRef: ChangeDetectorRef,
     private posts: PostsService,
     private profile: ProfileService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private toast: ToastController,
     private modal: ModalController,
     private alert: AlertController,

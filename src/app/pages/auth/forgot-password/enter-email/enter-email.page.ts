@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./enter-email.page.scss'],
 })
 export class EnterEmailPage implements OnInit {
-  forgotPasswordForm: FormGroup;
+  forgotPasswordForm: UntypedFormGroup;
 
   validationMessasges = {
     email: [
@@ -19,7 +19,7 @@ export class EnterEmailPage implements OnInit {
   };
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private auth: AuthService) { }
 

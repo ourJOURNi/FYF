@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { ModalController, NavParams, LoadingController, AlertController} from '@ionic/angular';
 import { PostsService } from 'src/app/services/post.service';
 
@@ -9,7 +9,7 @@ import { PostsService } from 'src/app/services/post.service';
   styleUrls: ['./report-comment.page.scss'],
 })
 export class ReportCommentPage implements OnInit {
-  reportCommentForm: FormGroup;
+  reportCommentForm: UntypedFormGroup;
   commentContents: string;
   commentUserFullName: string;
   commentUserProfilePicture: string;
@@ -24,7 +24,7 @@ export class ReportCommentPage implements OnInit {
 
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private modal: ModalController,
     private navParams: NavParams,
     private loading: LoadingController,

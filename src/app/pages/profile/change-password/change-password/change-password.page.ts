@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../../services/auth.service';
 import { ProfileService } from '../../../../services/profile.service';
@@ -11,7 +11,7 @@ import { AlertController } from '@ionic/angular';
   styleUrls: ['./change-password.page.scss'],
 })
 export class ChangePasswordPage implements OnInit {
-  changePassword: FormGroup;
+  changePassword: UntypedFormGroup;
   activeEmail = '';
   passwordsMatch = false;
 
@@ -22,7 +22,7 @@ export class ChangePasswordPage implements OnInit {
   };
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private auth: AuthService,
     private alertController: AlertController,

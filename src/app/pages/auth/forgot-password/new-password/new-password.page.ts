@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ToastController } from '@ionic/angular';
@@ -16,7 +16,7 @@ import { environment } from '../../../../../environments/environment';
 export class NewPasswordPage implements OnInit {
 
   BACKEND_URL = environment.url;
-  newPasswordForm: FormGroup;
+  newPasswordForm: UntypedFormGroup;
 
   passwordsMatch = false;
   code: string;
@@ -29,7 +29,7 @@ export class NewPasswordPage implements OnInit {
   };
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private auth: AuthService,
     private activatedRoute: ActivatedRoute,

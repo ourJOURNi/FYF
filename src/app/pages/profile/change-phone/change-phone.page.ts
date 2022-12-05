@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../services/auth.service';
 import { ProfileService } from '../../../services/profile.service';
@@ -12,7 +12,7 @@ import { ToastController, AlertController } from '@ionic/angular';
   styleUrls: ['./change-phone.page.scss'],
 })
 export class ChangePhonePage implements OnInit {
-  changePhone: FormGroup;
+  changePhone: UntypedFormGroup;
   activeEmail = '';
   phone;
 
@@ -30,7 +30,7 @@ export class ChangePhonePage implements OnInit {
 
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private router: Router,
     private auth: AuthService,
     private toast: ToastController,
