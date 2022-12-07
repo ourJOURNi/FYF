@@ -9,11 +9,6 @@
   margin-right: 8px;
   border-radius: 50px;
 }
-.post {
-  margin-bottom: 40px;
-  background: #fbfcfd;
-  padding: 20px 0px;
-}
 .comments-header {
   color: #0055a5;
   font-size: 1.4em;
@@ -25,15 +20,13 @@
   font-size: 1.3em;
   border-top: 6px solid #0055a5;
   padding-top: 4px;
+  z-index: 9999;
 }
 .post-title {
-  color: #67b5ff;
+  color: #ea8400;
   padding-top: 24px;
   margin-bottom: 64px;
   font-size: 1.4em;
-  font-weight: 600;
-  border-top: 3px solid white;
-
 }
 
 .profile-picture {
@@ -48,7 +41,6 @@
 .post-name {
   color: #0055a5;
   font-size: 1.6em;
-  font-weight: 600;
   margin: 0;
   display: inline-block;
 }
@@ -100,19 +92,27 @@
   border-radius: 5px;
 }
 
+.post-content {
+  white-space: pre-wrap;
+  font-size: 1.3em;
+  line-height: 25px;
+  position: relative;
+  top: -24px;
+  width: 98%;
+  color: #222;
+}
 
 @media only screen and (max-width: 576px) {
   .profile-picture  {
     height: 65px;
     width: 65px;
   }
-}x
+  .post-content {
+    font-size: 1em;
 
-.post-content{
-  font-size: 1.15em;
-  line-height: 28px;
-  color: #333;
+  }
 }
+
 
 .back-button {
   --color: white;
@@ -361,8 +361,7 @@ ion-fab {
   box-shadow: none;
   padding-left: 10px;
   border: 3px solid #faa71b;
-
-  color: white;
+  color: #222;
   font-size: 1.3em;
   border-radius: 2px;
   transition: 1s;

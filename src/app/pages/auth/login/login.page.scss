@@ -1,5 +1,5 @@
 .login-background {
-  // --background: #5a88c1;
+  --background: #5a88c1;
   height: 100vh;
   width: 100%;
   background-image: url('../../../../assets/login-background.png');
@@ -7,6 +7,9 @@
   background-size: auto 100%;
   background-position-x: 40%;
 
+}
+.login-background-mobile {
+  background: #5a88c1;
 }
 #logo {
   height: 70px;
@@ -16,7 +19,7 @@
   border-radius: 10px;
   padding: 3em;
   height: 100vh;
-  background: #ffffffcc;
+  background: #0055a5;
   box-shadow: 1px 10px 26px rgba(0,0,0,0.05);
 }
 @media only screen and (max-width: 800px) {
