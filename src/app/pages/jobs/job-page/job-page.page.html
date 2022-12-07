@@ -2,7 +2,8 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button (click)="triggerJobPageRefresh()"></ion-back-button>
-      <img id="mobile-toolbar-icon" src="../../../../assets/logos/White-FYF-LOGO.svg" alt="White FYF Logo">
+      <ion-title>Job</ion-title>
+      <!-- <img id="mobile-toolbar-icon" src="../../../../assets/logos/White-FYF-LOGO.svg" alt="White FYF Logo"> -->
     </ion-buttons>
     <ion-buttons slot="end"> 
       <app-heart-icon  class="ion-float-right" id="heart-icon" [job]="jobObj" [favoriteJobs]="favoriteJobsObj" *ngIf="favoriteJobsObj">
@@ -13,15 +14,15 @@
 
 <ion-content>
   <ion-grid>
-    <ion-row id="job-header-wrapper" class="ion-justify-content-center">
-      <ion-col size-xs="12" size-sm="8" size-md="6" size-lg="6" size-xl="5">
+    <ion-row class="ion-justify-content-center">
+      <ion-col id="job-header-wrapper" size-xs="12" size-sm="8" size-md="6" size-lg="6" size-xl="5">
         <div class="spacer"></div>
         <ion-toolbar class="toolbar-company-info">
           <ion-buttons slot="start">
             <img style="border-radius: 50px;" height="75" src="{{this.jobLogo}}">
             <div class="toolbar-company-info">
-              <h2>{{jobCompanyName}}</h2>
-              <h3>{{jobTitle}}</h3>
+              <h2>{{jobTitle}}</h2>
+              <h3>{{jobCompanyName}}</h3>
               <p>${{jobRateOfPay}} / hr</p>
             </div>
           </ion-buttons>
@@ -39,7 +40,7 @@
     </ion-row>
     <ion-row class="ion-justify-content-center">
       <ion-col size="6"  class="ion-text-center">
-        <ion-button (click)="applyForJob()" class="blue-button" style="width: 150px;">Apply</ion-button>
+        <ion-button (click)="applyForJob()" class="orange-button">Apply</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

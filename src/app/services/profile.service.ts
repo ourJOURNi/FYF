@@ -44,7 +44,7 @@ export class ProfileService {
   }
   //  Gets User Details from Server to populate the Profile tab with User information.
   getUserDetails() {
-      return this.http.post(`${this.BACKEND_URL}/api/home/user`, {email: this.activeEmail});
+      return this.http.post(`${this.BACKEND_URL}/api/home/user`, {email: 'eddie@journi.org'});
   }
   getTheirDetails(email) {
     return this.http.post(`${this.BACKEND_URL}/api/home/user/their-details`, {email});

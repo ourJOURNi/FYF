@@ -11,12 +11,12 @@
   <ion-grid>
 
      <!-- Desktop Header -->
-     <ion-row style="padding-top: 80px; margin-bottom: 40px;" class="ion-hide-lg-down ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="6">
+     <ion-row class="ion-hide-lg-down ion-justify-content-center">
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="5">
         <ion-toolbar class="desktop-toolbar">
               <ion-buttons slot="start">
                   <img height="50" src="../../../assets/icon/mentor-icon-blue.svg" alt="" srcset="">
-                  <h1>Mentors</h1>
+                  <h1 style="color: #e28f00;">Mentors</h1>
               </ion-buttons>
         </ion-toolbar>
             <!-- <img height="50" style="display: inline;" src="../../../assets/icon/suitcase-blue.svg" alt="" srcset="">
@@ -24,13 +24,18 @@
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="4">
-        <p class="ion-hide-md-up message-mobile">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through Find Your Future's list of Mentors, and contact them if you have any questions!</p>
-        <p class="ion-hide-md-down" style="font-size: 1.1em; margin-top: 24px;">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through Find Your Future's list of Mentors, and contact them if you have any questions!</p>
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="5">
+        <p class="ion-hide-md-up message-mobile">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through our list of Mentors, and contact them if you have any questions!</p>
+        <p class="ion-hide-md-down message-mobile" style="font-size: 1.1em; margin-top: 24px;">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through Find Your Future's list of Mentors, and contact them if you have any questions!</p>
+        <div class="ion-text-center">
+          <ion-button (click)="onClick()" style="font-size: 0.75em;" class="orange-button">
+            Become a Mentor
+          </ion-button>
+        </div>
       </ion-col>
     </ion-row>
     <ion-row class="ion-justify-content-center">
-      <ion-col  size-xs="12" size-sm="10" size-md="10" size-lg="8" size-xl="4">
+      <ion-col  size-xs="12" size-sm="10" size-md="10" size-lg="8" size-xl="5">
         <ion-list>
           <ion-item class="mentor" *ngFor="let mentor of allMentors" lines="none">
             <ion-avatar slot="start">
@@ -52,5 +57,6 @@
         </ion-list>
       </ion-col>
     </ion-row>
+    <div class="bottom-page-spacer"></div>
   </ion-grid>
 </ion-content>

@@ -47,10 +47,18 @@ export class TabsPage {
   }
   toProfile() {
     let tabBarFab = document.getElementById('tab-bar-fab');
-    tabBarFab.classList.remove("pro-pic-animation")
-    tabBarFab.offsetWidth
-    tabBarFab.classList.add("pro-pic-animation")
+    tabBarFab.classList.remove("pro-pic-animation-off");
+    tabBarFab.classList.add("pro-pic-animation");
     return;
     // this.router.navigateByUrl('/profile');
+  }
+
+  nonProfilePage() {
+    console.log('non profile page')
+    let tabBarFab = document.getElementById('tab-bar-fab');
+    tabBarFab.classList.remove("pro-pic-animation");
+    tabBarFab.classList.add("pro-pic-animation-off");
+    return;
+
   }
 }

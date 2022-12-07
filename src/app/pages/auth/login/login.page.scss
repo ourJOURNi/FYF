@@ -1,28 +1,28 @@
-.backgound {
-  --background: linear-gradient(180deg,rgba(0,85,165, 0.7) 30%, rgba(0,85,165, 1) 100%), url('../../../../assets/schools-small.png') no-repeat center center / cover;
-}
-@media only screen and (max-width: 602px) {
-  .backgound {
-    // --background: #fff url('../../../../assets/fyf-login-image-small.png') linear-gradient(#eb01a5, #d13531)
-    --background: linear-gradient(180deg, rgba(0,85,165, 0.7) 30%, rgb(5, 20, 34) 100%), url('../../../../assets/schools-small.png') no-repeat center center / cover;
-	-webkit-backdrop-filter: blur(50px);
-	backdrop-filter: blur(50px);
-  }
+.login-background {
+  // --background: #5a88c1;
+  height: 100vh;
+  width: 100%;
+  background-image: url('../../../../assets/login-background.png');
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position-x: 40%;
+
 }
 #logo {
   height: 70px;
   // margin: 54px 0 30px 0;
 }
 .form-wrapper {
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 3em;
-  margin: 10% auto 0 auto;
-  background: rgba(255, 255, 255, .8);
-	-webkit-backdrop-filter: blur(50px);
+  height: 100vh;
+  background: #ffffffcc;
   box-shadow: 1px 10px 26px rgba(0,0,0,0.05);
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .form-wrapper {
+    margin-top: 3em;
+    box-shadow: none;
     background: none;
   }
 }
@@ -107,7 +107,7 @@ ion-button {
   margin: 8px auto;
 }
 #login-loading {
-  background: #0055a5;
+  background: #e9aa3d;
   height: 100vh;
   z-index: 9999;
   display: flex;

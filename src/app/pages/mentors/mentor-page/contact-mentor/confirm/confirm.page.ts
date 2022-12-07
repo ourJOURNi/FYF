@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class ConfirmPage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private loading: LoadingController,
     private router: Router) { }
 
   ngOnInit() {
@@ -31,8 +33,16 @@ export class ConfirmPage implements OnInit {
     // }, 9000);
   }
 
-  returnToMentors() {
-    this.router.navigate(['/home/mentors']);
+  async returnToMentors() {
+    const loading = await this.loading.create({
+      message: 'Loading...',
+      duration: 1500,
+    });
+
+    loading.present()
+      .then( a => {
+        this.router.navigate(['/home/mentors']);
+      });
   }
 
 }

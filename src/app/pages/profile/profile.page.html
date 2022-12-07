@@ -9,21 +9,9 @@
 
 <ion-content>
   <ion-grid>
-     <!-- Desktop Header -->
-     <ion-row style="padding-top: 80px; margin-bottom: 40px;" class="ion-hide-lg-down ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="7">
-        <ion-toolbar class="desktop-toolbar">
-              <ion-buttons slot="start">
-                  <img height="50" src="../../../assets/icon/profile-icon-blue.svg" alt="" srcset="">
-                  <h1>Profile</h1>
-              </ion-buttons>
-        </ion-toolbar>
-            <!-- <img height="50" style="display: inline;" src="../../../assets/icon/suitcase-blue.svg" alt="" srcset="">
-            <h1 style="display: inline; margin-left: 15px;">Jobs</h1> -->
-      </ion-col>
-    </ion-row>
+    <div class="ion-hide-lg-down large-spacer"></div>
     <ion-row class="profile-wrapper ion-justify-content-center ion-align-items-center">
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="7">
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="4">
         <ion-row>
           <ion-col size-xs="11" size-sm="3" size-md="2" size-lg="1.5">
             <ion-row class="ion-justify-content-center">
@@ -31,13 +19,13 @@
                 <img id="profile-picture" src="{{this.userObject.profilePicture}}" alt="User Profile Picture">
               </ion-col>
               <ion-col class="ion-text-center" size="12">
-                <ion-button class="blue-button" (click)="changeProfilePicture()">
+                <ion-button class="orange-button" (click)="changeProfilePicture()">
                   Change Picture
                 </ion-button>
               </ion-col>
             </ion-row>
           </ion-col>
-          <ion-col size-xs="11" size-sm="6" size-md="5" size-lg="10" size-xl="5">
+          <ion-col push="1" size-xs="11" size-sm="6" size-md="5" size-lg="10" size-xl="5">
             <ion-row>
               <ion-col id="profile-info" size="12">
                 <p><span>Name:</span> {{userObject.fullName}}</p>
@@ -52,7 +40,9 @@
           </ion-col>
         </ion-row>
       </ion-col>
-      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="8" size-xl="7">
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="4">
         <ion-list>
           <ion-item detail="true" lines="none" (click)="changeEmail()">
             <ion-label>Change Email</ion-label>

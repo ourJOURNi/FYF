@@ -130,11 +130,10 @@
   margin-top: 10px;
 }
 #posts-wrapper {
-  padding: 90px 0;
 }
 .post {
-  margin-top: 2%;
-  padding: 24px 0;
+  margin-bottom: 2%;
+  padding: 1em 0;
   border-radius: 10px;
   box-shadow: 1px 10px 26px rgba(0,0,0,0.05);
   font-size: 1.1em;
@@ -144,8 +143,7 @@
 .post-title {
   color: #0055a5;
   font-size: 0.9em;
-  font-weight: 600;
-  line-height: 0px;
+  line-height: 1.3em;
   margin: 0;
 }
 
@@ -216,7 +214,6 @@ ion-content {
 }
 .hashtag{
   font-size: 0.65em;
-  font-weight: 600;
   display: inline-block;
   margin-right: 5px;
   color: #ea8400;
@@ -233,19 +230,26 @@ ion-content {
   position: relative;
   top: -32px;
 }
+.creator-profile-picture {
+  border-radius: 100px;
+  height: 45xpx; 
+  width: 45px;
+  box-shadow: 1px 1px 3px #999;
+}
 .post-content {
-  font-size: 0.8em;
+  font-size: 0.9em;
+  line-height: 1.35em;
   position: relative;
-  line-height: 1.3em;
   color: #111;
   height: auto;
-  overflow: hidden;
-  border-top: 2px solid #99999936; 
-  padding: 8px 0px;
+  // overflow: hidden;
+  border-top: 1px solid #99999936; 
+  padding: 1em 0;
  }
 
  .show-less {
-  height: 80px;
+  max-height: 300px;
+  min-height: 100px;
   overflow: hidden;
 }
 
@@ -314,7 +318,6 @@ ion-content {
 #username {
   color: #0055a5;
   font-size: 0.8em;
-  font-weight: 600;
   position: relative;
   left: 0px;
   opacity: 0;
@@ -456,7 +459,7 @@ form {
   margin: 20px 0 10px 0;
   box-shadow: none;
   padding-left: 10px;
-  border: 3px solid #0055a5;
+  border: 1px solid #54acff;
   border-radius: 2px;
   transition: 1s;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -585,7 +588,7 @@ ion-fab-button {
   --color-hover: white;
   --color-activated: white;
   position: relative;
-  bottom: 10px;
+  bottom: 80px;
   right: 10px;
   opacity: 0;
   transition: 0.5s;

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UntypedFormGroup, UntypedFormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ProfileService } from '../../../../services/profile.service';
 import { MentorsService } from '../../../../services/mentor.service';
 import {Location} from '@angular/common';
+import { IonContent } from '@ionic/angular';
 
 
 
@@ -32,6 +33,7 @@ export class ContactMentorPage implements OnInit {
   userProfilePicture;
   userResume;
   messageValid: boolean;
+  @ViewChild('contactMentorIonContent') contactIonContent: IonContent;
 
   constructor(
     private profile: ProfileService,
@@ -121,6 +123,10 @@ export class ContactMentorPage implements OnInit {
 
   back() {
     this.location.back();
+  }
+
+  onKeyboard() {
+    this.contactIonContent.scrollToBottom();
   }
 
 }

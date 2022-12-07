@@ -34,7 +34,7 @@
   </ion-toolbar>
   <!-- Tab Bar for Mobile -->
   <ion-fab id="tab-bar-fab" class="ion-hide-lg-up" vertical="bottom" horizontal="center" translucent="true">
-    <ion-fab-button>
+    <ion-fab-button id="pro-pic-fab-btn">
       <ion-tab-button (click)="toProfile()"  tab="profile">
         <img id="profile-picture" src="{{this.userProfilePicture}}" alt="User Profile Picture">
         <!-- <ion-label>PROFILE</ion-label> -->
@@ -43,27 +43,27 @@
   </ion-fab>
 
   <ion-tab-bar id="tabBar" slot="bottom" class="ion-hide-lg-up ion-no-border">
-  <ion-tab-button tab="jobs">
-    <ion-icon style="font-size: 2.1em"  name="briefcase-outline"></ion-icon>
+    <ion-tab-button (click)="nonProfilePage()" tab="jobs">
+    <ion-icon style="font-size: 1.7em"  name="briefcase-outline"></ion-icon>
     <!-- <ion-icon src="../assets/icon/suitcase-inactive.svg"></ion-icon> -->
     <ion-label>JOBS</ion-label>
-  </ion-tab-button>
+    </ion-tab-button>
 
-  <ion-tab-button class="events" tab="events">
-    <ion-icon style="font-size: 2.1em"  name="calendar-outline"></ion-icon>
+    <ion-tab-button (click)="nonProfilePage()" class="events" tab="events">
+    <ion-icon style="font-size: 1.7em"  name="calendar-outline"></ion-icon>
     <!-- <ion-icon src="../assets/icon/calendar-inactive.svg"></ion-icon> -->
     <ion-label>EVENTS</ion-label>
-  </ion-tab-button>
+    </ion-tab-button>
 
   <svg height="50" viewBox="0 0 100 50" width="100" xmlns="http://www.w3.org/2000/svg"><path d="M100 0v50H0V0c.543 27.153 22.72 49 50 49S99.457 27.153 99.99 0h.01z" fill-rule="evenodd"></path></svg>
 
-    <ion-tab-button class="posts" tab="posts">
-      <ion-icon style="font-size: 2.1em" name="newspaper-outline"></ion-icon>
+    <ion-tab-button (click)="nonProfilePage()" class="posts" tab="posts">
+      <ion-icon style="font-size: 1.7em" name="newspaper-outline"></ion-icon>
       <ion-label>POSTS</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="mentors">
-      <ion-icon style="font-size: 2.1em" name="ribbon-outline"></ion-icon>
+    <ion-tab-button (click)="nonProfilePage()" tab="mentors">
+      <ion-icon style="font-size: 1.7em" name="ribbon-outline"></ion-icon>
       <ion-label>MENTORS</ion-label>
     </ion-tab-button>
   </ion-tab-bar>

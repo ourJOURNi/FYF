@@ -40,11 +40,22 @@ html, body {
 * {
   font-family: "Arial", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
+
+p {
+  font-family: 'Helvetica';
+
+}
 ion-grid {
   --ion-grid-padding: 0px;
 }
 .spacer {
   margin: 1em 0;
+}
+.large-spacer {
+  margin: 2em 0;
+}
+.bottom-page-spacer {
+  margin: 5em 0;
 }
 #logo {
   height: 40px;
@@ -56,8 +67,8 @@ ion-header {
     font-size: 2em;
   }
   ion-title {
-    color: #ca7200;
-    font-weight: 500;
+    color: #db8700;
+    font-weight: 600;
     position: relative;
     right: 5px;
   }
@@ -141,13 +152,37 @@ ion-title {
   color: white;
 }
 
+.desktop-side-menu {
+  position: fixed;
+  padding: 0em;
+  z-index: 999; 
+  left: 15%;
+  border-radius: 5px;
+  box-shadow: 1px 3px 3px rgba(0,0,0,0.1);
+
+  ion-list {
+    background: #fff;
+  }
+  ion-item {
+    --background: none;
+    padding: 0em 0.2em;
+  }
+  .side-menu-small-btn {
+    --background: none;
+    color: #0055a1;
+  }
+  ion-button {
+    // --background: none;
+  }
+}
+
 .comment-text, #mentor-description, #job-full-description, .reply-text, .event-description {
   white-space: pre-wrap;
 }
 
 .searchbar-input {
   background: #FFF !important;
-  border: 2px solid #0055a5 !important;
+  border: 1px solid #0055a5 !important;
   border-radius: 5px !important;
   height: 40px !important;
   padding: 10px 0px 10px 10px !important;
@@ -155,7 +190,7 @@ ion-title {
   font-size: 0.8em !important;
   transition: 0.2s;
   transition-timing-function: ease-in-out;
-  box-shadow: 1px 1px 10px rgba(0,0,0,0.15) !important;
+  box-shadow: none!important;
 }
 
 .searchbar-input:hover {
@@ -163,8 +198,8 @@ ion-title {
 }
 
 .searchbar-input:focus {
-  border: 2px solid #ffa71b !important;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.5) !important;
+  border: 2px solid #db8700 !important;
+  box-shadow: none !important;
 }
 
 @keyframes searchbar-slide-up {
@@ -219,7 +254,6 @@ ion-title {
       margin-bottom: 20px;
       // box-shadow: 1px 10px 6px rgba(0,0,0,0.07);
       border: 2px solid #0055a5;
-      transition: 0.2s;
       border-radius: 4px;
       opacity: 1;
       color: #222;
@@ -251,13 +285,13 @@ ion-select-option {
 }
 
 .orange-button {
-  width: 200px;
+  width: 150px;
   height: 40px;
   font-size: 1em;
   font-weight: 800;
   color: white;
   margin: 10px auto;
-  --background: #faa71b;
+  --background: #e28f00;
   --transition: 0.5s;
   // opacity: 0;
   // animation: slide-up 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
@@ -278,6 +312,7 @@ ion-select-option {
   font-size: 1em;
   font-weight: 800;
   color: white;
+  margin: 10px auto;
   --background: linear-gradient(#4dc066, #2da847);
   --background-hover: linear-gradient(#3fa054, #217734);
   --transition: 0.5s;
@@ -289,7 +324,7 @@ ion-select-option {
   --background: #e0e0e0;
   --background-hover: #e0e0e0;
   color: #0055a1;
-  width: 200px;
+  width: 150px;
   height: 40px;
   font-size: 1em;
   font-weight: 800;
@@ -305,7 +340,7 @@ ion-select-option {
 }
 
 .blue-button {
-  width: 200px;
+  width: 150px;
   height: 40px;
   font-size: 1em;
   font-weight: 800;

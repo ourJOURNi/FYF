@@ -1,7 +1,7 @@
 // Tab-Bar
 #profile-picture {
   border-radius: 100px;
-  padding: 2.3em;
+  padding: 2.6em;
 }
 // Profile Picture needs height: 40px on desktop views.
 @media only screen and (min-width: 993px) {
@@ -56,7 +56,7 @@ ion-tabs{
 	}
 	ion-tab-bar {
 		--border: 0;
-		--background: none;
+		--background: #fff;
 		position: absolute;
 		bottom: 0;
 		left:0; right: 0;
@@ -70,11 +70,14 @@ ion-tabs{
 			position: absolute;
 		}
 		ion-tab-button {
-			--background: #0055a5;
+			--background: #fff;
+			--color-selected: #e28f00;
+			--color: #777;
+			
 
-			ion-icon, ion-label {
-				color: white;
-			}
+			// ion-icon, ion-label {
+			// 	color: white;
+			// }
 		}
 		ion-tab-button.events {
 			margin-right: 0px;
@@ -85,25 +88,43 @@ ion-tabs{
 			border-top-left-radius: 18px;
 		}
 		svg {
-			width: 72px;
+			width: 80px;
 			margin-top: 19px;
 			path{
-				fill:  #0055a5;
+				fill:  #fff;
 			}
 		}
 	}
 	.pro-pic-animation {
-		animation: profile-picture-up 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+		animation: profile-picture-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+	}
+	.pro-pic-animation-off {
+		animation: profile-picture-off 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 	}
 	@keyframes profile-picture-up {
 		0% {
 			transform: translateY(0px);
 		}
 		50% {
-			transform: translateY(-20px);
+			transform: translateY(-5px);
 		}
 		100% {
 			transform: translateY(0px);
+			border: 3px solid #e28f00;
+			border-radius: 100px;
+		}
+	}
+	@keyframes profile-picture-off {
+		0% {
+			transform: translateY(0px);
+		}
+		50% {
+			transform: translateY(5px);
+		}
+		100% {
+			transform: translateY(0px);
+			border: none;
+			border-radius: 100px;
 		}
 	}
 }

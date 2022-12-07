@@ -6,7 +6,7 @@ ion-back-button {
     color: white;
     width: auto;
   }
-.blue-button-small {
+.contact-button-small {
     --background: #0055a5;
     opacity: 1;
     height: 24px;
@@ -17,16 +17,25 @@ ion-back-button {
     top: 100px;
     z-index: 9999;
 }
-.toolbar-contact-button {
-    width: 90px;
-    font-weight: 600;
-    --background: #faa71b;
-    position: relative;
-    right: 8px;
-  }
-.orange-button{
-    margin: 120px auto;
+img {
+    box-shadow: 1px 1px 3px #999;
 }
+.back-button {
+    --color: 444;
+    --background: #b8b8b8;
+    --background-hover: linear-gradient(#0055a5, #0d2e4d);
+    height: 24px;
+    --border-radius: 5px;
+    width: 54px;
+    font-size: 0.5em;
+    font-weight: 600;
+  }
+.toolbar-contact-button {
+    width: 85px;
+    height: 30px;
+    font-size: 0.75em;
+    --background: #e28f00;
+  }
 .message-mobile {
     font-size: 1em;
     background: white;
@@ -37,20 +46,23 @@ ion-back-button {
     background: #fff;
     padding: 0.8em;
     border-radius: 5px;
-    box-shadow: 1px 1px 10px #c6c6c6;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 #mentor-profile-picture{
     margin: 1em 0;
-    height: 100px;
-    width: 100px;
-    opacity: 0;
-    animation: slide-in-left 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s forwards;
+    background-size: contain;
+    border-radius: 100px;
+    height: 200px;
+    width: 200px;
+    opacity: 1;
+    // animation: slide-in-left 1s ease-in 1s forwards;
 }
 #mentor-name {
     font-size: 2em;
     font-weight: 900;
     opacity: 1;
     margin: 0.2em 0;
+    color: #111;
 }
 
 #mentor-title {
@@ -74,12 +86,18 @@ ion-back-button {
     opacity: 1;
 }
 
-#mentor-description {
-    font-size: 1.1em;
+.mentor-description {
+    font-size: 1em;
     color: #222;
-    line-height: 1.7em;
+    line-height: 1.5em;
     opacity: 1;
+    white-space: pre-wrap;
 }
+@media only screen and (min-width: 992px) {
+    .mentor-description {
+        font-size: 1.3em;
+    }
+  }
 
 #contact-button {
     margin: 50px 0 250px 0;

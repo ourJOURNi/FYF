@@ -19,15 +19,15 @@
         <ion-title>View Resume</ion-title>
       </ion-buttons>
       <ion-buttons slot="end">
-        <ion-button (click)="uploadResumeModal()" id="upload-button">UPDATE</ion-button>
+        <ion-button (click)="uploadResumeModal()" style="--background: e28f00;" id="upload-button">UPDATE</ion-button>
       </ion-buttons>
     </ion-toolbar>
 
     <!-- Resume View -->
     <ion-row class="ion-justify-content-center">
       <ion-col class="ion-text-center" size-xs="12" size-sm="10">
-        <p class="text-header">You can View and Update your Resume here</p>
-        <object [data]="this.sanitizeImageUrl(this.resume)" width="100%" height="700" type="application/pdf"></object>
+        <img src="https://cdn-images.zety.com/templates/zety/valera-11-classic-silver-dark-332@3x.png" alt="" srcset="">
+        <!-- <object [data]="this.sanitizeImageUrl('https://cdn-images.zety.com/templates/zety/valera-11-classic-silver-dark-332@3x.png')" width="100%" height="700" type="application/pdf"></object> -->
       </ion-col>
     </ion-row>
   </ion-grid>

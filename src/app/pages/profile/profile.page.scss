@@ -30,15 +30,19 @@ ion-item {
 }
 #profile-info {
   height: auto;
+
+  span {
+    color: #0055a5;
+  }
  
 }
 #logout-item {
   --background: none;
   --color: #e3405f;
   font-weight: 600;
-  --border-color: #e3405f;
-  --border-style: solid;
-  --border-width: 2px;
+  // --border-color: #e3405f;
+  // --border-style: solid;
+  // --border-width: 2px;
   margin-bottom: 100px;
 }
 h4 {
@@ -54,26 +58,26 @@ p {
   // animation: text-slide-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.5s forwards;
 }
 span {
-  color: #0055a5;
+  color: #888;
   font-weight: 600;
   width: 64px;
   display: inline-block;
 }
 #profile-picture {
-  height: 100px;
-  width: 100px;
+  width: 200px;
   border-radius: 100px;
   margin: 0 auto 8px;
   display: block;
   opacity: 1;
+  box-shadow: 1px 1px 3px #999;
   // animation: pic-slide-right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards;
 }
 .back-button{
   opacity: 1;
   // animation: buttons-slide-up 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
-.blue-button{
-  --background: #0055a5;
+.orange-button{
+  --background: #e28f00;
   opacity: 1;
   height: 24px;
   width: 100px;
@@ -148,7 +152,7 @@ span {
     font-size: 1em;
   }
    span {
-    color: #0055a5;
+    color: #888;
     font-weight: 600;
     width: 64px;
     display: inline-block;

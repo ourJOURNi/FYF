@@ -25,7 +25,7 @@ export class ViewResumePage implements OnInit {
     this.profile.getUserDetails()
       .subscribe( data => {
         console.log(data);
-        this.profile.resume.next(data['resume']);
+        this.profile.resume.next('https://cdn-images.zety.com/templates/zety/valera-11-classic-silver-dark-332@3x.png');
       });
 
 

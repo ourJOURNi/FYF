@@ -6,7 +6,7 @@
         <ion-title>Add Post</ion-title>
       </ion-buttons>
     <ion-buttons slot="end">
-      <img height="30" src="../../../../assets/icon/White-FYF-LOGO.png" alt="" srcset="">
+      <!-- <img height="30" src="../../../../assets/icon/White-FYF-LOGO.png" alt="" srcset=""> -->
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -24,14 +24,13 @@
     </ion-row>
 
     <ion-row class="ion-justify-content-center" style="margin-top: 1%;">
-      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="9" size-lg="7" size-xl="6">
+      <ion-col size-xs="11" size-sm="10" size-md="9" size-lg="7" size-xl="6">
         <!-- Mobile Text Header -->
         <p class="message ion-hide-md-up">Please keep your content clean. In order to maintain a high standard of content, each post will have to be verified before they are added to the Posts feed. Happy posting, and be inspired!</p>
 
         <!-- Desktop Text Header -->
         <p class="message ion-hide-md-down">Please keep your content clean. In order to maintain a high standard of content, each post will have to be verified before they are added to the Posts feed. Happy posting, and be inspired!</p>
-        <hr style="border-top: #9993 solid 2px;
-        margin-bottom: 50px;">
+        <hr style="border-top: #9993 solid 1px;">
       </ion-col>
 
     </ion-row>
@@ -53,27 +52,31 @@
               placeholder="Title"></ion-input>
             </ion-item>
             <ion-label>Hashtags</ion-label>
-            <h5>Please seperate each tag with a comma ( , ). You can add up to 5 hashtags.</h5>
             <div class="hashtag" *ngFor="let i = index; let tag of hashtags">
               <p>{{tag}}</p>
               <img (click)="deleteTag(i)" src="../../../../assets/icon/close-icon.svg" alt="" srcset="">
             </div>
+            <p>Enter each hashtag one at a time. You can add up to 5 hashtags.</p>
             <ion-item>
               <ion-input
+              slot="start"
               #hashtagRef
               autocapitalize="on"
               required
               inputmode="text"
               maxlength="100"
               clearInput="true"
-              (keydown)="addHashTag($event)"
+              (keydown)="addHashTag($event, textPostForm)"
               formControlName="hashtags"
-              placeholder="Type tag then press Enter">#</ion-input>
+              placeholder="Add Hashtag">#<span style="width: 1em;"></span></ion-input>
+              <ion-buttons slot="end">
+                <ion-button (click)="addHashTag(textPostForm)">
+                  <ion-icon slot="end" name="add-outline" size="large" color="primary"></ion-icon>
+                </ion-button>
+              </ion-buttons>
             </ion-item>
             <!-- <p class="char-limit">{{titleChars.value.length}} / 100 character limit</p> -->
-
             <ion-label>Post</ion-label>
-            <h5>Keep your content clean. There is a filter for profane language. Administrative action will be taken against posts with too much profanity.</h5>
               <ion-item style="height: auto;">
                 <ion-textarea
                   #postChars
@@ -98,6 +101,7 @@
         </form>
       </ion-col>
     </ion-row>
+    <div class="bottom-page-spacer"></div>
   </ion-grid>
 
 </ion-content>

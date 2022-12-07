@@ -82,7 +82,7 @@ export class AddPostPage implements OnInit, AfterViewInit {
     console.log('Loading dismissed!');
   }
 
-  addHashTag(event) {
+  addHashTag(event?, form?: any) {
     console.log(event);
     let hashtagControl = this.textPostForm.get('hashtags');
     if(event.code === "Enter") {
@@ -92,6 +92,8 @@ export class AddPostPage implements OnInit, AfterViewInit {
       console.log('Hashtags: ');
       this.hashtags.push(hashtagControl.value);
       console.log(this.hashtags);
+      console.log(form);
+      form.reset();
 
     }
 

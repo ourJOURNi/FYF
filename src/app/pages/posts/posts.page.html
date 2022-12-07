@@ -37,19 +37,16 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <!-- Spinner -->
-  <ion-spinner *ngIf="searching" name="crescent"></ion-spinner>
-
   <!-- Desktop -->
   <ion-grid class="ion-hide-lg-down">
-    <!-- Search & Filter -->
+    <!-- Search & Filter
     <ion-row id="search-wrapper" class="ion-justify-content-center">
-      <!-- Posts Page Icon -->
+      Posts Page Icon
       <ion-col size="1" push="0.2" pull-lg="2">
         <ion-icon id="posts-icon" size="large" name="newspaper-outline"></ion-icon>
         <h3>| Posts</h3>
       </ion-col>
-      <!-- Searchbar Element -->
+      Searchbar Element
       <ion-col size="2.5">
         <ion-searchbar
           class="searchbar-desktop"
@@ -67,14 +64,14 @@
 
         </ion-searchbar>
       </ion-col>
-      <!-- Search Button -->
+      Search Button
       <ion-col size="0.8">
         <div style="margin-top: 11px;"></div>
         <ion-button id="search-button" (click)="searchLoading()">
           Search
         </ion-button>
       </ion-col>
-      <!-- Filter-Button -->
+      Filter-Button
       <ion-col size="1.4">
         <div class="spacer-1x"></div>
         <div class="filter-message">
@@ -86,16 +83,16 @@
           <p *ngIf="this.postFilter === 'oldest'" (click)="filterMenu()"> Oldest</p>
         </div>
       </ion-col>
-      <!-- Notifications -->
+      Notifications
       <ion-col size="1" push="0.2">
-        <!-- TODO: Switch to Grey Icon when Notifications count == 0 -->
+        TODO: Switch to Grey Icon when Notifications count == 0
         <div class="spacer-1x"></div>
         <img height="25" src="../../../assets/icon/posts-notification-bell-red.svg"/>
         <span id="notifications-count">3</span>
       </ion-col>
     </ion-row>
     
-    <!-- Search message -->
+    Search message
     <ion-row id="search-message-wrapper">
       <ion-col size="12">
         <p>You can choose up to five hashtags. 
@@ -104,28 +101,61 @@
       </ion-col>
     </ion-row>
 
-    <!-- Search Message Overlay -->
+    Search Message Overlay
     <ion-row id="search-message-overlay">
       <ion-col size="12"></ion-col>
-    </ion-row>
+    </ion-row> -->
 
     <!-- If Filtering -->
-    <ion-row class="ion-justify-content-center">
+    <ion-row *ngIf="this.filtering" class="ion-justify-content-center">
       <ion-col style="position: relative; top: -32px;" class="ion-text-center" size="12">
-        <ion-spinner *ngIf="this.filtering" name="bubbles">Filtering</ion-spinner>
+        <ion-spinner  name="bubbles">Filtering</ion-spinner>
       </ion-col>
     </ion-row>
 
-    <!-- Posts & SideBar -->
+    <div class="large-spacer"></div>
     <ion-row *ngIf="!this.filtering" class="ion-justify-content-center">
+      <!-- Side-Menu -->
+      <ion-col class="ion-hide-lg-down desktop-side-menu" size-lg="2" size-xl="2">
+          <ion-list>
+            <ion-item lines="none">
+              <span class="hash">#</span>
+              <span style="width: 10px"></span>
+              <h1 style="color: #e28f00;">Posts</h1>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label style="color: #999;">Followed</ion-label>
+              <ion-button class="side-menu-small-btn" (click)="onClick()" slot="end">
+                <ion-icon slot="start" size="large" name="list-outline"></ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label style="color: #999;">Filter</ion-label>
+              <ion-button class="side-menu-small-btn" (click)="onClick()" slot="end">
+                <ion-icon  size="large" slot="start" name="filter">
+                </ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label>Search</ion-label>
+              <ion-searchbar placeholder=""></ion-searchbar>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-button (click)="addPost()" class="green-button">
+                <ion-icon slot="start" name="add"></ion-icon>
+                Add Post
+              </ion-button>
+            </ion-item>
+          </ion-list>
+      </ion-col>
       <!-- Posts -->
-      <ion-col id="posts-wrapper" size-md="7.5" size-lg="5" size-xl="4.5">
+      <ion-col id="posts-wrapper" size-xs="12" size-sm="10" size-md="10" push-lg="1" size-lg="5" size-xl="5">
         <div class="post" *ngFor="let post of allPosts">
           <!-- Profile Header -->
           <ion-row>
             <!-- Profile Picture -->
             <ion-col class="ion-text-center" push="0.2" size="1">
-              <img src="{{post.creatorProfilePicture}}" style="border-radius: 100px; height: 35xpx; width: 35px;">
+              <img class="creator-profile-picture" src="{{post.creatorProfilePicture}}">
             </ion-col>
             <!-- Post Creator's Name -->
             <ion-col push="0.2" size="10">
@@ -150,7 +180,7 @@
               <p [ngClass]="{'show-less': showShortDesciption}" 
                 class="post-content">
                 {{post.post}}
-                <button *ngIf="post.post.length > 400" class="show-more-or-less-button" type="button" (click)="alterDescriptionText(post.post)">
+                <button *ngIf="post.post.length > 1000" class="show-more-or-less-button" type="button" (click)="alterDescriptionText(post.post)">
                   {{ showShortDesciption ? '... Read More': 'Show Less' }}
                 </button>
               </p>
@@ -200,7 +230,7 @@
         </div>
       </ion-col>
       <!-- Sidebar with User Info -->
-      <ion-col size="2">
+      <!-- <ion-col size="2">
         <ion-row id="user-details">
           <ion-col size="12">
             <img id="posts-profile-picture" src="{{userProfilePicture}}">
@@ -218,12 +248,12 @@
             </ion-button>
           </ion-col>
         </ion-row>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
   </ion-grid>
 
   <!-- Fab placed to the bottom end -->
-  <ion-fab [@inOutAnimation] id="fab-wrapper" class="ion-hide-lg-up" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab id="fab-wrapper" class="ion-hide-lg-up" vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button id="add-post-button" (click)="addPost()">
         <ion-icon name="add" size="large"></ion-icon>
       </ion-fab-button>

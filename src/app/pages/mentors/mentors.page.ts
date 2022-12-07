@@ -45,13 +45,19 @@ export class MentorsPage implements OnInit {
         if(url.includes('/home/mentors/mentor-page/')) {
           console.log('Hide Tab Bar!');
           let tabBar = document.getElementById('tabBar');
+          let proPic = document.getElementById('pro-pic-fab-btn');
           tabBar.style.height = '0px'
-          tabBar.style.transition = '1s'
+          tabBar.style.transition = '0.1s'
+          proPic.style.height = '0px'
+          proPic.style.transition = '0.1s'
         } else {
           let tabBar = document.getElementById('tabBar');
+          let proPic = document.getElementById('pro-pic-fab-btn');
           console.log(tabBar);
-          tabBar.style.height = '50px'
-          tabBar.style.transition = '1s'
+          tabBar.style.height = '56px'
+          tabBar.style.transition = '0.1s'
+          proPic.style.height = '56px'
+          proPic.style.transition = '0.1s'
         }
       });
   }

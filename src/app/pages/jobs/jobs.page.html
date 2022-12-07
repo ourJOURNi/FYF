@@ -3,13 +3,13 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-icon style="position: relative; left: 8px; color: #0055a5;"name="briefcase-outline"></ion-icon>
-      <ion-title>Jobs |</ion-title>
+      <ion-title style="width: 80px;">Jobs</ion-title>
     </ion-buttons>
-    <ion-searchbar></ion-searchbar>
+    <ion-searchbar placeholder=""></ion-searchbar>
        <ion-buttons slot="end">
         <ion-button (click)="favoritesPage()">             
           <!-- Favorites Icon -->
-          <svg id="favorites-page-button" width="35px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <svg id="favorites-page-button" width="25px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>jobs-favorites-heart-red</title>
             <defs>
                 <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-134">
@@ -32,6 +32,21 @@
         </ion-button>
       </ion-buttons>
   </ion-toolbar>
+      
+  <!-- Mobile Filter Toolbar -->
+  <ion-toolbar style="position: fixed;" class="mobile-filter-toolbar ion-hide-lg-up">
+    <ion-buttons slot="start">
+      <p class="filter-message">
+        Filter: Newest</p>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        <!-- Filter -->
+        <ion-icon class="filter-icon" name="filter-outline"></ion-icon> 
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
 </ion-header>
 
 <ion-content>
@@ -44,7 +59,7 @@
   <ion-grid>
     <div *ngIf="this.data">
       <!-- Desktop Header -->
-      <ion-row style="padding-top: 40px; margin-bottom: 40px;" class="ion-hide-lg-down ion-justify-content-center">
+      <!-- <ion-row style="padding-top: 40px; margin-bottom: 40px;" class="ion-hide-lg-down ion-justify-content-center">
         <ion-col style="padding: 0 2em;" size-xs="11" size-sm="10" size-md="10" size-lg="7" size-xl="6">
           <ion-toolbar class="desktop-toolbar">
             <ion-buttons slot="start">
@@ -69,7 +84,7 @@
             </ion-buttons>
           </ion-toolbar>
         </ion-col>
-      </ion-row>
+      </ion-row> -->
 
       <!-- Filter Toolbar (Mobile) -->
       <!-- <ion-row class="filter-toolbar-wrapper ion-hide-lg-up ion-justify-content-center">
@@ -86,26 +101,55 @@
           </ion-toolbar>
         </ion-col>
       </ion-row> -->
-      
-      <!-- Mobile Filter Toolbar -->
-      <ion-toolbar style="position: fixed;" class="mobile-filter-toolbar ion-hide-lg-up">
-        <ion-buttons slot="start">
-          <p class="filter-message">
-            Filter: Newest</p>
-        </ion-buttons>
-        <ion-buttons slot="end">
-          <ion-button (click)="onClick()">
-            <!-- Filter -->
-            <ion-icon class="filter-icon" name="filter-outline"></ion-icon> 
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-      
       <!-- Jobs -->
+      <div class="large-spacer"></div>
       <ion-row class="ion-justify-content-center">
-        <ion-col size-xs="12" size-sm="10" size-md="10" size-lg="6" size-xl="5">
-          <div style="margin-top: 4em;"></div>
-
+        <!-- Side-Menu -->
+        <ion-col class="ion-hide-lg-down desktop-side-menu" size-lg="2" size-xl="2">
+          <ion-list>
+            <ion-item lines="none">
+              <ion-icon style="font-size: 1.5em; position: relative; top: 4px; color: #0055a5;"name="briefcase-outline"></ion-icon>
+              <span style="width: 10px"></span>
+              <h1 style="color: #e28f00;">Jobs</h1>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label style="color: #999;">Favorites</ion-label>
+              <ion-button (click)="onClick()" slot="end" style=" width: 35px; font-size: 0.55em;">
+                <svg  style="position: relative; left: -6px;" width="35px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <title>jobs-favorites-heart-red</title>
+                  <defs>
+                      <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1341">
+                          <stop stop-color="#E80404" offset="0%"></stop>
+                          <stop stop-color="#980000" offset="100%"></stop>
+                      </linearGradient>
+                      <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1351">
+                          <stop stop-color="#777" offset="0%"></stop>
+                          <stop stop-color="#999" offset="100%"></stop>
+                      </linearGradient>
+                  </defs>
+                  <g id="jobs-favorites-heart-red" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                      <path d="M343.54238,63.6069503 C305.547015,30.6673745 249.039314,36.5922661 214.164009,73.1996318 L200.505092,87.5181196 L186.846154,73.1996318 C152.040204,36.5922661 95.4631671,30.6673745 57.4678045,63.6069503 C13.9256735,101.413401 11.6376316,169.267517 50.6036789,210.248017 L184.766137,351.175794 C193.432963,360.274735 207.507886,360.274735 216.174713,351.175794 L350.337169,210.248017 C389.372552,169.267517 387.08451,101.413401 343.54238,63.6069503 Z" 
+                            id="heart-path" 
+                            fill="url(#linearGradient-1341)" 
+                            fill-rule="nonzero"></path>
+                  </g>
+                </svg>
+              </ion-button>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label style="color: #999;">Filter</ion-label>
+              <ion-button (click)="onClick()" slot="end" style="width: 30px; color: #999;">
+                <ion-icon class="filter-icon" slot="start" name="filter">
+                </ion-icon>
+              </ion-button>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-label>Search</ion-label>
+              <ion-searchbar placeholder=""></ion-searchbar>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size-xs="12" size-sm="10" size-md="10" push-lg="1" size-lg="6" size-xl="6">
           <!-- Jobs Sections -->
           <ion-row class="job-section ion-justify-content-center" *ngFor="let job of allJobs">
             <ion-col push="0.3" size="1">

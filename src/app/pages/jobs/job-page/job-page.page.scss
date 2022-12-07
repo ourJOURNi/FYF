@@ -9,7 +9,11 @@ ion-content {
 }
 @media only screen and (min-width: 992px) {
   #job-header-wrapper {
-    margin-top: 4em;
+    margin: 4em auto;
+    background: #fff;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px 1px #d3d3d3;
   }
 }
 #mobile-toolbar-icon {
@@ -41,7 +45,6 @@ app-heart-icon {
   }
   h2 {
     color: #0055a5;
-    font-weight: 600;
   }
   h3 {
     font-size: 1em;
@@ -55,7 +58,6 @@ app-heart-icon {
     width: 50px;
     padding: 4px;
     font-size: 0.7em;
-    font-weight: 600;
     border-radius: 5px;
   }
 }
@@ -71,15 +73,14 @@ span {
   font-weight: 700;
 }
 .back-button {
-  --color: white;
-  --background: #0055a5;
+  --color: 444;
+  --background: #b8b8b8;
   --background-hover: linear-gradient(#0055a5, #0d2e4d);
   height: 24px;
   --border-radius: 5px;
   width: 54px;
   font-size: 0.5em;
   font-weight: 600;
-  display: block;
 }
 #job-summary {
   font-size: 1.1em;
@@ -106,8 +107,7 @@ span {
   top: -43px
 }
 #job-full-description {
-  font-size: 1.2em;
-  font-weight: 600;
+  font-size: 1em;
   line-height: 1.4em;
   color: #222;
   border-top: 1px solid #22222221;

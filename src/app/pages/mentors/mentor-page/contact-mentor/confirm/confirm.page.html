@@ -3,10 +3,11 @@
 
 <ion-content id="background">
   <ion-grid>
+    <div class="bottom-page-spacer"></div>
     <ion-row class="ion-justify-content-center full-page" style="margin: 15% 0% 3% 0%;">
-      <ion-col size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5" class="ion-text-center" size="10">
+      <ion-col size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5" class="ion-text-center ion-align-items-center" size="10">
         <img src="../../../../../../assets/icon/Green-Checked.svg">
-        <p>An email has been sent to <span style="font-weight: 800;">{{mentorName}}</span> with your message. They will contact you at their earliest convenience. Please be sure to check the email you have associated with your FYF Account.</p>
+        <p>An email has been sent to <span style="font-weight: 800;">{{mentorName}}</span> with your message.</p>
         <ion-button (click)="returnToMentors()">
           Done
         </ion-button>

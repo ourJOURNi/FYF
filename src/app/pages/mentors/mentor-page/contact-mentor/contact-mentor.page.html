@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content #contactMentorIonContent [scrollEvents]="true">
   <ion-grid>
     <!-- Desktop Header -->
     <ion-row style="margin-top: 100px;" class="ion-hide-lg-down ion-justify-content-center">
@@ -25,24 +25,35 @@
         <!-- Form -->
         <!-- Mentor Photo -->
         <div class="ion-text-center">
+          <p class="ion-hide-md-up message-mobile">Send a message directly to <b>{{mentorName}}</b>. They will get back to you at their earliest convenience via your profile's email: <b>{{this.userEmail}}</b></p>
           <img src="{{mentorPhoto}}" class="ion-hide-lg-up"  id="mentor-photo">
         </div>
-        <form [formGroup]="contactMenorForm"  (ngSubmit)="confirm(this.contactMenorForm.value)">
-          <ion-textarea
-                class="message-input"
-                formControlName="message"
-                placeholder="Have a question for a {{mentorName}}? Send them an email!"
-                rows="10"
-                autogrow="true"
-                required
-                spellcheck="true"
-                (keydown.control.enter)="messageValid ? confirm(this.contactMenorForm.value) : null"></ion-textarea>
-            <ion-button type="submit" class="orange-button" [disabled]="!messageValid"
-            expand="block">
-                Send
-            </ion-button>
-          </form>
         </ion-col>
     </ion-row>
   </ion-grid>
+  <div id="bottom-of-page"></div>
 </ion-content>
+
+<ion-footer class="ion-hide-lg-up add-comment-footer">
+  <ion-row class="ion-justify-content-center">
+    <ion-col style="display: inline-block; height: 40px;" size="10">
+      <ion-textarea
+      #footerCommentInput
+      (ionChange)="commentInput($event)"
+      style="display: inline;"
+      autocapitalize="true"
+      rows="1"
+      spellcheck="true"
+      wrap="soft"
+      type="text"
+      placeholder="Type Message"
+      >
+    </ion-textarea>
+    </ion-col>
+    <ion-col style="display: inline-block; height: 50px;" size="1">
+      <ion-button style="--background: none;" (click)="confirm(this.footerCommentInput.value)">
+      <ion-icon style="font-size: 1.8em; color: #0055a5;" slot="start" name="send"></ion-icon>
+    </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

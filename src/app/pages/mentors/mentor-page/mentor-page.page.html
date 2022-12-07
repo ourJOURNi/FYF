@@ -2,7 +2,6 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      <img height="30" id="mobile-toolbar-icon" src="../../../../assets/logos/White-FYF-LOGO.svg" alt="White FYF Logo">
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button style="--width: 50px;" class="toolbar-contact-button" (click)="contactMentor()">
@@ -15,20 +14,22 @@
 
 <ion-content>
   <ion-grid>
-
-    <!-- Desktop Header -->
-    <ion-row class="ion-hide-md-down ion-justify-content-center">
-      <ion-col size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5">
-        <ion-button class="blue-button-small ion-float-right" (click)="back()">
-          Back
-       </ion-button>
-      </ion-col>
-    </ion-row>
-
-    <!-- Mentors -->
     <ion-row class="mentor ion-justify-content-center">
-      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5">
-        <p class="ion-hide-md-up message-mobile">Need advice? Want feedback on something? Want to learn about a particular career field? Browse through Find Your Future's list of Mentors, and contact them if you have any questions!</p>
+      <div class="large-spacer"></div>
+      <div class="large-spacer"></div>
+      <div class="large-spacer"></div>
+      <!-- Back Button -->
+      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="6">
+        <ion-toolbar style="--background: none;">
+          <ion-buttons slot="start">
+            <ion-title>Mentor</ion-title>
+          </ion-buttons>
+          <ion-buttons slot="end">
+            <ion-button class="back-button" (click)="back()">
+              Back
+           </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
         <div id="mentor-card">
           <img src="{{this.mentorPhoto}}" id="mentor-profile-picture"/>
           <p id="mentor-name">{{mentorName}}</p>
@@ -36,13 +37,16 @@
           <p id="mentor-location">{{mentorCity}}, {{mentorState}}</p>
         </div>
       </ion-col>
-      <ion-col size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5">
-        <p id="mentor-description">{{mentorDescription}}</p>
+      <!-- Mentor Info -->
+      <ion-col size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="6">
+        <p class="mentor-description">{{mentorDescription}}</p>
       </ion-col>
-      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="5">
+      <!-- Contact Button -->
+      <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="7" size-lg="6" size-xl="6">
         <ion-button class="orange-button"  (click)="contactMentor()">
           Contact
         </ion-button>
+        <div class="bottom-page-spacer"></div>
       </ion-col>
     </ion-row>
   </ion-grid>

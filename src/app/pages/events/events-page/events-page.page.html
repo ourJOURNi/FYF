@@ -22,6 +22,40 @@
 
         <!-- Picture Header Desktop -->
         <ion-row class="ion-hide-sm-down ion-justify-content-center">
+          <div class="large-spacer"></div>
+          <ion-col size-md="10" size-lg="6" size-xl="6">
+            <ion-toolbar style="--background: none;">
+              <ion-buttons slot="start">
+                <ion-title class="event-title">{{eventTitle}}</ion-title>
+              </ion-buttons>
+              <ion-buttons slot="end">
+                <ion-button (click)="onClick()">
+                  <svg  style="position: relative; left: -6px;" width="35px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>jobs-favorites-heart-red</title>
+                    <defs>
+                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-134">
+                            <stop stop-color="#E80404" offset="0%"></stop>
+                            <stop stop-color="#980000" offset="100%"></stop>
+                        </linearGradient>
+                        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-135">
+                            <stop stop-color="#777" offset="0%"></stop>
+                            <stop stop-color="#999" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <g id="jobs-favorites-heart-red" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <path d="M343.54238,63.6069503 C305.547015,30.6673745 249.039314,36.5922661 214.164009,73.1996318 L200.505092,87.5181196 L186.846154,73.1996318 C152.040204,36.5922661 95.4631671,30.6673745 57.4678045,63.6069503 C13.9256735,101.413401 11.6376316,169.267517 50.6036789,210.248017 L184.766137,351.175794 C193.432963,360.274735 207.507886,360.274735 216.174713,351.175794 L350.337169,210.248017 C389.372552,169.267517 387.08451,101.413401 343.54238,63.6069503 Z" 
+                              id="heart-path" 
+                              fill="url(#linearGradient-134)" 
+                              fill-rule="nonzero"></path>
+                    </g>
+                  </svg>
+                </ion-button>
+                <ion-button class="back-button" (click)="this.router.navigateByUrl('/home/events');">
+                  Back
+                </ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-col>
           <ion-col size-md="10" size-lg="6" size-xl="6" 
             class="event-image" 
             style="background-image: url({{eventPhoto}});">
@@ -30,53 +64,27 @@
 
         <!-- Event Details -->
         <ion-row class="ion-justify-content-center ion-align-items-center">
-          <ion-col class="details" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="4">
-            <h1 id="event-title">{{ eventTitle }}</h1>
-            <h3>Address </h3>
-            <p>{{ eventAddressOne }} {{ eventAddressTwo }}, {{ eventCity }}, {{ eventState }}, {{ eventZip}}</p>
-            <h3>Date</h3>
-            <p>{{ eventDate }}</p>
-            <h3>Time</h3>
-            <p>{{ eventTime }}</p>
-            <h3>Description</h3>
-            <p>{{ eventDescription }}</p>
+          <ion-col class="details" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="6">
+            <ion-list>
+              <ion-item lines="none">
+                <ion-label>Address</ion-label>
+                <ion-title>{{ eventAddressOne }}</ion-title>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>Date</ion-label>
+                <ion-title>{{ eventDate }}</ion-title>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>Time</ion-label>
+                <ion-title>{{ eventTime }}</ion-title>
+              </ion-item>
+              <ion-item lines="none">
+                <ion-label>Description</ion-label>
+                <ion-title>{{ eventDescription }}</ion-title>
+              </ion-item>
+            </ion-list>
         </ion-col>
         </ion-row>
-
-        <!-- Going or Not Going sections? -->
-
-        <!-- GOING? -->
-        <ion-row *ngIf="!going" class="going ion-justify-content-center">
-            <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
-              <div>
-                <img height="70" src="../../../../assets/icon/jobs-favorites-heart-grey-outline.svg" alt="Favorite Icon">
-              </div>
-              <p class="going-text">Favorite this Event?</p>
-              <ion-button class="going-button" (click)="goingToEvent()">
-                   Yes.
-                </ion-button><br><br>
-              <a class="going-link" routerLink="/home/events" (click)="callEventEmitter()">Go back to Events Page</a><br><br>
-               <a class="going-link" routerLink="/home/events/going">View Favorites</a>
-                 </ion-col>
-        </ion-row>
-
-        <!-- NOT GOING -->
-        <ion-row *ngIf="going" class="going ion-justify-content-center">
-              <ion-col class="ion-text-center" size-xs="11" size-sm="10" size-md="10" size-lg="6" size-xl="5">
-                <div>
-                  <img height="70" src="../../../../assets/icon/jobs-favorites-heart-red.svg" alt="Favorite Icon">
-                </div>
-                <p class="going-text">Un-favorite this Event?</p>
-                <ion-button class="not-going-button" (click)="notGoingToEvent()">
-                 No.
-                </ion-button><br><br>
-                <a class="not-going-link" routerLink="/home/events" (click)="callEventEmitter()">
-                  
-                  Go back to Events Page</a><br><br>
-                <a class="not-going-link" routerLink="/home/events/going">View Favorites</a>
-               </ion-col>
-      </ion-row>
-      <div style="padding-bottom: 4em"></div>
-
+        <div class="bottom-page-spacer"></div>
       </ion-grid>
 </ion-content>

@@ -18,9 +18,10 @@
   border-radius: 50px;
   width: 100%;
 }
-#mobile-filter-toolbar {
-  --background: #e0e7ed;
+.mobile-filter-toolbar {
+  --background: #fff;
   z-index: 999;
+  box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
 }
 .filter-toolbar-wrapper{
   width: 100%;
@@ -36,9 +37,8 @@
   }
 }
 .filter-message{
-  font-weight: 600;
-  font-size: 1em;
-  color: #0055a5;
+  font-size: 0.8em;
+  color: #888;
   opacity: 0;
   transition: 0.5s;
   animation: filter-selection-slide 1s ease-in-out 0.5s forwards;
@@ -136,7 +136,7 @@
   width: 100%;
   opacity: 0;
   padding: 1em 0px;
-  margin-bottom: 50px;
+  margin-bottom: 1em;
   box-shadow: 1px 4px 5px rgb(0 0 0 / 5%);
   animation: job-section-slide 0.5s ease 0.5 forwards;
 }
@@ -158,6 +158,9 @@ h6, p {
 
 --ion-buttons {
   --color: #888;
+}
+ion-button {
+  --background: none;
 }
 
 #job-summary {

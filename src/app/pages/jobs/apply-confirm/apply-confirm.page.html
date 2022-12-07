@@ -6,10 +6,11 @@
 
 <ion-content id="background">
   <ion-grid>
-    <ion-row class="ion-justify-content-center full-page" style="margin: 10% 0% 3%;">
-      <ion-col class="ion-align-self-center ion-text-center" size-xs="11" size-sm="10" size-md="9" size-lg="6" size-xl="5">
+    <div class="bottom-page-spacer"></div>
+    <ion-row class="ion-justify-content-center full-page" style="padding: 10% 0% 0 0%;">
+      <ion-col class="ion-align-items-center ion-text-center" size-xs="11" size-sm="10" size-md="9" size-lg="6" size-xl="5">
         <img id="confirm-icon" src="../../../../assets/icon/white-check.svg">
-        <p id="confirm-text">Thanks for applying to {{jobCompanyName}} for the role of {{jobTitle}}. {{jobCompanyName}} has been notified at the email address of {{jobCompanyEmail}} and you will hear from them shortly.</p>
+        <p id="confirm-text">Thanks for applying to {{jobCompanyName}} for the role of {{jobTitle}}. {{jobCompanyName}} has been notified at the email address of {{jobCompanyEmail}} and you will hear from them soon.</p>
         <ion-button (click)="backHome()" color="light" fill="solid">Done</ion-button>
       </ion-col>
     </ion-row>

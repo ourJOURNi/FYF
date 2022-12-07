@@ -1,7 +1,3 @@
-ion-title {
-  margin: 0;
-  color: white;
-}
 ion-toolbar {
   --background: #0055a5;
 }
@@ -12,6 +8,18 @@ ion-toolbar {
 ion-back-button {
   color: white;
   width: auto;
+}
+.app-wrapper {
+  background: #fff;
+  padding: 1em 2em;
+  box-shadow: 1px 1px 5px 1px rgb(204, 204, 204);
+}
+@media screen and (max-width: 1000px) {
+  .app-wrapper {
+    background: #fff;
+    padding: 1em;
+    box-shadow: none;
+  }
 }
 .desktop-toolbar{
   --background: none;
@@ -29,7 +37,6 @@ ion-back-button {
   }
   h2 {
     color: #0055a5;
-    font-weight: 600;
   }
   h3 {
     font-size: 1em;
@@ -49,7 +56,7 @@ ion-back-button {
 }
 .back-button {
   --color: white;
-  --background: #ffa71b;
+  --background: #b8b8b8;
   --background-hover: linear-gradient(#ffa71b, #ffa81b80);
   height: 24px;
   --border-radius: 5px;
@@ -58,14 +65,11 @@ ion-back-button {
   font-weight: 600;
   display: block;
 }
-.instructions {
+.step-header {
   line-height: 1em;
-  font-size: 0.9em;
-  font-weight: 600;
-  color: #fff;
-  padding: 0.6em 0.2em 0.6em 1em;
-  background: #005191;
-  width: 330px;
+  font-size: 1.2em;
+  color: #005191;
+  padding: 0.6em 0em;
   height: auto;
 }
 
@@ -99,14 +103,18 @@ ion-back-button {
   margin-left: 8px;
   color: #222;
 }
-#instructions {
-  margin-top: 25px;
+.instructions-header {
   font-size: 1em;
-  font-weight: 600;
-  color: #111;
+  background: #fff9ef;
+  padding: 8px;
+  border-left: 5px solid #e28f00;
+}
+.instructions {
+  color: #005191;
+  font-size: 1em;
 }
 @media only screen and (min-width: 992px) {
-  #instructions {
+  .instructions-header, .instructions {
     font-size: 1.2em;
   }
 }
