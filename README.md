@@ -1,11 +1,7 @@
-++ Running the App on Device
-  -- make sure device is connected with command 'adb devices' (for android debugging)
-
-  -- After the device is connected, run on app on the device with the 'ionic cordova run android' command.
-
-  ++ Running on Phone
-  ng serve --host {ip address} > Type ip address on Mobile browser
-
-  ++ Connecting to AWS EC2 (Bitnami MEAN)
-    -- navigate to Express folder
-    -- sudo ssh -i "fyf-app.pem" bitnami@ec2-13-58-123-255.us-east-2.compute.amazonaws.com
+@ 06/07/2025
+- I am going to bring this project back to life, simply for my Portfolio. Here's a little more information about this app
+- I was a Tech Educator and Software Developer in the earlier part of my career, in the non-profit space, for an organization named Journi. I taught HTML, CSS, JavaScript, Swift, Github, UI/UX Design, Augmented Reality, and Video Game Development with Unreal Engine, over the span of 4.5 years.
+- In 2019, Journi & United Way SouthEast Michigan partnerned to create an app called "Find Your Future". Think of it as sort of a LinkedIN Junior for Detroit area kids in Middle School, High School, and Early College.
+- I designed and built this app, and in 2019, I was totally in over my head, lol. I was just learning how to code in 2019 & 2020 in professional environments outside of hackathons, so I was really put to the test on this project. 
+- I had to learn AWS EC2 Instances in order to run a server, using NGINX as a Web Server. This is before I even knew what CI/CD was. I wrote the server in JavaScript using Express & Node with MondoDb/Mongoose. I essetially designed the entire system archieture on my own, and even though i was definetly not satified with what happened, I learned so much.
+- I am going to to deditcate a few weeks to polishing this webapp up, both on the front end and back end.
